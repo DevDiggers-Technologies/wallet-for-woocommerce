@@ -2,7 +2,7 @@
 
 **Contributors:** DevDiggers
 
-**Tags:** wallet, store credit, cashback, digital wallet, account funds
+**Tags:** woocommerce wallet, cashback, store credit, digital wallet, wallet payment
 
 **WordPress**
   * `Requires at least: 6.2`
@@ -10,7 +10,7 @@
 
 **WooCommerce**
   * `Requires at least: 9.0`
-  * `Tested up to: 10.8`
+  * `Tested up to: 10.8.1`
 
 **PHP**
   * `Requires PHP: 7.0`
@@ -21,31 +21,33 @@
 
 ## Description
 
-Wallet Management for WooCommerce adds a digital wallet to your WooCommerce store. Customers top up their wallet, pay for orders directly with their balance, earn cart based cashback, and track every transaction from the My Account page. Store owners manage balances, adjust funds, bulk-import balances, and configure cashback from a clean admin dashboard.
+Wallet Management for WooCommerce gives every customer a wallet they can top up, spend at checkout, and track from their account. The wallet works as a normal WooCommerce payment gateway, so once a customer has a balance they pay for an order in one click.
 
-The wallet works as a standard WooCommerce payment gateway, so once a customer has a balance they can check out in a single click.
+Store owners run it from the WordPress admin. You can credit or debit any customer, import balances in bulk from a CSV, set up cart based cashback, and watch balances and transactions from one dashboard. Refunds go back to the wallet, so a returned order does not turn into a manual payout.
+
+It fits stores that want store credit, a cashback program, prepaid balances, refunds without gateway fees, or a faster repeat checkout.
 
 ## How It Works
 
-A hidden top-up product is created on activation. Customers enter an amount on their My Account wallet page and check out to add funds. The wallet then appears as a payment method at checkout, and the balance pays for the order. Every credit and debit is recorded in the customer's transaction history.
+A hidden top-up product is created on activation. A customer opens the wallet page in My Account, enters an amount, and checks out to add funds. The wallet then appears as a payment method at checkout, and the balance pays for the order. Every credit and debit is written to the customer's transaction history.
 
 ## Free Features
 
 **Payments and top-up**
-* Enable or disable the wallet across the whole store.
+* Turn the wallet on or off for the whole store.
 * Wallet payment gateway so customers pay for orders with their balance.
 * Top-up with min/max limits and quick preset amounts.
-* Configurable top-up confirmation order status.
-* Restrict top-ups to specific payment gateways.
-* Fixed or percentage based debit limits.
+* Pick the order status that confirms a top-up.
+* Limit top-ups to specific payment gateways.
+* Fixed or percentage debit limits.
 
 **Cashback**
-* Cart-total cashback rules with amount ranges (fixed or percentage).
-* Maximum cap, minimum order value, and exclude-sale-products controls.
+* Cart total cashback rules with amount ranges (fixed or percentage).
+* Maximum cap, minimum order value, and skip-sale-products option.
 * Cashback messages on shop, product, cart, checkout and order pages.
 
 **Customer wallet page**
-* My Account wallet page with balance, today's credit/debit and AJAX-paginated transactions.
+* My Account wallet page with balance, today's credit/debit and AJAX paginated transactions.
 * Shortcodes for wallet balance, top-up and transactions (tags set in settings).
 * Order refunds credited back to the wallet automatically.
 
@@ -54,25 +56,32 @@ A hidden top-up product is created on activation. Customers enter an amount on t
 * Manual credit/debit for any single customer.
 * Bulk credit/debit via CSV import.
 * Setup wizard and a full Configuration screen.
-* Dashboard with balance, transactions, users and spend overview.
+* Dashboard with balance, transactions, users and spend.
 
 **Emails and compatibility**
 * WooCommerce email notifications for credit, debit and manual adjustments, with editable templates.
-* Compatible with WooCommerce HPOS and the block-based Cart and Checkout.
+* Compatible with WooCommerce HPOS and the block based Cart and Checkout.
 * Translation ready.
 
-## Pro Features
+## Free vs Pro
 
-Upgrade to [Wallet Management for WooCommerce Pro](https://devdiggers.com/product/woocommerce-wallet-management/) to add:
+| Capability | Free | Pro |
+| --- | :---: | :---: |
+| Wallet top-up and wallet checkout | Yes | Yes |
+| Cart total cashback | Yes | Yes |
+| Manual and bulk (CSV) adjustments | Yes | Yes |
+| Transaction history and refunds to wallet | Yes | Yes |
+| Wallet emails, HPOS, block checkout | Yes | Yes |
+| Partial payment (wallet plus gateway) | No | Yes |
+| Send and request money (peer to peer) | No | Yes |
+| Wallet withdrawals with approval, charges, limits | No | Yes |
+| OTP email verification | No | Yes |
+| Referral program | No | Yes |
+| Advanced cashback (product, category, role, gateway, top-up) | No | Yes |
+| First order cashback, cashback expiry and reminders | No | Yes |
+| Export wallet data to CSV | No | Yes |
 
-* Partial payments (wallet plus another gateway on one order).
-* Send and request money between customers (peer-to-peer transfers).
-* Wallet withdrawals with admin approval, charges and limits.
-* OTP email verification for sensitive wallet operations.
-* Referral program rewarding both the referrer and the new customer.
-* Advanced cashback: per product, per category, on top-ups, by user role and by payment gateway.
-* First-order cashback, cashback expiry and expiry reminder emails.
-* Export customer wallet data to CSV.
+[Upgrade to Wallet Management for WooCommerce Pro](https://devdiggers.com/product/woocommerce-wallet-management/)
 
 ## Installation
 
@@ -80,7 +89,7 @@ Upgrade to [Wallet Management for WooCommerce Pro](https://devdiggers.com/produc
 2. Activate the plugin through the **Plugins** menu in WordPress.
 3. Open the **Wallet** menu and run the setup wizard, or configure it from **Wallet > Configuration**.
 
-Requires WooCommerce to be installed and active.
+Requires WooCommerce installed and active.
 
 ## Build From Source
 
@@ -102,10 +111,13 @@ Yes. The plugin registers the wallet as a WooCommerce payment gateway.
 A hidden "Wallet Topup" product is created on activation. Customers enter an amount on the My Account wallet page and check out to top up.
 
 **Does it work with HPOS and block checkout?**
-Yes. It declares HPOS compatibility and registers a payment method for the block-based Cart and Checkout.
+Yes. It declares HPOS compatibility and registers a payment method for the block based Cart and Checkout.
 
-**Is my data safe if I later upgrade to Pro?**
-Yes. The Free plugin never deletes data, and it stops loading when the Pro plugin is active so the two never conflict.
+**Are refunds returned to the wallet?**
+Yes. Refunding a WooCommerce order credits the amount back to the customer's wallet automatically.
+
+**Is my data safe if I upgrade to Pro later?**
+Yes. The free plugin never deletes data, and it stops loading when the Pro plugin is active so the two never conflict.
 
 ## Support
 
