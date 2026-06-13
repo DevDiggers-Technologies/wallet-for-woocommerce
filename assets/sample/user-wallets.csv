@@ -1,0 +1,4 @@
+id,username,email,wallet_balance,description
+1,admin,admin@example.com,100.00,Initial wallet balance
+2,customer1,customer1@example.com,50.00,Signup bonus
+3,customer2,customer2@example.com,25.50,Referral reward

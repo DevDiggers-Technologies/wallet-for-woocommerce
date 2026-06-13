@@ -1,0 +1,381 @@
+// Color variables for easy theming
+@ddwcwm-bg-primary: #fff;
+@ddwcwm-bg-secondary: #f8fafc;
+@ddwcwm-bg-tertiary: #f3f4f6;
+@ddwcwm-text-primary: #1f2937;
+@ddwcwm-text-secondary: #6b7280;
+@ddwcwm-text-muted: #9ca3af;
+@ddwcwm-border-color: #e5e7eb;
+@ddwcwm-border-light: #d1d5db;
+@ddwcwm-success-color: #10b981;
+@ddwcwm-warning-color: #eab308;
+@ddwcwm-error-color: #dc2626;
+
+// Mixins for common patterns
+.ddwcwm-error-base() {
+    text-align: center;
+    padding: 32px 20px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    margin: 20px 0;
+
+    .ddwcwm-error-icon {
+        font-size: 2em;
+        color: @ddwcwm-error-color;
+        margin-bottom: 12px;
+        display: block;
+    }
+
+    h3 { 
+        color: @ddwcwm-error-color; 
+        margin: 0 0 8px 0; 
+        font-size: 1.2em; 
+    }
+    p { 
+        color: @ddwcwm-error-color; 
+        margin: 0 0 16px 0; 
+    }
+
+    .ddwcwm-retry {
+        background: @ddwcwm-error-color;
+        color: @ddwcwm-bg-primary;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover { 
+            background: darken(@ddwcwm-error-color, 10%); 
+        }
+    }
+}
+
+// Common wizard styles
+.ddwcwm-wizard {
+    background: @ddwcwm-bg-primary;
+    border-radius: 16px;
+    padding: 0;
+    margin: 40px auto;
+    max-width: 800px;
+    border: 1px solid @ddwcwm-border-color;
+    overflow: hidden;
+
+    .ddwcwm-step-description {
+        margin: 12px 0 10px 0;
+    }
+
+    p { margin: 0 0 8px 0; color: @ddwcwm-text-secondary; }
+    h2 { font-size: 24px; margin: 0 0 8px 0; }
+    label { display: block; }
+
+    .select2-container { width: 100% !important; }
+
+    // Steps navigation
+    .ddwcwm-steps {
+        display: flex;
+        background: @ddwcwm-bg-secondary;
+        padding: 12px 32px;
+        border-bottom: 1px solid @ddwcwm-border-color;
+        margin: 0;
+
+        .ddwcwm-step {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 16px;
+            color: @ddwcwm-text-secondary;
+            font-weight: 500;
+            font-size: 14px;
+            position: relative;
+
+            .ddwcwm-step-index {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background: @ddwcwm-border-color;
+                color: @ddwcwm-text-secondary;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: 600;
+                margin-right: 8px;
+            }
+
+            .ddwcwm-step-label { font-size: 14px; }
+
+            &.active {
+                color: var(--ddfw-primary-color);
+                .ddwcwm-step-index { background: var(--ddfw-primary-color); color: #fff; }
+            }
+
+            &.completed .ddwcwm-step-index { background: @ddwcwm-success-color; color: #fff; }
+
+            &:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                right: -16px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 32px;
+                height: 1px;
+                background: @ddwcwm-border-color;
+            }
+        }
+    }
+
+    // Step content
+    .ddwcwm-step-content {
+        padding: 40px 48px;
+    }
+
+    .ddwcwm-step-content-final {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 40px 20px;
+    }
+
+    // Buttons
+    .ddwcwm-step-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-top: 32px;
+        padding-top: 24px;
+        border-top: 1px solid @ddwcwm-border-color;
+
+        .button {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.2s;
+
+            &.button-primary {
+                background: var(--ddfw-primary-color);
+                border-color: var(--ddfw-primary-color);
+                color: #fff;
+
+                &:hover {
+                    background: #1d4ed8;
+                    border-color: #1d4ed8;
+                }
+            }
+
+            &.button-secondary {
+                background: @ddwcwm-bg-primary;
+                border-color: @ddwcwm-border-light;
+                color: @ddwcwm-text-primary;
+
+                &:hover {
+                    background: #f9fafb;
+                    border-color: @ddwcwm-text-muted;
+                }
+            }
+        }
+    }
+
+    .ddwcwm-step-actions-final {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 16px;
+        margin-top: 24px;
+        padding-top: 0;
+        border-top: none;
+    }
+
+    // Generic progress bar
+    .ddwcwm-progress-wrap {
+        margin: 32px 0 24px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        background: @ddwcwm-bg-secondary;
+        padding: 24px;
+        border-radius: 12px;
+        border: 1px solid @ddwcwm-border-color;
+    }
+
+    .ddwcwm-progress-bar-bg {
+        background: @ddwcwm-border-color;
+        border-radius: 8px;
+        width: 100%;
+        height: 8px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .ddwcwm-progress-bar {
+        background: linear-gradient(90deg, var(--ddfw-primary-color) 0%, #2563eb 100%);
+        height: 100%;
+        width: 0%;
+        border-radius: 8px;
+        transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+            animation: ddwcwm-progress-shine 2s infinite;
+        }
+    }
+
+    .ddwcwm-progress-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        color: @ddwcwm-text-primary;
+        font-weight: 500;
+
+        .ddwcwm-progress-text { 
+            color: @ddwcwm-text-secondary; 
+            font-size: 13px; 
+        }
+    }
+
+    .ddwcwm-progress-text {
+        color: @ddwcwm-text-muted; 
+        font-size: 0.9em;
+    }
+
+    // Generic error states
+    .ddwcwm-error {
+        .ddwcwm-error-base();
+    }
+
+    // Wizard error states
+    .ddwcwm-wizard-error {
+        .ddwcwm-error-base();
+
+        .ddwcwm-wizard-error-icon {
+            font-size: 2em;
+            color: @ddwcwm-error-color;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .ddwcwm-wizard-retry {
+            background: @ddwcwm-error-color;
+            color: @ddwcwm-bg-primary;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover { 
+                background: darken(@ddwcwm-error-color, 10%); 
+            }
+        }
+    }
+
+    // Wizard summary styles
+    .ddwcwm-wizard-summary-wrap { 
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .ddwcwm-wizard-summary {
+        margin: 24px 0;
+        padding: 0 24px;
+    }
+
+    .ddwcwm-wizard-summary-card {
+        background: @ddwcwm-bg-primary;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .ddwcwm-wizard-summary-header {
+        display: flex;
+        align-items: center;
+        padding: 24px 32px;
+        background: @ddwcwm-bg-secondary;
+        border-bottom: 1px solid @ddwcwm-border-color;
+    }
+
+    .ddwcwm-wizard-summary-success {
+        display: flex;
+        align-items: center;
+        margin-right: 12px;
+
+        svg { 
+            width: 24px; 
+            height: 24px; 
+        }
+    }
+
+    .ddwcwm-wizard-summary-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: @ddwcwm-text-primary;
+        flex: 1;
+        margin: 0;
+    }
+
+    .ddwcwm-wizard-summary-details {
+        padding: 32px; 
+    }
+
+    .ddwcwm-wizard-summary-rows {
+        color: @ddwcwm-text-secondary;
+        font-size: 16px;
+        margin-bottom: 24px;
+        font-weight: 500;
+    }
+
+    .ddwcwm-wizard-summary-table {
+        background: @ddwcwm-bg-secondary;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 24px;
+    }
+
+    .ddwcwm-wizard-summary-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.05em;
+        padding: 6px 0;
+    }
+
+    .ddwcwm-wizard-summary-label {
+        display: flex;
+        align-items: center;
+    }
+
+    .ddwcwm-wizard-summary-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.12em;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+
+    .ddwcwm-wizard-summary-total-value {
+        color: @ddwcwm-text-primary;
+        font-size: 1.18em;
+        font-weight: 700;
+    }
+
+    // Status colors
+    .ddwcwm-success { color: @ddwcwm-success-color; }
+    .ddwcwm-warning { color: @ddwcwm-warning-color; }
+}
+
+// Animations
+@keyframes ddwcwm-progress-shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
