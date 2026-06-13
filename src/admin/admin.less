@@ -1,0 +1,637 @@
+// Variables matching MultiPOS
+@primary-color: #0256ff;
+@success-color: #01CC44;
+@warning-color: #fde8cd;
+@error-color: #FF4800;
+@border-color: #f2f2f2;
+@bg-light: #f6f7f7;
+
+
+.ddwcwm-hide {
+    display: none !important;
+}
+.ddwcwm-width-100 {
+    width: 100%;
+}
+.dashicons-trash {
+    cursor: pointer;
+}
+.ddwcwm-credit, .ddwcwm-credit span {
+    color: @success-color !important;
+    font-weight: 600;
+}
+.ddwcwm-debit, .ddwcwm-debit span {
+    color: @error-color !important;
+    font-weight: 600;
+}
+.ddwcwm-status {
+    background-color: #e1e4ea;
+    color: #222530;
+    text-align: center;
+    font-size: 12px;
+    display: inline-block;
+    border-radius: 6px;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 2px 10px;
+
+    &.status-success, &.status-credit, &.status-paid, &.status-completed, &.status-active, 
+    &.status-wallet_topup, &.status-referral_reward, &.status-manual_credit, &.status-transfer_credit {
+        color: #10b981;
+        background-color: rgba(16, 185, 129, 0.1);
+    }
+
+    &.status-danger, &.status-failed, &.status-cancelled, &.status-inactive, &.status-withdraw_cancelled {
+        color: #ef4444;
+        background-color: rgba(239, 68, 68, 0.1);
+    }
+
+    &.status-warning, &.status-pending, &.status-withdraw_request {
+        color: #f59e0b;
+        background-color: rgba(245, 158, 11, 0.1);
+    }
+
+    &.status-debit, &.status-manual_debit {
+        color: #f97316;
+        background-color: rgba(249, 115, 22, 0.1);
+    }
+
+    &.status-order_withdrawal {
+        color: #3b82f6;
+        background-color: rgba(59, 130, 246, 0.1);
+    }
+
+    &.status-transfer, &.status-transfer_debit {
+        color: #6366f1;
+        background-color: rgba(99, 102, 241, 0.1);
+    }
+
+    &.status-withdraw, &.status-withdraw_completed {
+        color: #8b5cf6;
+        background-color: rgba(139, 92, 246, 0.1);
+    }
+}
+.ddwcwm-wallet-withdraw-requests-popup {
+    .ddwcwm-mobile-label {
+        display: none;
+    }
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px); // Glassmorphism
+    -webkit-backdrop-filter: blur(4px);
+
+    &.ddwcwm-popup-open {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        
+        .ddwcwm-wallet-withdraw-requests-popup-content {
+            animation: ddwcwm-modal-slide-in 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+    }
+}
+
+@keyframes ddwcwm-modal-slide-in {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.ddwcwm-wallet-withdraw-requests-popup-content {
+    background-color: #fff;
+    margin: 0;
+    padding: 0; // Remove padding for full-width header
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+
+    .ddwcwm-modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 32px;
+        background: #f8fafc;
+        border-bottom: 1px solid #eef2f6;
+
+        .ddwcwm-modal-user-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            img {
+                border-radius: 50%;
+                border: 2px solid #fff;
+                box-shadow: 0 0 0 1px #e2e8f0;
+            }
+
+            h3 {
+                margin: 0;
+                font-size: 18px;
+                font-weight: 700;
+                color: #1a202c;
+            }
+
+            p {
+                margin: 2px 0 0;
+                font-size: 13px;
+                color: #718096;
+            }
+        }
+
+        .ddwcwm-modal-summary {
+            display: flex;
+            gap: 24px;
+            margin-right: 40px;
+
+            .ddwcwm-summary-item {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                .ddwcwm-label {
+                    font-size: 11px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
+                    color: #a0aec0;
+                    font-weight: 600;
+                }
+
+                .ddwcwm-value {
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #2d3748;
+                }
+            }
+        }
+    }
+
+    .ddwcwm-modal-body {
+        padding: 24px 32px 32px;
+    }
+
+    .ddwcwm-close-popup {
+        position: absolute;
+		cursor: pointer;
+        right: 24px;
+        top: 24px;
+        width: 32px;
+        height: 32px;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #e2e8f0;
+        transition: all 0.2s;
+
+        &::before {
+            content: "\f158"; // Dashicons no-alt
+            font-family: Dashicons;
+            font-size: 18px;
+            color: #718096;
+        }
+
+        &:hover {
+            background: #f1f5f9;
+            color: #ef4444;
+            border-color: #cbd5e0;
+            transform: rotate(90deg);
+        }
+    }
+
+    .ddwcwm-message {
+        margin: 16px 32px;
+        padding: 14px 18px 14px 44px;
+        border-radius: 8px;
+        border-style: solid;
+        border-width: 1px 1px 1px 4px !important;
+        font-size: 13px;
+        font-weight: 500;
+        position: relative;
+
+        p {
+            margin: 0;
+        }
+
+        &::before {
+            font-family: Dashicons;
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+        }
+
+        &.ddwcwm-message-success {
+            background: #f0fdf4;
+            border-color: #16a34a !important;
+            color: #166534;
+            &::before {
+                content: "\f147"; // yes
+                color: #16a34a;
+            }
+        }
+
+        &.ddwcwm-message-error {
+            background: #fef2f2;
+            border-color: #dc2626 !important;
+            color: #991b1b;
+            &::before {
+                content: "\f158"; // no
+                color: #dc2626;
+            }
+        }
+    }
+}
+
+.ddwcwm-withdrawals-detail-table {
+    thead th {
+        // background: #fff !important;
+        // border-bottom: 2px solid #f1f5f9 !important;
+        // color: #4a5568 !important;
+        // font-weight: 600 !important;
+        padding: 12px 16px !important;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+    }
+
+    tbody td {
+        padding: 16px !important;
+        vertical-align: middle !important;
+        border-bottom: 1px solid #f1f5f9 !important;
+    }
+
+    .ddwcwm-date-time {
+        display: flex;
+        flex-direction: column;
+        
+        strong {
+            color: #2d3748;
+            font-size: 13px;
+        }
+
+        small {
+            color: #718096;
+            font-size: 11px;
+        }
+    }
+
+    mark {
+        background: var(--ddfw-tab-background-color);
+        color: @primary-color;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 700;
+    }
+
+    .ddwcwm-note-cell {
+        max-width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 12px;
+        color: #718096;
+        
+        &:hover {
+            white-space: normal;
+            overflow: visible;
+        }
+    }
+
+    .ddwcwm-action-col {
+        width: 100px;
+        text-align: right !important;
+    }
+
+    .ddwcwm-action-buttons {
+        display: flex;
+        gap: 8px;
+        justify-content: flex-end;
+
+        .button {
+            &[data-withdraw-request-action="cancel"]:hover {
+                background: #ef4444 !important;
+                border-color: #ef4444 !important;
+                color: #fff !important;
+            }
+        }
+    }
+}
+.ddwcwm-user-column {
+    img {
+        border-radius: 4px;
+        margin-right: 10px;
+        float: left;
+        width: 32px;
+        height: 32px;
+    }
+    strong {
+        line-height: 1.4;
+    }
+    small {
+        color: #666;
+        line-height: 1.4;
+    }
+    .row-actions {
+        clear: both;
+        padding-top: 2px;
+    }
+}
+
+// Grouped Columns for Transactions List
+.ddwcwm-transaction-id-column {
+	.ddwcwm-transaction-id {
+		font-weight: 600;
+		color: #111827;
+		font-size: 14px;
+	}
+	.ddwcwm-transaction-date {
+		font-size: 12px;
+		color: #6b7280;
+		margin-top: 2px;
+	}
+}
+
+.ddwcwm-transaction-context-column {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+
+	.ddwcwm-type-tier {
+		margin-bottom: 2px;
+	}
+
+	.ddwcwm-reference-tier, .ddwcwm-order-tier {
+		font-size: 12px;
+		color: #4b5563;
+		display: flex;
+		align-items: center;
+		gap: 6px;
+
+		em {
+			color: #111827;
+			font-style: normal;
+		}
+
+		a {
+			text-decoration: none;
+			font-weight: 500;
+            word-break: break-all;
+		}
+	}
+}
+
+.ddwcwm-label-mini {
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: #9ca3af;
+	font-weight: 600;
+	min-width: 35px;
+}
+
+.ddwcwm-amount-column {
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.ddwcwm-note-column {
+	max-width: 250px;
+	font-size: 12px;
+	color: #6b7280;
+	line-height: 1.4;
+
+	em {
+		font-style: italic;
+	}
+}
+
+// Withdrawal Popup Responsive Styles
+@media (max-width: 782px) {
+    .ddwcwm-wallet-withdraw-requests-popup-content {
+        width: 95% !important;
+        max-height: 90vh !important;
+        overflow-y: auto !important;
+
+        .ddwcwm-modal-header {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            padding: 20px !important;
+            gap: 16px !important;
+
+            .ddwcwm-modal-summary {
+                width: 100% !important;
+                justify-content: flex-start !important;
+                margin-right: 0 !important;
+                gap: 20px !important;
+                
+                .ddwcwm-summary-item {
+                    align-items: flex-start !important;
+                }
+            }
+        }
+
+        .ddwcwm-modal-body {
+            padding: 16px !important;
+        }
+
+        .ddwcwm-message {
+            margin: 12px !important;
+            font-size: 12px !important;
+            padding: 12px 14px 12px 40px !important;
+        }
+
+        .ddwcwm-close-popup {
+            top: 12px !important;
+            right: 12px !important;
+        }
+    }
+
+    .ddwcwm-withdrawals-detail-table {
+        display: block !important;
+        width: 100% !important;
+        
+        thead {
+            display: none !important;
+        }
+
+        tbody {
+            display: block !important;
+            
+            tr {
+                display: block !important;
+                margin-bottom: 16px !important;
+                border: 1px solid #f1f5f9 !important;
+                border-radius: 8px !important;
+                padding: 12px !important;
+                background: #fff !important;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+
+                td {
+                    display: block !important;
+                    width: 100% !important;
+                    box-sizing: border-box !important;
+                    position: relative;
+                    padding: 10px 10px 10px 35% !important;
+                    border-bottom: 1px solid #f8fafc !important;
+                    text-align: right !important;
+                    min-height: 40px;
+
+                    &::before {
+                        content: attr(data-colname);
+                        position: absolute;
+                        left: 10px;
+                        top: 10px; // Align with top padding
+                        display: block !important;
+                        font-weight: 600 !important;
+                        font-size: 11px !important;
+                        text-transform: uppercase !important;
+                        color: #718096 !important;
+                        width: 30%;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        text-align: left;
+                    }
+
+                    &:last-child {
+                        border-bottom: none !important;
+                    }
+
+                    &.ddwcwm-note-cell {
+                        max-width: none !important;
+                        white-space: normal !important;
+                        overflow: visible !important;
+                        text-align: left !important;
+                        padding-top: 35px !important; // Drop the text below the label
+                        
+                        &::before {
+                            width: 100%;
+                            top: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Withdrawal Popup Responsive Styles
+@media (max-width: 782px) {
+    .ddwcwm-wallet-withdraw-requests-popup-content {
+        width: 95% !important;
+        max-height: 90vh !important;
+        overflow-y: auto !important;
+
+        .ddwcwm-modal-header {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            padding: 20px !important;
+            gap: 16px !important;
+
+            .ddwcwm-modal-summary {
+                width: 100% !important;
+                justify-content: flex-start !important;
+                margin-right: 0 !important;
+                gap: 20px !important;
+                
+                .ddwcwm-summary-item {
+                    align-items: flex-start !important;
+                }
+            }
+        }
+
+        .ddwcwm-modal-body {
+            padding: 16px !important;
+        }
+
+        .ddwcwm-message {
+            margin: 12px !important;
+            font-size: 12px !important;
+            padding: 12px 14px 12px 40px !important;
+        }
+
+        .ddwcwm-close-popup {
+            top: 12px !important;
+            right: 12px !important;
+        }
+    }
+
+    .ddwcwm-withdrawals-detail-table {
+        display: block !important;
+        width: 100% !important;
+        
+        thead {
+            display: none !important;
+        }
+
+        tbody {
+            display: block !important;
+            
+            tr {
+                display: block !important;
+                margin-bottom: 16px !important;
+                border: 1px solid #f1f5f9 !important;
+                border-radius: 8px !important;
+                padding: 12px !important;
+                background: #fff !important;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+
+                td {
+                    display: block !important;
+                    width: 100% !important;
+                    box-sizing: border-box !important;
+                    position: relative;
+                    padding: 10px 10px 10px 35% !important;
+                    border-bottom: 1px solid #f8fafc !important;
+                    text-align: right !important;
+                    min-height: 40px;
+
+                    &::before {
+                        content: attr(data-colname);
+                        position: absolute;
+                        left: 10px;
+                        top: 10px; // Align with top padding
+                        display: block !important;
+                        font-weight: 600 !important;
+                        font-size: 11px !important;
+                        text-transform: uppercase !important;
+                        color: #718096 !important;
+                        width: 30%;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        text-align: left;
+                    }
+
+                    &:last-child {
+                        border-bottom: none !important;
+                    }
+
+                    &.ddwcwm-note-cell {
+                        max-width: none !important;
+                        white-space: normal !important;
+                        overflow: visible !important;
+                        text-align: left !important;
+                        padding-top: 35px !important; // Drop the text below the label
+                        
+                        &::before {
+                            width: 100%;
+                            top: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

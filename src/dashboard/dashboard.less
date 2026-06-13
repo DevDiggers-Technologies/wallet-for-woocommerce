@@ -1,0 +1,567 @@
+// Dashboard Variables - Reusing framework variables where possible
+@primary-color: #0256ff;
+@success-color: #01CC44;
+@warning-color: #fde8cd;
+@error-color: #FF4800;
+@text-primary: #111827;
+@text-secondary: #6b7280;
+@text-muted: #9ca3af;
+@border-color: #f2f2f2;
+@border-light: #f3f4f6;
+@background-light: #f8fafc;
+@background-white: #ffffff;
+@radius-sm: 6px;
+@radius-md: 8px;
+@radius-lg: 12px;
+@spacing-xs: 4px;
+@spacing-sm: 8px;
+@spacing-md: 12px;
+@spacing-lg: 16px;
+@spacing-xl: 20px;
+@spacing-2xl: 24px;
+@spacing-3xl: 32px;
+
+// Common Base Classes - Reusable components
+.ddwcwm-card-base {
+    background: @background-white;
+    border-radius: @radius-lg;
+    padding: @spacing-xl;
+    border: solid 1px @border-color;
+}
+
+.ddwcwm-widget-base {
+    .ddwcwm-card-base();
+
+    h3 {
+        margin: 0 0 @spacing-lg 0;
+        font-size: 16px;
+        font-weight: 600;
+        color: @text-primary;
+        display: flex;
+        align-items: center;
+        gap: @spacing-sm;
+    }
+}
+
+.ddwcwm-grid-responsive {
+    display: grid;
+    gap: @spacing-lg;
+    margin-bottom: @spacing-lg;
+
+    @media (max-width: 1200px) {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.ddwcwm-no-data {
+    text-align: center;
+    color: @text-muted;
+    font-style: italic;
+    padding: @spacing-lg;
+}
+
+// Empty State Styles
+.ddwcwm-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: @spacing-3xl;
+    text-align: center;
+    height: 100%;
+    min-height: 200px;
+    color: @text-muted;
+    font-size: 14px;
+}
+
+// Dashboard Styles
+.ddwcwm-dashboard {
+    .ddwcwm-dashboard-header {
+        .ddwcwm-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: @spacing-lg;
+            gap: @spacing-lg;
+
+            .ddwcwm-header-left {
+                flex: 1;
+                min-width: 0;
+
+                .ddwcwm-welcome-section {
+                    .ddwcwm-welcome-content {
+                        display: flex;
+                        align-items: center;
+                        gap: @spacing-lg;
+
+                        .ddwcwm-admin-avatar {
+                            position: relative;
+                            flex-shrink: 0;
+
+                            .ddwcwm-avatar-image {
+                                width: 48px;
+                                height: 48px;
+                                border-radius: 50%;
+                                border: 3px solid @background-white;
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                                object-fit: cover;
+                            }
+                        }
+
+                        .ddwcwm-welcome-message {
+                            flex: 1;
+                            min-width: 0;
+
+                            h1 {
+                                margin: 0;
+                                color: @text-primary;
+                                font-size: 21px;
+                                font-weight: 600;
+                                padding: 0;
+                            }
+
+                            .ddwcwm-welcome-subtitle {
+                                font-size: 14px;
+                                color: @text-secondary;
+                                line-height: 1.4;
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .ddwcwm-header-right {
+                flex-shrink: 0;
+
+                .ddwcwm-date-range-container {
+                    position: relative;
+                    z-index: 1;
+
+                    .ddwcwm-date-range-picker {
+                        padding: @spacing-xs @spacing-xl;
+                        border: 1px solid @border-color;
+                        border-radius: @radius-md;
+                        font-size: 14px;
+                        font-weight: 500;
+                        min-width: 200px;
+                        background: @background-white;
+                        cursor: pointer;
+                        transition: all 0.2s ease;
+                        color: @text-primary;
+                        text-align: left;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        &:hover {
+                            border-color: @primary-color;
+                        }
+
+                        &::after {
+                            content: '▼';
+                            position: absolute;
+                            right: 16px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            color: @text-secondary;
+                            font-size: 10px;
+                            pointer-events: none;
+                            transition: all 0.2s ease;
+                        }
+
+                        &:hover::after {
+                            color: @primary-color;
+                        }
+                    }
+
+                    .ddwcwm-date-range-dropdown {
+                        position: absolute;
+                        top: 100%;
+                        right: 0;
+                        margin-top: @spacing-sm;
+                        background: @background-white;
+                        border: 1px solid @border-color;
+                        border-radius: @radius-lg;
+                        box-shadow: 0 20px 40px -12px rgba(14, 18, 27, 0.15);
+                        display: none;
+                        overflow: hidden;
+
+                        &.show {
+                            display: block;
+                            animation: ddwcwmFadeInDown 0.2s ease-out;
+                        }
+
+                        .ddwcwm-dropdown-content {
+                            display: flex;
+                            min-height: 280px;
+
+                            .ddwcwm-date-presets {
+                                background: #fff;
+                                flex: 0 0 200px;
+                                border-right: 1px solid @border-light;
+                                padding: 0;
+
+                                .ddwcwm-presets-header {
+                                    background: var(--ddfw-body-background-color);
+                                    padding: @spacing-lg @spacing-xl @spacing-md;
+                                    border-bottom: 1px solid @border-light;
+                                    
+                                    h4 {
+                                        margin: 0;
+                                        font-size: 12px;
+                                        font-weight: 600;
+                                        color: @text-primary;
+                                        text-transform: uppercase;
+                                        letter-spacing: 0.8px;
+                                    }
+                                }
+
+                                .ddwcwm-date-preset {
+                                    display: block;
+                                    width: 100%;
+                                    padding: @spacing-md @spacing-xl;
+                                    text-align: left;
+                                    border: none;
+                                    background: none;
+                                    font-size: 13px;
+                                    font-weight: 500;
+                                    color: @text-secondary;
+                                    cursor: pointer;
+                                    transition: all 0.2s ease;
+
+                                    &:hover {
+                                        background: var(--ddfw-body-background-color);
+                                        color: var(--ddfw-primary-color);
+                                    }
+
+                                    &.active {
+                                        color: var(--ddfw-primary-color);
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+
+                            .ddwcwm-custom-date-range {
+                                flex: 1;
+                                padding: @spacing-xl;
+
+                                .ddwcwm-custom-header {
+                                    margin-bottom: @spacing-lg;
+                                    text-align: center;
+
+                                    h4 {
+                                        margin: 0 0 @spacing-xs 0;
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        color: @text-primary;
+                                    }
+
+                                    p {
+                                        margin: 0;
+                                        font-size: 12px;
+                                        color: @text-secondary;
+                                        line-height: 1.4;
+                                    }
+                                }
+
+                                .ddwcwm-date-inputs {
+                                    display: flex;
+                                    gap: @spacing-md;
+                                    margin-bottom: @spacing-xl;
+
+                                    .ddwcwm-date-input-group {
+                                        flex: 1;
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: @spacing-xs;
+
+                                        label {
+                                            font-size: 11px;
+                                            font-weight: 600;
+                                            color: @text-secondary;
+                                            text-transform: uppercase;
+                                            letter-spacing: 0.5px;
+                                        }
+
+                                        input[type="date"] {
+                                            width: 100%;
+                                            padding: @spacing-xs @spacing-md;
+                                            border: 1px solid @border-color;
+                                            font-size: 13px;
+                                            transition: all 0.2s ease;
+                                        }
+                                    }
+                                }
+
+                                .ddwcwm-apply-custom-range {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .ddwcwm-dashboard-content {
+        .ddwcwm-dashboard-top-section {
+            margin-bottom: @spacing-2xl;
+
+            .ddwcwm-summary-cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+                gap: @spacing-lg;
+
+                @media (max-width: 1200px) {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                @media (max-width: 768px) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                @media (max-width: 480px) {
+                    grid-template-columns: 1fr;
+                }
+
+                .ddwcwm-summary-card {
+                    .ddwcwm-card-base();
+                    border-radius: @radius-lg;
+
+                    .ddwcwm-card-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        margin-bottom: @spacing-lg;
+
+                        .ddwcwm-card-icon {
+                            width: 45px;
+                            height: 45px;
+                            border-radius: 10px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex-shrink: 0;
+                            background-color: var(--ddfw-body-background-color);
+
+                            svg {
+                                color: @text-primary;
+                                width: 24px;
+                                height: 24px;
+                            }
+                        }
+
+                        .ddwcwm-change-indicator {
+                            display: flex;
+                            align-items: center;
+                            gap: @spacing-xs;
+                            font-size: 12px;
+                            font-weight: 600;
+
+                            &.positive {
+                                color: @success-color;
+                            }
+
+                            &.negative {
+                                color: @error-color;
+                            }
+
+                            svg {
+                                width: 12px;
+                                height: 12px;
+                            }
+                        }
+                    }
+
+                    .ddwcwm-card-content {
+                        h4 {
+                            margin: 0 0 @spacing-sm 0;
+                            font-size: 13px;
+                            font-weight: 500;
+                            line-height: 1.4;
+                            color: @text-secondary;
+                        }
+
+                        .ddwcwm-card-value {
+                            .ddwcwm-value-number,
+                            .ddwcwm-value-text {
+                                font-size: 18px;
+                                font-weight: 700;
+                                line-height: 1.1;
+                                display: block;
+                                color: @text-primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .ddwcwm-dashboard-charts-section {
+            .ddwcwm-grid-responsive();
+            grid-template-columns: 1.5fr 1fr;
+
+            .ddwcwm-chart-container {
+                .ddwcwm-widget-base();
+
+                h3 {
+                    justify-content: space-between;
+                    .ddwcwm-chart-subtitle {
+                        font-size: 12px;
+                        font-weight: 400;
+                        color: @text-muted;
+                    }
+                }
+
+                .ddwcwm-chart-wrapper {
+                    height: 350px;
+                    position: relative;
+                }
+            }
+        }
+
+        .ddwcwm-dashboard-tables-section {
+            .ddwcwm-grid-responsive();
+            grid-template-columns: 1fr 1fr;
+
+            .ddwcwm-table-widget {
+                .ddwcwm-widget-base();
+
+                .ddwcwm-widget-content {
+                    margin-top: 0;
+                }
+
+                // Activities List
+                .ddwcwm-activities-list {
+                    .ddwcwm-activity-item {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: @spacing-md 0;
+                        border-bottom: 1px solid @border-light;
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+
+                        .ddwcwm-activity-info {
+                            flex: 1;
+
+                            .ddwcwm-activity-title {
+                                font-size: 14px;
+                                color: @text-primary;
+                                margin-bottom: 2px;
+                            }
+
+                            .ddwcwm-activity-action {
+                                font-size: 12px;
+                                color: @text-secondary;
+                                line-height: 1.4;
+
+                                .ddwcwm-activity-date {
+                                    font-size: 11px;
+                                    color: @text-muted;
+                                    font-weight: 400;
+                                }
+                            }
+                        }
+
+                        .ddwcwm-activity-amount {
+                            .ddwcwm-amount-value {
+                                font-weight: 600;
+                                font-size: 14px;
+
+                                &.positive {
+                                    color: @success-color;
+                                }
+
+                                &.negative {
+                                    color: @error-color;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // Customers List
+                .ddwcwm-customers-list {
+                    .ddwcwm-customer-item {
+                        display: flex;
+                        align-items: center;
+                        gap: @spacing-md;
+                        padding: @spacing-md 0;
+                        border-bottom: 1px solid @border-light;
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+
+                        .ddwcwm-customer-avatar {
+                            flex-shrink: 0;
+                            img {
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 50%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .ddwcwm-customer-info {
+                            flex: 1;
+                            min-width: 0;
+
+                            .ddwcwm-customer-name {
+                                margin: 0;
+                                font-size: 14px;
+                                font-weight: 600;
+                                color: @text-primary;
+                            }
+
+                            .ddwcwm-customer-email {
+                                margin: 2px 0 0 0;
+                                font-size: 12px;
+                                color: @text-muted;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+                        }
+
+                        .ddwcwm-customer-balance {
+                            flex-shrink: 0;
+                            text-align: right;
+
+                            .ddwcwm-balance-label {
+                                display: block;
+                                font-size: 10px;
+                                font-weight: 600;
+                                color: @text-muted;
+                                text-transform: uppercase;
+                                margin-bottom: 2px;
+                            }
+
+                            .ddwcwm-balance-value {
+                                font-size: 14px;
+                                font-weight: 700;
+                                color: @primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes ddwcwmFadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

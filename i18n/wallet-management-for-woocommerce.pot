@@ -1,0 +1,2813 @@
+# Copyright (C) 2026 DevDiggers
+# This file is distributed under the GPLv3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wallet Management for WooCommerce 1.0.0\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/wallet-management-for-woocommerce\n"
+"POT-Creation-Date: 2026-06-13 19:38:21+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2026-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: autoload/autoload.php:56
+#. translators: %s: file path that could not be loaded.
+msgid "The file attempting to be loaded at %s does not exist."
+msgstr ""
+
+#: functions.php:86
+#. translators: %1$s for a opening tag and %2$s for a closing tag
+msgid ""
+"Wallet Management for WooCommerce is activated but not effective. It "
+"requires %1$sWooCommerce Plugin%2$s in order to use its functionalities."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Wallet Management for WooCommerce"
+msgstr ""
+
+#: functions.php:134 includes/admin-dashboard.php:76
+msgid "Dashboard"
+msgstr ""
+
+#: functions.php:136 includes/admin-dashboard.php:106
+msgid "Configuration"
+msgstr ""
+
+#: functions.php:138
+msgid "Setup Wizard"
+msgstr ""
+
+#: functions.php:140
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: functions.php:157
+msgid "Support"
+msgstr ""
+
+#: functions.php:158
+msgid "Documentation"
+msgstr ""
+
+#: functions.php:159 includes/admin-dashboard.php:478
+msgid "Review"
+msgstr ""
+
+#: helper/dashboard/dashboard-helper.php:58
+#: templates/admin/dashboard/dashboard-template.php:128
+msgid "Today"
+msgstr ""
+
+#: helper/dashboard/dashboard-helper.php:63
+#: templates/admin/dashboard/dashboard-template.php:129
+msgid "This Week"
+msgstr ""
+
+#: helper/dashboard/dashboard-helper.php:68
+#: templates/admin/dashboard/dashboard-template.php:130
+msgid "Last Week"
+msgstr ""
+
+#: helper/dashboard/dashboard-helper.php:73
+#: templates/admin/dashboard/dashboard-template.php:131
+msgid "This Month"
+msgstr ""
+
+#: helper/dashboard/dashboard-helper.php:78
+#: templates/admin/dashboard/dashboard-template.php:132
+msgid "Last Month"
+msgstr ""
+
+#: helper/dashboard/dashboard-helper.php:83
+#: templates/admin/dashboard/dashboard-template.php:133
+msgid "Last 3 Months"
+msgstr ""
+
+#: helper/dashboard/dashboard-helper.php:88
+#: templates/admin/dashboard/dashboard-template.php:134
+msgid "Last 6 Months"
+msgstr ""
+
+#: helper/dashboard/dashboard-helper.php:93
+#: templates/admin/dashboard/dashboard-template.php:135
+msgid "Year to Date"
+msgstr ""
+
+#: helper/dashboard/dashboard-helper.php:98
+#: templates/admin/dashboard/dashboard-template.php:136
+msgid "Last Year"
+msgstr ""
+
+#: helper/dashboard/dashboard-helper.php:103
+#: templates/admin/dashboard/dashboard-template.php:137
+msgid "All Time"
+msgstr ""
+
+#: helper/dashboard/dashboard-helper.php:115
+msgid "Last 30 Days"
+msgstr ""
+
+#: helper/dashboard/dashboard-helper.php:367
+msgid "Guest"
+msgstr ""
+
+#: helper/rules/rules-helper.php:165
+msgid "General cashback rules having empty or invalid fields."
+msgstr ""
+
+#: helper/rules/rules-helper.php:181
+msgid "Cashback Rules has been saved successfully."
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:119
+msgid "Manual adjustment by admin"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:158
+#: helper/transactions/transactions-helper.php:187
+#: helper/transactions/transactions-helper.php:199
+msgid "Note:"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:320
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:222
+#: templates/admin/transactions/transactions-list-template.php:440
+msgid "Credit"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:321
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:223
+#: templates/admin/transactions/transactions-list-template.php:441
+msgid "Debit"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:322
+#: includes/admin-dashboard.php:86 includes/admin-dashboard.php:224
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:142
+msgid "Manual Adjustment"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:323
+msgid "Manual Debit"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:324
+msgid "Manual Credit"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:325
+msgid "Order Credit"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:326
+#: helper/transactions/transactions-helper.php:327
+#: templates/admin/configuration/emails-configuration-template.php:239
+msgid "Order Payment"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:328
+msgid "Order Cancelled Credit"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:329
+msgid "Order Cancelled Debit"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:330
+msgid "Order Refund"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:331
+#: includes/common/common-functions.php:566
+msgid "Wallet Topup"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:332
+#: templates/admin/configuration/emails-configuration-template.php:91
+msgid "Cart Cashback"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:333
+#: templates/admin/configuration/emails-configuration-template.php:149
+msgid "Topup Cashback"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:334
+#: templates/admin/transactions/transactions-list-template.php:442
+msgid "Transfer"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:335
+msgid "Wallet Transfer"
+msgstr ""
+
+#: helper/transactions/transactions-helper.php:336
+#: includes/admin/setup-wizard.php:124
+#: templates/admin/configuration/general-configuration-template.php:54
+msgid "Registration Credit"
+msgstr ""
+
+#: helper/users/users-helper.php:101
+msgid "amount is credited to selected users(s) wallet balance."
+msgstr ""
+
+#: helper/users/users-helper.php:108
+msgid "amount is debited from selected users(s) wallet balance."
+msgstr ""
+
+#: helper/users/users-helper.php:111
+#: includes/admin/admin-ajax-functions.php:148
+msgid "Insufficient amount to debit."
+msgstr ""
+
+#: helper/users/users-helper.php:134
+msgid "Some fields are empty or not valid."
+msgstr ""
+
+#: includes/admin/admin-ajax-functions.php:30
+msgid "Insufficient privileges to import products."
+msgstr ""
+
+#: includes/admin/admin-ajax-functions.php:97
+msgid "Invalid user_ids format."
+msgstr ""
+
+#: includes/admin/admin-ajax-functions.php:106
+msgid "Invalid parameters."
+msgstr ""
+
+#: includes/admin/admin-ajax-functions.php:154
+msgid "Invalid action type"
+msgstr ""
+
+#: includes/admin/admin-ajax-functions.php:175
+msgid "Error processing user: "
+msgstr ""
+
+#: includes/admin/admin-ajax-functions.php:183
+msgid "Internal error: "
+msgstr ""
+
+#: includes/admin/setup-wizard.php:51
+msgid "Welcome"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:55
+#: templates/admin/configuration/general-configuration-template.php:39
+msgid "General Settings"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:56
+msgid "Core Wallet Configuration"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:57
+msgid "Set up the basic foundation of your customer wallet system."
+msgstr ""
+
+#: includes/admin/setup-wizard.php:62
+msgid "Cashback & Rewards"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:63
+msgid "Customer Loyalty Incentives"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:64
+msgid "Configure automated rewards to encourage repeat purchases."
+msgstr ""
+
+#: includes/admin/setup-wizard.php:69
+msgid "Ready!"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:70
+msgid "Your Wallet system is ready!"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:71
+msgid ""
+"You have successfully configured the core wallet features. You can now "
+"manage transactions and adjust advanced settings from the dashboard."
+msgstr ""
+
+#: includes/admin/setup-wizard.php:93
+msgid "Welcome to Wallet Management for WooCommerce!"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:95
+msgid ""
+"Thank you for choosing our Wallet Management solution. This quick setup "
+"wizard will help you configure the core features of your new customer "
+"wallet system."
+msgstr ""
+
+#: includes/admin/setup-wizard.php:115 includes/wallet-gateway.php:97
+#: templates/admin/configuration/general-configuration-template.php:45
+msgid "Enable/Disable"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:116
+#: templates/admin/configuration/general-configuration-template.php:46
+msgid "Enable Wallet Management for WooCommerce"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:117
+#: templates/admin/configuration/general-configuration-template.php:47
+msgid ""
+"Activate or deactivate the entire wallet system and its features for all "
+"customers."
+msgstr ""
+
+#: includes/admin/setup-wizard.php:125
+#: templates/admin/configuration/general-configuration-template.php:55
+msgid ""
+"The amount credited to a customer's wallet upon successful account "
+"registration. Leave blank to disable registration rewards."
+msgstr ""
+
+#: includes/admin/setup-wizard.php:134
+#: templates/admin/configuration/general-configuration-template.php:64
+msgid "Wallet Topup Order Status"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:135
+#: templates/admin/configuration/general-configuration-template.php:65
+msgid ""
+"Choose the order status that triggers the balance update for top-up "
+"purchases. 'Completed' is recommended for security."
+msgstr ""
+
+#: includes/admin/setup-wizard.php:137
+#: templates/admin/configuration/general-configuration-template.php:67
+msgid "Default"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:138
+#: templates/admin/configuration/general-configuration-template.php:68
+msgid "Completed"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:170
+#: templates/admin/configuration/cashback-configuration-template.php:46
+msgid "Exclude Sale Products"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:171
+#: templates/admin/configuration/cashback-configuration-template.php:47
+msgid "Exclude products on sale from cashback"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:172
+#: templates/admin/configuration/cashback-configuration-template.php:48
+msgid ""
+"When enabled, products already on sale will not contribute to the cashback "
+"calculation."
+msgstr ""
+
+#: includes/admin-dashboard.php:63 includes/admin-dashboard.php:69
+#: includes/blocks/wallet-gateway-blocks-support.php:114
+#: includes/wallet-gateway.php:39 includes/wallet-gateway.php:107
+#: src/blocks/index.js:79
+msgid "Wallet"
+msgstr ""
+
+#: includes/admin-dashboard.php:81 includes/admin-dashboard.php:223
+msgid "Users"
+msgstr ""
+
+#: includes/admin-dashboard.php:91
+msgid "Withdrawal Requests"
+msgstr ""
+
+#: includes/admin-dashboard.php:96 includes/admin-dashboard.php:284
+#: templates/admin/dashboard/dashboard-template.php:76
+#: templates/admin/users/users-list-template.php:200
+msgid "Transactions"
+msgstr ""
+
+#: includes/admin-dashboard.php:101
+msgid "Cashback Rules"
+msgstr ""
+
+#: includes/admin-dashboard.php:110
+msgid "General"
+msgstr ""
+
+#: includes/admin-dashboard.php:115
+msgid "Withdrawals"
+msgstr ""
+
+#: includes/admin-dashboard.php:120
+msgid "Endpoints"
+msgstr ""
+
+#: includes/admin-dashboard.php:125
+msgid "OTP"
+msgstr ""
+
+#: includes/admin-dashboard.php:130
+msgid "Referrals"
+msgstr ""
+
+#: includes/admin-dashboard.php:135
+msgid "Cashbacks"
+msgstr ""
+
+#: includes/admin-dashboard.php:140
+msgid "Emails"
+msgstr ""
+
+#: includes/admin-dashboard.php:145
+msgid "Shortcodes"
+msgstr ""
+
+#: includes/admin-dashboard.php:150
+msgid "Layout"
+msgstr ""
+
+#: includes/admin-dashboard.php:173
+msgid "Results Per Page"
+msgstr ""
+
+#: includes/admin-dashboard.php:225
+msgid "Import"
+msgstr ""
+
+#: includes/admin-dashboard.php:226
+msgid "Exporting wallet data to CSV is available in the Pro version."
+msgstr ""
+
+#: includes/admin-dashboard.php:226
+msgid "Export"
+msgstr ""
+
+#: includes/admin-dashboard.php:235 includes/admin-dashboard.php:293
+msgid "Search"
+msgstr ""
+
+#: includes/admin-dashboard.php:261
+msgid "Withdrawal Requests is a Pro feature"
+msgstr ""
+
+#: includes/admin-dashboard.php:262
+msgid ""
+"Let customers request to withdraw their wallet balance and review, approve "
+"or cancel those requests from here."
+msgstr ""
+
+#: includes/admin-dashboard.php:264
+msgid "Customer wallet withdrawal requests"
+msgstr ""
+
+#: includes/admin-dashboard.php:265
+msgid "Approve (mark as paid) or cancel requests"
+msgstr ""
+
+#: includes/admin-dashboard.php:266
+msgid "Fixed or percentage withdrawal charges"
+msgstr ""
+
+#: includes/admin-dashboard.php:267
+#: templates/admin/configuration/withdrawals-configuration-template.php:34
+msgid "Minimum and maximum withdrawal limits"
+msgstr ""
+
+#: includes/admin-dashboard.php:408
+msgid "No rows imported."
+msgstr ""
+
+#: includes/admin-dashboard.php:409
+msgid "All rows imported."
+msgstr ""
+
+#: includes/admin-dashboard.php:410
+msgid "Processing import..."
+msgstr ""
+
+#: includes/admin-dashboard.php:411
+msgid "Import error occurred"
+msgstr ""
+
+#: includes/admin-dashboard.php:412
+msgid "Please map at least one of ID, Username, or Email to identify users."
+msgstr ""
+
+#: includes/admin-dashboard.php:413
+msgid "Please map the Wallet Balance field."
+msgstr ""
+
+#: includes/admin-dashboard.php:414
+msgid "Unknown error occurred"
+msgstr ""
+
+#: includes/admin-dashboard.php:415
+msgid "AJAX error:"
+msgstr ""
+
+#: includes/admin-dashboard.php:478
+#. translators: %s for a tag
+msgid ""
+"If you really like our plugin, please leave us a %s rating, we'll really "
+"appreciate it."
+msgstr ""
+
+#: includes/blocks/wallet-gateway-blocks-support.php:115
+#: includes/wallet-gateway.php:114
+msgid "Pay with Wallet."
+msgstr ""
+
+#: includes/blocks/wallet-gateway-blocks-support.php:117
+#. translators: %s: available wallet balance amount.
+msgid "(Available Balance: %s)"
+msgstr ""
+
+#: includes/common/common-functions.php:85
+#. translators: %s: customer wallet balance amount.
+msgid "Your current wallet balance is %s"
+msgstr ""
+
+#: includes/common/common-functions.php:90
+#. translators: %s: My Account page URL.
+msgid ""
+"Sorry, we are not able to find your number saved on your account, kindly "
+"save your phone number on the billing phone field from here - %s"
+msgstr ""
+
+#: includes/common/common-functions.php:93
+msgid ""
+"You can also check your wallet balance from here just by typing like \"What "
+"is my wallet balance?\""
+msgstr ""
+
+#: includes/common/common-functions.php:192
+msgid ""
+"Your cart contains a Wallet top-up. Please remove it before adding other "
+"products."
+msgstr ""
+
+#: includes/common/common-functions.php:240
+msgid "Credited wallet amount on order cancel."
+msgstr ""
+
+#: includes/common/common-functions.php:264
+msgid "Debit wallet cashback for cart due to order cancel."
+msgstr ""
+
+#: includes/common/common-functions.php:282
+msgid "Debit wallet cashback for topup due to order cancel."
+msgstr ""
+
+#: includes/common/common-functions.php:332
+msgid "Credited wallet amount on order fully refund."
+msgstr ""
+
+#: includes/common/common-functions.php:357
+msgid "Debit wallet cashback for cart due to order fully refund."
+msgstr ""
+
+#: includes/common/common-functions.php:375
+msgid "Debit wallet cashback for topup due to order fully refund."
+msgstr ""
+
+#: includes/common/common-functions.php:452
+#. translators: %s: cashback type label.
+msgid "Debit wallet cashback for %s due to order partial refund."
+msgstr ""
+
+#: includes/common/common-functions.php:595
+msgid "Wallet Cashback for Cart"
+msgstr ""
+
+#: includes/common/common-functions.php:613
+msgid "Wallet Cashback for Topup"
+msgstr ""
+
+#: includes/common/common-functions.php:657
+#. translators: %s: registration credit amount.
+msgid "You'll receive %s in your wallet after sucessful registration."
+msgstr ""
+
+#: includes/email-notification-handler.php:30
+#: includes/email-notification-handler.php:31
+#: includes/email-notification-handler.php:32
+#: includes/email-notification-handler.php:61
+#: includes/email-notification-handler.php:65
+msgid "Wallet Notification"
+msgstr ""
+
+#: includes/email-notification-handler.php:33
+msgid "On using Wallet this mail is sent to user."
+msgstr ""
+
+#: includes/email-notification-handler.php:37
+msgid "Thanks for choosing Wallet."
+msgstr ""
+
+#: includes/file-handler.php:91
+msgid "creating a new account"
+msgstr ""
+
+#: includes/file-handler.php:92
+msgid "referring a friend to our store"
+msgstr ""
+
+#: includes/file-handler.php:93
+msgid "receiving cashback from your purchase"
+msgstr ""
+
+#: includes/file-handler.php:94
+msgid "receiving cart cashback from your purchase"
+msgstr ""
+
+#: includes/file-handler.php:95
+msgid "receiving product cashback from your purchase"
+msgstr ""
+
+#: includes/file-handler.php:96
+msgid "receiving topup cashback from your purchase"
+msgstr ""
+
+#: includes/file-handler.php:97
+msgid "receiving first order cashback from your purchase"
+msgstr ""
+
+#: includes/file-handler.php:98
+msgid "receiving user role cashback from your purchase"
+msgstr ""
+
+#: includes/file-handler.php:99
+msgid "receiving payment method cashback from your purchase"
+msgstr ""
+
+#: includes/file-handler.php:100
+msgid "refund processing"
+msgstr ""
+
+#: includes/file-handler.php:101
+msgid "wallet transfer received"
+msgstr ""
+
+#: includes/file-handler.php:102
+msgid "wallet topup"
+msgstr ""
+
+#: includes/file-handler.php:106
+msgid "order payment"
+msgstr ""
+
+#: includes/file-handler.php:107
+msgid "wallet transfer sent"
+msgstr ""
+
+#: includes/file-handler.php:108
+msgid "cashback expiration"
+msgstr ""
+
+#: includes/file-handler.php:109
+msgid "wallet withdrawal"
+msgstr ""
+
+#: includes/file-handler.php:168
+msgid "My Wallet"
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:39
+msgid "Email or amount fields are either empty or invalid."
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:47
+msgid "Email you entered does not exist."
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:57
+msgid "Cannot transfer money to yourself."
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:70
+msgid "You do not have enough wallet balance to send."
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:109
+#. translators: %s: transferred wallet amount.
+msgid "Wallet amount %s transferred successfully."
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:116
+#: includes/front/front-ajax-functions.php:159
+msgid "Security check failed!"
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:147
+msgid "Table rows fetched!"
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:153
+msgid "Arguments are missing."
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:230
+#: templates/admin/transactions/transactions-list-template.php:366
+msgid "Ref:"
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:234
+#: templates/admin/transactions/transactions-list-template.php:350
+msgid "Link:"
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:244
+#. translators: %s: recipient email and user ID.
+msgid "Receiver: %s"
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:247
+#. translators: %d: recipient user ID.
+msgid "Receiver: #%d"
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:252
+#: templates/admin/transactions/transactions-list-template.php:329
+#. translators: %s: sender email and user ID.
+#. translators: %s: linked user or order.
+msgid "Sender: %s"
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:255
+#: templates/admin/transactions/transactions-list-template.php:332
+#. translators: %d: sender user ID.
+#. translators: %d: user ID.
+msgid "Sender: #%d"
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:260
+#: templates/admin/transactions/transactions-list-template.php:340
+#. translators: %s: order link HTML.
+#. translators: %s: linked user or order.
+msgid "Order: %s"
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:268
+#: templates/admin/transactions/transactions-list-template.php:389
+msgid "N/A"
+msgstr ""
+
+#: includes/front/front-ajax-functions.php:275
+msgid "No transactions made yet."
+msgstr ""
+
+#: includes/front/front-functions.php:103
+msgid "Enter OTP first!!"
+msgstr ""
+
+#: includes/front/front-functions.php:104
+msgid "Demo OTP"
+msgstr ""
+
+#: includes/front/front-functions.php:105
+msgid "Are you sure you want to pay this request?"
+msgstr ""
+
+#: includes/front/front-functions.php:158
+msgid ""
+"Cannot add new products now. Either empty cart or process wallet topup "
+"first."
+msgstr ""
+
+#: includes/front/front-functions.php:327
+msgid "Enter amount to topup"
+msgstr ""
+
+#: includes/import-wizard.php:36
+msgid "You do not have permission to import wallet balances."
+msgstr ""
+
+#: includes/import-wizard.php:51
+msgid "No data."
+msgstr ""
+
+#: includes/import-wizard.php:87
+msgid "User not found"
+msgstr ""
+
+#: includes/import-wizard.php:99
+msgid "Invalid balance value"
+msgstr ""
+
+#: includes/import-wizard.php:109
+msgid "Wallet balance imported via CSV"
+msgstr ""
+
+#: includes/import-wizard.php:127
+msgid "Balance added"
+msgstr ""
+
+#: includes/import-wizard.php:142
+msgid "Balance subtracted"
+msgstr ""
+
+#: includes/import-wizard.php:156
+msgid "Balance overridden (added)"
+msgstr ""
+
+#: includes/import-wizard.php:158
+msgid "Balance overridden (subtracted)"
+msgstr ""
+
+#: includes/import-wizard.php:160
+msgid "Balance already matches"
+msgstr ""
+
+#: includes/import-wizard.php:168
+msgid "Unknown action"
+msgstr ""
+
+#: includes/import-wizard.php:214
+msgid "Import Error"
+msgstr ""
+
+#: includes/import-wizard.php:216
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:48
+msgid "Try Again"
+msgstr ""
+
+#: includes/import-wizard.php:233
+msgid "Row"
+msgstr ""
+
+#: includes/import-wizard.php:236
+msgid "User ID"
+msgstr ""
+
+#: includes/import-wizard.php:253
+msgid "Import CSV Summary"
+msgstr ""
+
+#: includes/import-wizard.php:257
+msgid "rows"
+msgstr ""
+
+#: includes/import-wizard.php:257
+msgid "columns"
+msgstr ""
+
+#: includes/import-wizard.php:261
+msgid "Total rows in file"
+msgstr ""
+
+#: includes/import-wizard.php:265
+msgid "Duplicated rows in file"
+msgstr ""
+
+#: includes/import-wizard.php:269
+msgid "Imported to the system"
+msgstr ""
+
+#: includes/import-wizard.php:274
+msgid "Not Imported"
+msgstr ""
+
+#: includes/import-wizard.php:280
+msgid "Total rows imported"
+msgstr ""
+
+#: includes/import-wizard.php:284
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:116
+msgid "Done"
+msgstr ""
+
+#: includes/import-wizard.php:293
+msgid "Select File"
+msgstr ""
+
+#: includes/import-wizard.php:297
+msgid "Mapping"
+msgstr ""
+
+#: includes/import-wizard.php:301
+msgid "Data Import"
+msgstr ""
+
+#: includes/import-wizard.php:307
+msgid "Upload a CSV file"
+msgstr ""
+
+#: includes/import-wizard.php:308
+msgid "Make sure file includes user ID, email, and wallet balance data"
+msgstr ""
+
+#: includes/import-wizard.php:326
+msgid "Drop a file or click to browse"
+msgstr ""
+
+#: includes/import-wizard.php:327
+msgid "CSV files of any size are supported with batch processing"
+msgstr ""
+
+#: includes/import-wizard.php:333
+msgid "Download a sample CSV file"
+msgstr ""
+
+#: includes/import-wizard.php:337
+msgid "Cancel"
+msgstr ""
+
+#: includes/import-wizard.php:338
+msgid "Continue"
+msgstr ""
+
+#: includes/import-wizard.php:343
+msgid "CSV Fields Mapping"
+msgstr ""
+
+#: includes/import-wizard.php:344
+msgid ""
+"Map columns from imported CSV to the default fields required for wallet "
+"balances. Not required columns could be skipped."
+msgstr ""
+
+#: includes/import-wizard.php:348
+msgid "User Identification:"
+msgstr ""
+
+#: includes/import-wizard.php:349
+msgid ""
+"You need to map at least one of ID, Username, or Email to identify users. "
+"Wallet Balance field is required."
+msgstr ""
+
+#: includes/import-wizard.php:356
+msgid "Fields"
+msgstr ""
+
+#: includes/import-wizard.php:357
+msgid "CSV Column"
+msgstr ""
+
+#: includes/import-wizard.php:358
+msgid "CSV Example Data"
+msgstr ""
+
+#: includes/import-wizard.php:366
+#: templates/admin/users/users-list-template.php:197
+msgid "ID"
+msgstr ""
+
+#: includes/import-wizard.php:372
+msgid "Username"
+msgstr ""
+
+#: includes/import-wizard.php:378
+msgid "Email"
+msgstr ""
+
+#: includes/import-wizard.php:384
+msgid "Wallet Balance"
+msgstr ""
+
+#: includes/import-wizard.php:389 includes/wallet-gateway.php:111
+msgid "Description"
+msgstr ""
+
+#: includes/import-wizard.php:401
+msgid "required"
+msgstr ""
+
+#: includes/import-wizard.php:405
+msgid "at least one required"
+msgstr ""
+
+#: includes/import-wizard.php:412
+msgid "Select column"
+msgstr ""
+
+#: includes/import-wizard.php:425
+msgid "Wallet Action"
+msgstr ""
+
+#: includes/import-wizard.php:432
+msgid "Add to existing balance"
+msgstr ""
+
+#: includes/import-wizard.php:437
+msgid "Subtract from existing balance"
+msgstr ""
+
+#: includes/import-wizard.php:442
+msgid "Override balance (set to value)"
+msgstr ""
+
+#: includes/import-wizard.php:463
+msgid "Manual Description (if not in CSV):"
+msgstr ""
+
+#: includes/import-wizard.php:464
+msgid "Enter description for all rows if not mapped"
+msgstr ""
+
+#: includes/import-wizard.php:468
+msgid "Back"
+msgstr ""
+
+#: includes/import-wizard.php:469 includes/import-wizard.php:474
+msgid "Import Wallet Balances"
+msgstr ""
+
+#: includes/import-wizard.php:475
+msgid "Processing your import..."
+msgstr ""
+
+#: includes/wallet-gateway.php:40
+msgid "Have your customers pay with Wallet."
+msgstr ""
+
+#: includes/wallet-gateway.php:77
+#. translators: %s: available wallet balance amount.
+msgid "Available Balance: %s"
+msgstr ""
+
+#: includes/wallet-gateway.php:98
+msgid "Enable Wallet"
+msgstr ""
+
+#: includes/wallet-gateway.php:104
+msgid "Title"
+msgstr ""
+
+#: includes/wallet-gateway.php:106
+msgid "Payment method title that the customer will see on your checkout."
+msgstr ""
+
+#: includes/wallet-gateway.php:113
+msgid "Payment method description that the customer will see on your website."
+msgstr ""
+
+#: includes/wallet-gateway.php:118
+msgid "Instructions"
+msgstr ""
+
+#: includes/wallet-gateway.php:120
+msgid "Instructions that will be added to the thank you page."
+msgstr ""
+
+#: includes/wallet-gateway.php:121
+msgid ""
+"Your order is placed with Wallet, please keep your wallet recharged in "
+"order to use its services."
+msgstr ""
+
+#: includes/wallet-gateway.php:125
+msgid "Enable for shipping methods"
+msgstr ""
+
+#: includes/wallet-gateway.php:129
+msgid ""
+"If Wallet is only available for certain methods, set it up here. Leave "
+"blank to enable for all methods."
+msgstr ""
+
+#: includes/wallet-gateway.php:133
+msgid "Select shipping methods"
+msgstr ""
+
+#: includes/wallet-gateway.php:241
+msgid "Credited on refund for purchase."
+msgstr ""
+
+#: includes/wallet-gateway.php:283
+msgid "Debited on using it on purchase."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:29
+msgid "Global Cashback Settings"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:30
+msgid ""
+"Configure the core logic, limits, and eligibility requirements for awarding "
+"cashback rewards."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:35
+msgid "Cashback Credit Delay"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:36
+msgid ""
+"The number of days to wait after order completion before crediting cashback "
+"to the wallet. Available in the Pro version."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:40
+#: templates/admin/configuration/cashback-configuration-template.php:145
+#: templates/admin/configuration/cashback-configuration-template.php:168
+msgid "Days"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:55
+msgid "Max Cashback Cap"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:56
+msgid ""
+"The maximum total cashback amount allowable per single order. Leave blank "
+"for no limit."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:60
+#: templates/admin/configuration/cashback-configuration-template.php:71
+msgid "Leave empty for no limit"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:66
+msgid "Minimum Order Value"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:67
+msgid ""
+"The minimum subtotal required for an order to qualify for any cashback "
+"rewards."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:79
+msgid "Reward Milestones"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:80
+msgid ""
+"Define specific scenarios and purchase milestones that trigger specialized "
+"cashback rewards."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:85
+msgid "First Order Reward"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:86
+msgid "Enable First Order Cashback"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:87
+msgid ""
+"Activate special one-time cashback incentives specifically for a customer's "
+"first successful purchase."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:96
+msgid "Reward Type"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:97
+msgid ""
+"Choose whether the first-order bonus is a fixed monetary value or a "
+"percentage of the purchase subtotal."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:99
+#: templates/admin/configuration/general-configuration-template.php:119
+msgid "Fixed"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:100
+#: templates/admin/configuration/general-configuration-template.php:120
+msgid "Percentage"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:110
+msgid "Reward Amount"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:111
+msgid "The specific value or percentage for the first-order incentive."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:122
+msgid "Expiry"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:123
+msgid ""
+"Set expiration rules and automated email reminders to encourage users to "
+"spend their cashback balances."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:128
+msgid "Enable Expiry"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:129
+msgid "Enable expiration for awarded cashback"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:130
+msgid ""
+"Toggle the automatic expiration of awarded cashback balances after a "
+"defined period."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:139
+msgid "Expiry Duration"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:140
+msgid ""
+"The lifespan of awarded cashback (in days) before it is automatically "
+"deducted from the user's balance."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:144
+#: templates/admin/configuration/cashback-configuration-template.php:167
+msgid "Enter number of days"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:151
+msgid "Enable Expiry Reminder"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:152
+msgid "Enable reminder email for expiring cashback"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:153
+msgid ""
+"Send an automated notification to customers before their cashback balance "
+"is scheduled to expire."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:162
+msgid "Reminder Before Expiry (in days)"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:163
+msgid "Number of days prior to expiration to trigger the reminder notification."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:176
+msgid "Visuals & Notifications"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:177
+msgid ""
+"Customize how cashback opportunities and earned rewards are communicated to "
+"customers across your store."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:182
+msgid "Enable Messages"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:183
+msgid "Display Cashback Banners"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:184
+msgid ""
+"Toggle the visibility of cashback information banners across various store "
+"pages."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:191
+msgid "Shop Page Message"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:192
+msgid "Enter Shop Page Message"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:197
+#. translators: %s: the {cashback_amount} placeholder tag.
+msgid "Archive pages highlighting potential earnings. Use placeholder: %s."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:201
+msgid "Product Page Message"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:202
+msgid "Enter Product Page Message"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:207
+#. translators: %s: the {cashback_amount} placeholder tag.
+msgid "Individual item pages showing specific cashback. Use placeholder: %s."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:211
+msgid "Cart Page Message"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:212
+msgid "Enter Cart Page Message"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:217
+#. translators: %s: the {cashback_amount} placeholder tag.
+msgid "Cumulative cashback summary on the cart page. Use placeholder: %s."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:221
+msgid "Checkout Page Message"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:222
+msgid "Enter Checkout Page Message"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:227
+#. translators: %s: the {cashback_amount} placeholder tag.
+msgid "Final cashback confirmation during checkout. Use placeholder: %s."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:231
+msgid "View Order Page Message"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:232
+msgid "Enter View Order Page Message"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:237
+#. translators: %s: the {cashback_amount} placeholder tag.
+msgid "Summary of rewards displayed on order details. Use placeholder: %s."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:241
+msgid "Order Received Message"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:242
+msgid "Enter Order Received Page Message"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:247
+#. translators: %s: the {cashback_amount} placeholder tag.
+msgid "Confirmation message on the \"Thank You\" page. Use placeholder: %s."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:253
+msgid "Message Design"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:254
+msgid ""
+"Fine-tune the appearance of cashback banners to match your store's visual "
+"theme."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:259
+msgid "Text Color"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:266
+msgid "Background Color"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:273
+msgid "Border Color"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:280
+msgid "Font Size (px)"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:29
+msgid "Wallet Credited Notification"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:30
+msgid ""
+"Automated notification sent to customers when funds are added to their "
+"wallet via registration, cashback, top-ups, or manual adjustments."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:35
+#: templates/admin/configuration/emails-configuration-template.php:201
+#: templates/admin/configuration/emails-configuration-template.php:287
+msgid "Heading"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:36
+#: templates/admin/configuration/emails-configuration-template.php:202
+#: templates/admin/configuration/emails-configuration-template.php:288
+msgid "Enter Heading"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:40
+msgid ""
+"The main title that appears at the top of the email sent to customers when "
+"they receive funds."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:44
+#: templates/admin/configuration/emails-configuration-template.php:210
+#: templates/admin/configuration/emails-configuration-template.php:296
+msgid "Subject"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:45
+#: templates/admin/configuration/emails-configuration-template.php:211
+#: templates/admin/configuration/emails-configuration-template.php:297
+msgid "Enter subject"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:49
+msgid ""
+"The subject line of the email notification that appears in the customer's "
+"inbox when they receive funds."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:53
+#: templates/admin/configuration/emails-configuration-template.php:219
+#: templates/admin/configuration/emails-configuration-template.php:305
+msgid "Email Message"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:54
+#: templates/admin/configuration/emails-configuration-template.php:220
+#: templates/admin/configuration/emails-configuration-template.php:306
+msgid "Enter Email Message"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:60
+#. translators: 1: amount, 2: reason, 3: balance, 4: user name, 5: user email,
+#. 6: display name, 7: site title.
+msgid ""
+"The body of the email that informs the customer about the amount credited, "
+"along with details like the new balance. \n"
+"\n"
+" Available Placeholders: %1$s, %2$s, %3$s, %4$s, %5$s, %6$s and %7$s."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:66
+msgid "Credit Reason Labels"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:68
+#. translators: %s: the {reason} placeholder tag.
+msgid ""
+"Define the human-readable text for the %s placeholder used in credit "
+"notifications. This clarifies the source of funds for the customer."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:73
+msgid "Registration"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:74
+#: templates/admin/configuration/emails-configuration-template.php:83
+#: templates/admin/configuration/emails-configuration-template.php:92
+#: templates/admin/configuration/emails-configuration-template.php:101
+#: templates/admin/configuration/emails-configuration-template.php:110
+#: templates/admin/configuration/emails-configuration-template.php:119
+#: templates/admin/configuration/emails-configuration-template.php:128
+#: templates/admin/configuration/emails-configuration-template.php:139
+#: templates/admin/configuration/emails-configuration-template.php:150
+#: templates/admin/configuration/emails-configuration-template.php:161
+#: templates/admin/configuration/emails-configuration-template.php:172
+#: templates/admin/configuration/emails-configuration-template.php:183
+#: templates/admin/configuration/emails-configuration-template.php:240
+#: templates/admin/configuration/emails-configuration-template.php:249
+#: templates/admin/configuration/emails-configuration-template.php:258
+#: templates/admin/configuration/emails-configuration-template.php:269
+msgid "Enter Reason"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:78
+msgid ""
+"Enter the reason text for funds earned when a user successfully registers "
+"an account."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:82
+msgid "General Cashback"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:87
+msgid "Enter the reason text for funds earned from general cashbacks."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:96
+msgid "Reason text for cashback earned on the entire cart."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:100
+msgid "Refund"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:105
+msgid "Enter the reason text for funds returned via an order refund."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:109
+#: templates/shortcodes/wallet-balance-layout.php:86
+msgid "Topup"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:114
+msgid "Enter the reason text for funds added via a manual topup purchase."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:118
+msgid "Transfer Received"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:123
+msgid "Reason text for funds received from another user via Send Money."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:127
+msgid "Referral"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:132
+msgid "Reason text for funds earned from the referral program."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:138
+msgid "Product Cashback"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:143
+msgid "Reason text for cashback earned on specific products or categories."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:154
+msgid "Reason text for bonus cashback earned on wallet top-ups."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:160
+msgid "First Order Cashback"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:165
+msgid "Reason text for the one-time first-order cashback bonus."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:171
+msgid "User Role Cashback"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:176
+msgid "Reason text for cashback earned based on the customer user role."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:182
+msgid "Payment Method Cashback"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:187
+msgid "Reason text for cashback earned by paying with a specific gateway."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:195
+msgid "Wallet Debited Notification"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:196
+msgid ""
+"Automated notification sent to customers when funds are deducted for "
+"purchases, transfers, or balance expirations."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:206
+msgid "The main title that appears at the top of the email when funds are debited."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:215
+msgid "The subject line for the funds debit notification email."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:226
+#. translators: 1: amount, 2: reason, 3: balance, 4: user name, 5: user email,
+#. 6: display name, 7: site title.
+msgid ""
+"The body of the email that informs the customer about the amount debited, "
+"along with details like the new balance. \n"
+"\n"
+" Available Placeholders: %1$s, %2$s, %3$s, %4$s, %5$s, %6$s and %7$s."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:232
+msgid "Debit Reason Labels"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:234
+#. translators: %s: the {reason} placeholder tag.
+msgid ""
+"Define the human-readable text for the %s placeholder used in debit "
+"notifications. This clarifies the reason for the deduction."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:244
+msgid "Enter the reason text for funds debited for paying an order."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:248
+msgid "Transfer Sent"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:253
+msgid "Reason text for funds sent to another user via Send Money."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:257
+msgid "Cashback Expired"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:262
+msgid "Reason text for cashback removed when it expires."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:268
+#: templates/admin/transactions/transactions-list-template.php:443
+msgid "Withdrawal"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:273
+msgid "Reason text for funds debited for a withdrawal payout."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:281
+msgid "Manual Adjustment Notification"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:282
+msgid ""
+"Notification sent when an administrator manually modifies a user's wallet "
+"balance."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:292
+msgid ""
+"The title of the email that notifies users of manual adjustments made to "
+"their wallet balance by an admin."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:301
+msgid ""
+"The subject line of the email notifying users of manual adjustments to "
+"their balance."
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:312
+#. translators: 1: amount, 2: reason, 3: balance, 4: user name, 5: user email,
+#. 6: display name, 7: site title.
+msgid ""
+"The body content of the email informing users about the manual adjustment "
+"of their balance.\n"
+"\n"
+" Available Placeholders: %1$s, %2$s, %3$s, %4$s, %5$s, %6$s and %7$s."
+msgstr ""
+
+#: templates/admin/configuration/endpoints-configuration-template.php:34
+msgid "My Account Section"
+msgstr ""
+
+#: templates/admin/configuration/endpoints-configuration-template.php:35
+msgid ""
+"Configure the endpoint slug, menu title, and sidebar presence for the "
+"wallet dashboard within the WooCommerce My Account area."
+msgstr ""
+
+#: templates/admin/configuration/endpoints-configuration-template.php:40
+msgid "Endpoint Slug"
+msgstr ""
+
+#: templates/admin/configuration/endpoints-configuration-template.php:41
+msgid ""
+"The unique URL identifier for the wallet section (e.g., \"my-wallet\"). "
+"Remember to save permalinks after changing this."
+msgstr ""
+
+#: templates/admin/configuration/endpoints-configuration-template.php:42
+msgid "Default: wallet-management-for-woocommerce"
+msgstr ""
+
+#: templates/admin/configuration/endpoints-configuration-template.php:49
+msgid "Menu Title"
+msgstr ""
+
+#: templates/admin/configuration/endpoints-configuration-template.php:50
+msgid "The label displayed in the My Account sidebar navigation menu."
+msgstr ""
+
+#: templates/admin/configuration/endpoints-configuration-template.php:51
+msgid "Default: My Wallet"
+msgstr ""
+
+#: templates/admin/configuration/endpoints-configuration-template.php:58
+msgid "Sidebar Widgets"
+msgstr ""
+
+#: templates/admin/configuration/endpoints-configuration-template.php:59
+msgid "Enable wallet widgets in account sidebar"
+msgstr ""
+
+#: templates/admin/configuration/endpoints-configuration-template.php:60
+msgid ""
+"Toggle the visibility of supplementary wallet information widgets when "
+"viewing the wallet endpoint."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:40
+msgid ""
+"Configure the core functionalities of the wallet system, including "
+"registration rewards and top-up defaults."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:76
+msgid "Top-up Presets"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:77
+msgid ""
+"Define quick-select amount buttons (comma-separated) to simplify the top-up "
+"process for customers (e.g., 10, 20, 50, 100). Available in the Pro version."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:88
+msgid "Limits Settings"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:89
+msgid "Set restrictions on how users can top up or spend their wallet balance."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:94
+msgid "Min Topup Limit"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:95
+msgid "The lowest allowable amount for a single top-up transaction."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:105
+msgid "Max Topup Limit"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:106
+msgid "The highest allowable amount for a single top-up transaction."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:116
+msgid "Debit Limit Type"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:117
+msgid ""
+"Choose whether the debit limit is a fixed value or a percentage of the "
+"order total."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:130
+msgid "Min Debit Limit"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:131
+msgid "The minimum wallet balance required to use the wallet at checkout."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:141
+msgid "Max Debit Limit"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:142
+msgid "The maximum amount that can be debited from the wallet for a single order."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:152
+msgid "Min Transfer Limit"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:153
+msgid "The minimum amount a customer can send in a single wallet transfer."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:163
+msgid "Max Transfer Limit"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:164
+msgid "The maximum amount a customer can send in a single wallet transfer."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:176
+msgid "Checkout Settings"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:177
+msgid ""
+"Configure how the wallet integrates with the WooCommerce checkout process "
+"and manage payment methods."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:182
+msgid "Partial Payments"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:183
+msgid "Enable/Disable Partial Payments"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:184
+msgid ""
+"Allow customers to pay a portion of their order with their wallet balance "
+"and the rest with another payment method. Available in the Pro version."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:193
+msgid "Enabled Payment Gateways for Topup"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:194
+msgid ""
+"Restrict the payment methods available specifically for wallet top-up "
+"transactions."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:201
+msgid "Select Payment Gateways"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:206
+msgid "Redirect to Checkout on Top-up"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:207
+msgid "Redirect to checkout after adding top-up"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:208
+msgid ""
+"Automatically redirect customers to the checkout page after they add a "
+"top-up amount to their wallet."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:215
+msgid "Configure Payment Gateway"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:216
+msgid "Configure"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:217
+msgid ""
+"Navigate to the core WooCommerce settings to configure the Wallet payment "
+"method."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:29
+msgid "Global Interface Settings"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:30
+msgid ""
+"Configure global theme elements, brand colors, and the primary visibility "
+"of graphical icons across the wallet dashboard."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:35
+msgid "Primary Theme Color"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:36
+msgid ""
+"The core brand color used for action buttons, active highlights, and "
+"primary interface elements."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:42
+msgid "Global Icon Visibility"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:43
+msgid "Show icons next to wallet details"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:44
+msgid ""
+"Toggle the display of graphical icons alongside balance information and "
+"operation cards."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:50
+msgid "Icon Background Wrappers"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:51
+msgid "Enable decorative wrappers for icons"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:52
+msgid "Adds a circular or square background container behind your dashboard icons."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:58
+msgid "Base Icon Size (px)"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:59
+msgid ""
+"Specify the height and width for dashboard icons. Default is recommended "
+"for optimal layout."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:67
+msgid "Dashboard Component Icons"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:68
+msgid ""
+"Upload custom icons to represent specific wallet operations and account "
+"states. Recommended size: 100x100px."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:73
+msgid "Available Balance Icon"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:74
+msgid "Represents the current spendable funds in the user's wallet."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:82
+msgid "Send Money Icon"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:83
+msgid "Icon for the peer-to-peer fund transfer operation."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:91
+msgid "Request Money Icon"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:92
+msgid "Icon for incoming and outgoing fund requests."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:100
+msgid "Withdrawal Icon"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:101
+msgid "Icon for payout and withdrawal requests."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:109
+msgid "Referral System Icon"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:110
+msgid "Icon for the referral program link and sharing options."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:118
+msgid "Top-up (Add Money) Icon"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:119
+msgid "Icon for the manual balance top-up purchase flow."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:129
+msgid "Card & Table Styling"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:130
+msgid ""
+"Fine-tune the typography and background colors for transaction tables and "
+"summary cards."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:135
+msgid "Icon Graphic Color"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:136
+msgid "The fill color applied to the icons if non-colored SVG files are used."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:142
+msgid "Icon Wrapper Background"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:143
+msgid "Background color for the decorative icon containers."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:149
+msgid "Card Background"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:150
+msgid "Background color for all dashboard info cards."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:156
+msgid "Card Border Color"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:157
+msgid "The perimeter line color for dashboard sections."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:163
+msgid "Card Label Color"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:164
+msgid "Typography color for descriptive labels within cards."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:170
+msgid "Card Value Color"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:171
+msgid "Typography color for numerical balances and main amounts."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:177
+msgid "Table Header Text"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:178
+msgid "Typography color for the transaction history table headings."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:184
+msgid "Table Header Background"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:185
+msgid "Background horizontal bar color for transaction tables."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:193
+msgid "Feedback & Notification Colors"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:194
+msgid ""
+"Customize the color palette for system alerts, success confirmations, and "
+"informational notices."
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:199
+msgid "Success Message Text"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:205
+msgid "Success Background"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:211
+msgid "Error Message Text"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:217
+msgid "Error Background"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:223
+msgid "Info Message Text"
+msgstr ""
+
+#: templates/admin/configuration/layout-configuration-template.php:229
+msgid "Info Background"
+msgstr ""
+
+#: templates/admin/configuration/otp-configuration-template.php:29
+msgid "OTP Verification is a Pro feature"
+msgstr ""
+
+#: templates/admin/configuration/otp-configuration-template.php:30
+msgid ""
+"Add an email based One-Time Password layer to secure sensitive wallet "
+"operations."
+msgstr ""
+
+#: templates/admin/configuration/otp-configuration-template.php:32
+msgid "Require OTP for send, request and withdraw operations"
+msgstr ""
+
+#: templates/admin/configuration/otp-configuration-template.php:33
+msgid "Configurable OTP expiry time"
+msgstr ""
+
+#: templates/admin/configuration/otp-configuration-template.php:34
+msgid "Configurable OTP length"
+msgstr ""
+
+#: templates/admin/configuration/referrals-configuration-template.php:29
+msgid "Referral Program is a Pro feature"
+msgstr ""
+
+#: templates/admin/configuration/referrals-configuration-template.php:30
+msgid ""
+"Reward both the referrer and the new customer with wallet credit on "
+"successful registration."
+msgstr ""
+
+#: templates/admin/configuration/referrals-configuration-template.php:32
+msgid "Reward referrer and new user automatically"
+msgstr ""
+
+#: templates/admin/configuration/referrals-configuration-template.php:33
+msgid "Configurable reward amount"
+msgstr ""
+
+#: templates/admin/configuration/referrals-configuration-template.php:34
+msgid "Customizable referral invitation email"
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:29
+msgid "Custom Shortcodes"
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:30
+msgid ""
+"Deploy wallet functionality anywhere on your site using custom shortcodes. "
+"These tags automatically render user-specific data for the currently "
+"logged-in customer."
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:35
+msgid "Balance Only"
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:36
+msgid "Displays the numerical wallet balance of the current user."
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:38
+#: templates/admin/configuration/shortcodes-configuration-template.php:48
+#: templates/admin/configuration/shortcodes-configuration-template.php:58
+#: templates/admin/configuration/shortcodes-configuration-template.php:68
+#: templates/admin/configuration/shortcodes-configuration-template.php:78
+#. translators: %s: the default shortcode example.
+msgid "Default: %s"
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:45
+msgid "Balance Layout"
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:46
+msgid "Renders the stylized balance card layout, including icons and labels."
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:55
+msgid "Operations Hub"
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:56
+msgid ""
+"Displays the interactive action buttons for adding, sending, requesting, "
+"and withdrawing funds."
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:65
+msgid "Integrated Dashboard"
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:66
+msgid ""
+"Combines the balance layout and operation buttons into a single cohesive "
+"interface."
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:75
+msgid "Transaction History"
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:76
+msgid ""
+"Renders a detailed table of the user's recent wallet activity and "
+"transaction logs."
+msgstr ""
+
+#: templates/admin/configuration/withdrawals-configuration-template.php:29
+msgid "Withdrawals is a Pro feature"
+msgstr ""
+
+#: templates/admin/configuration/withdrawals-configuration-template.php:30
+msgid ""
+"Allow customers to request payouts from their wallet balance, with full "
+"control over charges and limits."
+msgstr ""
+
+#: templates/admin/configuration/withdrawals-configuration-template.php:32
+msgid "Enable customer withdrawal requests"
+msgstr ""
+
+#: templates/admin/configuration/withdrawals-configuration-template.php:33
+msgid "Fixed or percentage based withdrawal charges"
+msgstr ""
+
+#: templates/admin/configuration/withdrawals-configuration-template.php:35
+msgid "Approve or cancel requests from the admin dashboard"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:77
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:200
+#: templates/admin/transactions/transactions-list-template.php:256
+#: templates/shortcodes/wallet-operations.php:45
+#: templates/shortcodes/wallet-transactions.php:41
+msgid "Amount"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:78
+msgid "Transaction Types"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:79
+msgid "No data available"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:100
+#. translators: %s: current user display name.
+msgid "Welcome back, %s! 👋🏻"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:103
+msgid "Here's what's happening with your customers' wallets."
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:126
+msgid "Quick Select"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:142
+msgid "Custom Range"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:143
+msgid "Select specific start and end dates for your analysis"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:147
+msgid "From Date"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:151
+msgid "To Date"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:155
+msgid "Apply Custom Range"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:173
+#: templates/shortcodes/wallet-balance-layout.php:44
+msgid "Available Balance"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:182
+msgid "Wallet Spent"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:191
+msgid "Total Transactions"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:199
+msgid "Total Users"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:207
+msgid "Total Cashback Awarded"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:223
+msgid "Transaction Trends"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:233
+msgid "Transaction Types Breakdown"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:245
+msgid "Recent Activities"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:253
+msgid "Top Customers"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:304
+msgid "No recent activities found."
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:339
+msgid "No customers found."
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:354
+#: templates/admin/users/users-list-template.php:199
+msgid "Balance"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:46
+msgid "Processing Error"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:59
+msgid "Processing Complete"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:64
+msgid "Total users processed"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:68
+msgid "Successfully processed"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:72
+msgid "Failed to process"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:81
+msgid "View Failed Process Details"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:90
+msgid "Failed"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:95
+msgid "Action:"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:99
+msgid "Amount Requested:"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:103
+msgid "Current Balance:"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:115
+msgid "Start Again"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:125
+msgid "Select Users & Amount"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:129
+msgid "Process Transaction"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:133
+msgid "Complete"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:143
+msgid ""
+"You can manually credit or debit the wallet amount for single or multiple "
+"users from here."
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:149
+msgid "User Selection"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:155
+msgid "Select All Users"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:156
+msgid "Apply wallet transaction to all users in the system"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:177
+msgid "OR"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:182
+msgid "Select Users"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:183
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:201
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:219
+#: templates/shortcodes/wallet-operations.php:41
+#: templates/shortcodes/wallet-operations.php:45
+msgid "Required"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:185
+msgid "Search Users..."
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:186
+msgid "Select single or multiple users for the operation."
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:192
+msgid "Transaction Configuration"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:213
+msgid "Enter the amount you want to credit or debit."
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:218
+msgid "Action Type"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:225
+msgid "Choose whether to credit or debit the amount."
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:233
+msgid "Reason"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:234
+msgid "Optional"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:240
+msgid "e.g., Manual bonus added"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:241
+msgid "Add a reason that will be logged and visible to users in emails."
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:251
+msgid "Start Process"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:257
+msgid "Processing Transaction"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:258
+msgid "Please wait while we process the wallet transaction..."
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:267
+msgid "Transaction Complete"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:268
+msgid "The wallet transactions have been processed."
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:71
+msgid "Available in Pro"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:93
+msgid "Amount From"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:93
+msgid "From this amount range, respective cashback applied."
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:94
+msgid "Amount To"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:94
+msgid "To this amount range, respective cashback applied."
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:95
+#: templates/admin/rules/cashback-rules-template.php:119
+#: templates/admin/rules/cashback-rules-template.php:224
+msgid "Cashback Type"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:95
+msgid "Select cashback type."
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:96
+msgid "Cashback Amount"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:96
+msgid ""
+"This cashback amount will be credited to customers between the respective "
+"amount ranges."
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:97
+msgid "Status"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:97
+msgid "Select rule status."
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:108
+#: templates/admin/rules/cashback-rules-template.php:213
+msgid "Enter Amount From"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:114
+#: templates/admin/rules/cashback-rules-template.php:219
+msgid "Enter Amount to"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:120
+#: templates/admin/rules/cashback-rules-template.php:225
+#. translators: %s: currency symbol.
+msgid "Fixed (%s)"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:121
+#: templates/admin/rules/cashback-rules-template.php:226
+msgid "Percentage (%)"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:126
+#: templates/admin/rules/cashback-rules-template.php:232
+msgid "Enter Cashback Amount"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:130
+#: templates/admin/rules/cashback-rules-template.php:237
+msgid "Select Status"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:131
+#: templates/admin/rules/cashback-rules-template.php:238
+msgid "Enabled"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:132
+#: templates/admin/rules/cashback-rules-template.php:239
+msgid "Disabled"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:134
+#: templates/admin/rules/cashback-rules-template.php:241
+msgid "Remove"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:144
+msgid "Add Row"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:156
+msgid "Cart Cashback Rules"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:157
+msgid ""
+"Define cashback amount ranges for cart purchases. Rules are matched based "
+"on the order subtotal falling within the specified range."
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:164
+msgid "Product Cashback Rules"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:165
+msgid "Configure per-product cashback rewards."
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:168
+msgid ""
+"Reward customers with cashback when they purchase specific products or "
+"product categories."
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:172
+msgid "User Role Cashback Rules"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:173
+msgid "Configure cashback rewards based on user roles."
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:176
+msgid "Give different cashback rates to different customer user roles."
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:180
+msgid "Payment Method Cashback Rules"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:181
+msgid "Configure cashback rewards based on the payment method used."
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:184
+msgid "Reward customers with cashback for paying with a specific payment gateway."
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:200
+msgid "Save"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:250
+msgid "Some Fields are empty or not valid."
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:41
+msgid "Transaction List"
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:42
+msgid "Transactions List"
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:101
+#. translators: %s: number of deleted transactions.
+msgid "%s Transaction(s) deleted successfully."
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:105
+msgid "Select transactions(s) to delete."
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:110
+#: templates/admin/transactions/transactions-list-template.php:136
+msgid "Invalid nonce. Security check failed!!!"
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:130
+msgid "Transaction deleted successfully."
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:233
+msgid "No transactions avaliable."
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:253
+#: templates/shortcodes/wallet-transactions.php:39
+msgid "ID & Date"
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:254
+msgid "Customer"
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:255
+#: templates/shortcodes/wallet-transactions.php:40
+msgid "Transaction Context"
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:257
+#: templates/shortcodes/wallet-operations.php:49
+#: templates/shortcodes/wallet-transactions.php:42
+msgid "Note"
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:303
+#: templates/admin/transactions/transactions-list-template.php:428
+msgid "Delete"
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:439
+msgid "Transaction Type"
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:469
+msgid "From:"
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:472
+msgid "To:"
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:475
+msgid "Select Customer"
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:488
+#: templates/admin/users/users-list-template.php:317
+msgid "Filter"
+msgstr ""
+
+#: templates/admin/transactions/transactions-list-template.php:495
+#: templates/admin/users/users-list-template.php:319
+msgid "Reset"
+msgstr ""
+
+#: templates/admin/users/users-list-template.php:42
+msgid "User List"
+msgstr ""
+
+#: templates/admin/users/users-list-template.php:43
+msgid "Users List"
+msgstr ""
+
+#: templates/admin/users/users-list-template.php:177
+msgid "No users avaliable."
+msgstr ""
+
+#: templates/admin/users/users-list-template.php:198
+msgid "User"
+msgstr ""
+
+#: templates/admin/users/users-list-template.php:258
+msgid "Edit"
+msgstr ""
+
+#: templates/admin/users/users-list-template.php:312
+msgid "All Users"
+msgstr ""
+
+#: templates/admin/users/users-list-template.php:313
+msgid "Users having amount in wallet"
+msgstr ""
+
+#: templates/admin/users/users-list-template.php:314
+msgid "Users don't have amount in wallet"
+msgstr ""
+
+#: templates/shortcodes/wallet-balance-layout.php:58
+msgid "Today's Credit"
+msgstr ""
+
+#: templates/shortcodes/wallet-balance-layout.php:64
+msgid "Today's Debit"
+msgstr ""
+
+#: templates/shortcodes/wallet-balance-layout.php:78
+msgid "Add Money"
+msgstr ""
+
+#: templates/shortcodes/wallet-balance-layout.php:85
+msgid "Enter amount here"
+msgstr ""
+
+#: templates/shortcodes/wallet-operations.php:27
+#: templates/shortcodes/wallet-operations.php:37
+#: templates/shortcodes/wallet-operations.php:52
+msgid "Send Money"
+msgstr ""
+
+#: templates/shortcodes/wallet-operations.php:41
+msgid "Receiver's Email"
+msgstr ""
+
+#: templates/shortcodes/wallet-operations.php:42
+msgid "Enter receiver email address"
+msgstr ""
+
+#: templates/shortcodes/wallet-operations.php:46
+msgid "Enter Amount"
+msgstr ""
+
+#: templates/shortcodes/wallet-operations.php:50
+msgid "Enter Note (optional)"
+msgstr ""
+
+#: templates/shortcodes/wallet-transactions.php:59
+msgid "Previous"
+msgstr ""
+
+#: templates/shortcodes/wallet-transactions.php:60
+msgid "Next"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://devdiggers.com/product/woocommerce-wallet-management/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Allows customers to use virtual money on the store to top up their wallet, "
+"pay for orders, earn cart cashback and track every transaction."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "DevDiggers"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://devdiggers.com/"
+msgstr ""
+
+#: src/blocks/index.js:40
+msgid "You will get {cashback_amount} cashback on this order."
+msgstr ""
+
