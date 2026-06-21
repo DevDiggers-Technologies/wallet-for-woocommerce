@@ -65,6 +65,11 @@ if ( ! class_exists( 'DDFW_Assets' ) ) {
 			wp_register_style( self::$framework_css_handle, DDFW_URL . 'assets/css/framework.css', [ 'select2' ], filemtime( DDFW_FILE . 'assets/css/framework.css' ) );
 			wp_register_script( self::$framework_js_handle, DDFW_URL . 'assets/js/framework.js', [ 'select2', 'wp-color-picker', 'wp-mediaelement' ], filemtime( DDFW_FILE . 'assets/js/framework.js' ) , true );
 
+			// Shared analytics dashboard assets (enqueued on demand by DDFW_Dashboard).
+			wp_register_script( 'ddfw-chart-js', DDFW_URL . 'assets/js/chart.js', [], self::asset_version( 'assets/js/chart.js' ), true );
+			wp_register_style( 'ddfw-dashboard-analytics-style', DDFW_URL . 'assets/css/dashboard-analytics.css', [ self::$framework_css_handle ], self::asset_version( 'assets/css/dashboard-analytics.css' ) );
+			wp_register_script( 'ddfw-dashboard-analytics-script', DDFW_URL . 'assets/js/dashboard-analytics.js', [ 'jquery', 'ddfw-chart-js', self::$framework_js_handle ], self::asset_version( 'assets/js/dashboard-analytics.js' ), true );
+
 			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only admin page routing parameter.
 			if ( ! empty( $_GET['page'] ) && in_array( $_GET['page'], [ 'devdiggers-plugins', 'devdiggers-extensions' ], true ) ) {
 				wp_enqueue_style( 'ddfw-dashboard-style', DDFW_URL . 'assets/css/dashboard.css', [], filemtime( DDFW_FILE . 'assets/css/dashboard.css' ) );
@@ -114,8 +119,20 @@ if ( ! class_exists( 'DDFW_Assets' ) ) {
 		}
 
 		/**
+		 * Resolve an asset version, falling back to the framework version if the file is absent.
+		 *
+		 * @param string $relative_path Path relative to the framework root.
+		 * @return string|int Version string.
+		 */
+		private static function asset_version( $relative_path ) {
+			$path = DDFW_FILE . $relative_path;
+
+			return file_exists( $path ) ? filemtime( $path ) : DDFW_VERSION;
+		}
+
+		/**
 		 * Get current DevDiggers plugin dynamically
-		 * 
+		 *
 		 * @return array
 		 */
 		private function get_current_devdiggers_plugin() {

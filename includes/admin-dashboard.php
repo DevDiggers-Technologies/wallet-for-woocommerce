@@ -418,14 +418,11 @@ if ( ! class_exists( 'DDWCWM_Admin_Dashboard' ) ) {
 				);
 
 
-				// Register dashboard specific assets.
-				$current_menu = ! empty( $_GET[ 'menu' ] ) ? sanitize_title( wp_unslash( $_GET[ 'menu' ] ) ) : 'dashboard';
-				if ( 'dashboard' === $current_menu ) {
-					wp_register_style( 'ddwcwm-dashboard-style', DDWCWM_PLUGIN_URL . 'assets/css/dashboard.css', [ DDFW_Assets::$framework_css_handle ], filemtime( DDWCWM_PLUGIN_FILE . 'assets/css/dashboard.css' ) );
-					wp_register_script( 'ddwcwm-dashboard-script', DDWCWM_PLUGIN_URL . 'assets/js/dashboard.js', [ DDFW_Assets::$framework_js_handle ], filemtime( DDWCWM_PLUGIN_FILE . 'assets/js/dashboard.js' ), true );
+				// The dashboard view (charts, stat cards, date filter, styles) is provided by the
+				// shared devdiggers-framework DDFW_Dashboard builder, which enqueues its own assets.
 
-					wp_enqueue_style( 'ddwcwm-dashboard-style' );
-				}
+				// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only admin routing input.
+				$current_menu = ! empty( $_GET['menu'] ) ? sanitize_title( wp_unslash( $_GET['menu'] ) ) : 'dashboard';
 
 				if ( 'manual-adjustment' === $current_menu ) {
 					wp_enqueue_style( 'ddwcwm-manual-adjustment-style', DDWCWM_PLUGIN_URL . 'assets/css/manual-adjustment.css', [ DDFW_Assets::$framework_css_handle ], filemtime( DDWCWM_PLUGIN_FILE . 'assets/css/manual-adjustment.css' ) );

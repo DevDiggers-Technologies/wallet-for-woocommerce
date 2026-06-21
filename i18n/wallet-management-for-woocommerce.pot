@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Wallet Management for WooCommerce 1.0.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/wallet-management-for-woocommerce\n"
-"POT-Creation-Date: 2026-06-13 19:38:21+00:00\n"
+"POT-Creation-Date: 2026-06-21 21:58:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,65 +65,11 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-#: functions.php:159 includes/admin-dashboard.php:478
+#: functions.php:159 includes/admin-dashboard.php:475
 msgid "Review"
 msgstr ""
 
-#: helper/dashboard/dashboard-helper.php:58
-#: templates/admin/dashboard/dashboard-template.php:128
-msgid "Today"
-msgstr ""
-
-#: helper/dashboard/dashboard-helper.php:63
-#: templates/admin/dashboard/dashboard-template.php:129
-msgid "This Week"
-msgstr ""
-
-#: helper/dashboard/dashboard-helper.php:68
-#: templates/admin/dashboard/dashboard-template.php:130
-msgid "Last Week"
-msgstr ""
-
-#: helper/dashboard/dashboard-helper.php:73
-#: templates/admin/dashboard/dashboard-template.php:131
-msgid "This Month"
-msgstr ""
-
-#: helper/dashboard/dashboard-helper.php:78
-#: templates/admin/dashboard/dashboard-template.php:132
-msgid "Last Month"
-msgstr ""
-
-#: helper/dashboard/dashboard-helper.php:83
-#: templates/admin/dashboard/dashboard-template.php:133
-msgid "Last 3 Months"
-msgstr ""
-
-#: helper/dashboard/dashboard-helper.php:88
-#: templates/admin/dashboard/dashboard-template.php:134
-msgid "Last 6 Months"
-msgstr ""
-
-#: helper/dashboard/dashboard-helper.php:93
-#: templates/admin/dashboard/dashboard-template.php:135
-msgid "Year to Date"
-msgstr ""
-
-#: helper/dashboard/dashboard-helper.php:98
-#: templates/admin/dashboard/dashboard-template.php:136
-msgid "Last Year"
-msgstr ""
-
-#: helper/dashboard/dashboard-helper.php:103
-#: templates/admin/dashboard/dashboard-template.php:137
-msgid "All Time"
-msgstr ""
-
-#: helper/dashboard/dashboard-helper.php:115
-msgid "Last 30 Days"
-msgstr ""
-
-#: helper/dashboard/dashboard-helper.php:367
+#: helper/dashboard/dashboard-helper.php:296
 msgid "Guest"
 msgstr ""
 
@@ -397,7 +343,7 @@ msgid "Withdrawal Requests"
 msgstr ""
 
 #: includes/admin-dashboard.php:96 includes/admin-dashboard.php:284
-#: templates/admin/dashboard/dashboard-template.php:76
+#: templates/admin/dashboard/dashboard-template.php:138
 #: templates/admin/users/users-list-template.php:200
 msgid "Transactions"
 msgstr ""
@@ -521,7 +467,7 @@ msgstr ""
 msgid "AJAX error:"
 msgstr ""
 
-#: includes/admin-dashboard.php:478
+#: includes/admin-dashboard.php:475
 #. translators: %s for a tag
 msgid ""
 "If you really like our plugin, please leave us a %s rating, we'll really "
@@ -2227,103 +2173,76 @@ msgstr ""
 msgid "Approve or cancel requests from the admin dashboard"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:77
-#: templates/admin/manual-adjustment/manual-adjustment-template.php:200
-#: templates/admin/transactions/transactions-list-template.php:256
-#: templates/shortcodes/wallet-operations.php:45
-#: templates/shortcodes/wallet-transactions.php:41
-msgid "Amount"
-msgstr ""
-
-#: templates/admin/dashboard/dashboard-template.php:78
-msgid "Transaction Types"
-msgstr ""
-
-#: templates/admin/dashboard/dashboard-template.php:79
-msgid "No data available"
-msgstr ""
-
-#: templates/admin/dashboard/dashboard-template.php:100
+#: templates/admin/dashboard/dashboard-template.php:88
 #. translators: %s: current user display name.
 msgid "Welcome back, %s! 👋🏻"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:103
+#: templates/admin/dashboard/dashboard-template.php:89
 msgid "Here's what's happening with your customers' wallets."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:126
-msgid "Quick Select"
-msgstr ""
-
-#: templates/admin/dashboard/dashboard-template.php:142
-msgid "Custom Range"
-msgstr ""
-
-#: templates/admin/dashboard/dashboard-template.php:143
-msgid "Select specific start and end dates for your analysis"
-msgstr ""
-
-#: templates/admin/dashboard/dashboard-template.php:147
-msgid "From Date"
-msgstr ""
-
-#: templates/admin/dashboard/dashboard-template.php:151
-msgid "To Date"
-msgstr ""
-
-#: templates/admin/dashboard/dashboard-template.php:155
-msgid "Apply Custom Range"
-msgstr ""
-
-#: templates/admin/dashboard/dashboard-template.php:173
+#: templates/admin/dashboard/dashboard-template.php:93
 #: templates/shortcodes/wallet-balance-layout.php:44
 msgid "Available Balance"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:182
+#: templates/admin/dashboard/dashboard-template.php:101
 msgid "Wallet Spent"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:191
+#: templates/admin/dashboard/dashboard-template.php:109
 msgid "Total Transactions"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:199
+#: templates/admin/dashboard/dashboard-template.php:116
 msgid "Total Users"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:207
-msgid "Total Cashback Awarded"
+#: templates/admin/dashboard/dashboard-template.php:121
+msgid "Cashback Awarded"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:223
+#: templates/admin/dashboard/dashboard-template.php:132
 msgid "Transaction Trends"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:233
+#: templates/admin/dashboard/dashboard-template.php:141
+#: templates/admin/dashboard/dashboard-template.php:154
+msgid "No transaction data"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:142
+msgid "Transaction trends will appear here once wallets are used."
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:147
 msgid "Transaction Types Breakdown"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:245
+#: templates/admin/dashboard/dashboard-template.php:155
+msgid "The transaction type split will appear here."
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:161
 msgid "Recent Activities"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:253
+#: templates/admin/dashboard/dashboard-template.php:165
 msgid "Top Customers"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:304
+#: templates/admin/dashboard/dashboard-template.php:183
 msgid "No recent activities found."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:339
-msgid "No customers found."
+#: templates/admin/dashboard/dashboard-template.php:201
+#. translators: %s: expiry date.
+msgid "Expires: %s"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:354
-#: templates/admin/users/users-list-template.php:199
-msgid "Balance"
+#: templates/admin/dashboard/dashboard-template.php:225
+msgid "No customers found."
 msgstr ""
 
 #: templates/admin/manual-adjustment/manual-adjustment-template.php:46
@@ -2426,6 +2345,13 @@ msgstr ""
 
 #: templates/admin/manual-adjustment/manual-adjustment-template.php:192
 msgid "Transaction Configuration"
+msgstr ""
+
+#: templates/admin/manual-adjustment/manual-adjustment-template.php:200
+#: templates/admin/transactions/transactions-list-template.php:256
+#: templates/shortcodes/wallet-operations.php:45
+#: templates/shortcodes/wallet-transactions.php:41
+msgid "Amount"
 msgstr ""
 
 #: templates/admin/manual-adjustment/manual-adjustment-template.php:213
@@ -2725,6 +2651,10 @@ msgstr ""
 
 #: templates/admin/users/users-list-template.php:198
 msgid "User"
+msgstr ""
+
+#: templates/admin/users/users-list-template.php:199
+msgid "Balance"
 msgstr ""
 
 #: templates/admin/users/users-list-template.php:258

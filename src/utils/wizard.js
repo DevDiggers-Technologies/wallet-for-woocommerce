@@ -72,18 +72,6 @@ export const navigateToStep = ( stepNumber ) => {
 	}
 };
 
-// Generic show error message
-export const showError = ( message, templateId = 'ddwcwm-error' ) => {
-	const summary = document.querySelector( '.ddwcwm-summary' );
-	if ( summary ) {
-		const errorData = { message: message };
-		const templateHTML = ddwcwm_utils.renderTemplate( templateId, errorData );
-		if ( templateHTML ) {
-			summary.innerHTML = templateHTML;
-		}
-	}
-};
-
 // Generic error handler with custom selector
 export const showCustomError = ( message, selector, templateId ) => {
 	const element = document.querySelector( selector );

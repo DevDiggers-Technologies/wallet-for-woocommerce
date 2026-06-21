@@ -14,7 +14,6 @@ const CAMEL_CASE_REPLACE_REGEX = /-([a-z])/g;
 const JS_ENTRY_POINTS = {
 	admin              : './src/admin/index.js',
 	'manual-adjustment': './src/manual-adjustment/index.js',
-	dashboard          : './src/dashboard/index.js',
 	front              : './src/front/index.js',
 	blocks             : './src/blocks/index.js',
 	import             : './src/import/index.js',
