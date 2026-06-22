@@ -45,83 +45,12 @@ if ( ! class_exists( 'DDWCWM_Dashboard_Helper' ) ) {
 		 * @return array
 		 */
 		protected function get_date_range() {
-			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only dashboard date-range filter.
-			$range_type = ! empty( $_GET['date_range'] ) ? sanitize_text_field( wp_unslash( $_GET['date_range'] ) ) : '30_days';
-			$from_date  = '';
-			$to_date    = '';
-			$label      = '';
+			$range = \DevDiggers\Framework\Includes\DDFW_Dashboard_Data::get_date_range();
 
-			switch ( $range_type ) {
-				case 'today':
-					$from_date = current_time( 'Y-m-d' );
-					$to_date   = current_time( 'Y-m-d' );
-					$label     = __( 'Today', 'wallet-management-for-woocommerce' );
-					break;
-				case '7_days':
-					$from_date = gmdate( 'Y-m-d', strtotime( 'monday this week' ) );
-					$to_date   = current_time( 'Y-m-d' );
-					$label     = __( 'This Week', 'wallet-management-for-woocommerce' );
-					break;
-				case 'last_week':
-					$from_date = gmdate( 'Y-m-d', strtotime( 'monday last week' ) );
-					$to_date   = gmdate( 'Y-m-d', strtotime( 'sunday last week' ) );
-					$label     = __( 'Last Week', 'wallet-management-for-woocommerce' );
-					break;
-				case '30_days':
-					$from_date = current_time( 'Y-m-01' );
-					$to_date   = current_time( 'Y-m-d' );
-					$label     = __( 'This Month', 'wallet-management-for-woocommerce' );
-					break;
-				case 'last_month':
-					$from_date = gmdate( 'Y-m-01', strtotime( 'first day of last month' ) );
-					$to_date   = gmdate( 'Y-m-t', strtotime( 'last day of last month' ) );
-					$label     = __( 'Last Month', 'wallet-management-for-woocommerce' );
-					break;
-				case '90_days':
-					$from_date = gmdate( 'Y-m-d', strtotime( '-90 days' ) );
-					$to_date   = current_time( 'Y-m-d' );
-					$label     = __( 'Last 3 Months', 'wallet-management-for-woocommerce' );
-					break;
-				case '180_days':
-					$from_date = gmdate( 'Y-m-d', strtotime( '-180 days' ) );
-					$to_date   = current_time( 'Y-m-d' );
-					$label     = __( 'Last 6 Months', 'wallet-management-for-woocommerce' );
-					break;
-				case 'year_to_date':
-					$from_date = current_time( 'Y-01-01' );
-					$to_date   = current_time( 'Y-m-d' );
-					$label     = __( 'Year to Date', 'wallet-management-for-woocommerce' );
-					break;
-				case 'last_year':
-					$from_date = gmdate( 'Y-01-01', strtotime( 'last year' ) );
-					$to_date   = gmdate( 'Y-12-31', strtotime( 'last year' ) );
-					$label     = __( 'Last Year', 'wallet-management-for-woocommerce' );
-					break;
-				case 'all_time':
-					$from_date = '2020-01-01'; // Fallback start date
-					$to_date   = current_time( 'Y-m-d' );
-					$label     = __( 'All Time', 'wallet-management-for-woocommerce' );
-					break;
-				case 'custom':
-					// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only dashboard custom date filter.
-					$from_date = ! empty( $_GET['from_date'] ) ? sanitize_text_field( wp_unslash( $_GET['from_date'] ) ) : current_time( 'Y-m-d', false, strtotime( '-30 days' ) );
-					// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only dashboard custom date filter.
-					$to_date   = ! empty( $_GET['to_date'] ) ? sanitize_text_field( wp_unslash( $_GET['to_date'] ) ) : current_time( 'Y-m-d' );
-					$label     = sprintf( '%s to %s', $from_date, $to_date );
-					break;
-				default:
-					$from_date = current_time( 'Y-m-d', false, strtotime( '-30 days' ) );
-					$to_date   = current_time( 'Y-m-d' );
-					$label     = __( 'Last 30 Days', 'wallet-management-for-woocommerce' );
-					break;
-			}
+			// Preserve the legacy 'type' alias used internally by this helper.
+			$range['type'] = $range['key'];
 
-			return [
-				'from'  => $from_date,
-				'to'    => $to_date,
-				'label' => $label,
-				'type'  => $range_type,
-			];
+			return $range;
 		}
 
 		/**
