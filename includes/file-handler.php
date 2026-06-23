@@ -198,8 +198,6 @@ if ( ! class_exists( 'DDWCWM_File_Handler' ) ) {
 				'credit_reason'                       => get_option( '_ddwcwm_credit_reason', $credit_reason ),
 				'debit_reason'                        => get_option( '_ddwcwm_debit_reason', $debit_reason ),
 				'cashback_messages_enabled'           => get_option( '_ddwcwm_cashback_messages_enabled', 'yes' ),
-				'cashback_shop_page_message'          => get_option( '_ddwcwm_cashback_shop_page_message', 'Get {cashback_amount} cashback on this product.' ),
-				'cashback_product_page_message'       => get_option( '_ddwcwm_cashback_product_page_message', 'Get {cashback_amount} cashback on this product.' ),
 				'cashback_cart_page_message'          => get_option( '_ddwcwm_cashback_cart_page_message', 'You will earn {total_cashback} total cashback on this order.' ),
 				'cashback_checkout_page_message'      => get_option( '_ddwcwm_cashback_checkout_page_message', 'You will earn {total_cashback} total cashback on this order.' ),
 				'cashback_view_order_page_message'     => get_option( '_ddwcwm_cashback_view_order_page_message', 'You have earned {total_cashback} cashback on this order.' ),

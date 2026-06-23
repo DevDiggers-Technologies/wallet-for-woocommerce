@@ -77,18 +77,18 @@ if ( ! class_exists( 'DDWCWM_Rules_Helper' ) ) {
 		public function ddwcwm_prepare_cashback_rule_data_and_save( $data, $old_cashback_rules ) {
 			$error = 0;
 
-			// General Rules args
+			// Cart cashback rule args. Free supports cart-total cashback only, so there is
+			// no rule "basis" dimension; every rule applies to the cart subtotal.
             $amount_from     = ! empty( $data[ 'ddwcwm_amount_from' ] ) ? array_map( 'sanitize_text_field', wp_unslash( $data[ 'ddwcwm_amount_from' ] ) ) : [];
             $amount_to       = ! empty( $data[ 'ddwcwm_amount_to' ] ) ? array_map( 'sanitize_text_field', wp_unslash( $data[ 'ddwcwm_amount_to' ] ) ) : [];
-            $basis           = ! empty( $data[ 'ddwcwm_rule_basis' ] ) ? array_map( 'sanitize_text_field', wp_unslash( $data[ 'ddwcwm_rule_basis' ] ) ) : [];
             $cashback_type   = ! empty( $data[ 'ddwcwm_cashback_type' ] ) ? array_map( 'sanitize_text_field', wp_unslash( $data[ 'ddwcwm_cashback_type' ] ) ) : [];
             $cashback_amount = ! empty( $data[ 'ddwcwm_cashback_amount' ] ) ? array_map( 'sanitize_text_field', wp_unslash( $data[ 'ddwcwm_cashback_amount' ] ) ) : [];
             $rule_status     = ! empty( $data[ 'ddwcwm_rule_status' ] ) ? array_map( 'sanitize_text_field', wp_unslash( $data[ 'ddwcwm_rule_status' ] ) ) : [];
 
-			if ( ! empty( $amount_from ) && ! empty( $amount_to ) && ! empty( $basis ) && ! empty( $cashback_type ) && ! empty( $cashback_amount ) && ! empty( $rule_status ) ) {
+			if ( ! empty( $amount_from ) && ! empty( $amount_to ) && ! empty( $cashback_type ) && ! empty( $cashback_amount ) && ! empty( $rule_status ) ) {
 				$number_of_cashback_rules = count( $amount_from );
 
-				if ( ( count( $amount_from ) + count( $amount_to ) + count( $basis ) + count( $cashback_type ) + count( $cashback_amount ) + count( $rule_status ) ) === ( $number_of_cashback_rules * 6 ) ) {
+				if ( ( count( $amount_from ) + count( $amount_to ) + count( $cashback_type ) + count( $cashback_amount ) + count( $rule_status ) ) === ( $number_of_cashback_rules * 5 ) ) {
 					foreach ( $amount_from as $amount_from_id => $amount_from_value ) {
 						if ( $amount_from[ $amount_from_id ] > $amount_to[ $amount_from_id ] ) {
 							$this->error_helper->set_error_code( 1 );
@@ -102,10 +102,6 @@ if ( ! class_exists( 'DDWCWM_Rules_Helper' ) ) {
 						}
 
 						foreach ( $amount_from as $key => $amount_from_val ) {
-							if ( $basis[ $amount_from_id ] != $basis[ $key ] ) {
-								continue;
-							}
-
 							if ( $amount_from_id === $key ) {
 								continue;
 							}
@@ -150,9 +146,6 @@ if ( ! class_exists( 'DDWCWM_Rules_Helper' ) ) {
 						$cashback_rule_data = [
 							'amount_from'     => $amount_from[ $cashback_id ],
 							'amount_to'       => $amount_to[ $cashback_id ],
-							// Free supports cart-total cashback only. The basis is forced to
-							// 'cart' so Pro bases (topup, etc.) cannot be saved via direct POST.
-							'basis'           => 'cart',
 							'cashback_type'   => $cashback_type[ $cashback_id ],
 							'cashback_amount' => $cashback_amount[ $cashback_id ],
 							'status'          => $rule_status[ $cashback_id ],
@@ -220,8 +213,7 @@ if ( ! class_exists( 'DDWCWM_Rules_Helper' ) ) {
 		public function ddwcwm_get_all_cashback_rules() {
 			global $wpdb;
 
-			// Free supports cart-total cashback rules only.
-			$rules = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM %i WHERE basis = %s", $this->rules_table, 'cart' ), ARRAY_A ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+			$rules = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM %i", $this->rules_table ), ARRAY_A ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 
 			return apply_filters( 'ddwcwm_modify_rules_data', $rules );
 		}
@@ -285,7 +277,7 @@ if ( ! class_exists( 'DDWCWM_Rules_Helper' ) ) {
 
 				// General Cart Rule (the only cashback type available in Free).
 				if ( ! $wallet_pro_exists ) {
-					$cashback_data = $wpdb->get_row( $wpdb->prepare( "SELECT cashback_amount, cashback_type FROM %i WHERE basis=%s AND status=%s AND %f >= amount_from AND amount_to >= %f", $this->rules_table, 'cart', 'enabled', $cart_subtotal, $cart_subtotal ), ARRAY_A ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+					$cashback_data = $wpdb->get_row( $wpdb->prepare( "SELECT cashback_amount, cashback_type FROM %i WHERE status=%s AND %f >= amount_from AND amount_to >= %f", $this->rules_table, 'enabled', $cart_subtotal, $cart_subtotal ), ARRAY_A ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 
 					if ( ! empty( $cashback_data ) ) {
 						if ( $cashback_data[ 'cashback_type' ] == 'fixed' ) {
@@ -352,7 +344,7 @@ if ( ! class_exists( 'DDWCWM_Rules_Helper' ) ) {
 
 				// General Cart Rule (the only cashback type available in Free).
 				if ( ! $wallet_pro_exists ) {
-					$cashback_data = $wpdb->get_row( $wpdb->prepare( "SELECT cashback_amount, cashback_type FROM %i WHERE basis=%s AND status=%s AND %f >= amount_from AND amount_to >= %f", $this->rules_table, 'cart', 'enabled', $order_subtotal, $order_subtotal ), ARRAY_A ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+					$cashback_data = $wpdb->get_row( $wpdb->prepare( "SELECT cashback_amount, cashback_type FROM %i WHERE status=%s AND %f >= amount_from AND amount_to >= %f", $this->rules_table, 'enabled', $order_subtotal, $order_subtotal ), ARRAY_A ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 
 					if ( ! empty( $cashback_data ) ) {
 						if ( $cashback_data[ 'cashback_type' ] == 'fixed' ) {

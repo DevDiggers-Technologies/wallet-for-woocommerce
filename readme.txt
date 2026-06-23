@@ -147,19 +147,25 @@ Use the [DevDiggers contact page](https://devdiggers.com/contact/) or the plugin
 
 == External services ==
 
-This plugin connects to DevDiggers (the plugin author) for the two optional features below. No data leaves your site unless you actively use one of them.
+This plugin relies on the following third-party services provided by DevDiggers (https://devdiggers.com). These connections only happen inside the WordPress admin area and are described below so you know exactly what is sent, why, and when.
 
-1. DevDiggers newsletter subscription
-What it does: If you choose to subscribe from the plugin's onboarding/dashboard, the email address you type and your site URL are sent to DevDiggers to add you to the newsletter list.
-When: Only when you submit the subscribe form. No data is sent otherwise.
-Service endpoint: https://devdiggers.com/
-Terms: https://devdiggers.com/terms-and-conditions/ | Privacy: https://devdiggers.com/privacy-policy/
+**1. DevDiggers extensions directory**
 
-2. DevDiggers extensions list
-What it does: On the plugin's "DevDiggers extensions" admin screen, the plugin requests the public list of DevDiggers plugins so it can display them. No personal data is sent.
-When: Only when you open that admin screen.
-Service endpoint: https://devdiggers.com/wp-json/ddwcs/v1/plugins
-Terms: https://devdiggers.com/terms-and-conditions/ | Privacy: https://devdiggers.com/privacy-policy/
+* What it is: A read-only API on devdiggers.com that returns the public list of DevDiggers WooCommerce extensions.
+* What it is used for: To display available DevDiggers extensions on the plugin's "Extensions" admin page.
+* When data is sent: Only when a logged-in administrator opens the "Extensions" admin page. The response is cached for 24 hours, so the request is not repeated on every page load.
+* What data is sent: A standard outbound HTTP request only (your server's IP address and a plugin user-agent string, as with any web request). No personal data and no store data are sent.
+* Endpoint: https://devdiggers.com/wp-json/ddwcs/v1/plugins
+
+**2. Newsletter subscription (optional)**
+
+* What it is: A contact/newsletter endpoint on devdiggers.com.
+* What it is used for: To add your email address to the DevDiggers newsletter, only if you explicitly choose to subscribe.
+* When data is sent: Only when an administrator submits the optional newsletter form in the plugin dashboard. Nothing is sent automatically.
+* What data is sent: The email address you enter and your site URL.
+* Endpoint: https://devdiggers.com/
+
+These services are provided by DevDiggers. By using them you agree to the DevDiggers Terms and Conditions (https://devdiggers.com/terms-and-conditions/) and Privacy Policy (https://devdiggers.com/privacy-policy/).
 
 == Source code and build tools ==
 

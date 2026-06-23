@@ -26,7 +26,7 @@ if ( ! class_exists( 'DDWCWM_Front_Ajax_Functions' ) ) {
 		 * @return void
 		 */
 		public function ddwcwm_send_money_to_user() {
-			if ( check_ajax_referer( 'ddwcwm-nonce', 'ddwcwm_nonce', false ) ) {
+			if ( check_ajax_referer( 'ddwcwm-nonce', 'ddwcwm_nonce', false ) && is_user_logged_in() ) {
 				$email  = ! empty( $_POST['ddwcwm_email'] ) && is_email( wp_unslash( $_POST['ddwcwm_email'] ) ) ? sanitize_email( wp_unslash( $_POST['ddwcwm_email'] ) ) : '';
 				$amount = ! empty( $_POST['ddwcwm_amount'] ) ? floatval( wp_unslash( $_POST['ddwcwm_amount'] ) ) : '';
 				$note   = ! empty( $_POST['ddwcwm_note'] ) ? sanitize_textarea_field( wp_unslash( $_POST['ddwcwm_note'] ) ) : '';

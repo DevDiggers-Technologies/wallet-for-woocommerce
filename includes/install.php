@@ -46,8 +46,6 @@ if ( ! class_exists( 'DDWCWM_Install' ) ) {
 			$cashback_rules_table = $wpdb->prefix . 'ddwcwm_cashback_rules';
 			$cashback_rules = "CREATE TABLE $cashback_rules_table (
 				`id` bigint(20) NOT NULL AUTO_INCREMENT,
-				`basis` varchar(20) NOT NULL,
-				`basis_value` varchar(100),
 				`amount_from` varchar(20),
 				`amount_to` varchar(20),
 				`cashback_type` varchar(20),

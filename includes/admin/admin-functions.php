@@ -30,6 +30,14 @@ if ( ! class_exists( 'DDWCWM_Admin_Functions' ) ) {
 				'sanitize_callback' => [ $this, 'ddwcwm_sanitize_array_option' ],
 			];
 
+			$sanitize_color = [
+				'sanitize_callback' => [ $this, 'ddwcwm_sanitize_color_option' ],
+			];
+
+			$sanitize_number = [
+				'sanitize_callback' => [ $this, 'ddwcwm_sanitize_number_option' ],
+			];
+
 			register_setting( 'ddwcwm-general-configuration-fields', '_ddwcwm_enabled', $sanitize );
 			register_setting( 'ddwcwm-general-configuration-fields', '_ddwcwm_registration_credit', $sanitize );
 			register_setting( 'ddwcwm-general-configuration-fields', '_ddwcwm_topup_order_status', $sanitize );
@@ -52,22 +60,21 @@ if ( ! class_exists( 'DDWCWM_Admin_Functions' ) ) {
 
 			// Pro-only: cashback credit delay is not registered in Free.
 			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_exclude_sale_products', $sanitize );
-			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_max_cap', $sanitize );
-			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_min_order_value', $sanitize );
+			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_max_cap', $sanitize_number );
+			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_min_order_value', $sanitize_number );
 			// Pro-only cashback controls (first-order cashback, expiry, expiry reminders)
 			// are intentionally NOT registered in Free.
 
 			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_messages_enabled', $sanitize );
-			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_shop_page_message', $sanitize );
-			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_product_page_message', $sanitize );
+			// Shop/product page cashback messages depend on Pro product/category rules and are not registered in Free.
 			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_cart_page_message', $sanitize );
 			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_checkout_page_message', $sanitize );
 			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_view_order_page_message', $sanitize );
 			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_order_received_page_message', $sanitize );
-			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_message_text_color', $sanitize );
-			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_message_bg_color', $sanitize );
-			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_message_border_color', $sanitize );
-			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_message_font_size', $sanitize );
+			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_message_text_color', $sanitize_color );
+			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_message_bg_color', $sanitize_color );
+			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_message_border_color', $sanitize_color );
+			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_message_font_size', $sanitize_number );
 
 			register_setting( 'ddwcwm-emails-configuration-fields', '_ddwcwm_email_settings', $sanitize_array );
 			register_setting( 'ddwcwm-emails-configuration-fields', '_ddwcwm_credit_reason', $sanitize_array );
@@ -75,24 +82,24 @@ if ( ! class_exists( 'DDWCWM_Admin_Functions' ) ) {
 
 			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_icons_enabled', $sanitize );
 			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_icons_wrapper_enabled', $sanitize );
-			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_icon_size', $sanitize );
+			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_icon_size', $sanitize_number );
 			// Pro-only: custom component icon uploads (available balance, send, request,
 			// withdraw, refer, top-up) are not registered in Free.
-			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_theme_color', $sanitize );
-			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_icon_color', $sanitize );
-			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_icon_wrapper_background_color', $sanitize );
-			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_card_background_color', $sanitize );
-			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_card_border_color', $sanitize );
-			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_card_text_color', $sanitize );
-			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_card_value_color', $sanitize );
-			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_layout_table_header_text_color', $sanitize );
-			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_layout_table_header_background_color', $sanitize );
-			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_success_message_text_color', $sanitize );
-			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_success_message_background_color', $sanitize );
-			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_error_message_text_color', $sanitize );
-			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_error_message_background_color', $sanitize );
-			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_info_message_text_color', $sanitize );
-			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_info_message_background_color', $sanitize );
+			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_theme_color', $sanitize_color );
+			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_icon_color', $sanitize_color );
+			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_icon_wrapper_background_color', $sanitize_color );
+			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_card_background_color', $sanitize_color );
+			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_card_border_color', $sanitize_color );
+			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_card_text_color', $sanitize_color );
+			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_card_value_color', $sanitize_color );
+			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_layout_table_header_text_color', $sanitize_color );
+			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_layout_table_header_background_color', $sanitize_color );
+			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_success_message_text_color', $sanitize_color );
+			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_success_message_background_color', $sanitize_color );
+			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_error_message_text_color', $sanitize_color );
+			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_error_message_background_color', $sanitize_color );
+			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_info_message_text_color', $sanitize_color );
+			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_info_message_background_color', $sanitize_color );
 		}
 
 		/**
@@ -118,6 +125,49 @@ if ( ! class_exists( 'DDWCWM_Admin_Functions' ) ) {
 			}
 
 			return map_deep( wp_unslash( $input ), 'wp_kses_post' );
+		}
+
+		/**
+		 * Sanitize a colour option (hex, rgb(a) or hsl(a)).
+		 *
+		 * @param string $input Colour value.
+		 * @return string
+		 */
+		public function ddwcwm_sanitize_color_option( $input ) {
+			$input = trim( sanitize_text_field( wp_unslash( $input ) ) );
+			if ( '' === $input ) {
+				return '';
+			}
+
+			$hex = sanitize_hex_color( $input );
+			if ( ! empty( $hex ) ) {
+				return $hex;
+			}
+
+			if ( preg_match( '/^(?:rgba?|hsla?)\([0-9.,%\s]+\)$/i', $input ) || preg_match( '/^[a-z]+$/i', $input ) ) {
+				return $input;
+			}
+
+			return '';
+		}
+
+		/**
+		 * Sanitize a numeric option (decimal amount or size).
+		 *
+		 * @param string $input Numeric value.
+		 * @return string
+		 */
+		public function ddwcwm_sanitize_number_option( $input ) {
+			$input = sanitize_text_field( wp_unslash( $input ) );
+			if ( '' === $input || ! is_numeric( $input ) ) {
+				return '';
+			}
+
+			if ( function_exists( 'wc_format_decimal' ) ) {
+				return (string) wc_format_decimal( $input );
+			}
+
+			return (string) floatval( $input );
 		}
 	}
 }

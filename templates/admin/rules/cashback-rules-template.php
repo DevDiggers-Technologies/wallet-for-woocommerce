@@ -120,7 +120,6 @@ if ( ! class_exists( 'DDWCWM_Cashback_Rules_Template' ) ) {
 										<option value="fixed" <?php echo esc_attr( $cart_rule_data[ 'cashback_type' ] === 'fixed' ? 'selected="selected"' : '' ); ?>><?php /* translators: %s: currency symbol. */ printf( esc_html__( 'Fixed (%s)', 'wallet-management-for-woocommerce' ), esc_html( get_woocommerce_currency_symbol() ) ); ?></option>
 										<option value="percentage" <?php echo esc_attr( $cart_rule_data[ 'cashback_type' ] === 'percentage' ? 'selected="selected"' : '' ); ?>><?php esc_html_e( 'Percentage (%)', 'wallet-management-for-woocommerce' ); ?></option>
 									</select>
-									<input type="hidden" name="ddwcwm_rule_basis[<?php echo esc_attr( $cart_rule_data[ 'id' ] ); ?>]" value="cart" />
 								</td>
 								<td class="forminp forminp-text">
 									<input type="number" name="ddwcwm_cashback_amount[<?php echo esc_attr( $cart_rule_data[ 'id' ] ); ?>]" class="regular-text ddwcwm-width-100 ddwcwm-cashback-amount" placeholder="<?php esc_attr_e( 'Enter Cashback Amount', 'wallet-management-for-woocommerce' ); ?>" min="0" step="0.01" value="<?php echo esc_attr( $cart_rule_data[ 'cashback_amount' ] ); ?>" autocomplete="off" />
@@ -225,7 +224,6 @@ if ( ! class_exists( 'DDWCWM_Cashback_Rules_Template' ) ) {
 							<option value="fixed"><?php /* translators: %s: currency symbol. */ printf( esc_html__( 'Fixed (%s)', 'wallet-management-for-woocommerce' ), esc_html( get_woocommerce_currency_symbol() ) ); ?></option>
 							<option value="percentage"><?php esc_html_e( 'Percentage (%)', 'wallet-management-for-woocommerce' ); ?></option>
 						</select>
-						<input type="hidden" name="ddwcwm_rule_basis[{{data.key}}]" value="cart" />
 					</td>
 					<td class="forminp forminp-text">
 						<div class="ddfw-table-column-flex">

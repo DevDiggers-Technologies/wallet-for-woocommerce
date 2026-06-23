@@ -435,9 +435,7 @@ if ( ! class_exists( 'DDWCWM_Admin_Dashboard' ) ) {
 
 				wp_enqueue_style( 'ddwcwm-admin-style', DDWCWM_PLUGIN_URL . 'assets/css/admin.css', [ DDFW_Assets::$framework_css_handle ], filemtime( DDWCWM_PLUGIN_FILE . 'assets/css/admin.css' ) );
 
-				wp_enqueue_style( 'select2', plugins_url() . '/woocommerce/assets/css/select2.css', [], defined( 'WC_VERSION' ) ? WC_VERSION : '1.0.0' );
-
-				wp_enqueue_script( 'ddwcwm-admin-script', DDWCWM_PLUGIN_URL . 'assets/js/admin.js', [ DDFW_Assets::$framework_js_handle, 'select2', 'wp-util' ], filemtime( DDWCWM_PLUGIN_FILE . 'assets/js/admin.js' ), true );
+				wp_enqueue_script( 'ddwcwm-admin-script', DDWCWM_PLUGIN_URL . 'assets/js/admin.js', [ DDFW_Assets::$framework_js_handle, 'wp-util' ], filemtime( DDWCWM_PLUGIN_FILE . 'assets/js/admin.js' ), true );
 
 				wp_localize_script( 'ddwcwm-admin-script', 'ddwcwmAdminObj', [
 					'ajax' => [

@@ -108,26 +108,34 @@ if ( ! class_exists( 'DDWCWM_Front_Functions' ) ) {
 				],
 			] );
 
-			// Add dynamic layout CSS
-			$custom_css = "
-				:root {
-					--ddwcwm-theme-color: {$ddwcwm_wallet['theme_color']};
-					--ddwcwm-success-text: {$ddwcwm_wallet['success_message_text_color']};
-					--ddwcwm-success-bg: {$ddwcwm_wallet['success_message_background_color']};
-					--ddwcwm-error-text: {$ddwcwm_wallet['error_message_text_color']};
-					--ddwcwm-error-bg: {$ddwcwm_wallet['error_message_background_color']};
-					--ddwcwm-info-text: {$ddwcwm_wallet['info_message_text_color']};
-					--ddwcwm-info-bg: {$ddwcwm_wallet['info_message_background_color']};
-					--ddwcwm-card-bg: {$ddwcwm_wallet['details_card_background_color']};
-					--ddwcwm-card-border: {$ddwcwm_wallet['details_card_border_color']};
-					--ddwcwm-card-text: {$ddwcwm_wallet['details_card_text_color']};
-					--ddwcwm-card-value: {$ddwcwm_wallet['details_card_value_color']};
-					--ddwcwm-icon-color: {$ddwcwm_wallet['details_icon_color']};
-					--ddwcwm-icon-wrapper-bg: {$ddwcwm_wallet['details_icon_wrapper_background_color']};
-					--ddwcwm-table-header-bg: {$ddwcwm_wallet['layout_table_header_background_color']};
-					--ddwcwm-table-header-text: {$ddwcwm_wallet['layout_table_header_text_color']};
+			// Add dynamic layout CSS. Each value is a user-configured colour, so it is
+			// run through a CSS-colour sanitizer before being interpolated and output.
+			$css_vars = [
+				'--ddwcwm-theme-color'      => $this->ddwcwm_sanitize_css_color( $ddwcwm_wallet['theme_color'] ),
+				'--ddwcwm-success-text'     => $this->ddwcwm_sanitize_css_color( $ddwcwm_wallet['success_message_text_color'] ),
+				'--ddwcwm-success-bg'       => $this->ddwcwm_sanitize_css_color( $ddwcwm_wallet['success_message_background_color'] ),
+				'--ddwcwm-error-text'       => $this->ddwcwm_sanitize_css_color( $ddwcwm_wallet['error_message_text_color'] ),
+				'--ddwcwm-error-bg'         => $this->ddwcwm_sanitize_css_color( $ddwcwm_wallet['error_message_background_color'] ),
+				'--ddwcwm-info-text'        => $this->ddwcwm_sanitize_css_color( $ddwcwm_wallet['info_message_text_color'] ),
+				'--ddwcwm-info-bg'          => $this->ddwcwm_sanitize_css_color( $ddwcwm_wallet['info_message_background_color'] ),
+				'--ddwcwm-card-bg'          => $this->ddwcwm_sanitize_css_color( $ddwcwm_wallet['details_card_background_color'] ),
+				'--ddwcwm-card-border'      => $this->ddwcwm_sanitize_css_color( $ddwcwm_wallet['details_card_border_color'] ),
+				'--ddwcwm-card-text'        => $this->ddwcwm_sanitize_css_color( $ddwcwm_wallet['details_card_text_color'] ),
+				'--ddwcwm-card-value'       => $this->ddwcwm_sanitize_css_color( $ddwcwm_wallet['details_card_value_color'] ),
+				'--ddwcwm-icon-color'       => $this->ddwcwm_sanitize_css_color( $ddwcwm_wallet['details_icon_color'] ),
+				'--ddwcwm-icon-wrapper-bg'  => $this->ddwcwm_sanitize_css_color( $ddwcwm_wallet['details_icon_wrapper_background_color'] ),
+				'--ddwcwm-table-header-bg'  => $this->ddwcwm_sanitize_css_color( $ddwcwm_wallet['layout_table_header_background_color'] ),
+				'--ddwcwm-table-header-text' => $this->ddwcwm_sanitize_css_color( $ddwcwm_wallet['layout_table_header_text_color'] ),
+			];
+
+			$custom_css = ':root {';
+			foreach ( $css_vars as $var => $value ) {
+				if ( '' !== $value ) {
+					$custom_css .= esc_attr( $var ) . ':' . esc_attr( $value ) . ';';
 				}
-			";
+			}
+			$custom_css .= '}';
+
 			wp_add_inline_style( 'ddwcwm-front-style', $custom_css );
 		}
 
@@ -399,97 +407,30 @@ if ( ! class_exists( 'DDWCWM_Front_Functions' ) ) {
 		}
 
 		/**
-		 * Display cashback message on shop page function
+		 * Sanitize a user-configured CSS colour value before it is interpolated into
+		 * inline CSS. Accepts hex, rgb(a) and hsl(a); falls back to an empty string.
 		 *
-		 * @return void
+		 * @param string $value Raw colour value.
+		 * @return string
 		 */
-		public function ddwcwm_display_cashback_message_on_shop_page() {
-			global $product, $ddwcwm_wallet;
-			$message = $ddwcwm_wallet['cashback_shop_page_message'];
-			if ( empty( $message ) ) {
-				return;
+		public function ddwcwm_sanitize_css_color( $value ) {
+			$value = trim( (string) $value );
+			if ( '' === $value ) {
+				return '';
 			}
 
-			$cashback_amount = $this->ddwcwm_get_product_potential_cashback( $product->get_id() );
-			if ( $cashback_amount <= 0 ) {
-				return;
+			$hex = sanitize_hex_color( $value );
+			if ( ! empty( $hex ) ) {
+				return $hex;
 			}
 
-			$style = $this->ddwcwm_get_cashback_message_style();
-			?>
-			<div class="ddwcwm-cashback-info-message" style="<?php echo esc_attr( $style ); ?>">
-				<?php echo wp_kses_post( str_replace( '{cashback_amount}', wc_price( $cashback_amount ), esc_html( $message ) ) ); ?>
-			</div>
-			<?php
-		}
-
-		/**
-		 * Display cashback message on product page function
-		 *
-		 * @return void
-		 */
-		public function ddwcwm_display_cashback_message_on_product_page() {
-			global $product, $ddwcwm_wallet;
-			$message = $ddwcwm_wallet['cashback_product_page_message'];
-			if ( empty( $message ) ) {
-				return;
+			// Allow rgb()/rgba()/hsl()/hsla() and named colours, stripping anything
+			// that could break out of the CSS value context.
+			if ( preg_match( '/^(?:rgba?|hsla?)\([0-9.,%\s]+\)$/i', $value ) || preg_match( '/^[a-z]+$/i', $value ) ) {
+				return $value;
 			}
 
-			$cashback_amount = $this->ddwcwm_get_product_potential_cashback( $product->get_id() );
-			if ( $cashback_amount <= 0 ) {
-				return;
-			}
-
-			$style = $this->ddwcwm_get_cashback_message_style();
-			?>
-			<div class="ddwcwm-cashback-info-message" style="<?php echo esc_attr( $style ); ?>">
-				<?php echo wp_kses_post( str_replace( '{cashback_amount}', wc_price( $cashback_amount ), esc_html( $message ) ) ); ?>
-			</div>
-			<?php
-		}
-
-		/**
-		 * Get product potential cashback helper function
-		 *
-		 * @param int $product_id
-		 * @return float
-		 */
-		public function ddwcwm_get_product_potential_cashback( $product_id ) {
-			$product = wc_get_product( $product_id );
-			if ( ! $product ) {
-				return 0;
-			}
-
-			// Product Rule
-			$product_cashback_data = get_post_meta( $product_id, '_ddwcwm_cashback_data', true );
-			if ( ! empty( $product_cashback_data ) ) {
-				$cashback_type   = $product_cashback_data['cashback_type'];
-				$cashback_amount = $product_cashback_data['cashback_amount'];
-				if ( $cashback_type == 'fixed' ) {
-					return floatval( $cashback_amount );
-				} else {
-					return floatval( $product->get_price() ) * floatval( $cashback_amount ) / 100;
-				}
-			}
-
-			// Category Rule
-			$product_categories = wp_get_post_terms( $product_id, 'product_cat', [ 'fields' => 'ids' ] );
-			if ( ! empty( $product_categories ) ) {
-				foreach ( $product_categories as $category_id ) {
-					$category_cashback_data = get_term_meta( $category_id, '_ddwcwm_cashback_data', true );
-					if ( ! empty( $category_cashback_data ) ) {
-						$cashback_type   = $category_cashback_data['cashback_type'];
-						$cashback_amount = $category_cashback_data['cashback_amount'];
-						if ( $cashback_type == 'fixed' ) {
-							return floatval( $cashback_amount );
-						} else {
-							return floatval( $product->get_price() ) * floatval( $cashback_amount ) / 100;
-						}
-					}
-				}
-			}
-
-			return 0;
+			return '';
 		}
 
 		/**

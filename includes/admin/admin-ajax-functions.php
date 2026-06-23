@@ -26,6 +26,10 @@ if ( ! class_exists( 'DDWCWM_Admin_Ajax_Functions' ) ) {
         public function ddwcwm_do_ajax_users_import() {
             check_ajax_referer( 'ddwcwm-users-import', 'security' );
 
+            if ( ! current_user_can( 'manage_woocommerce' ) ) {
+                wp_send_json_error( [ 'message' => esc_html__( 'Insufficient permissions.', 'wallet-management-for-woocommerce' ) ] );
+            }
+
             if ( ! isset( $_POST[ 'file' ] ) ) { // PHPCS: input var ok.
                 wp_send_json_error( [ 'message' => esc_html__( 'Insufficient privileges to import products.', 'wallet-management-for-woocommerce' ) ] );
             }
@@ -87,6 +91,10 @@ if ( ! class_exists( 'DDWCWM_Admin_Ajax_Functions' ) ) {
 		public function ddwcwm_batch_manual_transaction() {
 			try {
 				check_ajax_referer( 'ddwcwm-nonce', 'ddwcwm_nonce' );
+
+				if ( ! current_user_can( 'manage_woocommerce' ) ) {
+					wp_send_json_error( [ 'error' => esc_html__( 'Insufficient permissions.', 'wallet-management-for-woocommerce' ) ] );
+				}
 
 				// Handle both array and JSON string formats. IDs are integers, so a
 				// text-field sanitize keeps the JSON intact while stripping anything unsafe.
@@ -191,6 +199,10 @@ if ( ! class_exists( 'DDWCWM_Admin_Ajax_Functions' ) ) {
 		 */
 		public function ddwcwm_get_all_users() {
 			check_ajax_referer( 'ddwcwm-nonce', 'ddwcwm_nonce' );
+
+			if ( ! current_user_can( 'manage_woocommerce' ) ) {
+				wp_send_json_error( [ 'error' => esc_html__( 'Insufficient permissions.', 'wallet-management-for-woocommerce' ) ] );
+			}
 
 			global $wpdb;
 			$users = $wpdb->get_results(  // phpcs:ignore WordPress.DB.DirectDatabaseQuery
