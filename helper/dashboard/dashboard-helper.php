@@ -2,7 +2,7 @@
 /**
  * Dashboard Helper
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -293,7 +293,7 @@ if ( ! class_exists( 'DDWCWM_Dashboard_Helper' ) ) {
 			foreach ( $results as $row ) {
 				$data[] = [
 					'id'           => $row->id,
-					'display_name' => $row->display_name ?: __( 'Guest', 'wallet-management-for-woocommerce' ),
+					'display_name' => $row->display_name ?: __( 'Guest', 'devdiggers-wallet-for-woocommerce' ),
 					'user_email'   => $row->user_email,
 					'amount'       => (float) $row->amount,
 					'type'         => $row->type,

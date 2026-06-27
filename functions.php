@@ -1,15 +1,15 @@
 <?php
 /**
- * Plugin Name: Wallet Management for WooCommerce
+ * Plugin Name: DevDiggers Wallet for WooCommerce
  * Description: Allows customers to use virtual money on the store to top up their wallet, pay for orders, earn cart cashback and track every transaction.
  * Plugin URI: https://devdiggers.com/product/woocommerce-wallet-management/
  * Author: DevDiggers
  * Author URI: https://devdiggers.com/
  * Version: 1.0.0
- * Text Domain: wallet-management-for-woocommerce
+ * Text Domain: devdiggers-wallet-for-woocommerce
  * Domain Path: /i18n
  * WC requires at least: 9.0.0
- * WC tested up to: 10.8.1
+ * WC tested up to: 10.9.1
  * WP requires at least: 6.2.0
  * WP tested up to: 7.0
  * DevDiggersPrefix: ddwcwm
@@ -17,10 +17,10 @@
  * License: GPLv3 or later
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  */
 
-// ddwcwm: DevDiggers Wallet Management for WooCommerce.
+// ddwcwm: DevDiggers DevDiggers Wallet for WooCommerce.
 use DDWCWalletManagement\Includes;
 
 defined( 'ABSPATH' ) || exit();
@@ -83,7 +83,7 @@ if ( ! class_exists( 'DDWCWM_Free_Init' ) ) {
 						<p>
 							<?php
 							/* translators: %1$s for a opening tag and %2$s for a closing tag */
-							echo sprintf( esc_html__( 'Wallet Management for WooCommerce is activated but not effective. It requires %1$sWooCommerce Plugin%2$s in order to use its functionalities.', 'wallet-management-for-woocommerce' ), '<a href="' . esc_url( '//wordpress.org/plugins/woocommerce/' ) . '" target="_blank">', '</a>' );
+							echo sprintf( esc_html__( 'DevDiggers Wallet for WooCommerce is activated but not effective. It requires %1$sWooCommerce Plugin%2$s in order to use its functionalities.', 'devdiggers-wallet-for-woocommerce' ), '<a href="' . esc_url( '//wordpress.org/plugins/woocommerce/' ) . '" target="_blank">', '</a>' );
 							?>
 						</p>
 					</div>
@@ -97,9 +97,9 @@ if ( ! class_exists( 'DDWCWM_Free_Init' ) ) {
 				// Initialize review notice if framework is available.
 				if ( class_exists( '\DevDiggers\Framework\Includes\DDFW_Review_Notice' ) ) {
 					new \DevDiggers\Framework\Includes\DDFW_Review_Notice( [
-						'plugin_name'   => esc_html__( 'Wallet Management for WooCommerce', 'wallet-management-for-woocommerce' ),
+						'plugin_name'   => esc_html__( 'DevDiggers Wallet for WooCommerce', 'devdiggers-wallet-for-woocommerce' ),
 						'plugin_prefix' => 'ddwcwm',
-						'review_url'    => 'https://wordpress.org/support/plugin/wallet-management-for-woocommerce/reviews/#new-post',
+						'review_url'    => 'https://wordpress.org/support/plugin/devdiggers-wallet-for-woocommerce/reviews/#new-post',
 					] );
 				}
 			}
@@ -131,13 +131,13 @@ if ( ! class_exists( 'DDWCWM_Free_Init' ) ) {
 		public function ddwcwm_plugin_settings_link( $links ) {
 			ob_start();
 			?>
-			<a href="<?php echo esc_url( admin_url( 'admin.php?page=ddwcwm-dashboard' ) ); ?>"><?php esc_html_e( 'Dashboard', 'wallet-management-for-woocommerce' ); ?></a>
+			<a href="<?php echo esc_url( admin_url( 'admin.php?page=ddwcwm-dashboard' ) ); ?>"><?php esc_html_e( 'Dashboard', 'devdiggers-wallet-for-woocommerce' ); ?></a>
 			|
-			<a href="<?php echo esc_url( admin_url( 'admin.php?page=ddwcwm-dashboard&menu=configuration' ) ); ?>"><?php esc_html_e( 'Configuration', 'wallet-management-for-woocommerce' ); ?></a>
+			<a href="<?php echo esc_url( admin_url( 'admin.php?page=ddwcwm-dashboard&menu=configuration' ) ); ?>"><?php esc_html_e( 'Configuration', 'devdiggers-wallet-for-woocommerce' ); ?></a>
 			|
-			<a href="<?php echo esc_url( admin_url( 'admin.php?page=ddwcwm-dashboard&setup-wizard=true' ) ); ?>"><?php esc_html_e( 'Setup Wizard', 'wallet-management-for-woocommerce' ); ?></a>
+			<a href="<?php echo esc_url( admin_url( 'admin.php?page=ddwcwm-dashboard&setup-wizard=true' ) ); ?>"><?php esc_html_e( 'Setup Wizard', 'devdiggers-wallet-for-woocommerce' ); ?></a>
 			|
-			<a href="//devdiggers.com/product/woocommerce-wallet-management/" style="color: #0256ff; font-weight: bold;" target="_blank"><?php esc_html_e( 'Upgrade to Pro', 'wallet-management-for-woocommerce' ); ?></a>
+			<a href="//devdiggers.com/product/woocommerce-wallet-management/" style="color: #0256ff; font-weight: bold;" target="_blank"><?php esc_html_e( 'Upgrade to Pro', 'devdiggers-wallet-for-woocommerce' ); ?></a>
 			<?php
 			$new_links = ob_get_clean();
 			array_unshift( $links, $new_links );
@@ -154,9 +154,9 @@ if ( ! class_exists( 'DDWCWM_Free_Init' ) ) {
 		public function ddwcwm_plugin_row_meta( $links, $file ) {
 			if ( plugin_basename( __FILE__ ) === $file ) {
 				$row_meta = [
-					'support'       => '<a href="//devdiggers.com/contact/" aria-label="' . esc_attr__( 'Support', 'wallet-management-for-woocommerce' ) . '">' . esc_html__( 'Support', 'wallet-management-for-woocommerce' ) . '</a>',
-					'documentation' => '<a href="//devdiggers.com/woocommerce-wallet-management/" aria-label="' . esc_attr__( 'Documentation', 'wallet-management-for-woocommerce' ) . '">' . esc_html__( 'Documentation', 'wallet-management-for-woocommerce' ) . '</a>',
-					'review'        => '<a href="//wordpress.org/support/plugin/wallet-management-for-woocommerce/reviews/#new-post" target="_blank" title="' . esc_attr__( 'Review', 'wallet-management-for-woocommerce' ) . '" aria-label="' . esc_attr__( 'Review', 'wallet-management-for-woocommerce' ) . '"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 32" height="10"><path d="M16 26.534L6.111 32 8 20.422l-8-8.2 11.056-1.688L16 0l4.944 10.534L32 12.223l-8 8.2L25.889 32zm40 0L46.111 32 48 20.422l-8-8.2 11.056-1.688L56 0l4.944 10.534L72 12.223l-8 8.2L65.889 32zm40 0L86.111 32 88 20.422l-8-8.2 11.056-1.688L96 0l4.944 10.534L112 12.223l-8 8.2L105.889 32zm40 0L126.111 32 128 20.422l-8-8.2 11.056-1.688L136 0l4.944 10.534L152 12.223l-8 8.2L145.889 32zm40 0L166.111 32 168 20.422l-8-8.2 11.056-1.688L176 0l4.944 10.534L192 12.223l-8 8.2L185.889 32z" fill="#F5A623" fill-rule="evenodd"/></svg></a>',
+					'support'       => '<a href="//devdiggers.com/contact/" aria-label="' . esc_attr__( 'Support', 'devdiggers-wallet-for-woocommerce' ) . '">' . esc_html__( 'Support', 'devdiggers-wallet-for-woocommerce' ) . '</a>',
+					'documentation' => '<a href="//devdiggers.com/woocommerce-wallet-management/" aria-label="' . esc_attr__( 'Documentation', 'devdiggers-wallet-for-woocommerce' ) . '">' . esc_html__( 'Documentation', 'devdiggers-wallet-for-woocommerce' ) . '</a>',
+					'review'        => '<a href="//wordpress.org/support/plugin/devdiggers-wallet-for-woocommerce/reviews/#new-post" target="_blank" title="' . esc_attr__( 'Review', 'devdiggers-wallet-for-woocommerce' ) . '" aria-label="' . esc_attr__( 'Review', 'devdiggers-wallet-for-woocommerce' ) . '"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 32" height="10"><path d="M16 26.534L6.111 32 8 20.422l-8-8.2 11.056-1.688L16 0l4.944 10.534L32 12.223l-8 8.2L25.889 32zm40 0L46.111 32 48 20.422l-8-8.2 11.056-1.688L56 0l4.944 10.534L72 12.223l-8 8.2L65.889 32zm40 0L86.111 32 88 20.422l-8-8.2 11.056-1.688L96 0l4.944 10.534L112 12.223l-8 8.2L105.889 32zm40 0L126.111 32 128 20.422l-8-8.2 11.056-1.688L136 0l4.944 10.534L152 12.223l-8 8.2L145.889 32zm40 0L166.111 32 168 20.422l-8-8.2 11.056-1.688L176 0l4.944 10.534L192 12.223l-8 8.2L185.889 32z" fill="#F5A623" fill-rule="evenodd"/></svg></a>',
 				];
 				$links = array_merge( $links, $row_meta );
 			}

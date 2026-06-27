@@ -84,10 +84,10 @@ if ( ! class_exists( 'DDFW_Assets' ) ) {
 							'ajaxNonce' => wp_create_nonce( 'ddfw-nonce' ),
 						],
 						'i18n' => [
-							'subscribing'         => esc_html__( 'Subscribing...', 'wallet-management-for-woocommerce' ),
-							'subscribe'           => esc_html__( 'Subscribe', 'wallet-management-for-woocommerce' ),
-							'subscriptionSuccess' => esc_html__( 'Thank you for subscribing!', 'wallet-management-for-woocommerce' ),
-							'subscriptionError'   => esc_html__( 'An error occurred. Please try again.', 'wallet-management-for-woocommerce' ),
+							'subscribing'         => esc_html__( 'Subscribing...', 'devdiggers-wallet-for-woocommerce' ),
+							'subscribe'           => esc_html__( 'Subscribe', 'devdiggers-wallet-for-woocommerce' ),
+							'subscriptionSuccess' => esc_html__( 'Thank you for subscribing!', 'devdiggers-wallet-for-woocommerce' ),
+							'subscriptionError'   => esc_html__( 'An error occurred. Please try again.', 'devdiggers-wallet-for-woocommerce' ),
 						],
 					]
 				);
@@ -105,12 +105,12 @@ if ( ! class_exists( 'DDFW_Assets' ) ) {
 						'ajaxNonce' => wp_create_nonce( 'ddfw-nonce' ),
 					],
 					'i18n' => [
-						'selectImage'         => esc_html__( 'Select Image', 'wallet-management-for-woocommerce' ),
-						'useImage'            => esc_html__( 'Use Image', 'wallet-management-for-woocommerce' ),
-						'pleaseEnter'         => esc_html__( 'Please enter', 'wallet-management-for-woocommerce' ),
-						'moreCharacter'       => esc_html__( 'or more character', 'wallet-management-for-woocommerce' ),
-						'noResult'            => esc_html__( 'No result Found', 'wallet-management-for-woocommerce' ),
-						'deleteConfirm'       => esc_html__( 'Are you sure you want to delete?', 'wallet-management-for-woocommerce' ),
+						'selectImage'         => esc_html__( 'Select Image', 'devdiggers-wallet-for-woocommerce' ),
+						'useImage'            => esc_html__( 'Use Image', 'devdiggers-wallet-for-woocommerce' ),
+						'pleaseEnter'         => esc_html__( 'Please enter', 'devdiggers-wallet-for-woocommerce' ),
+						'moreCharacter'       => esc_html__( 'or more character', 'devdiggers-wallet-for-woocommerce' ),
+						'noResult'            => esc_html__( 'No result Found', 'devdiggers-wallet-for-woocommerce' ),
+						'deleteConfirm'       => esc_html__( 'Are you sure you want to delete?', 'devdiggers-wallet-for-woocommerce' ),
 					],
 					'site_url'          => site_url(),
 					'devdiggers_plugin' => $devdiggers_plugin,

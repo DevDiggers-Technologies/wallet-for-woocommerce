@@ -2,7 +2,7 @@
 /**
  * Admin ajax hooks class
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 

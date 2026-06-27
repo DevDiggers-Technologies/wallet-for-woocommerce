@@ -2,7 +2,7 @@
 /**
  * Dynamically loads classes
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  */
 
 namespace DDWCWalletManagement\Inc;
@@ -53,7 +53,7 @@ function ddwcwm_namespace_class_autoload( $class_name ) {
 	} else {
 		wp_die(
 			/* translators: %s: file path that could not be loaded. */
-			sprintf( esc_html__( 'The file attempting to be loaded at %s does not exist.', 'wallet-management-for-woocommerce' ), esc_html( $filepath ) )
+			sprintf( esc_html__( 'The file attempting to be loaded at %s does not exist.', 'devdiggers-wallet-for-woocommerce' ), esc_html( $filepath ) )
 		);
 	}
 }

@@ -16,7 +16,7 @@ $defaults = [
 	'description'         => '',
 	'list_features'       => [],
 	'upgrade_url'         => 'https://devdiggers.com/woocommerce-extensions/',
-	'upgrade_button_text' => esc_html__( 'Upgrade to Pro', 'wallet-management-for-woocommerce' ),
+	'upgrade_button_text' => esc_html__( 'Upgrade to Pro', 'devdiggers-wallet-for-woocommerce' ),
 ];
 
 $args = wp_parse_args( $args, $defaults );

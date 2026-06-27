@@ -2,7 +2,7 @@
 /**
  * This file handles all admin dashboard functionalities.
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -60,94 +60,94 @@ if ( ! class_exists( 'DDWCWM_Admin_Dashboard' ) ) {
 				<path d="M20 16C20 16.5523 19.5523 17 19 17H13C12.4477 17 12 16.5523 12 16C12 15.4477 12.4477 15 13 15H19C19.5523 15 20 15.4477 20 16Z" fill="white"/>
 				<circle cx="21" cy="16" r="2" fill="white" fill-opacity="0.2"/>
 			</svg>
-			<?php esc_html_e( 'Wallet', 'wallet-management-for-woocommerce' ); ?>
+			<?php esc_html_e( 'Wallet', 'devdiggers-wallet-for-woocommerce' ); ?>
 			<?php
 			$plugin_name = ob_get_clean();
 
 			$args = [
-				'page_title'              => esc_html__( 'Wallet Management for WooCommerce', 'wallet-management-for-woocommerce' ),
-				'menu_title'              => esc_html__( 'Wallet', 'wallet-management-for-woocommerce' ),
+				'page_title'              => esc_html__( 'DevDiggers Wallet for WooCommerce', 'devdiggers-wallet-for-woocommerce' ),
+				'menu_title'              => esc_html__( 'Wallet', 'devdiggers-wallet-for-woocommerce' ),
 				'slug'                    => 'ddwcwm-dashboard',
 				'plugin_name'             => $plugin_name,
 				'upgrade_url'             => 'https://devdiggers.com/product/woocommerce-wallet-management/',
 				'screen_options_callback' => [ $this, 'ddwcwm_add_screen_options' ],
 				'menus'                   => [
 					'dashboard'         => [
-						'label'    => esc_html__( 'Dashboard', 'wallet-management-for-woocommerce' ),
+						'label'    => esc_html__( 'Dashboard', 'devdiggers-wallet-for-woocommerce' ),
 						'callback' => [ $this, 'ddwcwm_get_dashboard_template' ],
 						'layout'   => 'full-width',
 					],
 					'users'         => [
-						'label'    => esc_html__( 'Users', 'wallet-management-for-woocommerce' ),
+						'label'    => esc_html__( 'Users', 'devdiggers-wallet-for-woocommerce' ),
 						'callback' => [ $this, 'ddwcwm_get_users_template' ],
 						'layout'   => 'full-width',
 					],
 					'manual-adjustment' => [
-						'label'    => esc_html__( 'Manual Adjustment', 'wallet-management-for-woocommerce' ),
+						'label'    => esc_html__( 'Manual Adjustment', 'devdiggers-wallet-for-woocommerce' ),
 						'callback' => [ $this, 'ddwcwm_get_manual_adjustment_template' ],
 						'layout'   => 'full-width',
 					],
 					'withdraw-requests' => [
-						'label'    => esc_html__( 'Withdrawal Requests', 'wallet-management-for-woocommerce' ),
+						'label'    => esc_html__( 'Withdrawal Requests', 'devdiggers-wallet-for-woocommerce' ),
 						'callback' => [ $this, 'ddwcwm_get_withdraw_requests_template' ],
 						'layout'   => 'full-width',
 					],
 					'transactions'      => [
-						'label'    => esc_html__( 'Transactions', 'wallet-management-for-woocommerce' ),
+						'label'    => esc_html__( 'Transactions', 'devdiggers-wallet-for-woocommerce' ),
 						'callback' => [ $this, 'ddwcwm_get_transactions_template' ],
 						'layout'   => 'full-width',
 					],
 					'cashback-rules'   => [
-						'label'    => esc_html__( 'Cashback Rules', 'wallet-management-for-woocommerce' ),
+						'label'    => esc_html__( 'Cashback Rules', 'devdiggers-wallet-for-woocommerce' ),
 						'callback' => [ $this, 'ddwcwm_get_cashback_rules_template' ],
 						'layout'   => 'full-width',
 					],
 					'configuration'     => [
-						'label'    => esc_html__( 'Configuration', 'wallet-management-for-woocommerce' ),
+						'label'    => esc_html__( 'Configuration', 'devdiggers-wallet-for-woocommerce' ),
 						'layout'   => 'sidebar',
 						'tabs'     => [
 							'general'  => [
-								'label'    => esc_html__( 'General', 'wallet-management-for-woocommerce' ),
+								'label'    => esc_html__( 'General', 'devdiggers-wallet-for-woocommerce' ),
 								'icon'     => DDFW_SVG::get_svg_icon( 'general', true, [ 'size' => 18 ] ),
 								'callback' => [ $this, 'ddwcwm_get_general_configuration_template' ],
 							],
 							'withdrawals' => [
-								'label'    => esc_html__( 'Withdrawals', 'wallet-management-for-woocommerce' ),
+								'label'    => esc_html__( 'Withdrawals', 'devdiggers-wallet-for-woocommerce' ),
 								'icon'     => DDFW_SVG::get_svg_icon( 'withdrawals', true, [ 'size' => 18 ] ),
 								'callback' => [ $this, 'ddwcwm_get_withdrawals_configuration_template' ],
 							],
 							'endpoints' => [
-								'label'    => esc_html__( 'Endpoints', 'wallet-management-for-woocommerce' ),
+								'label'    => esc_html__( 'Endpoints', 'devdiggers-wallet-for-woocommerce' ),
 								'icon'     => DDFW_SVG::get_svg_icon( 'endpoints', true, [ 'size' => 18 ] ),
 								'callback' => [ $this, 'ddwcwm_get_endpoints_configuration_template' ],
 							],
 							'otp' => [
-								'label'    => esc_html__( 'OTP', 'wallet-management-for-woocommerce' ),
+								'label'    => esc_html__( 'OTP', 'devdiggers-wallet-for-woocommerce' ),
 								'icon'     => DDFW_SVG::get_svg_icon( 'otp', true, [ 'size' => 18 ] ),
 								'callback' => [ $this, 'ddwcwm_get_otp_configuration_template' ],
 							],
 							'referrals' => [
-								'label'    => esc_html__( 'Referrals', 'wallet-management-for-woocommerce' ),
+								'label'    => esc_html__( 'Referrals', 'devdiggers-wallet-for-woocommerce' ),
 								'icon'     => DDFW_SVG::get_svg_icon( 'referrals', true, [ 'size' => 18 ] ),
 								'callback' => [ $this, 'ddwcwm_get_referrals_configuration_template' ],
 							],
 							'cashbacks' => [
-								'label'    => esc_html__( 'Cashbacks', 'wallet-management-for-woocommerce' ),
+								'label'    => esc_html__( 'Cashbacks', 'devdiggers-wallet-for-woocommerce' ),
 								'icon'     => DDFW_SVG::get_svg_icon( 'cashback', true, [ 'size' => 18 ] ),
 								'callback' => [ $this, 'ddwcwm_get_cashback_configuration_template' ],
 							],
 							'emails' => [
-								'label'    => esc_html__( 'Emails', 'wallet-management-for-woocommerce' ),
+								'label'    => esc_html__( 'Emails', 'devdiggers-wallet-for-woocommerce' ),
 								'icon'     => DDFW_SVG::get_svg_icon( 'emails', true, [ 'size' => 18 ] ),
 								'callback' => [ $this, 'ddwcwm_get_emails_configuration_template' ],
 							],
 							'shortcodes' => [
-								'label'    => esc_html__( 'Shortcodes', 'wallet-management-for-woocommerce' ),
+								'label'    => esc_html__( 'Shortcodes', 'devdiggers-wallet-for-woocommerce' ),
 								'icon'     => DDFW_SVG::get_svg_icon( 'shortcodes', true, [ 'size' => 18 ] ),
 								'callback' => [ $this, 'ddwcwm_get_shortcodes_configuration_template' ],
 							],
 							'layout'  => [
-								'label'    => esc_html__( 'Layout', 'wallet-management-for-woocommerce' ),
+								'label'    => esc_html__( 'Layout', 'devdiggers-wallet-for-woocommerce' ),
 								'icon'     => DDFW_SVG::get_svg_icon( 'layout', true, [ 'size' => 18 ] ),
 								'callback' => [ $this, 'ddwcwm_get_layout_configuration_template' ],
 							],
@@ -170,7 +170,7 @@ if ( ! class_exists( 'DDWCWM_Admin_Dashboard' ) ) {
 			$current_menu = ! empty( $_GET['menu'] ) ? sanitize_title( wp_unslash( $_GET['menu'] ) ) : 'dashboard';
 
 			$args = [
-				'label'    => esc_html__( 'Results Per Page', 'wallet-management-for-woocommerce' ),
+				'label'    => esc_html__( 'Results Per Page', 'devdiggers-wallet-for-woocommerce' ),
 				'default'  => 20,
 				'hidden'   => 'id',
 				'sanitize' => 'intval',
@@ -220,10 +220,10 @@ if ( ! class_exists( 'DDWCWM_Admin_Dashboard' ) ) {
 				$paged = ! empty( $_GET['paged'] ) ? sanitize_text_field( wp_unslash( $_GET['paged'] ) ) : '';
 				?>
 				<div class="wrap">
-					<h1 class="wp-heading-inline"><?php esc_html_e( 'Users', 'wallet-management-for-woocommerce' ); ?></h1>
-					<a href="<?php echo esc_url( admin_url( 'admin.php?page=' . $page . '&menu=manual-adjustment' ) ); ?>" class="page-title-action button"><?php esc_html_e( 'Manual Adjustment', 'wallet-management-for-woocommerce' ); ?></a>
-					<a href="<?php echo esc_url( admin_url( "admin.php?page={$page}&menu={$menu}&action=ddwcwm-users-import" ) ); ?>" class="page-title-action button"><?php esc_html_e( 'Import', 'wallet-management-for-woocommerce' ); ?></a>
-					<button class="page-title-action button ddfw-upgrade-to-pro-tag-wrapper" title="<?php esc_attr_e( 'Exporting wallet data to CSV is available in the Pro version.', 'wallet-management-for-woocommerce' ); ?>"><?php esc_html_e( 'Export', 'wallet-management-for-woocommerce' ); ?></button>
+					<h1 class="wp-heading-inline"><?php esc_html_e( 'Users', 'devdiggers-wallet-for-woocommerce' ); ?></h1>
+					<a href="<?php echo esc_url( admin_url( 'admin.php?page=' . $page . '&menu=manual-adjustment' ) ); ?>" class="page-title-action button"><?php esc_html_e( 'Manual Adjustment', 'devdiggers-wallet-for-woocommerce' ); ?></a>
+					<a href="<?php echo esc_url( admin_url( "admin.php?page={$page}&menu={$menu}&action=ddwcwm-users-import" ) ); ?>" class="page-title-action button"><?php esc_html_e( 'Import', 'devdiggers-wallet-for-woocommerce' ); ?></a>
+					<button class="page-title-action button ddfw-upgrade-to-pro-tag-wrapper" title="<?php esc_attr_e( 'Exporting wallet data to CSV is available in the Pro version.', 'devdiggers-wallet-for-woocommerce' ); ?>"><?php esc_html_e( 'Export', 'devdiggers-wallet-for-woocommerce' ); ?></button>
 					<hr class="wp-header-end" />
 					<form method="get">
 						<input type="hidden" name="page" value="<?php echo esc_attr( $page ); ?>" />
@@ -232,7 +232,7 @@ if ( ! class_exists( 'DDWCWM_Admin_Dashboard' ) ) {
 						<?php
 						wp_nonce_field( 'ddwcwm_users_list_nonce_action', 'ddwcwm_users_list_nonce' );
 						$obj->prepare_items();
-						$obj->search_box( esc_html__( 'Search', 'wallet-management-for-woocommerce' ), 'search-id' );
+						$obj->search_box( esc_html__( 'Search', 'devdiggers-wallet-for-woocommerce' ), 'search-id' );
 						$obj->display();
 						?>
 					</form>
@@ -258,13 +258,13 @@ if ( ! class_exists( 'DDWCWM_Admin_Dashboard' ) ) {
 		public function ddwcwm_get_withdraw_requests_template() {
 			ddfw_upgrade_to_pro_section( [
 				'image_url'     => DDWCWM_PLUGIN_URL . 'assets/images/pro-pages/withdrawal-requests.webp',
-				'heading'       => esc_html__( 'Withdrawal Requests is a Pro feature', 'wallet-management-for-woocommerce' ),
-				'description'   => esc_html__( 'Let customers request to withdraw their wallet balance and review, approve or cancel those requests from here.', 'wallet-management-for-woocommerce' ),
+				'heading'       => esc_html__( 'Withdrawal Requests is a Pro feature', 'devdiggers-wallet-for-woocommerce' ),
+				'description'   => esc_html__( 'Let customers request to withdraw their wallet balance and review, approve or cancel those requests from here.', 'devdiggers-wallet-for-woocommerce' ),
 				'list_features' => [
-					esc_html__( 'Customer wallet withdrawal requests', 'wallet-management-for-woocommerce' ),
-					esc_html__( 'Approve (mark as paid) or cancel requests', 'wallet-management-for-woocommerce' ),
-					esc_html__( 'Fixed or percentage withdrawal charges', 'wallet-management-for-woocommerce' ),
-					esc_html__( 'Minimum and maximum withdrawal limits', 'wallet-management-for-woocommerce' ),
+					esc_html__( 'Customer wallet withdrawal requests', 'devdiggers-wallet-for-woocommerce' ),
+					esc_html__( 'Approve (mark as paid) or cancel requests', 'devdiggers-wallet-for-woocommerce' ),
+					esc_html__( 'Fixed or percentage withdrawal charges', 'devdiggers-wallet-for-woocommerce' ),
+					esc_html__( 'Minimum and maximum withdrawal limits', 'devdiggers-wallet-for-woocommerce' ),
 				],
 				'upgrade_url'   => 'https://devdiggers.com/product/woocommerce-wallet-management/',
 			] );
@@ -281,7 +281,7 @@ if ( ! class_exists( 'DDWCWM_Admin_Dashboard' ) ) {
 				<?php
 				$obj = new Admin\Transactions\DDWCWM_Transactions_List_Template();
 				?>
-				<h1 class="wp-heading-inline"><?php esc_html_e( 'Transactions', 'wallet-management-for-woocommerce' ); ?></h1>
+				<h1 class="wp-heading-inline"><?php esc_html_e( 'Transactions', 'devdiggers-wallet-for-woocommerce' ); ?></h1>
 				<hr class="wp-header-end" />
 				<form method="get">
 					<input type="hidden" name="page" value="<?php echo isset( $_REQUEST[ 'page' ] ) ? esc_attr( sanitize_text_field( wp_unslash( $_REQUEST[ 'page' ] ) ) ) : ''; ?>" />
@@ -290,7 +290,7 @@ if ( ! class_exists( 'DDWCWM_Admin_Dashboard' ) ) {
 					<?php
 					wp_nonce_field( 'ddwcwm_transactions_list_nonce_action', 'ddwcwm_transactions_list_nonce' );
 					$obj->prepare_items();
-					$obj->search_box( esc_html__( 'Search', 'wallet-management-for-woocommerce' ), 'search-id' );
+					$obj->search_box( esc_html__( 'Search', 'devdiggers-wallet-for-woocommerce' ), 'search-id' );
 					$obj->display();
 					?>
 				</form>
@@ -405,14 +405,14 @@ if ( ! class_exists( 'DDWCWM_Admin_Dashboard' ) ) {
 							'ajaxNonce' => wp_create_nonce( 'ddwcwm-nonce' ),
 						],
 						'i18n' => [
-							'noRowsImported'    => esc_html__( 'No rows imported.', 'wallet-management-for-woocommerce' ),
-							'allRowsImported'   => esc_html__( 'All rows imported.', 'wallet-management-for-woocommerce' ),
-							'processingImport'  => esc_html__( 'Processing import...', 'wallet-management-for-woocommerce' ),
-							'importError'       => esc_html__( 'Import error occurred', 'wallet-management-for-woocommerce' ),
-							'mapUserIdentifier' => esc_html__( 'Please map at least one of ID, Username, or Email to identify users.', 'wallet-management-for-woocommerce' ),
-							'mapBalanceField'   => esc_html__( 'Please map the Wallet Balance field.', 'wallet-management-for-woocommerce' ),
-							'unknownError'      => esc_html__( 'Unknown error occurred', 'wallet-management-for-woocommerce' ),
-							'ajaxError'         => esc_html__( 'AJAX error:', 'wallet-management-for-woocommerce' ),
+							'noRowsImported'    => esc_html__( 'No rows imported.', 'devdiggers-wallet-for-woocommerce' ),
+							'allRowsImported'   => esc_html__( 'All rows imported.', 'devdiggers-wallet-for-woocommerce' ),
+							'processingImport'  => esc_html__( 'Processing import...', 'devdiggers-wallet-for-woocommerce' ),
+							'importError'       => esc_html__( 'Import error occurred', 'devdiggers-wallet-for-woocommerce' ),
+							'mapUserIdentifier' => esc_html__( 'Please map at least one of ID, Username, or Email to identify users.', 'devdiggers-wallet-for-woocommerce' ),
+							'mapBalanceField'   => esc_html__( 'Please map the Wallet Balance field.', 'devdiggers-wallet-for-woocommerce' ),
+							'unknownError'      => esc_html__( 'Unknown error occurred', 'devdiggers-wallet-for-woocommerce' ),
+							'ajaxError'         => esc_html__( 'AJAX error:', 'devdiggers-wallet-for-woocommerce' ),
 						],
 					]
 				);
@@ -470,7 +470,7 @@ if ( ! class_exists( 'DDWCWM_Admin_Dashboard' ) ) {
 				// Change the footer text.
 				$footer_text = sprintf(
 					/* translators: %s for a tag */
-					esc_html__( 'If you really like our plugin, please leave us a %s rating, we\'ll really appreciate it.', 'wallet-management-for-woocommerce' ), '<a href="//devdiggers.com/product/woocommerce-wallet-management/#reviews" target="_blank" title="' . esc_attr__( 'Review', 'wallet-management-for-woocommerce' ) . '" aria-label="' . esc_attr__( 'Review', 'wallet-management-for-woocommerce' ) . '"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 32" height="10"><path d="M16 26.534L6.111 32 8 20.422l-8-8.2 11.056-1.688L16 0l4.944 10.534L32 12.223l-8 8.2L25.889 32zm40 0L46.111 32 48 20.422l-8-8.2 11.056-1.688L56 0l4.944 10.534L72 12.223l-8 8.2L65.889 32zm40 0L86.111 32 88 20.422l-8-8.2 11.056-1.688L96 0l4.944 10.534L112 12.223l-8 8.2L105.889 32zm40 0L126.111 32 128 20.422l-8-8.2 11.056-1.688L136 0l4.944 10.534L152 12.223l-8 8.2L145.889 32zm40 0L166.111 32 168 20.422l-8-8.2 11.056-1.688L176 0l4.944 10.534L192 12.223l-8 8.2L185.889 32z" fill="#F5A623" fill-rule="evenodd"/></svg></a>'
+					esc_html__( 'If you really like our plugin, please leave us a %s rating, we\'ll really appreciate it.', 'devdiggers-wallet-for-woocommerce' ), '<a href="//devdiggers.com/product/woocommerce-wallet-management/#reviews" target="_blank" title="' . esc_attr__( 'Review', 'devdiggers-wallet-for-woocommerce' ) . '" aria-label="' . esc_attr__( 'Review', 'devdiggers-wallet-for-woocommerce' ) . '"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 32" height="10"><path d="M16 26.534L6.111 32 8 20.422l-8-8.2 11.056-1.688L16 0l4.944 10.534L32 12.223l-8 8.2L25.889 32zm40 0L46.111 32 48 20.422l-8-8.2 11.056-1.688L56 0l4.944 10.534L72 12.223l-8 8.2L65.889 32zm40 0L86.111 32 88 20.422l-8-8.2 11.056-1.688L96 0l4.944 10.534L112 12.223l-8 8.2L105.889 32zm40 0L126.111 32 128 20.422l-8-8.2 11.056-1.688L136 0l4.944 10.534L152 12.223l-8 8.2L145.889 32zm40 0L166.111 32 168 20.422l-8-8.2 11.056-1.688L176 0l4.944 10.534L192 12.223l-8 8.2L185.889 32z" fill="#F5A623" fill-rule="evenodd"/></svg></a>'
 				);
 			}
 

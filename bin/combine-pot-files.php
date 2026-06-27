@@ -2,7 +2,7 @@
 /**
  * Command line script for merging two .pot files.
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  */
 
 /**

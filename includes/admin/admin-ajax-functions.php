@@ -2,7 +2,7 @@
 /**
  * Admin ajax functions class
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -27,11 +27,11 @@ if ( ! class_exists( 'DDWCWM_Admin_Ajax_Functions' ) ) {
             check_ajax_referer( 'ddwcwm-users-import', 'security' );
 
             if ( ! current_user_can( 'manage_woocommerce' ) ) {
-                wp_send_json_error( [ 'message' => esc_html__( 'Insufficient permissions.', 'wallet-management-for-woocommerce' ) ] );
+                wp_send_json_error( [ 'message' => esc_html__( 'Insufficient permissions.', 'devdiggers-wallet-for-woocommerce' ) ] );
             }
 
             if ( ! isset( $_POST[ 'file' ] ) ) { // PHPCS: input var ok.
-                wp_send_json_error( [ 'message' => esc_html__( 'Insufficient privileges to import products.', 'wallet-management-for-woocommerce' ) ] );
+                wp_send_json_error( [ 'message' => esc_html__( 'Insufficient privileges to import products.', 'devdiggers-wallet-for-woocommerce' ) ] );
             }
 
             $file   = sanitize_text_field( wp_unslash( $_POST[ 'file' ] ) );
@@ -64,7 +64,7 @@ if ( ! class_exists( 'DDWCWM_Admin_Ajax_Functions' ) ) {
                     [
                         'position'   => 'done',
                         'percentage' => 100,
-                        'url'        => add_query_arg( [ '_wpnonce' => wp_create_nonce( 'ddwcwm-csv-importer' ) ], admin_url( 'admin.php?page=wallet-management-for-woocommerce&action=ddwcwm-users-import&step=done' ) ),
+                        'url'        => add_query_arg( [ '_wpnonce' => wp_create_nonce( 'ddwcwm-csv-importer' ) ], admin_url( 'admin.php?page=devdiggers-wallet-for-woocommerce&action=ddwcwm-users-import&step=done' ) ),
                         'imported'   => count( $results[ 'imported' ] ),
                         'failed'     => count( $results[ 'failed' ] ),
                         'skipped'    => count( $results[ 'skipped' ] ),
@@ -93,7 +93,7 @@ if ( ! class_exists( 'DDWCWM_Admin_Ajax_Functions' ) ) {
 				check_ajax_referer( 'ddwcwm-nonce', 'ddwcwm_nonce' );
 
 				if ( ! current_user_can( 'manage_woocommerce' ) ) {
-					wp_send_json_error( [ 'error' => esc_html__( 'Insufficient permissions.', 'wallet-management-for-woocommerce' ) ] );
+					wp_send_json_error( [ 'error' => esc_html__( 'Insufficient permissions.', 'devdiggers-wallet-for-woocommerce' ) ] );
 				}
 
 				// Handle both array and JSON string formats. IDs are integers, so a
@@ -102,7 +102,7 @@ if ( ! class_exists( 'DDWCWM_Admin_Ajax_Functions' ) ) {
 				$user_ids     = '' !== $raw_user_ids ? json_decode( $raw_user_ids, true ) : [];
 
 				if ( ! is_array( $user_ids ) ) {
-					wp_send_json_error( [ 'error' => esc_html__( 'Invalid user_ids format.', 'wallet-management-for-woocommerce' ) ] );
+					wp_send_json_error( [ 'error' => esc_html__( 'Invalid user_ids format.', 'devdiggers-wallet-for-woocommerce' ) ] );
 				}
 
 				$user_ids    = array_map( 'intval', $user_ids );
@@ -111,7 +111,7 @@ if ( ! class_exists( 'DDWCWM_Admin_Ajax_Functions' ) ) {
 				$reason      = sanitize_text_field( wp_unslash( $_POST['reason'] ?? '' ) );
 
 				if ( empty( $user_ids ) || empty( $action_type ) || $amount <= 0 ) {
-					wp_send_json_error( [ 'error' => esc_html__( 'Invalid parameters.', 'wallet-management-for-woocommerce' ) ] );
+					wp_send_json_error( [ 'error' => esc_html__( 'Invalid parameters.', 'devdiggers-wallet-for-woocommerce' ) ] );
 				}
 
 				$user_helper        = new DDWCWM_Users_Helper();
@@ -153,13 +153,13 @@ if ( ! class_exists( 'DDWCWM_Admin_Ajax_Functions' ) ) {
 								$result['wallet_balance'] = wc_price( $new_wallet_amount );
 							} else {
 								$result['status'] = 'error';
-								$result['message'] = esc_html__( 'Insufficient amount to debit.', 'wallet-management-for-woocommerce' );
+								$result['message'] = esc_html__( 'Insufficient amount to debit.', 'devdiggers-wallet-for-woocommerce' );
 								$results[] = $result;
 								continue;
 							}
 						} else {
 							$result['status'] = 'error';
-							$result['message'] = esc_html__( 'Invalid action type', 'wallet-management-for-woocommerce' );
+							$result['message'] = esc_html__( 'Invalid action type', 'devdiggers-wallet-for-woocommerce' );
 							$results[] = $result;
 							continue;
 						}
@@ -180,7 +180,7 @@ if ( ! class_exists( 'DDWCWM_Admin_Ajax_Functions' ) ) {
 
 					} catch ( \Exception $e ) {
 						$result['status'] = 'error';
-						$result['message'] = esc_html__( 'Error processing user: ', 'wallet-management-for-woocommerce' ) . $e->getMessage();
+						$result['message'] = esc_html__( 'Error processing user: ', 'devdiggers-wallet-for-woocommerce' ) . $e->getMessage();
 					}
 
 					$results[] = $result;
@@ -188,7 +188,7 @@ if ( ! class_exists( 'DDWCWM_Admin_Ajax_Functions' ) ) {
 
 				wp_send_json_success( [ 'results' => $results ] );
 			} catch ( \Exception $e ) {
-				wp_send_json_error( [ 'error' => esc_html__( 'Internal error: ', 'wallet-management-for-woocommerce' ) . $e->getMessage() ] );
+				wp_send_json_error( [ 'error' => esc_html__( 'Internal error: ', 'devdiggers-wallet-for-woocommerce' ) . $e->getMessage() ] );
 			}
 		}
 
@@ -201,7 +201,7 @@ if ( ! class_exists( 'DDWCWM_Admin_Ajax_Functions' ) ) {
 			check_ajax_referer( 'ddwcwm-nonce', 'ddwcwm_nonce' );
 
 			if ( ! current_user_can( 'manage_woocommerce' ) ) {
-				wp_send_json_error( [ 'error' => esc_html__( 'Insufficient permissions.', 'wallet-management-for-woocommerce' ) ] );
+				wp_send_json_error( [ 'error' => esc_html__( 'Insufficient permissions.', 'devdiggers-wallet-for-woocommerce' ) ] );
 			}
 
 			global $wpdb;

@@ -2,7 +2,7 @@
 /**
  * Transactions helper
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -116,7 +116,7 @@ if ( ! class_exists( 'DDWCWM_Transactions_Helper' ) ) {
 					$email_heading = $ddwcwm_wallet['email_settings']['manual_adjustment']['heading'];
 					$email_subject = $ddwcwm_wallet['email_settings']['manual_adjustment']['subject'];
 					$email_message = wpautop( $ddwcwm_wallet['email_settings']['manual_adjustment']['message'] );
-					$reason        = ! empty( $data['note'] ) ? $data['note'] : esc_html__( 'Manual adjustment by admin', 'wallet-management-for-woocommerce' );
+					$reason        = ! empty( $data['note'] ) ? $data['note'] : esc_html__( 'Manual adjustment by admin', 'devdiggers-wallet-for-woocommerce' );
 				}
 			} elseif ( 'credit' === $data['type'] ) {
 				if ( ! empty( $ddwcwm_wallet['email_settings']['wallet_credited']['message'] ) ) {
@@ -155,7 +155,7 @@ if ( ! class_exists( 'DDWCWM_Transactions_Helper' ) ) {
 						
 						$sender_reason  = ! empty( $ddwcwm_wallet['debit_reason']['transfer_sent'] ) ? $ddwcwm_wallet['debit_reason']['transfer_sent'] : 'Transfer Sent';
 						if ( ! empty( $data['note'] ) ) {
-							$sender_reason .= ' - ' . esc_html__( 'Note:', 'wallet-management-for-woocommerce' ) . ' ' . $data['note'];
+							$sender_reason .= ' - ' . esc_html__( 'Note:', 'devdiggers-wallet-for-woocommerce' ) . ' ' . $data['note'];
 						}
 
 						$sender_replace = [
@@ -184,7 +184,7 @@ if ( ! class_exists( 'DDWCWM_Transactions_Helper' ) ) {
 
 					$reason = ! empty( $ddwcwm_wallet['credit_reason']['transfer_received'] ) ? $ddwcwm_wallet['credit_reason']['transfer_received'] : 'Transfer Received';
 					if ( ! empty( $data['note'] ) ) {
-						$reason .= ' - ' . esc_html__( 'Note:', 'wallet-management-for-woocommerce' ) . ' ' . $data['note'];
+						$reason .= ' - ' . esc_html__( 'Note:', 'devdiggers-wallet-for-woocommerce' ) . ' ' . $data['note'];
 					}
 				}
 			} elseif ( 'withdraw' === $data['type'] ) {
@@ -196,7 +196,7 @@ if ( ! class_exists( 'DDWCWM_Transactions_Helper' ) ) {
 					$status = $this->ddwcwm_get_transactions_translation( $data['reference'] );
 					$reason = ! empty( $ddwcwm_wallet['debit_reason']['withdrawal'] ) ? $ddwcwm_wallet['debit_reason']['withdrawal'] : 'Withdrawal';
 					if ( ! empty( $data['note'] ) ) {
-						$reason .= ' - ' . esc_html__( 'Note:', 'wallet-management-for-woocommerce' ) . ' ' . $data['note'];
+						$reason .= ' - ' . esc_html__( 'Note:', 'devdiggers-wallet-for-woocommerce' ) . ' ' . $data['note'];
 					}
 				}
 			}
@@ -317,23 +317,23 @@ if ( ! class_exists( 'DDWCWM_Transactions_Helper' ) ) {
 		 */
 		public static function ddwcwm_get_transactions_translation( $static_word ) {
             $transaction_translation = [
-				'credit'                 => esc_html__( 'Credit', 'wallet-management-for-woocommerce' ),
-				'debit'                  => esc_html__( 'Debit', 'wallet-management-for-woocommerce' ),
-				'manual_adjustment'      => esc_html__( 'Manual Adjustment', 'wallet-management-for-woocommerce' ),
-				'manual_debit'           => esc_html__( 'Manual Debit', 'wallet-management-for-woocommerce' ),
-				'manual_credit'          => esc_html__( 'Manual Credit', 'wallet-management-for-woocommerce' ),
-				'order_credit'           => esc_html__( 'Order Credit', 'wallet-management-for-woocommerce' ),
-				'order_debit'            => esc_html__( 'Order Payment', 'wallet-management-for-woocommerce' ),
-				'order_payment'          => esc_html__( 'Order Payment', 'wallet-management-for-woocommerce' ),
-				'order_cancelled_credit' => esc_html__( 'Order Cancelled Credit', 'wallet-management-for-woocommerce' ),
-				'order_cancelled_debit'  => esc_html__( 'Order Cancelled Debit', 'wallet-management-for-woocommerce' ),
-				'order_refund'           => esc_html__( 'Order Refund', 'wallet-management-for-woocommerce' ),
-				'wallet_topup'           => esc_html__( 'Wallet Topup', 'wallet-management-for-woocommerce' ),
-				'cart_cashback'          => esc_html__( 'Cart Cashback', 'wallet-management-for-woocommerce' ),
-				'topup_cashback'         => esc_html__( 'Topup Cashback', 'wallet-management-for-woocommerce' ),
-				'transfer'               => esc_html__( 'Transfer', 'wallet-management-for-woocommerce' ),
-				'wallet_transfer'        => esc_html__( 'Wallet Transfer', 'wallet-management-for-woocommerce' ),
-				'registration_credit'    => esc_html__( 'Registration Credit', 'wallet-management-for-woocommerce' ),
+				'credit'                 => esc_html__( 'Credit', 'devdiggers-wallet-for-woocommerce' ),
+				'debit'                  => esc_html__( 'Debit', 'devdiggers-wallet-for-woocommerce' ),
+				'manual_adjustment'      => esc_html__( 'Manual Adjustment', 'devdiggers-wallet-for-woocommerce' ),
+				'manual_debit'           => esc_html__( 'Manual Debit', 'devdiggers-wallet-for-woocommerce' ),
+				'manual_credit'          => esc_html__( 'Manual Credit', 'devdiggers-wallet-for-woocommerce' ),
+				'order_credit'           => esc_html__( 'Order Credit', 'devdiggers-wallet-for-woocommerce' ),
+				'order_debit'            => esc_html__( 'Order Payment', 'devdiggers-wallet-for-woocommerce' ),
+				'order_payment'          => esc_html__( 'Order Payment', 'devdiggers-wallet-for-woocommerce' ),
+				'order_cancelled_credit' => esc_html__( 'Order Cancelled Credit', 'devdiggers-wallet-for-woocommerce' ),
+				'order_cancelled_debit'  => esc_html__( 'Order Cancelled Debit', 'devdiggers-wallet-for-woocommerce' ),
+				'order_refund'           => esc_html__( 'Order Refund', 'devdiggers-wallet-for-woocommerce' ),
+				'wallet_topup'           => esc_html__( 'Wallet Topup', 'devdiggers-wallet-for-woocommerce' ),
+				'cart_cashback'          => esc_html__( 'Cart Cashback', 'devdiggers-wallet-for-woocommerce' ),
+				'topup_cashback'         => esc_html__( 'Topup Cashback', 'devdiggers-wallet-for-woocommerce' ),
+				'transfer'               => esc_html__( 'Transfer', 'devdiggers-wallet-for-woocommerce' ),
+				'wallet_transfer'        => esc_html__( 'Wallet Transfer', 'devdiggers-wallet-for-woocommerce' ),
+				'registration_credit'    => esc_html__( 'Registration Credit', 'devdiggers-wallet-for-woocommerce' ),
 			];
 
 			$transaction_translation = apply_filters( 'ddwcwm_modify_transaction_translations', $transaction_translation );

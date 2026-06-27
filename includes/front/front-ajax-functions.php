@@ -2,7 +2,7 @@
 /**
  * Front ajax functions class
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -36,7 +36,7 @@ if ( ! class_exists( 'DDWCWM_Front_Ajax_Functions' ) ) {
 				if ( empty( $email ) || empty( $amount ) ) {
 					$response = [
 						'success' => false,
-						'message' => esc_html__( 'Email or amount fields are either empty or invalid.', 'wallet-management-for-woocommerce' ),
+						'message' => esc_html__( 'Email or amount fields are either empty or invalid.', 'devdiggers-wallet-for-woocommerce' ),
 					];
 				} else {
 					$error = 0;
@@ -44,7 +44,7 @@ if ( ! class_exists( 'DDWCWM_Front_Ajax_Functions' ) ) {
 					if ( ! email_exists( $email ) ) {
 						$response = [
 							'success' => false,
-							'message' => esc_html__( 'Email you entered does not exist.', 'wallet-management-for-woocommerce' ),
+							'message' => esc_html__( 'Email you entered does not exist.', 'devdiggers-wallet-for-woocommerce' ),
 						];
 						$error = 1;
 					}
@@ -54,7 +54,7 @@ if ( ! class_exists( 'DDWCWM_Front_Ajax_Functions' ) ) {
 					if ( $user->user_email === $email ) {
 						$response = [
 							'success' => false,
-							'message' => esc_html__( 'Cannot transfer money to yourself.', 'wallet-management-for-woocommerce' ),
+							'message' => esc_html__( 'Cannot transfer money to yourself.', 'devdiggers-wallet-for-woocommerce' ),
 						];
 						$error = 1;
 					}
@@ -67,7 +67,7 @@ if ( ! class_exists( 'DDWCWM_Front_Ajax_Functions' ) ) {
 					if ( empty( $error ) && $amount > $current_user_wallet_balance ) {
 						$response = [
 							'success' => false,
-							'message' => esc_html__( 'You do not have enough wallet balance to send.', 'wallet-management-for-woocommerce' ),
+							'message' => esc_html__( 'You do not have enough wallet balance to send.', 'devdiggers-wallet-for-woocommerce' ),
 						];
 						$error = 1;
 					}
@@ -106,14 +106,14 @@ if ( ! class_exists( 'DDWCWM_Front_Ajax_Functions' ) ) {
 						$response = [
 							'success' => true,
 							/* translators: %s: transferred wallet amount. */
-							'message' => sprintf( esc_html__( 'Wallet amount %s transferred successfully.', 'wallet-management-for-woocommerce' ), wp_strip_all_tags( wc_price( apply_filters( 'ddwcwm_modify_amount_to_multi_currency', $amount ) ) ) ),
+							'message' => sprintf( esc_html__( 'Wallet amount %s transferred successfully.', 'devdiggers-wallet-for-woocommerce' ), wp_strip_all_tags( wc_price( apply_filters( 'ddwcwm_modify_amount_to_multi_currency', $amount ) ) ) ),
 						];
 					}
 				}
 			} else {
 				$response = [
 					'success' => false,
-					'message' => esc_html__( 'Security check failed!', 'wallet-management-for-woocommerce' ),
+					'message' => esc_html__( 'Security check failed!', 'devdiggers-wallet-for-woocommerce' ),
 				];
 			}
 
@@ -144,19 +144,19 @@ if ( ! class_exists( 'DDWCWM_Front_Ajax_Functions' ) ) {
 
 					$response = [
 						'success' => true,
-						'message' => esc_html__( 'Table rows fetched!', 'wallet-management-for-woocommerce' ),
+						'message' => esc_html__( 'Table rows fetched!', 'devdiggers-wallet-for-woocommerce' ),
 						'html'    => $html,
 					];
 				} else {
 					$response = [
 						'success' => false,
-						'message' => esc_html__( 'Arguments are missing.', 'wallet-management-for-woocommerce' ),
+						'message' => esc_html__( 'Arguments are missing.', 'devdiggers-wallet-for-woocommerce' ),
 					];
 				}
 			} else {
 				$response = [
 					'success' => false,
-					'message' => esc_html__( 'Security check failed!', 'wallet-management-for-woocommerce' ),
+					'message' => esc_html__( 'Security check failed!', 'devdiggers-wallet-for-woocommerce' ),
 				];
 			}
 			wp_send_json( $response );
@@ -227,11 +227,11 @@ if ( ! class_exists( 'DDWCWM_Front_Ajax_Functions' ) ) {
 									<mark class="ddwcwm-status"><?php echo esc_html( DDWCWM_Transactions_Helper::ddwcwm_get_transactions_translation( $transaction_type ) ); ?></mark>
 								</div>
 								<div class="ddwcwm-reference-tier">
-									<span class="ddwcwm-label-mini"><?php esc_html_e( 'Ref:', 'wallet-management-for-woocommerce' ); ?></span> <em><?php echo esc_html( DDWCWM_Transactions_Helper::ddwcwm_get_transactions_translation( $transaction_reference ) ); ?></em>
+									<span class="ddwcwm-label-mini"><?php esc_html_e( 'Ref:', 'devdiggers-wallet-for-woocommerce' ); ?></span> <em><?php echo esc_html( DDWCWM_Transactions_Helper::ddwcwm_get_transactions_translation( $transaction_reference ) ); ?></em>
 								</div>
 								<?php if ( ! empty( $transaction['sender_id'] ) || ! empty( $order_id ) ) : ?>
 									<div class="ddwcwm-order-tier">
-										<span class="ddwcwm-label-mini"><?php esc_html_e( 'Link:', 'wallet-management-for-woocommerce' ); ?></span> <?php 
+										<span class="ddwcwm-label-mini"><?php esc_html_e( 'Link:', 'devdiggers-wallet-for-woocommerce' ); ?></span> <?php 
 											if ( ! empty( $transaction['sender_id'] ) ) {
 												$sender_id = $transaction['sender_id'];
 												$sender = get_user_by( 'ID', $sender_id );
@@ -241,23 +241,23 @@ if ( ! class_exists( 'DDWCWM_Front_Ajax_Functions' ) ) {
 													$recipient    = get_userdata( $recipient_id );
 													if ( $recipient ) {
 														/* translators: %s: recipient email and user ID. */
-														echo sprintf( esc_html__( 'Receiver: %s', 'wallet-management-for-woocommerce' ), esc_html( $recipient->user_email . ' (#' . $recipient_id . ')' ) );
+														echo sprintf( esc_html__( 'Receiver: %s', 'devdiggers-wallet-for-woocommerce' ), esc_html( $recipient->user_email . ' (#' . $recipient_id . ')' ) );
 													} else {
 														/* translators: %d: recipient user ID. */
-														echo sprintf( esc_html__( 'Receiver: #%d', 'wallet-management-for-woocommerce' ), absint( $recipient_id ) );
+														echo sprintf( esc_html__( 'Receiver: #%d', 'devdiggers-wallet-for-woocommerce' ), absint( $recipient_id ) );
 													}
 												} else {
 													if ( $sender ) {
 														/* translators: %s: sender email and user ID. */
-														echo sprintf( esc_html__( 'Sender: %s', 'wallet-management-for-woocommerce' ), esc_html( $sender->user_email . ' (#' . $sender_id . ')' ) );
+														echo sprintf( esc_html__( 'Sender: %s', 'devdiggers-wallet-for-woocommerce' ), esc_html( $sender->user_email . ' (#' . $sender_id . ')' ) );
 													} else {
 														/* translators: %d: sender user ID. */
-														echo sprintf( esc_html__( 'Sender: #%d', 'wallet-management-for-woocommerce' ), absint( $sender_id ) );
+														echo sprintf( esc_html__( 'Sender: #%d', 'devdiggers-wallet-for-woocommerce' ), absint( $sender_id ) );
 													}
 												}
 											} elseif ( ! empty( $order_id ) && $order ) {
 												/* translators: %s: order link HTML. */
-												echo wp_kses_post( sprintf( esc_html__( 'Order: %s', 'wallet-management-for-woocommerce' ), '<a href="' . esc_url( $order->get_view_order_url() ) . '">#' . esc_html( $order_id ) . '</a>' ) );
+												echo wp_kses_post( sprintf( esc_html__( 'Order: %s', 'devdiggers-wallet-for-woocommerce' ), '<a href="' . esc_url( $order->get_view_order_url() ) . '">#' . esc_html( $order_id ) . '</a>' ) );
 											}
 										?>
 									</div>
@@ -265,14 +265,14 @@ if ( ! class_exists( 'DDWCWM_Front_Ajax_Functions' ) ) {
 							</div>
 						</td>
 						<td><div class="ddwcwm-amount-column"><?php echo wp_kses_post( $amount ); ?></div></td>
-						<td><div class="ddwcwm-note-column"><em><?php echo esc_html( $transaction[ 'note' ] ? stripslashes( $transaction[ 'note' ] ) : esc_html__( 'N/A', 'wallet-management-for-woocommerce' ) ); ?></em></div></td>
+						<td><div class="ddwcwm-note-column"><em><?php echo esc_html( $transaction[ 'note' ] ? stripslashes( $transaction[ 'note' ] ) : esc_html__( 'N/A', 'devdiggers-wallet-for-woocommerce' ) ); ?></em></div></td>
 					</tr>
 					<?php
 				}
 			} else {
 				?>
 				<tr>
-					<td colspan="4" class="ddwcwm-empty-table-row"><center><?php esc_html_e( 'No transactions made yet.', 'wallet-management-for-woocommerce' ); ?></center></td>
+					<td colspan="4" class="ddwcwm-empty-table-row"><center><?php esc_html_e( 'No transactions made yet.', 'devdiggers-wallet-for-woocommerce' ); ?></center></td>
 				</tr>
 				<?php
 			}

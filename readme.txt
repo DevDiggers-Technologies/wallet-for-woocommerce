@@ -1,11 +1,11 @@
-=== Wallet Management for WooCommerce ===
+=== DevDiggers Wallet for WooCommerce ===
 Contributors: devdiggers
 Tags: woocommerce wallet, cashback, store credit, digital wallet, wallet payment
 Requires at least: 6.2
 Tested up to: 7.0
-Requires PHP: 7.0
+Requires PHP: 7.4
 WC requires at least: 9.0
-WC tested up to: 10.8.1
+WC tested up to: 10.9.1
 Stable tag: 1.0.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -14,7 +14,7 @@ WooCommerce wallet for store credit, cashback and top-ups. Customers pay at chec
 
 == Description ==
 
-**Wallet Management for WooCommerce** gives every customer a wallet they can top up, spend at checkout, and track from their account. The wallet works as a normal WooCommerce payment gateway, so once a customer has a balance they pay for an order in one click without re-entering card details.
+**DevDiggers Wallet for WooCommerce** gives every customer a wallet they can top up, spend at checkout, and track from their account. The wallet works as a normal WooCommerce payment gateway, so once a customer has a balance they pay for an order in one click without re-entering card details.
 
 Store owners run the whole thing from the WordPress admin. You can credit or debit any customer, import balances in bulk from a CSV, set up cart based cashback, and watch balances and transactions from one dashboard. Refunds go straight back to the wallet, so a returned order does not turn into a manual payout.
 
@@ -79,7 +79,7 @@ Store owners control balances and settings from the WordPress admin.
 
 The free plugin runs the complete wallet workflow: top-up, wallet checkout, cart cashback, manual and bulk adjustments, transaction history, refunds to wallet, and the customer wallet page. Most stores can launch on the free version alone.
 
-[Wallet Management for WooCommerce Pro](https://devdiggers.com/product/woocommerce-wallet-management/) is for stores that want flexible payments, peer to peer money, payouts, and a referral and cashback rewards program.
+[DevDiggers Wallet for WooCommerce Pro](https://devdiggers.com/product/woocommerce-wallet-management/) is for stores that want flexible payments, peer to peer money, payouts, and a referral and cashback rewards program.
 
 === Flexible payments (Pro) ===
 
@@ -105,7 +105,7 @@ The free plugin runs the complete wallet workflow: top-up, wallet checkout, cart
 
 == Installation ==
 
-1. Upload the `wallet-management-for-woocommerce` folder to the `/wp-content/plugins/` directory, or install the plugin through the Plugins screen in WordPress.
+1. Upload the `devdiggers-wallet-for-woocommerce` folder to the `/wp-content/plugins/` directory, or install the plugin through the Plugins screen in WordPress.
 2. Activate the plugin through the Plugins menu in WordPress.
 3. Go to **Wallet** in the admin menu and run the setup wizard, or configure it from **Wallet > Configuration**.
 
@@ -169,7 +169,9 @@ These services are provided by DevDiggers. By using them you agree to the DevDig
 
 == Source code and build tools ==
 
-The admin and frontend JavaScript and CSS are compiled from the `src/` folder with webpack and Babel. The uncompiled source ships inside the plugin zip in the `src/` directory.
+The admin and frontend JavaScript and CSS are compiled from the `src/` folder with webpack and Babel. The complete, human-readable source code (admin, frontend, and all build configuration) is published in our public GitHub repository:
+
+https://github.com/DevDiggers-Technologies/wallet-for-woocommerce
 
 To build the assets from source:
 
@@ -182,8 +184,3 @@ The build configuration is in `webpack.config.js` and `babel.config.js`.
 
 = 1.0.0 =
 * Initial free release.
-
-== Upgrade Notice ==
-
-= 1.0.0 =
-Initial free release of Wallet Management for WooCommerce.

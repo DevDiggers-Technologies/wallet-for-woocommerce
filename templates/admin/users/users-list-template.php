@@ -2,7 +2,7 @@
 /**
  * Users List Template
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -39,8 +39,8 @@ if ( ! class_exists( 'DDWCWM_Users_List_Template' ) ) {
             $this->user_helper = new DDWCWM_Users_Helper();
 
 			parent::__construct( [
-				'singular' => esc_html__( 'User List', 'wallet-management-for-woocommerce' ),
-				'plural'   => esc_html__( 'Users List', 'wallet-management-for-woocommerce' ),
+				'singular' => esc_html__( 'User List', 'devdiggers-wallet-for-woocommerce' ),
+				'plural'   => esc_html__( 'Users List', 'devdiggers-wallet-for-woocommerce' ),
 				'ajax'     => false,
 			] );
 		}
@@ -174,7 +174,7 @@ if ( ! class_exists( 'DDWCWM_Users_List_Template' ) ) {
 		 * @return void
 		 */
 		public function no_items() {
-			esc_html_e( 'No users avaliable.', 'wallet-management-for-woocommerce' );
+			esc_html_e( 'No users avaliable.', 'devdiggers-wallet-for-woocommerce' );
 		}
 
 		/**
@@ -194,10 +194,10 @@ if ( ! class_exists( 'DDWCWM_Users_List_Template' ) ) {
 		public function get_columns() {
 			$columns = [
 				'cb'           => '<input type="checkbox" />',
-				'id'           => esc_html__( 'ID', 'wallet-management-for-woocommerce' ),
-				'user'         => esc_html__( 'User', 'wallet-management-for-woocommerce' ),
-				'balance'      => esc_html__( 'Balance', 'wallet-management-for-woocommerce' ),
-				'transactions' => esc_html__( 'Transactions', 'wallet-management-for-woocommerce' ),
+				'id'           => esc_html__( 'ID', 'devdiggers-wallet-for-woocommerce' ),
+				'user'         => esc_html__( 'User', 'devdiggers-wallet-for-woocommerce' ),
+				'balance'      => esc_html__( 'Balance', 'devdiggers-wallet-for-woocommerce' ),
+				'transactions' => esc_html__( 'Transactions', 'devdiggers-wallet-for-woocommerce' ),
 			];
 
 			return apply_filters( 'ddwcwm_users_list_columns', $columns );
@@ -255,7 +255,7 @@ if ( ! class_exists( 'DDWCWM_Users_List_Template' ) ) {
 			$avatar  = get_avatar( $user_id, 32 );
 
 			$actions = [
-				'edit'        => sprintf( '<a href="%s">%s</a>', esc_url( admin_url( 'user-edit.php?user_id=' . $user_id ) ), esc_html__( 'Edit', 'wallet-management-for-woocommerce' ) ),
+				'edit'        => sprintf( '<a href="%s">%s</a>', esc_url( admin_url( 'user-edit.php?user_id=' . $user_id ) ), esc_html__( 'Edit', 'devdiggers-wallet-for-woocommerce' ) ),
 			];
 
 			return sprintf(
@@ -309,14 +309,14 @@ if ( ! class_exists( 'DDWCWM_Users_List_Template' ) ) {
 				?>
 				<div class="alignleft actions bulkactions">
 					<select name="balance">
-						<option value=""><?php esc_html_e( 'All Users', 'wallet-management-for-woocommerce' ); ?></option>
-						<option value="yes" <?php echo esc_attr( 'yes' === $this->balance ? 'selected="selected"' : '' ); ?>><?php esc_html_e( 'Users having amount in wallet', 'wallet-management-for-woocommerce' ); ?></option>
-						<option value="no" <?php echo esc_attr( 'no' === $this->balance ? 'selected="selected"' : '' ); ?>><?php esc_html_e( 'Users don\'t have amount in wallet', 'wallet-management-for-woocommerce' ); ?></option>
+						<option value=""><?php esc_html_e( 'All Users', 'devdiggers-wallet-for-woocommerce' ); ?></option>
+						<option value="yes" <?php echo esc_attr( 'yes' === $this->balance ? 'selected="selected"' : '' ); ?>><?php esc_html_e( 'Users having amount in wallet', 'devdiggers-wallet-for-woocommerce' ); ?></option>
+						<option value="no" <?php echo esc_attr( 'no' === $this->balance ? 'selected="selected"' : '' ); ?>><?php esc_html_e( 'Users don\'t have amount in wallet', 'devdiggers-wallet-for-woocommerce' ); ?></option>
 					</select>
 
-					<input type="submit" value="<?php esc_attr_e( 'Filter', 'wallet-management-for-woocommerce' ); ?>" name="ddwcwm_filter_submit" class="button" />
+					<input type="submit" value="<?php esc_attr_e( 'Filter', 'devdiggers-wallet-for-woocommerce' ); ?>" name="ddwcwm_filter_submit" class="button" />
 
-					<a href="<?php echo esc_url( admin_url( 'admin.php?page=' . $page . '&menu=' . $menu ) ); ?>" class="button button-secondary"><?php esc_html_e( 'Reset', 'wallet-management-for-woocommerce' ); ?></a>
+					<a href="<?php echo esc_url( admin_url( 'admin.php?page=' . $page . '&menu=' . $menu ) ); ?>" class="button button-secondary"><?php esc_html_e( 'Reset', 'devdiggers-wallet-for-woocommerce' ); ?></a>
 				</div>
 				<?php
 			}

@@ -2,7 +2,7 @@
 /**
  * Common functions class
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -82,15 +82,15 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 					$user_helper      = new DDWCWM_Users_Helper();
 					$wallet_balance   = $user_helper->ddwcwm_get_user_wallet_balance( $user_id );
 					/* translators: %s: customer wallet balance amount. */
-					$whatsapp_message = sprintf( esc_html__( 'Your current wallet balance is %s', 'wallet-management-for-woocommerce' ), $this->ddwcwm_whatsapp_price( $wallet_balance ) );
+					$whatsapp_message = sprintf( esc_html__( 'Your current wallet balance is %s', 'devdiggers-wallet-for-woocommerce' ), $this->ddwcwm_whatsapp_price( $wallet_balance ) );
 				} else {
                     $permalink = get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) . '/' . get_option( 'woocommerce_myaccount_edit_account_endpoint', 'edit-account' ) . '/billing';
 
 					/* translators: %s: My Account page URL. */
-					$whatsapp_message = sprintf( esc_html__( 'Sorry, we are not able to find your number saved on your account, kindly save your phone number on the billing phone field from here - %s', 'wallet-management-for-woocommerce' ), esc_url( $permalink ) );
+					$whatsapp_message = sprintf( esc_html__( 'Sorry, we are not able to find your number saved on your account, kindly save your phone number on the billing phone field from here - %s', 'devdiggers-wallet-for-woocommerce' ), esc_url( $permalink ) );
 				}
 			} else {
-				$whatsapp_message .= "\n\n" . html_entity_decode( esc_html__( 'You can also check your wallet balance from here just by typing like "What is my wallet balance?"', 'wallet-management-for-woocommerce' ) );
+				$whatsapp_message .= "\n\n" . html_entity_decode( esc_html__( 'You can also check your wallet balance from here just by typing like "What is my wallet balance?"', 'devdiggers-wallet-for-woocommerce' ) );
 			}
 
 			return $whatsapp_message;
@@ -189,7 +189,7 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 						}
 					} else if ( $wallet_product_in_cart ) {
 						// Adding a non-wallet product while wallet is in cart - block it
-						wc_add_notice( __( 'Your cart contains a Wallet top-up. Please remove it before adding other products.', 'wallet-management-for-woocommerce' ), 'error' );
+						wc_add_notice( __( 'Your cart contains a Wallet top-up. Please remove it before adding other products.', 'devdiggers-wallet-for-woocommerce' ), 'error' );
 						return false;
 					}
 				} else {
@@ -237,7 +237,7 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 						'amount'    => $wallet_amount_used,
 						'user_id'   => $user_id,
 						'order_id'  => $order_id,
-						'note'      => esc_html__( 'Credited wallet amount on order cancel.', 'wallet-management-for-woocommerce' ),
+						'note'      => esc_html__( 'Credited wallet amount on order cancel.', 'devdiggers-wallet-for-woocommerce' ),
 						'date'      => current_time( 'Y-m-d H:i:s' ),
 						'reference' => 'order_cancelled_credit',
 					];
@@ -261,7 +261,7 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 							'amount'    => $awarded_cashback_data[ 'cart' ],
 							'user_id'   => $user_id,
 							'order_id'  => $order_id,
-							'note'      => esc_html__( 'Debit wallet cashback for cart due to order cancel.', 'wallet-management-for-woocommerce' ),
+							'note'      => esc_html__( 'Debit wallet cashback for cart due to order cancel.', 'devdiggers-wallet-for-woocommerce' ),
 							'date'      => current_time( 'Y-m-d H:i:s' ),
 							'reference' => 'cart_cashback',
 						];
@@ -279,7 +279,7 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 							'amount'    => $awarded_cashback_data[ 'topup' ],
 							'user_id'   => $user_id,
 							'order_id'  => $order_id,
-							'note'      => esc_html__( 'Debit wallet cashback for topup due to order cancel.', 'wallet-management-for-woocommerce' ),
+							'note'      => esc_html__( 'Debit wallet cashback for topup due to order cancel.', 'devdiggers-wallet-for-woocommerce' ),
 							'date'      => current_time( 'Y-m-d H:i:s' ),
 							'reference' => 'topup_cashback',
 						];
@@ -329,7 +329,7 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 						'amount'    => $wallet_amount_used,
 						'user_id'   => $user_id,
 						'order_id'  => $order_id,
-						'note'      => esc_html__( 'Credited wallet amount on order fully refund.', 'wallet-management-for-woocommerce' ),
+						'note'      => esc_html__( 'Credited wallet amount on order fully refund.', 'devdiggers-wallet-for-woocommerce' ),
 						'date'      => current_time( 'Y-m-d H:i:s' ),
 						'reference' => 'order_refund',
 					];
@@ -354,7 +354,7 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 							'amount'    => $awarded_cashback_data[ 'cart' ],
 							'user_id'   => $user_id,
 							'order_id'  => $order_id,
-							'note'      => esc_html__( 'Debit wallet cashback for cart due to order fully refund.', 'wallet-management-for-woocommerce' ),
+							'note'      => esc_html__( 'Debit wallet cashback for cart due to order fully refund.', 'devdiggers-wallet-for-woocommerce' ),
 							'date'      => current_time( 'Y-m-d H:i:s' ),
 							'reference' => 'cart_cashback',
 						];
@@ -372,7 +372,7 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 							'amount'    => $awarded_cashback_data[ 'topup' ],
 							'user_id'   => $user_id,
 							'order_id'  => $order_id,
-							'note'      => esc_html__( 'Debit wallet cashback for topup due to order fully refund.', 'wallet-management-for-woocommerce' ),
+							'note'      => esc_html__( 'Debit wallet cashback for topup due to order fully refund.', 'devdiggers-wallet-for-woocommerce' ),
 							'date'      => current_time( 'Y-m-d H:i:s' ),
 							'reference' => 'topup_cashback',
 						];
@@ -449,7 +449,7 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 						'user_id'   => $user_id,
 						'order_id'  => $order_id,
 						/* translators: %s: cashback type label. */
-						'note'      => sprintf( esc_html__( 'Debit wallet cashback for %s due to order partial refund.', 'wallet-management-for-woocommerce' ), str_replace( '_', ' ', $key ) ),
+						'note'      => sprintf( esc_html__( 'Debit wallet cashback for %s due to order partial refund.', 'devdiggers-wallet-for-woocommerce' ), str_replace( '_', ' ', $key ) ),
 						'date'      => current_time( 'Y-m-d H:i:s' ),
 						'reference' => 'cashback_partial_reversal',
 					];
@@ -563,7 +563,7 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 						'amount'    => $order_subtotal,
 						'user_id'   => $user_id,
 						'order_id'  => $order_id,
-						'note'      => esc_html__( 'Wallet Topup', 'wallet-management-for-woocommerce' ),
+						'note'      => esc_html__( 'Wallet Topup', 'devdiggers-wallet-for-woocommerce' ),
 						'date'      => current_time( 'Y-m-d H:i:s' ),
 						'reference' => 'wallet_topup',
 					];
@@ -592,7 +592,7 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 						'amount'    => $awarded_cashback_data[ 'cart' ],
 						'user_id'   => $user_id,
 						'order_id'  => $order_id,
-						'note'      => esc_html__( 'Wallet Cashback for Cart', 'wallet-management-for-woocommerce' ),
+						'note'      => esc_html__( 'Wallet Cashback for Cart', 'devdiggers-wallet-for-woocommerce' ),
 						'date'        => current_time( 'Y-m-d H:i:s' ),
 						'reference'   => 'cart_cashback',
 					];
@@ -610,7 +610,7 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 						'amount'    => $awarded_cashback_data[ 'topup' ],
 						'user_id'   => $user_id,
 						'order_id'  => $order_id,
-						'note'      => esc_html__( 'Wallet Cashback for Topup', 'wallet-management-for-woocommerce' ),
+						'note'      => esc_html__( 'Wallet Cashback for Topup', 'devdiggers-wallet-for-woocommerce' ),
 						'date'        => current_time( 'Y-m-d H:i:s' ),
 						'reference'   => 'topup_cashback',
 					];
@@ -654,7 +654,7 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 
 			if ( ! empty( $ddwcwm_wallet[ 'registration_credit' ] ) && is_account_page() ) {
 				/* translators: %s: registration credit amount. */
-				wc_add_notice( sprintf ( esc_html__( 'You\'ll receive %s in your wallet after sucessful registration.', 'wallet-management-for-woocommerce' ), wc_price( apply_filters( 'ddwcwm_modify_amount_to_multi_currency', $ddwcwm_wallet[ 'registration_credit' ] ) ) ), 'notice' );
+				wc_add_notice( sprintf ( esc_html__( 'You\'ll receive %s in your wallet after sucessful registration.', 'devdiggers-wallet-for-woocommerce' ), wc_price( apply_filters( 'ddwcwm_modify_amount_to_multi_currency', $ddwcwm_wallet[ 'registration_credit' ] ) ) ), 'notice' );
 			}
 		}
 

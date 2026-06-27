@@ -2,7 +2,7 @@
 /**
  * Wallet Balance Layout Shortcode
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -41,7 +41,7 @@ $ddwcwm_available_balance_icon = DDFW_SVG::get_svg_icon(
         <div class="ddwcwm-balance-stats-section">
             <div class="ddwcwm-main-balance">
                 <div class="ddwcwm-balance-info">
-                    <p class="ddwcwm-card-title"><?php esc_html_e( 'Available Balance', 'wallet-management-for-woocommerce' ); ?></p>
+                    <p class="ddwcwm-card-title"><?php esc_html_e( 'Available Balance', 'devdiggers-wallet-for-woocommerce' ); ?></p>
                     <p class="ddwcwm-card-value">
                         <?php echo wp_kses_post( wc_price( apply_filters( 'ddwcwm_modify_amount_to_multi_currency', $ddwcwm_wallet_balance ) ) ); ?>
                     </p>
@@ -55,13 +55,13 @@ $ddwcwm_available_balance_icon = DDFW_SVG::get_svg_icon(
             
             <div class="ddwcwm-secondary-stats">
                 <div class="ddwcwm-stat-item">
-                    <p class="ddwcwm-card-title"><?php esc_html_e( 'Today\'s Credit', 'wallet-management-for-woocommerce' ); ?></p>
+                    <p class="ddwcwm-card-title"><?php esc_html_e( 'Today\'s Credit', 'devdiggers-wallet-for-woocommerce' ); ?></p>
                     <p class="ddwcwm-card-value ddwcwm-credit-text">
                         +<?php echo wp_kses_post( wc_price( apply_filters( 'ddwcwm_modify_amount_to_multi_currency', $ddwcwm_today_transaction[ 'credit' ] ) ) ); ?>
                     </p>
                 </div>
                 <div class="ddwcwm-stat-item">
-                    <p class="ddwcwm-card-title"><?php esc_html_e( 'Today\'s Debit', 'wallet-management-for-woocommerce' ); ?></p>
+                    <p class="ddwcwm-card-title"><?php esc_html_e( 'Today\'s Debit', 'devdiggers-wallet-for-woocommerce' ); ?></p>
                     <p class="ddwcwm-card-value ddwcwm-debit-text">
                         -<?php echo wp_kses_post( wc_price( apply_filters( 'ddwcwm_modify_amount_to_multi_currency', $ddwcwm_today_transaction[ 'debit' ] ) ) ); ?>
                     </p>
@@ -75,15 +75,15 @@ $ddwcwm_available_balance_icon = DDFW_SVG::get_svg_icon(
                 <div class="ddwcwm-topup-header-icon">
                     <?php DDFW_SVG::get_svg_icon( 'topup', false, [ 'size' => 20 ] ); ?>
                 </div>
-                <h4><?php esc_html_e( 'Add Money', 'wallet-management-for-woocommerce' ); ?></h4>
+                <h4><?php esc_html_e( 'Add Money', 'devdiggers-wallet-for-woocommerce' ); ?></h4>
             </div>
             <form method="post" class="ddwcwm-topup-form">
                 <?php
                 wp_nonce_field( 'ddwcwm_wallet_topup_nonce_action', 'ddwcwm_wallet_topup_nonce' );
                 ?>
                 <div class="ddwcwm-wallet-topup-input-container">
-                    <input type="number" class="form-control" id="ddwcwm-wallet-topup-amount" name="ddwcwm_wallet_topup_amount" min="0" step="0.01" placeholder="<?php esc_attr_e( 'Enter amount here', 'wallet-management-for-woocommerce' ); ?>" />
-                    <button type="submit" class="button" name="ddwcwm_wallet_topup"><?php esc_html_e( 'Topup', 'wallet-management-for-woocommerce' ); ?></button>
+                    <input type="number" class="form-control" id="ddwcwm-wallet-topup-amount" name="ddwcwm_wallet_topup_amount" min="0" step="0.01" placeholder="<?php esc_attr_e( 'Enter amount here', 'devdiggers-wallet-for-woocommerce' ); ?>" />
+                    <button type="submit" class="button" name="ddwcwm_wallet_topup"><?php esc_html_e( 'Topup', 'devdiggers-wallet-for-woocommerce' ); ?></button>
                 </div>
             </form>
         </div>

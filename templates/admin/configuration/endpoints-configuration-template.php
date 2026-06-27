@@ -2,7 +2,7 @@
 /**
  * Endpoints configuration template class
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -31,33 +31,33 @@ if ( ! class_exists( 'DDWCWM_Endpoints_Configuration_Template' ) ) {
 			$args = [
 				[
 					'header' => [
-						'heading'     => esc_html__( 'My Account Section', 'wallet-management-for-woocommerce' ),
-						'description' => esc_html__( 'Configure the endpoint slug, menu title, and sidebar presence for the wallet dashboard within the WooCommerce My Account area.', 'wallet-management-for-woocommerce' ),
+						'heading'     => esc_html__( 'My Account Section', 'devdiggers-wallet-for-woocommerce' ),
+						'description' => esc_html__( 'Configure the endpoint slug, menu title, and sidebar presence for the wallet dashboard within the WooCommerce My Account area.', 'devdiggers-wallet-for-woocommerce' ),
 					],
 					'fields' => [
 						[
 							'type'        => 'text',
-							'label'       => esc_html__( 'Endpoint Slug', 'wallet-management-for-woocommerce' ),
-							'description' => esc_html__( 'The unique URL identifier for the wallet section (e.g., "my-wallet"). Remember to save permalinks after changing this.', 'wallet-management-for-woocommerce' ),
-							'placeholder' => esc_attr__( 'Default: wallet-management-for-woocommerce', 'wallet-management-for-woocommerce' ),
+							'label'       => esc_html__( 'Endpoint Slug', 'devdiggers-wallet-for-woocommerce' ),
+							'description' => esc_html__( 'The unique URL identifier for the wallet section (e.g., "my-wallet"). Remember to save permalinks after changing this.', 'devdiggers-wallet-for-woocommerce' ),
+							'placeholder' => esc_attr__( 'Default: devdiggers-wallet-for-woocommerce', 'devdiggers-wallet-for-woocommerce' ),
 							'id'          => 'ddwcwm-my-account-endpoint',
 							'name'        => '_ddwcwm_my_account_endpoint',
 							'value'       => $ddwcwm_wallet['my_account_endpoint'],
 						],
 						[
 							'type'        => 'text',
-							'label'       => esc_html__( 'Menu Title', 'wallet-management-for-woocommerce' ),
-							'description' => esc_html__( 'The label displayed in the My Account sidebar navigation menu.', 'wallet-management-for-woocommerce' ),
-							'placeholder' => esc_attr__( 'Default: My Wallet', 'wallet-management-for-woocommerce' ),
+							'label'       => esc_html__( 'Menu Title', 'devdiggers-wallet-for-woocommerce' ),
+							'description' => esc_html__( 'The label displayed in the My Account sidebar navigation menu.', 'devdiggers-wallet-for-woocommerce' ),
+							'placeholder' => esc_attr__( 'Default: My Wallet', 'devdiggers-wallet-for-woocommerce' ),
 							'id'          => 'ddwcwm-my-account-endpoint-title',
 							'name'        => '_ddwcwm_my_account_endpoint_title',
 							'value'       => $ddwcwm_wallet['my_account_endpoint_title'],
 						],
 						[
 							'type'           => 'checkbox',
-							'label'          => esc_html__( 'Sidebar Widgets', 'wallet-management-for-woocommerce' ),
-							'checkbox_label' => esc_html__( 'Enable wallet widgets in account sidebar', 'wallet-management-for-woocommerce' ),
-							'description'    => esc_html__( 'Toggle the visibility of supplementary wallet information widgets when viewing the wallet endpoint.', 'wallet-management-for-woocommerce' ),
+							'label'          => esc_html__( 'Sidebar Widgets', 'devdiggers-wallet-for-woocommerce' ),
+							'checkbox_label' => esc_html__( 'Enable wallet widgets in account sidebar', 'devdiggers-wallet-for-woocommerce' ),
+							'description'    => esc_html__( 'Toggle the visibility of supplementary wallet information widgets when viewing the wallet endpoint.', 'devdiggers-wallet-for-woocommerce' ),
 							'id'             => 'ddwcwm-enable-widgets-my-account-endpoint',
 							'name'           => '_ddwcwm_enable_widgets_my_account_endpoint',
 							'value'          => $ddwcwm_wallet['enable_widgets_my_account_endpoint'],

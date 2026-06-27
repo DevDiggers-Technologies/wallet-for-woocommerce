@@ -1,4 +1,4 @@
-# Wallet Management for WooCommerce
+# DevDiggers Wallet for WooCommerce
 
 **Contributors:** DevDiggers
 
@@ -21,7 +21,7 @@
 
 ## Description
 
-Wallet Management for WooCommerce gives every customer a wallet they can top up, spend at checkout, and track from their account. The wallet works as a normal WooCommerce payment gateway, so once a customer has a balance they pay for an order in one click.
+DevDiggers Wallet for WooCommerce gives every customer a wallet they can top up, spend at checkout, and track from their account. The wallet works as a normal WooCommerce payment gateway, so once a customer has a balance they pay for an order in one click.
 
 Store owners run it from the WordPress admin. You can credit or debit any customer, import balances in bulk from a CSV, set up cart based cashback, and watch balances and transactions from one dashboard. Refunds go back to the wallet, so a returned order does not turn into a manual payout.
 
@@ -81,11 +81,11 @@ A hidden top-up product is created on activation. A customer opens the wallet pa
 | First order cashback, cashback expiry and reminders | No | Yes |
 | Export wallet data to CSV | No | Yes |
 
-[Upgrade to Wallet Management for WooCommerce Pro](https://devdiggers.com/product/woocommerce-wallet-management/)
+[Upgrade to DevDiggers Wallet for WooCommerce Pro](https://devdiggers.com/product/woocommerce-wallet-management/)
 
 ## Installation
 
-1. Upload the `wallet-management-for-woocommerce` folder to `/wp-content/plugins/`, or install it from the Plugins screen.
+1. Upload the `devdiggers-wallet-for-woocommerce` folder to `/wp-content/plugins/`, or install it from the Plugins screen.
 2. Activate the plugin through the **Plugins** menu in WordPress.
 3. Open the **Wallet** menu and run the setup wizard, or configure it from **Wallet > Configuration**.
 

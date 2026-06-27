@@ -19,7 +19,7 @@ class DDWCWM_Setup_Wizard {
      * Constructor
      */
     public function __construct() {
-        $slug = 'wallet-management-for-woocommerce';
+        $slug = 'devdiggers-wallet-for-woocommerce';
         if ( ! get_option( 'ddfw_setup_wizard_completed_' . $slug ) ) {
             // Check if plugin is already configured by checking for existing options.
             if ( get_option( '_ddwcwm_enabled' ) ) {
@@ -36,8 +36,8 @@ class DDWCWM_Setup_Wizard {
      */
     public function get_wizard_config() {
         return [
-            'plugin_slug'    => 'wallet-management-for-woocommerce',
-            'plugin_file'    => 'wallet-management-for-woocommerce/functions.php',
+            'plugin_slug'    => 'devdiggers-wallet-for-woocommerce',
+            'plugin_file'    => 'devdiggers-wallet-for-woocommerce/functions.php',
             'dashboard_page' => 'ddwcwm-dashboard',
             'redirect_url'   => admin_url( 'admin.php?page=ddwcwm-dashboard' ),
             'logo'           => '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,27 +48,27 @@ class DDWCWM_Setup_Wizard {
             </svg>',
             'steps'        => [
                 'welcome'   => [
-                    'label'         => esc_html__( 'Welcome', 'wallet-management-for-woocommerce' ),
+                    'label'         => esc_html__( 'Welcome', 'devdiggers-wallet-for-woocommerce' ),
                     'view_callback' => [ $this, 'welcome_view' ],
                 ],
                 'general'   => [
-                    'label'         => esc_html__( 'General Settings', 'wallet-management-for-woocommerce' ),
-                    'title'         => esc_html__( 'Core Wallet Configuration', 'wallet-management-for-woocommerce' ),
-                    'description'   => esc_html__( 'Set up the basic foundation of your customer wallet system.', 'wallet-management-for-woocommerce' ),
+                    'label'         => esc_html__( 'General Settings', 'devdiggers-wallet-for-woocommerce' ),
+                    'title'         => esc_html__( 'Core Wallet Configuration', 'devdiggers-wallet-for-woocommerce' ),
+                    'description'   => esc_html__( 'Set up the basic foundation of your customer wallet system.', 'devdiggers-wallet-for-woocommerce' ),
                     'view_callback' => [ $this, 'general_settings_view' ],
                     'save_callback' => [ $this, 'save_fields' ],
                 ],
                 'cashback'   => [
-                    'label'         => esc_html__( 'Cashback & Rewards', 'wallet-management-for-woocommerce' ),
-                    'title'         => esc_html__( 'Customer Loyalty Incentives', 'wallet-management-for-woocommerce' ),
-                    'description'   => esc_html__( 'Configure automated rewards to encourage repeat purchases.', 'wallet-management-for-woocommerce' ),
+                    'label'         => esc_html__( 'Cashback & Rewards', 'devdiggers-wallet-for-woocommerce' ),
+                    'title'         => esc_html__( 'Customer Loyalty Incentives', 'devdiggers-wallet-for-woocommerce' ),
+                    'description'   => esc_html__( 'Configure automated rewards to encourage repeat purchases.', 'devdiggers-wallet-for-woocommerce' ),
                     'view_callback' => [ $this, 'cashback_settings_view' ],
                     'save_callback' => [ $this, 'save_fields' ],
                 ],
                 'ready'     => [
-                    'label'             => esc_html__( 'Ready!', 'wallet-management-for-woocommerce' ),
-                    'ready_title'       => esc_html__( 'Your Wallet system is ready!', 'wallet-management-for-woocommerce' ),
-                    'ready_description' => esc_html__( 'You have successfully configured the core wallet features. You can now manage transactions and adjust advanced settings from the dashboard.', 'wallet-management-for-woocommerce' ),
+                    'label'             => esc_html__( 'Ready!', 'devdiggers-wallet-for-woocommerce' ),
+                    'ready_title'       => esc_html__( 'Your Wallet system is ready!', 'devdiggers-wallet-for-woocommerce' ),
+                    'ready_description' => esc_html__( 'You have successfully configured the core wallet features. You can now manage transactions and adjust advanced settings from the dashboard.', 'devdiggers-wallet-for-woocommerce' ),
                 ],
             ],
         ];
@@ -90,9 +90,9 @@ class DDWCWM_Setup_Wizard {
                     <circle cx="21" cy="16" r="2" fill="white" fill-opacity="0.2"/>
                 </svg>
             </div>
-            <h2 class="ddfw-setup-wizard-ready-title"><?php esc_html_e( 'Welcome to Wallet Management for WooCommerce!', 'wallet-management-for-woocommerce' ); ?></h2>
+            <h2 class="ddfw-setup-wizard-ready-title"><?php esc_html_e( 'Welcome to DevDiggers Wallet for WooCommerce!', 'devdiggers-wallet-for-woocommerce' ); ?></h2>
             <p class="ddfw-setup-wizard-ready-desc">
-                <?php esc_html_e( 'Thank you for choosing our Wallet Management solution. This quick setup wizard will help you configure the core features of your new customer wallet system.', 'wallet-management-for-woocommerce' ); ?>
+                <?php esc_html_e( 'Thank you for choosing our Wallet Management solution. This quick setup wizard will help you configure the core features of your new customer wallet system.', 'devdiggers-wallet-for-woocommerce' ); ?>
             </p>
         </div>
         <?php
@@ -112,17 +112,17 @@ class DDWCWM_Setup_Wizard {
                     $fields = [
                         [
                             'type'           => 'checkbox',
-                            'label'          => esc_html__( 'Enable/Disable', 'wallet-management-for-woocommerce' ),
-                            'checkbox_label' => esc_html__( 'Enable Wallet Management for WooCommerce', 'wallet-management-for-woocommerce' ),
-                            'description'    => esc_html__( 'Activate or deactivate the entire wallet system and its features for all customers.', 'wallet-management-for-woocommerce' ),
+                            'label'          => esc_html__( 'Enable/Disable', 'devdiggers-wallet-for-woocommerce' ),
+                            'checkbox_label' => esc_html__( 'Enable DevDiggers Wallet for WooCommerce', 'devdiggers-wallet-for-woocommerce' ),
+                            'description'    => esc_html__( 'Activate or deactivate the entire wallet system and its features for all customers.', 'devdiggers-wallet-for-woocommerce' ),
                             'id'             => 'ddwcwm-enable',
                             'name'           => '_ddwcwm_enabled',
                             'value'          => get_option( '_ddwcwm_enabled', 'yes' ),
                         ],
                         [
                             'type'              => 'number',
-                            'label'             => esc_html__( 'Registration Credit', 'wallet-management-for-woocommerce' ),
-                            'description'       => esc_html__( 'The amount credited to a customer\'s wallet upon successful account registration. Leave blank to disable registration rewards.', 'wallet-management-for-woocommerce' ),
+                            'label'             => esc_html__( 'Registration Credit', 'devdiggers-wallet-for-woocommerce' ),
+                            'description'       => esc_html__( 'The amount credited to a customer\'s wallet upon successful account registration. Leave blank to disable registration rewards.', 'devdiggers-wallet-for-woocommerce' ),
                             'id'                => 'ddwcwm-registration-credit',
                             'name'              => '_ddwcwm_registration_credit',
                             'value'             => get_option( '_ddwcwm_registration_credit', 0 ),
@@ -131,11 +131,11 @@ class DDWCWM_Setup_Wizard {
                         ],
                         [
                             'type'        => 'select',
-                            'label'       => esc_html__( 'Wallet Topup Order Status', 'wallet-management-for-woocommerce' ),
-                            'description' => esc_html__( 'Choose the order status that triggers the balance update for top-up purchases. \'Completed\' is recommended for security.', 'wallet-management-for-woocommerce' ),
+                            'label'       => esc_html__( 'Wallet Topup Order Status', 'devdiggers-wallet-for-woocommerce' ),
+                            'description' => esc_html__( 'Choose the order status that triggers the balance update for top-up purchases. \'Completed\' is recommended for security.', 'devdiggers-wallet-for-woocommerce' ),
                             'options'     => [
-                                'default'   => esc_html__( 'Default', 'wallet-management-for-woocommerce' ),
-                                'completed' => esc_html__( 'Completed', 'wallet-management-for-woocommerce' ),
+                                'default'   => esc_html__( 'Default', 'devdiggers-wallet-for-woocommerce' ),
+                                'completed' => esc_html__( 'Completed', 'devdiggers-wallet-for-woocommerce' ),
                             ],
                             'id'          => 'ddwcwm-topup-order-status',
                             'name'        => '_ddwcwm_topup_order_status',
@@ -167,9 +167,9 @@ class DDWCWM_Setup_Wizard {
                     $fields = [
                         [
                             'type'           => 'checkbox',
-                            'label'          => esc_html__( 'Exclude Sale Products', 'wallet-management-for-woocommerce' ),
-                            'checkbox_label' => esc_html__( 'Exclude products on sale from cashback', 'wallet-management-for-woocommerce' ),
-                            'description'    => esc_html__( 'When enabled, products already on sale will not contribute to the cashback calculation.', 'wallet-management-for-woocommerce' ),
+                            'label'          => esc_html__( 'Exclude Sale Products', 'devdiggers-wallet-for-woocommerce' ),
+                            'checkbox_label' => esc_html__( 'Exclude products on sale from cashback', 'devdiggers-wallet-for-woocommerce' ),
+                            'description'    => esc_html__( 'When enabled, products already on sale will not contribute to the cashback calculation.', 'devdiggers-wallet-for-woocommerce' ),
                             'id'             => 'ddwcwm-cashback-exclude-sale-products',
                             'name'           => '_ddwcwm_cashback_exclude_sale_products',
                             'value'          => get_option( '_ddwcwm_cashback_exclude_sale_products', 'no' ),

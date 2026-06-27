@@ -2,7 +2,7 @@
 /**
  * Transactions List Template
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -38,8 +38,8 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
 			$this->transaction_helper = new DDWCWM_Transactions_Helper();
 
 			parent::__construct( [
-				'singular' => esc_html__( 'Transaction List', 'wallet-management-for-woocommerce' ),
-				'plural'   => esc_html__( 'Transactions List', 'wallet-management-for-woocommerce' ),
+				'singular' => esc_html__( 'Transaction List', 'devdiggers-wallet-for-woocommerce' ),
+				'plural'   => esc_html__( 'Transactions List', 'devdiggers-wallet-for-woocommerce' ),
 				'ajax'     => false,
 			] );
 		}
@@ -98,16 +98,16 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
 								}
 
 								/* translators: %s: number of deleted transactions. */
-								$message = sprintf( esc_html__( '%s Transaction(s) deleted successfully.', 'wallet-management-for-woocommerce' ), count( $transaction_ids ) );
+								$message = sprintf( esc_html__( '%s Transaction(s) deleted successfully.', 'devdiggers-wallet-for-woocommerce' ), count( $transaction_ids ) );
 								$this->ddwcwm_print_notification( $message, 'success' );
 							}
 						} else {
-							$message = esc_html__( 'Select transactions(s) to delete.', 'wallet-management-for-woocommerce' );
+							$message = esc_html__( 'Select transactions(s) to delete.', 'devdiggers-wallet-for-woocommerce' );
 							$this->ddwcwm_print_notification( $message, 'error' );
 						}
 					}
 				} else {
-					$message = esc_html__( 'Invalid nonce. Security check failed!!!', 'wallet-management-for-woocommerce' ) . implode( ',', $error_ids );
+					$message = esc_html__( 'Invalid nonce. Security check failed!!!', 'devdiggers-wallet-for-woocommerce' ) . implode( ',', $error_ids );
 					$this->ddwcwm_print_notification( $message, 'error' );
 				}
 			}
@@ -127,13 +127,13 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
 							$transaction_id = intval( wp_unslash( $_GET[ 'ddwcwm-transaction-id' ] ) ); // WPCS: input var ok.
 							$this->transaction_helper->ddwcwm_delete_transaction( $transaction_id );
 
-							$message = esc_html__( 'Transaction deleted successfully.', 'wallet-management-for-woocommerce' );
+							$message = esc_html__( 'Transaction deleted successfully.', 'devdiggers-wallet-for-woocommerce' );
 							$this->ddwcwm_print_notification( $message, 'success' );
 
 						}
 					}
 				} else {
-					$message = esc_html__( 'Invalid nonce. Security check failed!!!', 'wallet-management-for-woocommerce' ) . implode( ',', $error_ids );
+					$message = esc_html__( 'Invalid nonce. Security check failed!!!', 'devdiggers-wallet-for-woocommerce' ) . implode( ',', $error_ids );
 					$this->ddwcwm_print_notification( $message, 'error' );
 				}
 			}
@@ -230,7 +230,7 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
 		 * @return void
 		 */
 		public function no_items() {
-			esc_html_e( 'No transactions avaliable.', 'wallet-management-for-woocommerce' );
+			esc_html_e( 'No transactions avaliable.', 'devdiggers-wallet-for-woocommerce' );
 		}
 
 		/**
@@ -250,11 +250,11 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
 		public function get_columns() {
 			$columns = [
 				'cb'                  => '<input type="checkbox" />',
-				'identification'      => esc_html__( 'ID & Date', 'wallet-management-for-woocommerce' ),
-				'customer'            => esc_html__( 'Customer', 'wallet-management-for-woocommerce' ),
-				'transaction_context' => esc_html__( 'Transaction Context', 'wallet-management-for-woocommerce' ),
-				'amount'              => esc_html__( 'Amount', 'wallet-management-for-woocommerce' ),
-				'note'                => esc_html__( 'Note', 'wallet-management-for-woocommerce' ),
+				'identification'      => esc_html__( 'ID & Date', 'devdiggers-wallet-for-woocommerce' ),
+				'customer'            => esc_html__( 'Customer', 'devdiggers-wallet-for-woocommerce' ),
+				'transaction_context' => esc_html__( 'Transaction Context', 'devdiggers-wallet-for-woocommerce' ),
+				'amount'              => esc_html__( 'Amount', 'devdiggers-wallet-for-woocommerce' ),
+				'note'                => esc_html__( 'Note', 'devdiggers-wallet-for-woocommerce' ),
 			];
 
 			return apply_filters( 'ddwcwm_transactions_list_columns', $columns );
@@ -300,7 +300,7 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
 		public function column_identification( $item ) {
 			$identification = $item['identification'];
 			$actions = [
-				'delete' => sprintf( '<a href="%s">%s</a>', wp_nonce_url( 'admin.php?page=' . ( isset( $_REQUEST[ 'page' ] ) ? sanitize_text_field( wp_unslash( $_REQUEST[ 'page' ] ) ) : '' ) . '&action=delete&ddwcwm-transaction-id=' . esc_attr( $item[ 'id' ] ), 'ddwcwm_transactions_list_nonce_action', 'ddwcwm_transactions_list_nonce' ), esc_html__( 'Delete', 'wallet-management-for-woocommerce' ) ),
+				'delete' => sprintf( '<a href="%s">%s</a>', wp_nonce_url( 'admin.php?page=' . ( isset( $_REQUEST[ 'page' ] ) ? sanitize_text_field( wp_unslash( $_REQUEST[ 'page' ] ) ) : '' ) . '&action=delete&ddwcwm-transaction-id=' . esc_attr( $item[ 'id' ] ), 'ddwcwm_transactions_list_nonce_action', 'ddwcwm_transactions_list_nonce' ), esc_html__( 'Delete', 'devdiggers-wallet-for-woocommerce' ) ),
 			];
 
 			return sprintf(
@@ -326,10 +326,10 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
 					$sender_email = $sender->user_email . ' (#' . $sender_id . ')' ;
 					$sender_url = admin_url( 'user-edit.php?user_id=' . $sender_id );
 					/* translators: %s: linked user or order. */
-					$related_id_html = sprintf( esc_html__( 'Sender: %s', 'wallet-management-for-woocommerce' ), '<a href="' . esc_url( $sender_url ) . '">' . esc_html( $sender_email ) . '</a>' );
+					$related_id_html = sprintf( esc_html__( 'Sender: %s', 'devdiggers-wallet-for-woocommerce' ), '<a href="' . esc_url( $sender_url ) . '">' . esc_html( $sender_email ) . '</a>' );
 				} else {
 					/* translators: %d: user ID. */
-					$related_id_html = sprintf( esc_html__( 'Sender: #%d', 'wallet-management-for-woocommerce' ), $sender_id );
+					$related_id_html = sprintf( esc_html__( 'Sender: #%d', 'devdiggers-wallet-for-woocommerce' ), $sender_id );
 				}
 			} elseif ( ! empty( $context['related_id'] ) ) {
 				$order_id = $context['related_id'];
@@ -337,7 +337,7 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
 				if ( $order ) {
 					$order_url = get_edit_post_link( $order_id );
 					/* translators: %s: linked user or order. */
-					$related_id_html = sprintf( esc_html__( 'Order: %s', 'wallet-management-for-woocommerce' ), '<a href="' . esc_url( $order_url ) . '">#' . esc_html( $order_id ) . '</a>' );
+					$related_id_html = sprintf( esc_html__( 'Order: %s', 'devdiggers-wallet-for-woocommerce' ), '<a href="' . esc_url( $order_url ) . '">#' . esc_html( $order_id ) . '</a>' );
 				}
 			}
 
@@ -347,7 +347,7 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
 					'<div class="ddwcwm-order-tier">
 						<span class="ddwcwm-label-mini">%1$s</span> %2$s
 					</div>',
-					esc_html__( 'Link:', 'wallet-management-for-woocommerce' ),
+					esc_html__( 'Link:', 'devdiggers-wallet-for-woocommerce' ),
 					$related_id_html
 				);
 			}
@@ -363,7 +363,7 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
 					%4$s
 				</div>',
 				esc_html( $context['type'] ),
-				esc_html__( 'Ref:', 'wallet-management-for-woocommerce' ),
+				esc_html__( 'Ref:', 'devdiggers-wallet-for-woocommerce' ),
 				! empty( $context['reference'] ) ? esc_html( $context['reference'] ) : '-',
 				$order_tier_html
 			);
@@ -386,7 +386,7 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
 		 * @return string
 		 */
 		public function column_note( $item ) {
-			return sprintf( '<div class="ddwcwm-note-column"><em>%s</em></div>', $item['note'] ? stripslashes( $item['note'] ) : esc_html__( 'N/A', 'wallet-management-for-woocommerce' ) );
+			return sprintf( '<div class="ddwcwm-note-column"><em>%s</em></div>', $item['note'] ? stripslashes( $item['note'] ) : esc_html__( 'N/A', 'devdiggers-wallet-for-woocommerce' ) );
 		}
 
 		/**
@@ -425,7 +425,7 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
          */
         public function get_bulk_actions() {
             return apply_filters( 'ddwcwm_modify_bulk_actions_in_transactions', [
-                'delete' => esc_html__( 'Delete', 'wallet-management-for-woocommerce' ),
+                'delete' => esc_html__( 'Delete', 'devdiggers-wallet-for-woocommerce' ),
 			] );
         }
 
@@ -436,11 +436,11 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
 		 */
 		public function extra_tablenav( $which ) {
 			$all_transaction_types = [
-				''         => esc_html__( 'Transaction Type', 'wallet-management-for-woocommerce' ),
-				'credit'   => esc_html__( 'Credit', 'wallet-management-for-woocommerce' ),
-				'debit'    => esc_html__( 'Debit', 'wallet-management-for-woocommerce' ),
-				'transfer' => esc_html__( 'Transfer', 'wallet-management-for-woocommerce' ),
-				'withdraw' => esc_html__( 'Withdrawal', 'wallet-management-for-woocommerce' ),
+				''         => esc_html__( 'Transaction Type', 'devdiggers-wallet-for-woocommerce' ),
+				'credit'   => esc_html__( 'Credit', 'devdiggers-wallet-for-woocommerce' ),
+				'debit'    => esc_html__( 'Debit', 'devdiggers-wallet-for-woocommerce' ),
+				'transfer' => esc_html__( 'Transfer', 'devdiggers-wallet-for-woocommerce' ),
+				'withdraw' => esc_html__( 'Withdrawal', 'devdiggers-wallet-for-woocommerce' ),
 			];
 
 			$all_transaction_types = apply_filters( 'ddwcwm_modify_transaction_types_for_filter' , $all_transaction_types );
@@ -466,13 +466,13 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
 
 					</select>
 
-					<label for="ddwcwm-transaction-from-date">&nbsp;<?php esc_html_e( 'From:', 'wallet-management-for-woocommerce' ); ?></label>
+					<label for="ddwcwm-transaction-from-date">&nbsp;<?php esc_html_e( 'From:', 'devdiggers-wallet-for-woocommerce' ); ?></label>
 					<input type="date" value="<?php echo esc_attr( $transaction_from_date ); ?>" name="ddwcwm-transaction-from-date" id="ddwcwm-transaction-from-date" class="ddwcwm-datepicker" placeholder="yyyy-mm-dd" autocomplete="off" />
 
-					<label for="ddwcwm-transaction-to-date">&nbsp;<?php esc_html_e( 'To:', 'wallet-management-for-woocommerce' ); ?></label>
+					<label for="ddwcwm-transaction-to-date">&nbsp;<?php esc_html_e( 'To:', 'devdiggers-wallet-for-woocommerce' ); ?></label>
 					<input type="date" value="<?php echo esc_attr( $transaction_to_date ); ?>" name="ddwcwm-transaction-to-date" id="ddwcwm-transaction-to-date" class="ddwcwm-datepicker" placeholder="yyyy-mm-dd" autocomplete="off" />
 
-					<select name="customer-id" id="ddwcwm-users" class="regular-text ddfw-users" data-placeholder="<?php esc_attr_e( 'Select Customer', 'wallet-management-for-woocommerce' ); ?>">
+					<select name="customer-id" id="ddwcwm-users" class="regular-text ddfw-users" data-placeholder="<?php esc_attr_e( 'Select Customer', 'devdiggers-wallet-for-woocommerce' ); ?>">
 						<?php
 						if ( ! empty( $_GET[ 'customer-id' ] ) ) {
 							$customer_id = absint( wp_unslash( $_GET[ 'customer-id' ] ) );
@@ -485,14 +485,14 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
 						?>
 					</select>
 
-					<input type="submit" value="<?php esc_html_e( 'Filter', 'wallet-management-for-woocommerce' ); ?>" name="transaction" class="button" />
+					<input type="submit" value="<?php esc_html_e( 'Filter', 'devdiggers-wallet-for-woocommerce' ); ?>" name="transaction" class="button" />
 					
 					<?php
 					if ( ! empty( $_GET['transaction'] ) || ! empty( $transaction_type ) || ! empty( $transaction_from_date ) || ! empty( $transaction_to_date ) || ! empty( $_GET['customer-id'] ) ) {
 						$page = ! empty( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '';
 						$menu = ! empty( $_GET['menu'] ) ? sanitize_text_field( wp_unslash( $_GET['menu'] ) ) : '';
 						?>
-						<a href="<?php echo esc_url( admin_url( "admin.php?page={$page}&menu={$menu}" ) ); ?>" class="button"><?php esc_html_e( 'Reset', 'wallet-management-for-woocommerce' ); ?></a>
+						<a href="<?php echo esc_url( admin_url( "admin.php?page={$page}&menu={$menu}" ) ); ?>" class="button"><?php esc_html_e( 'Reset', 'devdiggers-wallet-for-woocommerce' ); ?></a>
 						<?php
 					}
 					?>

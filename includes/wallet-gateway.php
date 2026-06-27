@@ -5,7 +5,7 @@
  * @class DDWCWM_Wallet_Gateway
  * @extends WC_Payment_Gateway
  * @version 1.0.0
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  */
 
 namespace DDWCWalletManagement\Includes;
@@ -36,8 +36,8 @@ class DDWCWM_Wallet_Gateway extends \WC_Payment_Gateway {
 	public function __construct() {
 		$this->id                 = 'ddwcwm_wallet';
 		$this->icon               = apply_filters( 'woocommerce_cod_icon', '' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Reusing core WooCommerce COD icon filter.
-		$this->method_title       = esc_html__( 'Wallet', 'wallet-management-for-woocommerce' );
-		$this->method_description = esc_html__( 'Have your customers pay with Wallet.', 'wallet-management-for-woocommerce' );
+		$this->method_title       = esc_html__( 'Wallet', 'devdiggers-wallet-for-woocommerce' );
+		$this->method_description = esc_html__( 'Have your customers pay with Wallet.', 'devdiggers-wallet-for-woocommerce' );
 		$this->has_fields         = false;
 
 		// Load the settings
@@ -74,7 +74,7 @@ class DDWCWM_Wallet_Gateway extends \WC_Payment_Gateway {
 			$wallet_balance = apply_filters( 'ddwcwm_modify_available_wallet_amount_displayed_in_payment_gateway', $wallet_balance );
 
 			/* translators: %s: available wallet balance amount. */
-			return apply_filters( 'ddwcwm_modify_available_balance_text_in_payment_gateway', ' (' . sprintf( esc_html__( 'Available Balance: %s', 'wallet-management-for-woocommerce' ), '<strong>' . wc_price( $wallet_balance ) . '</strong>' ) . ')' );
+			return apply_filters( 'ddwcwm_modify_available_balance_text_in_payment_gateway', ' (' . sprintf( esc_html__( 'Available Balance: %s', 'devdiggers-wallet-for-woocommerce' ), '<strong>' . wc_price( $wallet_balance ) . '</strong>' ) . ')' );
 		}
 	}
 
@@ -94,43 +94,43 @@ class DDWCWM_Wallet_Gateway extends \WC_Payment_Gateway {
 
 		$this->form_fields = [
 			'enabled' => [
-				'title'       => esc_html__( 'Enable/Disable', 'wallet-management-for-woocommerce' ),
-				'label'       => esc_html__( 'Enable Wallet', 'wallet-management-for-woocommerce' ),
+				'title'       => esc_html__( 'Enable/Disable', 'devdiggers-wallet-for-woocommerce' ),
+				'label'       => esc_html__( 'Enable Wallet', 'devdiggers-wallet-for-woocommerce' ),
 				'type'        => 'checkbox',
 				'description' => '',
 				'default'     => 'no'
 			],
 			'title' => [
-				'title'       => esc_html__( 'Title', 'wallet-management-for-woocommerce' ),
+				'title'       => esc_html__( 'Title', 'devdiggers-wallet-for-woocommerce' ),
 				'type'        => 'text',
-				'description' => esc_html__( 'Payment method title that the customer will see on your checkout.', 'wallet-management-for-woocommerce' ),
-				'default'     => esc_html__( 'Wallet', 'wallet-management-for-woocommerce' ),
+				'description' => esc_html__( 'Payment method title that the customer will see on your checkout.', 'devdiggers-wallet-for-woocommerce' ),
+				'default'     => esc_html__( 'Wallet', 'devdiggers-wallet-for-woocommerce' ),
 				'desc_tip'    => true,
 			],
 			'description' => [
-				'title'       => esc_html__( 'Description', 'wallet-management-for-woocommerce' ),
+				'title'       => esc_html__( 'Description', 'devdiggers-wallet-for-woocommerce' ),
 				'type'        => 'textarea',
-				'description' => esc_html__( 'Payment method description that the customer will see on your website.', 'wallet-management-for-woocommerce' ),
-				'default'     => esc_html__( 'Pay with Wallet.', 'wallet-management-for-woocommerce' ),
+				'description' => esc_html__( 'Payment method description that the customer will see on your website.', 'devdiggers-wallet-for-woocommerce' ),
+				'default'     => esc_html__( 'Pay with Wallet.', 'devdiggers-wallet-for-woocommerce' ),
 				'desc_tip'    => true,
 			],
 			'instructions' => [
-				'title'       => esc_html__( 'Instructions', 'wallet-management-for-woocommerce' ),
+				'title'       => esc_html__( 'Instructions', 'devdiggers-wallet-for-woocommerce' ),
 				'type'        => 'textarea',
-				'description' => esc_html__( 'Instructions that will be added to the thank you page.', 'wallet-management-for-woocommerce' ),
-				'default'     => esc_html__( 'Your order is placed with Wallet, please keep your wallet recharged in order to use its services.', 'wallet-management-for-woocommerce' ),
+				'description' => esc_html__( 'Instructions that will be added to the thank you page.', 'devdiggers-wallet-for-woocommerce' ),
+				'default'     => esc_html__( 'Your order is placed with Wallet, please keep your wallet recharged in order to use its services.', 'devdiggers-wallet-for-woocommerce' ),
 				'desc_tip'    => true,
 			],
 			'enable_for_methods' => [
-				'title'             => esc_html__( 'Enable for shipping methods', 'wallet-management-for-woocommerce' ),
+				'title'             => esc_html__( 'Enable for shipping methods', 'devdiggers-wallet-for-woocommerce' ),
 				'type'              => 'multiselect',
 				'class'             => 'wc-enhanced-select',
 				'default'           => '',
-				'description'       => esc_html__( 'If Wallet is only available for certain methods, set it up here. Leave blank to enable for all methods.', 'wallet-management-for-woocommerce' ),
+				'description'       => esc_html__( 'If Wallet is only available for certain methods, set it up here. Leave blank to enable for all methods.', 'devdiggers-wallet-for-woocommerce' ),
 				'options'           => $shipping_methods,
 				'desc_tip'          => true,
 				'custom_attributes' => [
-					'data-placeholder' => esc_html__( 'Select shipping methods', 'wallet-management-for-woocommerce' )
+					'data-placeholder' => esc_html__( 'Select shipping methods', 'devdiggers-wallet-for-woocommerce' )
 				],
 			],
 		];
@@ -238,7 +238,7 @@ class DDWCWM_Wallet_Gateway extends \WC_Payment_Gateway {
 			'amount'    => $amount,
 			'user_id'   => $user_id,
 			'order_id'  => $order_id,
-			'note'      => esc_html__( 'Credited on refund for purchase.', 'wallet-management-for-woocommerce' ),
+			'note'      => esc_html__( 'Credited on refund for purchase.', 'devdiggers-wallet-for-woocommerce' ),
 			'date'      => current_time( 'Y-m-d H:i:s' ),
 			'reference' => 'order_refund',
 		];
@@ -280,7 +280,7 @@ class DDWCWM_Wallet_Gateway extends \WC_Payment_Gateway {
 			'amount'    => $order_total,
 			'user_id'   => $user_id,
 			'order_id'  => $order_id,
-			'note'      => esc_html__( 'Debited on using it on purchase.', 'wallet-management-for-woocommerce' ),
+			'note'      => esc_html__( 'Debited on using it on purchase.', 'devdiggers-wallet-for-woocommerce' ),
 			'date'      => current_time( 'Y-m-d H:i:s' ),
 			'reference' => 'order_payment',
 		];
@@ -293,7 +293,7 @@ class DDWCWM_Wallet_Gateway extends \WC_Payment_Gateway {
 
 		$order->save();
 
-		// $order->update_status( apply_filters( 'ddwcwm_process_payment_order_status', $order->has_downloadable_item() ? 'on-hold' : 'processing', $order ), esc_html__( 'Payment done for Shopping.', 'wallet-management-for-woocommerce' ) );
+		// $order->update_status( apply_filters( 'ddwcwm_process_payment_order_status', $order->has_downloadable_item() ? 'on-hold' : 'processing', $order ), esc_html__( 'Payment done for Shopping.', 'devdiggers-wallet-for-woocommerce' ) );
 
 		$order->payment_complete();
 

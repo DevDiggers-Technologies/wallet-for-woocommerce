@@ -2,10 +2,10 @@
 # This file is distributed under the GPLv3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Wallet Management for WooCommerce 1.0.0\n"
+"Project-Id-Version: DevDiggers Wallet for WooCommerce 1.0.0\n"
 "Report-Msgid-Bugs-To: "
-"https://wordpress.org/support/plugin/wallet-management-for-woocommerce\n"
-"POT-Creation-Date: 2026-06-23 20:20:55+00:00\n"
+"https://wordpress.org/support/plugin/devdiggers-wallet-for-woocommerce\n"
+"POT-Creation-Date: 2026-06-27 11:36:57+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -33,12 +33,12 @@ msgstr ""
 #: functions.php:86
 #. translators: %1$s for a opening tag and %2$s for a closing tag
 msgid ""
-"Wallet Management for WooCommerce is activated but not effective. It "
+"DevDiggers Wallet for WooCommerce is activated but not effective. It "
 "requires %1$sWooCommerce Plugin%2$s in order to use its functionalities."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "Wallet Management for WooCommerce"
+msgid "DevDiggers Wallet for WooCommerce"
 msgstr ""
 
 #: functions.php:134 includes/admin-dashboard.php:76
@@ -260,7 +260,7 @@ msgid ""
 msgstr ""
 
 #: includes/admin/setup-wizard.php:93
-msgid "Welcome to Wallet Management for WooCommerce!"
+msgid "Welcome to DevDiggers Wallet for WooCommerce!"
 msgstr ""
 
 #: includes/admin/setup-wizard.php:95
@@ -277,7 +277,7 @@ msgstr ""
 
 #: includes/admin/setup-wizard.php:116
 #: templates/admin/configuration/general-configuration-template.php:46
-msgid "Enable Wallet Management for WooCommerce"
+msgid "Enable DevDiggers Wallet for WooCommerce"
 msgstr ""
 
 #: includes/admin/setup-wizard.php:117
@@ -1235,80 +1235,110 @@ msgid ""
 msgstr ""
 
 #: templates/admin/configuration/cashback-configuration-template.php:191
-msgid "Cart Page Message"
+msgid "Shop Page Message"
 msgstr ""
 
 #: templates/admin/configuration/cashback-configuration-template.php:192
-msgid "Enter Cart Page Message"
+msgid "Enter Shop Page Message"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:197
+#: templates/admin/configuration/cashback-configuration-template.php:195
 #. translators: %s: the {cashback_amount} placeholder tag.
-msgid "Cumulative cashback summary on the cart page. Use placeholder: %s."
+msgid ""
+"Archive pages highlighting potential earnings. Use placeholder: %s. "
+"Available in the Pro version."
 msgstr ""
 
 #: templates/admin/configuration/cashback-configuration-template.php:201
-msgid "Checkout Page Message"
+msgid "Product Page Message"
 msgstr ""
 
 #: templates/admin/configuration/cashback-configuration-template.php:202
-msgid "Enter Checkout Page Message"
+msgid "Enter Product Page Message"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:207
+#: templates/admin/configuration/cashback-configuration-template.php:205
 #. translators: %s: the {cashback_amount} placeholder tag.
-msgid "Final cashback confirmation during checkout. Use placeholder: %s."
+msgid ""
+"Individual item pages showing specific cashback. Use placeholder: %s. "
+"Available in the Pro version."
 msgstr ""
 
 #: templates/admin/configuration/cashback-configuration-template.php:211
-msgid "View Order Page Message"
+msgid "Cart Page Message"
 msgstr ""
 
 #: templates/admin/configuration/cashback-configuration-template.php:212
-msgid "Enter View Order Page Message"
+msgid "Enter Cart Page Message"
 msgstr ""
 
 #: templates/admin/configuration/cashback-configuration-template.php:217
 #. translators: %s: the {cashback_amount} placeholder tag.
-msgid "Summary of rewards displayed on order details. Use placeholder: %s."
+msgid "Cumulative cashback summary on the cart page. Use placeholder: %s."
 msgstr ""
 
 #: templates/admin/configuration/cashback-configuration-template.php:221
-msgid "Order Received Message"
+msgid "Checkout Page Message"
 msgstr ""
 
 #: templates/admin/configuration/cashback-configuration-template.php:222
-msgid "Enter Order Received Page Message"
+msgid "Enter Checkout Page Message"
 msgstr ""
 
 #: templates/admin/configuration/cashback-configuration-template.php:227
 #. translators: %s: the {cashback_amount} placeholder tag.
+msgid "Final cashback confirmation during checkout. Use placeholder: %s."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:231
+msgid "View Order Page Message"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:232
+msgid "Enter View Order Page Message"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:237
+#. translators: %s: the {cashback_amount} placeholder tag.
+msgid "Summary of rewards displayed on order details. Use placeholder: %s."
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:241
+msgid "Order Received Message"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:242
+msgid "Enter Order Received Page Message"
+msgstr ""
+
+#: templates/admin/configuration/cashback-configuration-template.php:247
+#. translators: %s: the {cashback_amount} placeholder tag.
 msgid "Confirmation message on the \"Thank You\" page. Use placeholder: %s."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:233
+#: templates/admin/configuration/cashback-configuration-template.php:253
 msgid "Message Design"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:234
+#: templates/admin/configuration/cashback-configuration-template.php:254
 msgid ""
 "Fine-tune the appearance of cashback banners to match your store's visual "
 "theme."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:239
+#: templates/admin/configuration/cashback-configuration-template.php:259
 msgid "Text Color"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:246
+#: templates/admin/configuration/cashback-configuration-template.php:266
 msgid "Background Color"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:253
+#: templates/admin/configuration/cashback-configuration-template.php:273
 msgid "Border Color"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:260
+#: templates/admin/configuration/cashback-configuration-template.php:280
 msgid "Font Size (px)"
 msgstr ""
 
@@ -1622,7 +1652,7 @@ msgid ""
 msgstr ""
 
 #: templates/admin/configuration/endpoints-configuration-template.php:42
-msgid "Default: wallet-management-for-woocommerce"
+msgid "Default: devdiggers-wallet-for-woocommerce"
 msgstr ""
 
 #: templates/admin/configuration/endpoints-configuration-template.php:49

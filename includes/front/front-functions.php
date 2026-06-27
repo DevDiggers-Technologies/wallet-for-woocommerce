@@ -2,7 +2,7 @@
 /**
  * Front functions
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -100,9 +100,9 @@ if ( ! class_exists( 'DDWCWM_Front_Functions' ) ) {
 				'ajaxNonce'     => wp_create_nonce( 'ddwcwm-nonce' ),
 				'ddwcwm_wallet' => $ddwcwm_wallet,
 				'i18n'          => [
-					'enterOtp'          => esc_html__( 'Enter OTP first!!', 'wallet-management-for-woocommerce' ),
-					'demoOtp'           => esc_html__( 'Demo OTP', 'wallet-management-for-woocommerce' ),
-					'confirmPayRequest' => esc_html__( 'Are you sure you want to pay this request?', 'wallet-management-for-woocommerce' ),
+					'enterOtp'          => esc_html__( 'Enter OTP first!!', 'devdiggers-wallet-for-woocommerce' ),
+					'demoOtp'           => esc_html__( 'Demo OTP', 'devdiggers-wallet-for-woocommerce' ),
+					'confirmPayRequest' => esc_html__( 'Are you sure you want to pay this request?', 'devdiggers-wallet-for-woocommerce' ),
 					'successIcon'       => DDFW_SVG::get_svg_icon( 'checkmark-circle', true ),
 					'errorIcon'         => DDFW_SVG::get_svg_icon( 'basic-info', true ), // Using info icon for now
 				],
@@ -163,7 +163,7 @@ if ( ! class_exists( 'DDWCWM_Front_Functions' ) ) {
 				if ( ! empty( $cart_contents ) ) {
 					foreach( $cart_contents as $key => $cart_content ) {
 						if ( $cart_content[ 'product_id' ] == $wallet_topup_pro->ID ) {
-							wc_add_notice( esc_html__( 'Cannot add new products now. Either empty cart or process wallet topup first.', 'wallet-management-for-woocommerce' ), 'notice' );
+							wc_add_notice( esc_html__( 'Cannot add new products now. Either empty cart or process wallet topup first.', 'devdiggers-wallet-for-woocommerce' ), 'notice' );
 						}
 					}
 				}
@@ -332,7 +332,7 @@ if ( ! class_exists( 'DDWCWM_Front_Functions' ) ) {
 					wp_safe_redirect( apply_filters( 'ddwcwm_modify_topup_redirection_url', $redirection_url ) );
 					exit();
 				} else {
-					wc_add_notice( esc_html__( 'Enter amount to topup', 'wallet-management-for-woocommerce' ), 'error' );
+					wc_add_notice( esc_html__( 'Enter amount to topup', 'devdiggers-wallet-for-woocommerce' ), 'error' );
 					wp_safe_redirect( wp_get_referer() ? wp_get_referer() : wc_get_cart_url() );
 					exit();
 				}

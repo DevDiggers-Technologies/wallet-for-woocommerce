@@ -2,7 +2,7 @@
 /**
  * Rules helper
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -155,7 +155,7 @@ if ( ! class_exists( 'DDWCWM_Rules_Helper' ) ) {
 						$this->ddwcwm_save_cashback_rule( $cashback_rule_data, $real_id );
 					}
 				} else {
-					$this->ddwcwm_print_notification( esc_html__( 'General cashback rules having empty or invalid fields.', 'wallet-management-for-woocommerce' ), 'error' );
+					$this->ddwcwm_print_notification( esc_html__( 'General cashback rules having empty or invalid fields.', 'devdiggers-wallet-for-woocommerce' ), 'error' );
 				}
 			} else {
 				if ( ! empty( $old_cashback_rules ) ) {
@@ -171,7 +171,7 @@ if ( ! class_exists( 'DDWCWM_Rules_Helper' ) ) {
 			// features and are intentionally not processed in Free.
 
 			if ( empty( $error ) ) {
-				$this->ddwcwm_print_notification( esc_html__( 'Cashback Rules has been saved successfully.', 'wallet-management-for-woocommerce' ), 'success' );
+				$this->ddwcwm_print_notification( esc_html__( 'Cashback Rules has been saved successfully.', 'devdiggers-wallet-for-woocommerce' ), 'success' );
 
 				return true;
 			}
