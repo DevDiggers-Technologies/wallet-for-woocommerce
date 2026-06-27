@@ -2,7 +2,7 @@
 /**
  * Create Schema on Activation
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -46,8 +46,6 @@ if ( ! class_exists( 'DDWCWM_Install' ) ) {
 			$cashback_rules_table = $wpdb->prefix . 'ddwcwm_cashback_rules';
 			$cashback_rules = "CREATE TABLE $cashback_rules_table (
 				`id` bigint(20) NOT NULL AUTO_INCREMENT,
-				`basis` varchar(20) NOT NULL,
-				`basis_value` varchar(100),
 				`amount_from` varchar(20),
 				`amount_to` varchar(20),
 				`cashback_type` varchar(20),
@@ -59,7 +57,7 @@ if ( ! class_exists( 'DDWCWM_Install' ) ) {
 			dbDelta( $cashback_rules );
 
 			// Trigger setup wizard for new installations.
-			set_transient( 'ddfw_activation_redirect_wallet-management-for-woocommerce', true, 30 );
+			set_transient( 'ddfw_activation_redirect_devdiggers-wallet-for-woocommerce', true, 30 );
 
 			DDWCWM_Install::ddwcwm_create_product();
 		}

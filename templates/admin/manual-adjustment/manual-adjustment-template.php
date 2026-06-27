@@ -2,7 +2,7 @@
 /**
  * Manual Adjustment template class
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -43,9 +43,9 @@ if ( ! class_exists( 'DDWCWM_Manual_Adjustment_Template' ) ) {
 					<script type="text/html" id="tmpl-ddwcwm-wizard-error">
 						<div class="ddwcwm-wizard-error">
 							<span class="ddwcwm-wizard-error-icon">⚠</span>
-							<h3><?php esc_html_e( 'Processing Error', 'wallet-management-for-woocommerce' ); ?></h3>
+							<h3><?php esc_html_e( 'Processing Error', 'devdiggers-wallet-for-woocommerce' ); ?></h3>
 							<p>{{ data.message }}</p>
-							<button class="button button-secondary ddwcwm-wizard-retry"><?php esc_html_e( 'Try Again', 'wallet-management-for-woocommerce' ); ?></button>
+							<button class="button button-secondary ddwcwm-wizard-retry"><?php esc_html_e( 'Try Again', 'devdiggers-wallet-for-woocommerce' ); ?></button>
 						</div>
 					</script>
 
@@ -56,20 +56,20 @@ if ( ! class_exists( 'DDWCWM_Manual_Adjustment_Template' ) ) {
 								<span class="ddwcwm-wizard-summary-success">
 									<svg width="24" height="24" fill="none"><circle cx="12" cy="12" r="12" fill="#22C55E"/><path d="M7 13l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 								</span>
-								<span class="ddwcwm-wizard-summary-title"><?php esc_html_e( 'Processing Complete', 'wallet-management-for-woocommerce' ); ?></span>
+								<span class="ddwcwm-wizard-summary-title"><?php esc_html_e( 'Processing Complete', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 							</div>
 							<div class="ddwcwm-wizard-summary-details">
 								<div class="ddwcwm-wizard-summary-stats">
 									<div class="ddwcwm-wizard-summary-row">
-										<span class="ddwcwm-wizard-summary-label ddwcwm-success">✔ <?php esc_html_e( 'Total users processed', 'wallet-management-for-woocommerce' ); ?></span>
+										<span class="ddwcwm-wizard-summary-label ddwcwm-success">✔ <?php esc_html_e( 'Total users processed', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 										<span class="ddwcwm-wizard-summary-value">{{ data.totalUsers }}</span>
 									</div>
 									<div class="ddwcwm-wizard-summary-row">
-										<span class="ddwcwm-wizard-summary-label ddwcwm-success">✔ <?php esc_html_e( 'Successfully processed', 'wallet-management-for-woocommerce' ); ?></span>
+										<span class="ddwcwm-wizard-summary-label ddwcwm-success">✔ <?php esc_html_e( 'Successfully processed', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 										<span class="ddwcwm-wizard-summary-value">{{ data.successCount }}</span>
 									</div>
 									<div class="ddwcwm-wizard-summary-row">
-										<span class="ddwcwm-wizard-summary-label ddwcwm-warning">⚠ <?php esc_html_e( 'Failed to process', 'wallet-management-for-woocommerce' ); ?></span>
+										<span class="ddwcwm-wizard-summary-label ddwcwm-warning">⚠ <?php esc_html_e( 'Failed to process', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 										<span class="ddwcwm-wizard-summary-value">{{ data.errorCount }}</span>
 									</div>
 								</div>
@@ -78,7 +78,7 @@ if ( ! class_exists( 'DDWCWM_Manual_Adjustment_Template' ) ) {
 									<details class="ddwcwm-details">
 										<summary class="ddwcwm-details-summary">
 											<span class="ddwcwm-details-icon">📋</span>
-											<?php esc_html_e( 'View Failed Process Details', 'wallet-management-for-woocommerce' ); ?>
+											<?php esc_html_e( 'View Failed Process Details', 'devdiggers-wallet-for-woocommerce' ); ?>
 											<span class="ddwcwm-details-count">({{ data.failedResults.length }})</span>
 										</summary>
 										<div class="ddwcwm-details-content">
@@ -87,20 +87,20 @@ if ( ! class_exists( 'DDWCWM_Manual_Adjustment_Template' ) ) {
 												<div class="ddwcwm-details-item">
 													<div class="ddwcwm-details-item-header">
 														<span class="ddwcwm-details-user">{{ result.display_name }} ({{ result.user_login }})</span>
-														<span class="ddwcwm-details-status ddwcwm-error"><?php esc_html_e( 'Failed', 'wallet-management-for-woocommerce' ); ?></span>
+														<span class="ddwcwm-details-status ddwcwm-error"><?php esc_html_e( 'Failed', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 													</div>
 													<div class="ddwcwm-details-item-content">
 														<p class="ddwcwm-details-message">{{ result.message }}</p>
 														<div class="ddwcwm-details-info">
-															<span class="ddwcwm-details-label"><?php esc_html_e( 'Action:', 'wallet-management-for-woocommerce' ); ?></span>
+															<span class="ddwcwm-details-label"><?php esc_html_e( 'Action:', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 															<span class="ddwcwm-details-value">{{ result.action_type }}</span>
 														</div>
 														<div class="ddwcwm-details-info">
-															<span class="ddwcwm-details-label"><?php esc_html_e( 'Amount Requested:', 'wallet-management-for-woocommerce' ); ?></span>
+															<span class="ddwcwm-details-label"><?php esc_html_e( 'Amount Requested:', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 															<span class="ddwcwm-details-value">{{{ result.amount_requested }}}</span>
 														</div>
 														<div class="ddwcwm-details-info">
-															<span class="ddwcwm-details-label"><?php esc_html_e( 'Current Balance:', 'wallet-management-for-woocommerce' ); ?></span>
+															<span class="ddwcwm-details-label"><?php esc_html_e( 'Current Balance:', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 															<span class="ddwcwm-details-value">{{{ result.wallet_balance }}}</span>
 														</div>
 													</div>
@@ -112,8 +112,8 @@ if ( ! class_exists( 'DDWCWM_Manual_Adjustment_Template' ) ) {
 								</div>
 								<# } #>
 								<div class="ddwcwm-step-actions-final ddwcwm-step-actions">
-									<button type="button" class="button button-secondary ddwcwm-start-again"><?php esc_html_e( 'Start Again', 'wallet-management-for-woocommerce' ); ?></button>
-									<a href="<?php echo esc_url( admin_url( 'admin.php?page=' . ( isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '' ) . '&menu=' . ( isset( $_GET['menu'] ) ? sanitize_text_field( wp_unslash( $_GET['menu'] ) ) : '' ) ) ); ?>" class="button button-primary"><?php esc_html_e( 'Done', 'wallet-management-for-woocommerce' ); ?></a>
+									<button type="button" class="button button-secondary ddwcwm-start-again"><?php esc_html_e( 'Start Again', 'devdiggers-wallet-for-woocommerce' ); ?></button>
+									<a href="<?php echo esc_url( admin_url( 'admin.php?page=' . ( isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '' ) . '&menu=' . ( isset( $_GET['menu'] ) ? sanitize_text_field( wp_unslash( $_GET['menu'] ) ) : '' ) ) ); ?>" class="button button-primary"><?php esc_html_e( 'Done', 'devdiggers-wallet-for-woocommerce' ); ?></a>
 								</div>
 							</div>
 						</div>
@@ -122,15 +122,15 @@ if ( ! class_exists( 'DDWCWM_Manual_Adjustment_Template' ) ) {
 					<div class="ddwcwm-steps">
 						<div class="ddwcwm-step active" data-step="1">
 							<span class="ddwcwm-step-index">1</span>
-							<span class="ddwcwm-step-label"><?php esc_html_e( 'Select Users & Amount', 'wallet-management-for-woocommerce' ); ?></span>
+							<span class="ddwcwm-step-label"><?php esc_html_e( 'Select Users & Amount', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 						</div>
 						<div class="ddwcwm-step" data-step="2">
 							<span class="ddwcwm-step-index">2</span>
-							<span class="ddwcwm-step-label"><?php esc_html_e( 'Process Transaction', 'wallet-management-for-woocommerce' ); ?></span>
+							<span class="ddwcwm-step-label"><?php esc_html_e( 'Process Transaction', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 						</div>
 						<div class="ddwcwm-step" data-step="3">
 							<span class="ddwcwm-step-index">3</span>
-							<span class="ddwcwm-step-label"><?php esc_html_e( 'Complete', 'wallet-management-for-woocommerce' ); ?></span>
+							<span class="ddwcwm-step-label"><?php esc_html_e( 'Complete', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 						</div>
 					</div>
 
@@ -139,21 +139,21 @@ if ( ! class_exists( 'DDWCWM_Manual_Adjustment_Template' ) ) {
 
 						<div class="ddwcwm-step-content active" data-step="1">
 							<div class="ddwcwm-step-header">
-								<h2><?php esc_html_e( 'Manual Adjustment', 'wallet-management-for-woocommerce' ); ?></h2>
-								<p class="ddwcwm-step-description"><?php esc_html_e( 'You can manually credit or debit the wallet amount for single or multiple users from here.', 'wallet-management-for-woocommerce' ); ?></p>
+								<h2><?php esc_html_e( 'Manual Adjustment', 'devdiggers-wallet-for-woocommerce' ); ?></h2>
+								<p class="ddwcwm-step-description"><?php esc_html_e( 'You can manually credit or debit the wallet amount for single or multiple users from here.', 'devdiggers-wallet-for-woocommerce' ); ?></p>
 							</div>
 
 							<div class="ddwcwm-manual-adjustment-fields">
 								<!-- User Selection Section -->
 								<div class="ddwcwm-field-section">
-									<h3><?php esc_html_e( 'User Selection', 'wallet-management-for-woocommerce' ); ?></h3>
+									<h3><?php esc_html_e( 'User Selection', 'devdiggers-wallet-for-woocommerce' ); ?></h3>
 
 									<div class="ddwcwm-field-option">
 										<label class="ddwcwm-field-checkbox">
 											<input type="checkbox" id="ddwcwm-select-all-users" name="ddwcwm_select_all_users">
 											<div class="ddwcwm-card-content">
-												<span class="ddwcwm-card-label"><?php esc_html_e( 'Select All Users', 'wallet-management-for-woocommerce' ); ?></span>
-												<span class="ddwcwm-card-description"><?php esc_html_e( 'Apply wallet transaction to all users in the system', 'wallet-management-for-woocommerce' ); ?></span>
+												<span class="ddwcwm-card-label"><?php esc_html_e( 'Select All Users', 'devdiggers-wallet-for-woocommerce' ); ?></span>
+												<span class="ddwcwm-card-description"><?php esc_html_e( 'Apply wallet transaction to all users in the system', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 											</div>
 											<div class="ddwcwm-card-icon">
 												<?php
@@ -174,22 +174,22 @@ if ( ! class_exists( 'DDWCWM_Manual_Adjustment_Template' ) ) {
 									</div>
 
 									<div class="ddwcwm-divider">
-										<span class="ddwcwm-divider-text"><?php esc_html_e( 'OR', 'wallet-management-for-woocommerce' ); ?></span>
+										<span class="ddwcwm-divider-text"><?php esc_html_e( 'OR', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 									</div>
 
 									<div class="ddwcwm-field-group" id="ddwcwm-individual-users-section">
 										<label for="ddwcwm-users" class="ddwcwm-field-label">
-											<?php esc_html_e( 'Select Users', 'wallet-management-for-woocommerce' ); ?>
-											<abbr title="<?php esc_html_e( 'Required', 'wallet-management-for-woocommerce' ); ?>" class="required">*</abbr>
+											<?php esc_html_e( 'Select Users', 'devdiggers-wallet-for-woocommerce' ); ?>
+											<abbr title="<?php esc_html_e( 'Required', 'devdiggers-wallet-for-woocommerce' ); ?>" class="required">*</abbr>
 										</label>
-										<select name="_ddwcwm_users[]" id="ddwcwm-users" class="regular-text ddfw-users" multiple data-placeholder="<?php esc_attr_e( 'Search Users...', 'wallet-management-for-woocommerce' ); ?>"></select>
-										<p class="description"><?php esc_html_e( 'Select single or multiple users for the operation.', 'wallet-management-for-woocommerce' ); ?></p>
+										<select name="_ddwcwm_users[]" id="ddwcwm-users" class="regular-text ddfw-users" multiple data-placeholder="<?php esc_attr_e( 'Search Users...', 'devdiggers-wallet-for-woocommerce' ); ?>"></select>
+										<p class="description"><?php esc_html_e( 'Select single or multiple users for the operation.', 'devdiggers-wallet-for-woocommerce' ); ?></p>
 									</div>
 								</div>
 
 								<!-- Amount Configuration Section -->
 								<div class="ddwcwm-field-section">
-									<h3><?php esc_html_e( 'Transaction Configuration', 'wallet-management-for-woocommerce' ); ?></h3>
+									<h3><?php esc_html_e( 'Transaction Configuration', 'devdiggers-wallet-for-woocommerce' ); ?></h3>
 
 									<?php do_action( 'ddwcwm_add_fields_after_select_users_in_manual_credit_debit' ); ?>
 
@@ -197,8 +197,8 @@ if ( ! class_exists( 'DDWCWM_Manual_Adjustment_Template' ) ) {
 										<div class="ddwcwm-field-grid">
 											<div class="ddwcwm-field-group">
 												<label for="ddwcwm-wallet-amount" class="ddwcwm-field-label">
-													<?php esc_html_e( 'Amount', 'wallet-management-for-woocommerce' ); ?>
-													<abbr title="<?php esc_html_e( 'Required', 'wallet-management-for-woocommerce' ); ?>" class="required">*</abbr>
+													<?php esc_html_e( 'Amount', 'devdiggers-wallet-for-woocommerce' ); ?>
+													<abbr title="<?php esc_html_e( 'Required', 'devdiggers-wallet-for-woocommerce' ); ?>" class="required">*</abbr>
 												</label>
 												<div class="ddwcwm-input-group">
 													<input type="number"
@@ -210,19 +210,19 @@ if ( ! class_exists( 'DDWCWM_Manual_Adjustment_Template' ) ) {
 														placeholder="0.00"
 														required>
 												</div>
-												<p class="description"><?php esc_html_e( 'Enter the amount you want to credit or debit.', 'wallet-management-for-woocommerce' ); ?></p>
+												<p class="description"><?php esc_html_e( 'Enter the amount you want to credit or debit.', 'devdiggers-wallet-for-woocommerce' ); ?></p>
 											</div>
 
 											<div class="ddwcwm-field-group">
 												<label for="ddwcwm-action-type" class="ddwcwm-field-label">
-													<?php esc_html_e( 'Action Type', 'wallet-management-for-woocommerce' ); ?>
-													<abbr title="<?php esc_html_e( 'Required', 'wallet-management-for-woocommerce' ); ?>" class="required">*</abbr>
+													<?php esc_html_e( 'Action Type', 'devdiggers-wallet-for-woocommerce' ); ?>
+													<abbr title="<?php esc_html_e( 'Required', 'devdiggers-wallet-for-woocommerce' ); ?>" class="required">*</abbr>
 												</label>
 												<select id="ddwcwm-action-type" name="_ddwcwm_action_type" class="ddwcwm-action-type regular-text" required>
-													<option value="credit" selected><?php esc_html_e( 'Credit', 'wallet-management-for-woocommerce' ); ?></option>
-													<option value="debit"><?php esc_html_e( 'Debit', 'wallet-management-for-woocommerce' ); ?></option>
+													<option value="credit" selected><?php esc_html_e( 'Credit', 'devdiggers-wallet-for-woocommerce' ); ?></option>
+													<option value="debit"><?php esc_html_e( 'Debit', 'devdiggers-wallet-for-woocommerce' ); ?></option>
 												</select>
-												<p class="description"><?php esc_html_e( 'Choose whether to credit or debit the amount.', 'wallet-management-for-woocommerce' ); ?></p>
+												<p class="description"><?php esc_html_e( 'Choose whether to credit or debit the amount.', 'devdiggers-wallet-for-woocommerce' ); ?></p>
 											</div>
 										</div>
 									</div>
@@ -230,15 +230,15 @@ if ( ! class_exists( 'DDWCWM_Manual_Adjustment_Template' ) ) {
 									<div class="ddwcwm-description-config">
 										<div class="ddwcwm-field-group">
 											<label for="ddwcwm-reason" class="ddwcwm-field-label">
-												<?php esc_html_e( 'Reason', 'wallet-management-for-woocommerce' ); ?>
-												<span class="ddwcwm-optional-badge"><?php esc_html_e( 'Optional', 'wallet-management-for-woocommerce' ); ?></span>
+												<?php esc_html_e( 'Reason', 'devdiggers-wallet-for-woocommerce' ); ?>
+												<span class="ddwcwm-optional-badge"><?php esc_html_e( 'Optional', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 											</label>
 											<textarea id="ddwcwm-reason"
 												name="_ddwcwm_reason"
 												class="ddwcwm-reason regular-text ddfw-full-width"
 												rows="3"
-												placeholder="<?php esc_attr_e( 'e.g., Manual bonus added', 'wallet-management-for-woocommerce' ); ?>"></textarea>
-											<p class="description"><?php esc_html_e( 'Add a reason that will be logged and visible to users in emails.', 'wallet-management-for-woocommerce' ); ?></p>
+												placeholder="<?php esc_attr_e( 'e.g., Manual bonus added', 'devdiggers-wallet-for-woocommerce' ); ?>"></textarea>
+											<p class="description"><?php esc_html_e( 'Add a reason that will be logged and visible to users in emails.', 'devdiggers-wallet-for-woocommerce' ); ?></p>
 										</div>
 									</div>
 
@@ -248,14 +248,14 @@ if ( ! class_exists( 'DDWCWM_Manual_Adjustment_Template' ) ) {
 
 							<div class="ddwcwm-step-actions">
 								<button type="submit" class="button button-primary" id="ddwcwm-start-transaction">
-									<?php esc_html_e( 'Start Process', 'wallet-management-for-woocommerce' ); ?>
+									<?php esc_html_e( 'Start Process', 'devdiggers-wallet-for-woocommerce' ); ?>
 								</button>
 							</div>
 						</div>
 
 						<div class="ddwcwm-step-content ddfw-hide" data-step="2">
-							<h2><?php esc_html_e( 'Processing Transaction', 'wallet-management-for-woocommerce' ); ?></h2>
-							<p class="ddwcwm-step-description"><?php esc_html_e( 'Please wait while we process the wallet transaction...', 'wallet-management-for-woocommerce' ); ?></p>
+							<h2><?php esc_html_e( 'Processing Transaction', 'devdiggers-wallet-for-woocommerce' ); ?></h2>
+							<p class="ddwcwm-step-description"><?php esc_html_e( 'Please wait while we process the wallet transaction...', 'devdiggers-wallet-for-woocommerce' ); ?></p>
 							<div class="ddwcwm-wizard-summary-wrap">
 								<div class="ddwcwm-wizard-summary">
 									<!-- Progress bar and results will be rendered using templates -->
@@ -264,8 +264,8 @@ if ( ! class_exists( 'DDWCWM_Manual_Adjustment_Template' ) ) {
 						</div>
 
 						<div class="ddwcwm-step-content ddfw-hide" data-step="3">
-							<h2><?php esc_html_e( 'Transaction Complete', 'wallet-management-for-woocommerce' ); ?></h2>
-							<p class="ddwcwm-step-description"><?php esc_html_e( 'The wallet transactions have been processed.', 'wallet-management-for-woocommerce' ); ?></p>
+							<h2><?php esc_html_e( 'Transaction Complete', 'devdiggers-wallet-for-woocommerce' ); ?></h2>
+							<p class="ddwcwm-step-description"><?php esc_html_e( 'The wallet transactions have been processed.', 'devdiggers-wallet-for-woocommerce' ); ?></p>
 							<div class="ddwcwm-wizard-summary-wrap">
 								<div class="ddwcwm-wizard-summary">
 									<!-- Summary will be rendered using templates -->

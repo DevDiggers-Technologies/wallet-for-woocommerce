@@ -33,10 +33,10 @@ $current_user = wp_get_current_user();
             <h1>
 				<?php
 				/* translators: %s: Current user's display name. */
-				printf( esc_html__( 'Hello, %s!', 'wallet-management-for-woocommerce' ), esc_html( $current_user->display_name ) );
+				printf( esc_html__( 'Hello, %s!', 'devdiggers-wallet-for-woocommerce' ), esc_html( $current_user->display_name ) );
 				?>
 			</h1>
-            <p><?php esc_html_e( 'Browse and explore our premium extensions for your WooCommerce store.', 'wallet-management-for-woocommerce' ); ?></p>
+            <p><?php esc_html_e( 'Browse and explore our premium extensions for your WooCommerce store.', 'devdiggers-wallet-for-woocommerce' ); ?></p>
         </div>
         <div class="ddfw-page-actions" style="margin-left: auto;">
         </div>
@@ -54,7 +54,7 @@ $current_user = wp_get_current_user();
             </div>
             <div class="ddfw-stat-content">
                 <h3><?php echo esc_html( $plugin_stats['total_plugins'] ); ?></h3>
-                <p><?php esc_html_e( 'Total Extensions', 'wallet-management-for-woocommerce' ); ?></p>
+                <p><?php esc_html_e( 'Total Extensions', 'devdiggers-wallet-for-woocommerce' ); ?></p>
             </div>
         </div>
 
@@ -67,7 +67,7 @@ $current_user = wp_get_current_user();
             </div>
             <div class="ddfw-stat-content">
                 <h3><?php echo esc_html( (int) gmdate( 'Y' ) - 2018 . '+' ); ?></h3>
-                <p><?php esc_html_e( 'Years Experience', 'wallet-management-for-woocommerce' ); ?></p>
+                <p><?php esc_html_e( 'Years Experience', 'devdiggers-wallet-for-woocommerce' ); ?></p>
             </div>
         </div>
 
@@ -78,8 +78,8 @@ $current_user = wp_get_current_user();
                 </svg>
             </div>
             <div class="ddfw-stat-content">
-                <h3><?php esc_html_e( '500+', 'wallet-management-for-woocommerce' ); ?></h3>
-                <p><?php esc_html_e( '5 Star Reviews', 'wallet-management-for-woocommerce' ); ?></p>
+                <h3><?php esc_html_e( '500+', 'devdiggers-wallet-for-woocommerce' ); ?></h3>
+                <p><?php esc_html_e( '5 Star Reviews', 'devdiggers-wallet-for-woocommerce' ); ?></p>
             </div>
         </div>
 
@@ -90,8 +90,8 @@ $current_user = wp_get_current_user();
                 </svg>
             </div>
             <div class="ddfw-stat-content">
-                <h3><?php esc_html_e( 'Online', 'wallet-management-for-woocommerce' ); ?></h3>
-                <p><?php esc_html_e( '24/7 Support', 'wallet-management-for-woocommerce' ); ?></p>
+                <h3><?php esc_html_e( 'Online', 'devdiggers-wallet-for-woocommerce' ); ?></h3>
+                <p><?php esc_html_e( '24/7 Support', 'devdiggers-wallet-for-woocommerce' ); ?></p>
             </div>
         </div>
     </div>
@@ -100,7 +100,7 @@ $current_user = wp_get_current_user();
     <?php if ( ! empty( $featured_plugins ) ): ?>
     <div class="ddfw-dashboard-section">
         <div class="ddfw-section-header">
-            <h2><?php esc_html_e( 'Featured Extensions', 'wallet-management-for-woocommerce' ); ?></h2>
+            <h2><?php esc_html_e( 'Featured Extensions', 'devdiggers-wallet-for-woocommerce' ); ?></h2>
         </div>
         <div class="ddfw-plugins-grid">
             <?php foreach ( $featured_plugins as $plugin ): ?>
@@ -117,17 +117,17 @@ $current_user = wp_get_current_user();
                     <div class="ddfw-plugin-footer">
                         <div class="ddfw-plugin-actions">
                             <a href="<?php echo esc_url( $plugin['url'] ); ?>" target="_blank" class="ddfw-button ddfw-button-primary">
-                                <?php esc_html_e( 'Buy Now', 'wallet-management-for-woocommerce' ); ?>
+                                <?php esc_html_e( 'Buy Now', 'devdiggers-wallet-for-woocommerce' ); ?>
                                 <?php DDFW_SVG::get_svg_icon('external-link', false, ['size' => 14]); ?>
                             </a>
                             <?php if ( ! empty( $plugin['demo_url'] ) ) : ?>
                                 <a href="<?php echo esc_url( $plugin['demo_url'] ); ?>" class="ddfw-button ddfw-button-secondary" target="_blank">
-                                    <?php esc_html_e( 'Live Demo', 'wallet-management-for-woocommerce' ); ?>
+                                    <?php esc_html_e( 'Live Demo', 'devdiggers-wallet-for-woocommerce' ); ?>
                                 </a>
                             <?php endif; ?>
                             <?php if ( ! empty( $plugin['documentation_url'] ) ) : ?>
                                 <a href="<?php echo esc_url( $plugin['documentation_url'] ); ?>" class="ddfw-button ddfw-button-secondary" target="_blank">
-                                    <?php esc_html_e( 'Documentation', 'wallet-management-for-woocommerce' ); ?>
+                                    <?php esc_html_e( 'Documentation', 'devdiggers-wallet-for-woocommerce' ); ?>
                                 </a>
                             <?php endif; ?>
                         </div>
@@ -141,7 +141,7 @@ $current_user = wp_get_current_user();
     <!-- All Extensions -->
     <div class="ddfw-dashboard-section">
         <div class="ddfw-section-header">
-            <h2><?php esc_html_e( 'All Extensions', 'wallet-management-for-woocommerce' ); ?></h2>
+            <h2><?php esc_html_e( 'All Extensions', 'devdiggers-wallet-for-woocommerce' ); ?></h2>
         </div>
         
         <div class="ddfw-plugins-grid" id="extensions-grid">
@@ -159,17 +159,17 @@ $current_user = wp_get_current_user();
                     <div class="ddfw-plugin-footer">
                         <div class="ddfw-plugin-actions">
                             <a href="<?php echo esc_url( $plugin['url'] ); ?>" target="_blank" class="ddfw-button ddfw-button-primary">
-                                <?php esc_html_e( 'Buy Now', 'wallet-management-for-woocommerce' ); ?>
+                                <?php esc_html_e( 'Buy Now', 'devdiggers-wallet-for-woocommerce' ); ?>
                                 <?php DDFW_SVG::get_svg_icon( 'external-link', false, [ 'size' => 14 ] ); ?>
                             </a>
                             <?php if ( ! empty( $plugin['demo_url'] ) ) : ?>
                                 <a href="<?php echo esc_url( $plugin['demo_url'] ); ?>" class="ddfw-button ddfw-button-secondary" target="_blank">
-                                    <?php esc_html_e( 'Live Demo', 'wallet-management-for-woocommerce' ); ?>
+                                    <?php esc_html_e( 'Live Demo', 'devdiggers-wallet-for-woocommerce' ); ?>
                                 </a>
                             <?php endif; ?>
                             <?php if ( ! empty( $plugin['documentation_url'] ) ) : ?>
                                 <a href="<?php echo esc_url( $plugin['documentation_url'] ); ?>" class="ddfw-button ddfw-button-secondary" target="_blank">
-                                    <?php esc_html_e( 'Documentation', 'wallet-management-for-woocommerce' ); ?>
+                                    <?php esc_html_e( 'Documentation', 'devdiggers-wallet-for-woocommerce' ); ?>
                                 </a>
                             <?php endif; ?>
                         </div>

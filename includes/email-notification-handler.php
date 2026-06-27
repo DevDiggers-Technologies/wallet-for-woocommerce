@@ -2,7 +2,7 @@
 /**
  * Email Notification Handler
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -27,14 +27,14 @@ if ( ! class_exists( 'DDWCWM_Email_Notification_Handler' ) ) {
          */
         public function __construct() {
             $this->id             = 'ddwcwm_notification';
-            $this->title          = esc_html__( 'Wallet Notification', 'wallet-management-for-woocommerce' );
-            $this->heading        = esc_html__( 'Wallet Notification', 'wallet-management-for-woocommerce' );
-            $this->subject        = '[' . get_option( 'blogname' ) . '] ' . esc_html__( 'Wallet Notification', 'wallet-management-for-woocommerce' );
-            $this->description    = esc_html__( 'On using Wallet this mail is sent to user.', 'wallet-management-for-woocommerce' );
+            $this->title          = esc_html__( 'Wallet Notification', 'devdiggers-wallet-for-woocommerce' );
+            $this->heading        = esc_html__( 'Wallet Notification', 'devdiggers-wallet-for-woocommerce' );
+            $this->subject        = '[' . get_option( 'blogname' ) . '] ' . esc_html__( 'Wallet Notification', 'devdiggers-wallet-for-woocommerce' );
+            $this->description    = esc_html__( 'On using Wallet this mail is sent to user.', 'devdiggers-wallet-for-woocommerce' );
             $this->template_html  = 'emails/wallet.php';
             $this->template_plain = 'emails/plain/wallet.php';
             $this->template_base  = DDWCWM_PLUGIN_FILE . '/templates/';
-            $this->footer         = esc_html__( 'Thanks for choosing Wallet.', 'wallet-management-for-woocommerce' );
+            $this->footer         = esc_html__( 'Thanks for choosing Wallet.', 'devdiggers-wallet-for-woocommerce' );
 
 			add_action( 'ddwcwm_mail_notification', [ $this, 'trigger' ] );
 
@@ -58,11 +58,11 @@ if ( ! class_exists( 'DDWCWM_Email_Notification_Handler' ) ) {
 			}
 
             if ( ! $this->subject ) {
-                $this->subject = '[' . get_option( 'blogname' ) . '] ' . esc_html__( 'Wallet Notification', 'wallet-management-for-woocommerce' );
+                $this->subject = '[' . get_option( 'blogname' ) . '] ' . esc_html__( 'Wallet Notification', 'devdiggers-wallet-for-woocommerce' );
 			}
 
             if ( ! $this->heading ) {
-                $this->heading = esc_html__( 'Wallet Notification', 'wallet-management-for-woocommerce' );
+                $this->heading = esc_html__( 'Wallet Notification', 'devdiggers-wallet-for-woocommerce' );
 			}
         }
 

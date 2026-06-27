@@ -2,7 +2,7 @@
 /**
  * My Wallet Template Class
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 

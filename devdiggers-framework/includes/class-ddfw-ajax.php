@@ -80,7 +80,7 @@ if ( ! class_exists( 'DDFW_Ajax' ) ) {
 			} else {
 				$response = [
 					'success' => false,
-					'message' => esc_html__( 'Security check failed!', 'wallet-management-for-woocommerce' ),
+					'message' => esc_html__( 'Security check failed!', 'devdiggers-wallet-for-woocommerce' ),
 				];
 			}
 			wp_send_json( $response );
@@ -110,7 +110,7 @@ if ( ! class_exists( 'DDFW_Ajax' ) ) {
 			} else {
 				$response = [
 					'success' => false,
-					'message' => esc_html__( 'Security check failed!', 'wallet-management-for-woocommerce' ),
+					'message' => esc_html__( 'Security check failed!', 'devdiggers-wallet-for-woocommerce' ),
 				];
 			}
 			wp_send_json( $response );
@@ -142,7 +142,7 @@ if ( ! class_exists( 'DDFW_Ajax' ) ) {
 			} else {
 				$response = [
 					'error'   => true,
-					'message' => esc_html__( 'Security check failed!', 'wallet-management-for-woocommerce' ),
+					'message' => esc_html__( 'Security check failed!', 'devdiggers-wallet-for-woocommerce' ),
 				];
 			}
 			wp_send_json( $response );
@@ -155,28 +155,28 @@ if ( ! class_exists( 'DDFW_Ajax' ) ) {
 		 */
 		public function ddfw_newsletter_subscribe() {
 			if ( ! check_ajax_referer( 'ddfw-nonce', 'nonce', false ) ) {
-				wp_send_json_error( [ 'message' => esc_html__( 'Security check failed.', 'wallet-management-for-woocommerce' ) ] );
+				wp_send_json_error( [ 'message' => esc_html__( 'Security check failed.', 'devdiggers-wallet-for-woocommerce' ) ] );
 			}
 
 			if ( ! $this->ddfw_current_user_can_manage() ) {
-				wp_send_json_error( [ 'message' => esc_html__( 'Insufficient permissions.', 'wallet-management-for-woocommerce' ) ] );
+				wp_send_json_error( [ 'message' => esc_html__( 'Insufficient permissions.', 'devdiggers-wallet-for-woocommerce' ) ] );
 			}
 
 			$email = sanitize_email( wp_unslash( $_POST['email'] ?? '' ) );
 
 			if ( ! is_email( $email ) ) {
-				wp_send_json_error( [ 'message' => esc_html__( 'Please enter a valid email address.', 'wallet-management-for-woocommerce' ) ] );
+				wp_send_json_error( [ 'message' => esc_html__( 'Please enter a valid email address.', 'devdiggers-wallet-for-woocommerce' ) ] );
 			}
 
 			$user_id = get_current_user_id();
 			if ( ! $user_id ) {
-				wp_send_json_error( [ 'message' => esc_html__( 'You must be logged in to subscribe.', 'wallet-management-for-woocommerce' ) ] );
+				wp_send_json_error( [ 'message' => esc_html__( 'You must be logged in to subscribe.', 'devdiggers-wallet-for-woocommerce' ) ] );
 			}
 
 			// Check if already subscribed
 			$already_subscribed = get_option( 'ddfw_newsletter_subscribed' );
 			if ( $already_subscribed ) {
-				wp_send_json_error( [ 'message' => esc_html__( 'You are already subscribed to our newsletter.', 'wallet-management-for-woocommerce' ) ] );
+				wp_send_json_error( [ 'message' => esc_html__( 'You are already subscribed to our newsletter.', 'devdiggers-wallet-for-woocommerce' ) ] );
 			}
 
 			// Prepare data for FluentCRM webhook
@@ -197,7 +197,7 @@ if ( ! class_exists( 'DDFW_Ajax' ) ) {
 			] );
 
 			if ( is_wp_error( $response ) ) {
-				wp_send_json_error( [ 'message' => esc_html__( 'Failed to connect to newsletter service. Please try again.', 'wallet-management-for-woocommerce' ) ] );
+				wp_send_json_error( [ 'message' => esc_html__( 'Failed to connect to newsletter service. Please try again.', 'devdiggers-wallet-for-woocommerce' ) ] );
 			}
 
 			$body = wp_remote_retrieve_body( $response );
@@ -208,9 +208,9 @@ if ( ! class_exists( 'DDFW_Ajax' ) ) {
 				update_option( 'ddfw_newsletter_subscribed', true );
 				update_option( 'ddfw_newsletter_email', $email );
 
-				wp_send_json_success( [ 'message' => esc_html__( 'Thank you for subscribing!', 'wallet-management-for-woocommerce' ) ] );
+				wp_send_json_success( [ 'message' => esc_html__( 'Thank you for subscribing!', 'devdiggers-wallet-for-woocommerce' ) ] );
 			} else {
-				$error_message = $data['message'] ?? esc_html__( 'Subscription failed. Please try again.', 'wallet-management-for-woocommerce' );
+				$error_message = $data['message'] ?? esc_html__( 'Subscription failed. Please try again.', 'devdiggers-wallet-for-woocommerce' );
 				wp_send_json_error( [ 'message' => $error_message ] );
 			}
 		}

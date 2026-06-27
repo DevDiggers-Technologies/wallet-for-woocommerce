@@ -2,7 +2,7 @@
 /**
  * Wallet Transactions Shortcode
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -36,10 +36,10 @@ $ddwcwm_transactions             = $ddwcwm_user_helper->ddwcwm_get_user_transact
 		<table class="my_account_orders shop_table_responsive ddwcwm-table">
 			<thead>
 				<tr>
-					<th><?php esc_html_e( 'ID & Date', 'wallet-management-for-woocommerce' ); ?></th>
-					<th><?php esc_html_e( 'Transaction Context', 'wallet-management-for-woocommerce' ); ?></th>
-					<th><?php esc_html_e( 'Amount', 'wallet-management-for-woocommerce' ); ?></th>
-					<th><?php esc_html_e( 'Note', 'wallet-management-for-woocommerce' ); ?></th>
+					<th><?php esc_html_e( 'ID & Date', 'devdiggers-wallet-for-woocommerce' ); ?></th>
+					<th><?php esc_html_e( 'Transaction Context', 'devdiggers-wallet-for-woocommerce' ); ?></th>
+					<th><?php esc_html_e( 'Amount', 'devdiggers-wallet-for-woocommerce' ); ?></th>
+					<th><?php esc_html_e( 'Note', 'devdiggers-wallet-for-woocommerce' ); ?></th>
 				</tr>
 			</thead>
 			<tbody id="ddwcwm-transactions-table-body">
@@ -56,8 +56,8 @@ $ddwcwm_transactions             = $ddwcwm_user_helper->ddwcwm_get_user_transact
 		<div class="woocommerce-pagination woocommerce-pagination--without-numbers woocommerce-Pagination ddwcwm-pagination">
 			<input type="hidden" class="ddwcwm-current-page" value="<?php echo esc_attr( $ddwcwm_current_page ); ?>" />
 			<input type="hidden" class="ddwcwm-total-count" value="<?php echo esc_attr( $ddwcwm_total_transactions_count ); ?>" />
-			<button class="woocommerce-button woocommerce-button--previous woocommerce-Button woocommerce-Button--previous button ddwcwm-pagination-button" data-table="transactions" data-perform="previous" <?php echo esc_attr( 1 === (int)$ddwcwm_current_page ? 'disabled' : '' ); ?>><?php esc_html_e( 'Previous', 'wallet-management-for-woocommerce' ); ?></button>
-			<button class="woocommerce-button woocommerce-button--next woocommerce-Button woocommerce-Button--next button ddwcwm-pagination-button" data-table="transactions" data-perform="next"><?php esc_html_e( 'Next', 'wallet-management-for-woocommerce' ); ?></button>
+			<button class="woocommerce-button woocommerce-button--previous woocommerce-Button woocommerce-Button--previous button ddwcwm-pagination-button" data-table="transactions" data-perform="previous" <?php echo esc_attr( 1 === (int)$ddwcwm_current_page ? 'disabled' : '' ); ?>><?php esc_html_e( 'Previous', 'devdiggers-wallet-for-woocommerce' ); ?></button>
+			<button class="woocommerce-button woocommerce-button--next woocommerce-Button woocommerce-Button--next button ddwcwm-pagination-button" data-table="transactions" data-perform="next"><?php esc_html_e( 'Next', 'devdiggers-wallet-for-woocommerce' ); ?></button>
 		</div>
 		<?php
 	}

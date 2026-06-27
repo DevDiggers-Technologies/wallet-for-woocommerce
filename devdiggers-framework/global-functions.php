@@ -255,7 +255,7 @@ if ( ! function_exists( 'ddfw_pro_tag' ) ) {
 	 */
 	function ddfw_pro_tag() {
 		?>
-		<span class="ddfw-pro-tag"><span class="dashicons dashicons-lock"></span> <?php esc_html_e( 'PRO', 'wallet-management-for-woocommerce' ); ?></span>
+		<span class="ddfw-pro-tag"><span class="dashicons dashicons-lock"></span> <?php esc_html_e( 'PRO', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 		<?php
 	}
 }

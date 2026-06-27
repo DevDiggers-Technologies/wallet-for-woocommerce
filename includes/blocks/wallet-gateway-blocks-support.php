@@ -2,7 +2,7 @@
 /**
  * Wallet Gateway Blocks Support class
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -111,10 +111,10 @@ final class DDWCWM_Wallet_Gateway_Blocks_Support extends AbstractPaymentMethodTy
 							$wallet_balance >= $cart_total;
 
 		return [
-			'title'                   => $this->get_setting( 'title', esc_html__( 'Wallet', 'wallet-management-for-woocommerce' ) ),
-			'description'             => $this->get_setting( 'description', esc_html__( 'Pay with Wallet.', 'wallet-management-for-woocommerce' ) ),
+			'title'                   => $this->get_setting( 'title', esc_html__( 'Wallet', 'devdiggers-wallet-for-woocommerce' ) ),
+			'description'             => $this->get_setting( 'description', esc_html__( 'Pay with Wallet.', 'devdiggers-wallet-for-woocommerce' ) ),
 			/* translators: %s: available wallet balance amount. */
-			'available_balance_text'   => sprintf( esc_html__( '(Available Balance: %s)', 'wallet-management-for-woocommerce' ), wp_strip_all_tags( wc_price( $wallet_balance ) ) ),
+			'available_balance_text'   => sprintf( esc_html__( '(Available Balance: %s)', 'devdiggers-wallet-for-woocommerce' ), wp_strip_all_tags( wc_price( $wallet_balance ) ) ),
 			'wallet_balance'          => $wallet_balance,
 			'partial_payments_enabled' => false, // Partial payments are a Pro feature; always disabled in Free.
 			'max_debit_limit'         => 0,

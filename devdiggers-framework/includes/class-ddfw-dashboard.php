@@ -118,7 +118,7 @@ if ( ! class_exists( 'DDFW_Dashboard' ) ) {
 			$show_date_filter = ! isset( $header['show_date_filter'] ) || $header['show_date_filter'];
 			$current_user     = wp_get_current_user();
 
-			$welcome = isset( $header['welcome'] ) ? $header['welcome'] : esc_html__( 'Welcome back!', 'wallet-management-for-woocommerce' );
+			$welcome = isset( $header['welcome'] ) ? $header['welcome'] : esc_html__( 'Welcome back!', 'devdiggers-wallet-for-woocommerce' );
 			if ( false !== strpos( $welcome, '%s' ) ) {
 				$welcome = sprintf( $welcome, $current_user->display_name );
 			}
@@ -183,7 +183,7 @@ if ( ! class_exists( 'DDFW_Dashboard' ) ) {
 							<div class="ddfw-dash-dropdown-content">
 								<div class="ddfw-dash-date-presets">
 									<div class="ddfw-dash-presets-header">
-										<h4><?php esc_html_e( 'Quick Select', 'wallet-management-for-woocommerce' ); ?></h4>
+										<h4><?php esc_html_e( 'Quick Select', 'devdiggers-wallet-for-woocommerce' ); ?></h4>
 									</div>
 									<?php foreach ( $presets as $key => $label ) : ?>
 										<button type="button" class="ddfw-dash-date-preset" data-range="<?php echo esc_attr( $key ); ?>"><?php echo esc_html( $label ); ?></button>
@@ -192,20 +192,20 @@ if ( ! class_exists( 'DDFW_Dashboard' ) ) {
 
 								<div class="ddfw-dash-custom-date-range">
 									<div class="ddfw-dash-custom-header">
-										<h4><?php esc_html_e( 'Custom Range', 'wallet-management-for-woocommerce' ); ?></h4>
-										<p><?php esc_html_e( 'Select specific start and end dates for your analysis', 'wallet-management-for-woocommerce' ); ?></p>
+										<h4><?php esc_html_e( 'Custom Range', 'devdiggers-wallet-for-woocommerce' ); ?></h4>
+										<p><?php esc_html_e( 'Select specific start and end dates for your analysis', 'devdiggers-wallet-for-woocommerce' ); ?></p>
 									</div>
 									<div class="ddfw-dash-date-inputs">
 										<div class="ddfw-dash-date-input-group">
-											<label for="ddfw-dash-from-date"><?php esc_html_e( 'From Date', 'wallet-management-for-woocommerce' ); ?></label>
+											<label for="ddfw-dash-from-date"><?php esc_html_e( 'From Date', 'devdiggers-wallet-for-woocommerce' ); ?></label>
 											<input type="date" name="from_date" id="ddfw-dash-from-date" value="<?php echo esc_attr( $this->date_range['from'] ); ?>" />
 										</div>
 										<div class="ddfw-dash-date-input-group">
-											<label for="ddfw-dash-to-date"><?php esc_html_e( 'To Date', 'wallet-management-for-woocommerce' ); ?></label>
+											<label for="ddfw-dash-to-date"><?php esc_html_e( 'To Date', 'devdiggers-wallet-for-woocommerce' ); ?></label>
 											<input type="date" name="to_date" id="ddfw-dash-to-date" value="<?php echo esc_attr( $this->date_range['to'] ); ?>" />
 										</div>
 									</div>
-									<button type="button" class="ddfw-dash-apply-custom-range button button-primary"><?php esc_html_e( 'Apply Custom Range', 'wallet-management-for-woocommerce' ); ?></button>
+									<button type="button" class="ddfw-dash-apply-custom-range button button-primary"><?php esc_html_e( 'Apply Custom Range', 'devdiggers-wallet-for-woocommerce' ); ?></button>
 								</div>
 							</div>
 						</div>
@@ -372,8 +372,8 @@ if ( ! class_exists( 'DDFW_Dashboard' ) ) {
 				'valueKey'    => $chart['value_key'] ?? 'value',
 				'valueFormat' => $chart['value_format'] ?? 'number',
 				'empty'       => [
-					'title' => $chart['empty']['title'] ?? esc_html__( 'No data available', 'wallet-management-for-woocommerce' ),
-					'desc'  => $chart['empty']['desc'] ?? esc_html__( 'Data will appear here once activity is recorded.', 'wallet-management-for-woocommerce' ),
+					'title' => $chart['empty']['title'] ?? esc_html__( 'No data available', 'devdiggers-wallet-for-woocommerce' ),
+					'desc'  => $chart['empty']['desc'] ?? esc_html__( 'Data will appear here once activity is recorded.', 'devdiggers-wallet-for-woocommerce' ),
 				],
 			];
 
@@ -445,7 +445,7 @@ if ( ! class_exists( 'DDFW_Dashboard' ) ) {
 					'dateRange'      => $this->date_range,
 					'currencySymbol' => $currency_symbol,
 					'i18n'           => [
-						'noData' => esc_html__( 'No data available', 'wallet-management-for-woocommerce' ),
+						'noData' => esc_html__( 'No data available', 'devdiggers-wallet-for-woocommerce' ),
 					],
 				]
 			);

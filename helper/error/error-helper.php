@@ -3,7 +3,7 @@
 /**
  * Error Handing class
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  */
 
 namespace DDWCWalletManagement\Helper\Error;

@@ -2,7 +2,7 @@
 /**
  * File handler
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -88,25 +88,25 @@ if ( ! class_exists( 'DDWCWM_File_Handler' ) ) {
 			}
 
 			$credit_reason = [
-				'registration'            => esc_html__( 'creating a new account', 'wallet-management-for-woocommerce' ),
-				'referral'                => esc_html__( 'referring a friend to our store', 'wallet-management-for-woocommerce' ),
-				'cashback'                => esc_html__( 'receiving cashback from your purchase', 'wallet-management-for-woocommerce' ),
-				'cart_cashback'           => esc_html__( 'receiving cart cashback from your purchase', 'wallet-management-for-woocommerce' ),
-				'product_cashback'        => esc_html__( 'receiving product cashback from your purchase', 'wallet-management-for-woocommerce' ),
-				'topup_cashback'          => esc_html__( 'receiving topup cashback from your purchase', 'wallet-management-for-woocommerce' ),
-				'first_order_cashback'    => esc_html__( 'receiving first order cashback from your purchase', 'wallet-management-for-woocommerce' ),
-				'user_role_cashback'      => esc_html__( 'receiving user role cashback from your purchase', 'wallet-management-for-woocommerce' ),
-				'payment_method_cashback' => esc_html__( 'receiving payment method cashback from your purchase', 'wallet-management-for-woocommerce' ),
-				'refund'                  => esc_html__( 'refund processing', 'wallet-management-for-woocommerce' ),
-				'transfer_received'       => esc_html__( 'wallet transfer received', 'wallet-management-for-woocommerce' ),
-				'topup'                   => esc_html__( 'wallet topup', 'wallet-management-for-woocommerce' ),
+				'registration'            => esc_html__( 'creating a new account', 'devdiggers-wallet-for-woocommerce' ),
+				'referral'                => esc_html__( 'referring a friend to our store', 'devdiggers-wallet-for-woocommerce' ),
+				'cashback'                => esc_html__( 'receiving cashback from your purchase', 'devdiggers-wallet-for-woocommerce' ),
+				'cart_cashback'           => esc_html__( 'receiving cart cashback from your purchase', 'devdiggers-wallet-for-woocommerce' ),
+				'product_cashback'        => esc_html__( 'receiving product cashback from your purchase', 'devdiggers-wallet-for-woocommerce' ),
+				'topup_cashback'          => esc_html__( 'receiving topup cashback from your purchase', 'devdiggers-wallet-for-woocommerce' ),
+				'first_order_cashback'    => esc_html__( 'receiving first order cashback from your purchase', 'devdiggers-wallet-for-woocommerce' ),
+				'user_role_cashback'      => esc_html__( 'receiving user role cashback from your purchase', 'devdiggers-wallet-for-woocommerce' ),
+				'payment_method_cashback' => esc_html__( 'receiving payment method cashback from your purchase', 'devdiggers-wallet-for-woocommerce' ),
+				'refund'                  => esc_html__( 'refund processing', 'devdiggers-wallet-for-woocommerce' ),
+				'transfer_received'       => esc_html__( 'wallet transfer received', 'devdiggers-wallet-for-woocommerce' ),
+				'topup'                   => esc_html__( 'wallet topup', 'devdiggers-wallet-for-woocommerce' ),
 			];
 
 			$debit_reason = [
-				'order_payment'    => esc_html__( 'order payment', 'wallet-management-for-woocommerce' ),
-				'transfer_sent'    => esc_html__( 'wallet transfer sent', 'wallet-management-for-woocommerce' ),
-				'cashback_expired' => esc_html__( 'cashback expiration', 'wallet-management-for-woocommerce' ),
-				'withdrawal'       => esc_html__( 'wallet withdrawal', 'wallet-management-for-woocommerce' ),
+				'order_payment'    => esc_html__( 'order payment', 'devdiggers-wallet-for-woocommerce' ),
+				'transfer_sent'    => esc_html__( 'wallet transfer sent', 'devdiggers-wallet-for-woocommerce' ),
+				'cashback_expired' => esc_html__( 'cashback expiration', 'devdiggers-wallet-for-woocommerce' ),
+				'withdrawal'       => esc_html__( 'wallet withdrawal', 'devdiggers-wallet-for-woocommerce' ),
 			];
 
 			$email_settings = [
@@ -165,7 +165,7 @@ if ( ! class_exists( 'DDWCWM_File_Handler' ) ) {
 				'referral_earning_amount'             => '',
 				'referral_email_content'              => '',
 				'my_account_endpoint'                 => ! empty( $my_account_endpoint ) ? $my_account_endpoint : 'my-wallet',
-				'my_account_endpoint_title'           => ! empty( $my_account_endpoint_title ) ? $my_account_endpoint_title : esc_html__( 'My Wallet', 'wallet-management-for-woocommerce' ),
+				'my_account_endpoint_title'           => ! empty( $my_account_endpoint_title ) ? $my_account_endpoint_title : esc_html__( 'My Wallet', 'devdiggers-wallet-for-woocommerce' ),
 				'enable_widgets_my_account_endpoint'  => get_option( '_ddwcwm_enable_widgets_my_account_endpoint' ),
 				'wallet_balance_only_shortcode'       => $wallet_balance_only_shortcode,
 				'wallet_balance_shortcode'            => $wallet_balance_shortcode,
@@ -198,8 +198,6 @@ if ( ! class_exists( 'DDWCWM_File_Handler' ) ) {
 				'credit_reason'                       => get_option( '_ddwcwm_credit_reason', $credit_reason ),
 				'debit_reason'                        => get_option( '_ddwcwm_debit_reason', $debit_reason ),
 				'cashback_messages_enabled'           => get_option( '_ddwcwm_cashback_messages_enabled', 'yes' ),
-				'cashback_shop_page_message'          => get_option( '_ddwcwm_cashback_shop_page_message', 'Get {cashback_amount} cashback on this product.' ),
-				'cashback_product_page_message'       => get_option( '_ddwcwm_cashback_product_page_message', 'Get {cashback_amount} cashback on this product.' ),
 				'cashback_cart_page_message'          => get_option( '_ddwcwm_cashback_cart_page_message', 'You will earn {total_cashback} total cashback on this order.' ),
 				'cashback_checkout_page_message'      => get_option( '_ddwcwm_cashback_checkout_page_message', 'You will earn {total_cashback} total cashback on this order.' ),
 				'cashback_view_order_page_message'     => get_option( '_ddwcwm_cashback_view_order_page_message', 'You have earned {total_cashback} cashback on this order.' ),

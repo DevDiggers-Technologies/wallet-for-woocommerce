@@ -2,7 +2,7 @@
 /**
  * Users helper
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -98,17 +98,17 @@ if ( ! class_exists( 'DDWCWM_Users_Helper' ) ) {
 
 						$reference = 'manual_adjustment';
 
-						$message = wc_price( $wallet_amount ) . ' ' . esc_html__( 'amount is credited to selected users(s) wallet balance.', 'wallet-management-for-woocommerce' );
+						$message = wc_price( $wallet_amount ) . ' ' . esc_html__( 'amount is credited to selected users(s) wallet balance.', 'devdiggers-wallet-for-woocommerce' );
 					} else if ( 'debit' === $action_type && $old_wallet_balance >= $wallet_amount ) {
 						$new_wallet_amount = $old_wallet_balance - $wallet_amount;
 						$this->ddwcwm_set_user_wallet_balance( $new_wallet_amount, $user_id );
 
 						$reference = 'manual_adjustment';
 
-						$message = wc_price( $wallet_amount ) . ' ' . esc_html__( 'amount is debited from selected users(s) wallet balance.', 'wallet-management-for-woocommerce' );
+						$message = wc_price( $wallet_amount ) . ' ' . esc_html__( 'amount is debited from selected users(s) wallet balance.', 'devdiggers-wallet-for-woocommerce' );
 					} else {
 						$error = 1;
-						$message = esc_html__( 'Insufficient amount to debit.', 'wallet-management-for-woocommerce' );
+						$message = esc_html__( 'Insufficient amount to debit.', 'devdiggers-wallet-for-woocommerce' );
 						$this->ddwcwm_print_notification( $message, 'error' );
 					}
 
@@ -131,7 +131,7 @@ if ( ! class_exists( 'DDWCWM_Users_Helper' ) ) {
 				}
 			} else {
 				$error = 1;
-				$message = esc_html__( 'Some fields are empty or not valid.', 'wallet-management-for-woocommerce' );
+				$message = esc_html__( 'Some fields are empty or not valid.', 'devdiggers-wallet-for-woocommerce' );
 				$this->ddwcwm_print_notification( $message, 'error' );
 			}
 

@@ -2,7 +2,7 @@
 /**
  * Import Users with Wallet Balance
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  */
 
 namespace DDWCWalletManagement\Includes;
@@ -33,7 +33,7 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 			check_ajax_referer( 'ddwcwm-nonce', 'nonce' );
 
 			if ( ! current_user_can( 'manage_woocommerce' ) ) {
-				wp_send_json_error( [ 'error' => esc_html__( 'You do not have permission to import wallet balances.', 'wallet-management-for-woocommerce' ) ] );
+				wp_send_json_error( [ 'error' => esc_html__( 'You do not have permission to import wallet balances.', 'devdiggers-wallet-for-woocommerce' ) ] );
 			}
 
 			// JSON payloads. The raw string is decoded first (text-field sanitizing the
@@ -48,7 +48,7 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 			$start_index        = isset( $_POST['start_index'] ) ? intval( wp_unslash( $_POST['start_index'] ) ) : 0;
 
 			if ( empty( $rows ) || ! is_array( $rows ) ) {
-				wp_send_json_error( [ 'error' => esc_html__( 'No data.', 'wallet-management-for-woocommerce' ) ] );
+				wp_send_json_error( [ 'error' => esc_html__( 'No data.', 'devdiggers-wallet-for-woocommerce' ) ] );
 			}
 
 			global $wpdb, $ddwcwm_wallet;
@@ -84,7 +84,7 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 						'row'         => $i,
 						'absoluteRow' => $absolute_row_index,
 						'status'      => 'error',
-						'message'     => esc_html__( 'User not found', 'wallet-management-for-woocommerce' ),
+						'message'     => esc_html__( 'User not found', 'devdiggers-wallet-for-woocommerce' ),
 					];
 					continue;
 				}
@@ -96,7 +96,7 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 						'row'         => $i,
 						'absoluteRow' => $absolute_row_index,
 						'status'      => 'error',
-						'message'     => esc_html__( 'Invalid balance value', 'wallet-management-for-woocommerce' ),
+						'message'     => esc_html__( 'Invalid balance value', 'devdiggers-wallet-for-woocommerce' ),
 					];
 					continue;
 				}
@@ -106,7 +106,7 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 
 				// Build description if empty
 				if ( empty( $desc ) ) {
-					$desc = esc_html__( 'Wallet balance imported via CSV', 'wallet-management-for-woocommerce' );
+					$desc = esc_html__( 'Wallet balance imported via CSV', 'devdiggers-wallet-for-woocommerce' );
 				}
 
 				$transaction_helper = new \DDWCWalletManagement\Helper\Transactions\DDWCWM_Transactions_Helper();
@@ -124,7 +124,7 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 							'reference' => 'manual_adjustment',
 						] );
 
-						$message = esc_html__( 'Balance added', 'wallet-management-for-woocommerce' );
+						$message = esc_html__( 'Balance added', 'devdiggers-wallet-for-woocommerce' );
 						break;
 					case 'subtract':
 						$amount      = abs( $wallet_balance );
@@ -139,7 +139,7 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 							'reference' => 'manual_adjustment',
 						] );
 
-						$message = esc_html__( 'Balance subtracted', 'wallet-management-for-woocommerce' );
+						$message = esc_html__( 'Balance subtracted', 'devdiggers-wallet-for-woocommerce' );
 						break;
 					case 'override':
 						$diff = $wallet_balance - $current_balance;
@@ -153,11 +153,11 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 							'reference' => 'manual_adjustment',
 						] );
 						if ( $diff > 0 ) {
-							$message = esc_html__( 'Balance overridden (added)', 'wallet-management-for-woocommerce' );
+							$message = esc_html__( 'Balance overridden (added)', 'devdiggers-wallet-for-woocommerce' );
 						} elseif ( $diff < 0 ) {
-							$message = esc_html__( 'Balance overridden (subtracted)', 'wallet-management-for-woocommerce' );
+							$message = esc_html__( 'Balance overridden (subtracted)', 'devdiggers-wallet-for-woocommerce' );
 						} else {
-							$message = esc_html__( 'Balance already matches', 'wallet-management-for-woocommerce' );
+							$message = esc_html__( 'Balance already matches', 'devdiggers-wallet-for-woocommerce' );
 						}
 						break;
 					default:
@@ -165,7 +165,7 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 							'row'         => $i,
 							'absoluteRow' => $absolute_row_index,
 							'status'      => 'error',
-							'message'     => esc_html__( 'Unknown action', 'wallet-management-for-woocommerce' ),
+							'message'     => esc_html__( 'Unknown action', 'devdiggers-wallet-for-woocommerce' ),
 						];
 						continue 2;
 				}
@@ -211,9 +211,9 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 				<script type="text/html" id="tmpl-ddwcwm-wizard-error">
 					<div class="ddwcwm-wizard-error">
 						<span class="ddwcwm-wizard-error-icon">⚠</span>
-						<h3><?php esc_html_e( 'Import Error', 'wallet-management-for-woocommerce' ); ?></h3>
+						<h3><?php esc_html_e( 'Import Error', 'devdiggers-wallet-for-woocommerce' ); ?></h3>
 						<p>{{ data.message }}</p>
-						<button class="button button-secondary ddwcwm-wizard-retry"><?php esc_html_e( 'Try Again', 'wallet-management-for-woocommerce' ); ?></button>
+						<button class="button button-secondary ddwcwm-wizard-retry"><?php esc_html_e( 'Try Again', 'devdiggers-wallet-for-woocommerce' ); ?></button>
 					</div>
 				</script>
 
@@ -230,10 +230,10 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 						<ul>
 						<# _.each( data.items, function( item ) { #>
 							<li>
-								<span class="ddwcwm-row-number"><?php esc_html_e( 'Row', 'wallet-management-for-woocommerce' ); ?> {{ item.displayRow || ( item.row + 1 ) }}:</span>
+								<span class="ddwcwm-row-number"><?php esc_html_e( 'Row', 'devdiggers-wallet-for-woocommerce' ); ?> {{ item.displayRow || ( item.row + 1 ) }}:</span>
 								<span class="ddwcwm-row-message">{{ item.message }}</span>
 								<# if ( item.user_id ) { #>
-									<span class="ddwcwm-row-user-id">(<?php esc_html_e( 'User ID', 'wallet-management-for-woocommerce' ); ?>: {{ item.user_id }})</span>
+									<span class="ddwcwm-row-user-id">(<?php esc_html_e( 'User ID', 'devdiggers-wallet-for-woocommerce' ); ?>: {{ item.user_id }})</span>
 								<# } #>
 							</li>
 						<# }); #>
@@ -250,38 +250,38 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 							<span class="ddwcwm-wizard-summary-success">
 								<svg width="24" height="24" fill="none"><circle cx="12" cy="12" r="12" fill="#22C55E"/><path d="M7 13l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 							</span>
-							<span class="ddwcwm-wizard-summary-title"><?php esc_html_e( 'Import CSV Summary', 'wallet-management-for-woocommerce' ); ?></span>
+							<span class="ddwcwm-wizard-summary-title"><?php esc_html_e( 'Import CSV Summary', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 						</div>
 						<div class="ddwcwm-wizard-summary-details">
 							<div class="ddwcwm-wizard-summary-rows">
-								{{ data.totalRows }} <?php esc_html_e( 'rows', 'wallet-management-for-woocommerce' ); ?> • {{ data.totalCols }} <?php esc_html_e( 'columns', 'wallet-management-for-woocommerce' ); ?>
+								{{ data.totalRows }} <?php esc_html_e( 'rows', 'devdiggers-wallet-for-woocommerce' ); ?> • {{ data.totalCols }} <?php esc_html_e( 'columns', 'devdiggers-wallet-for-woocommerce' ); ?>
 							</div>
 							<div class="ddwcwm-wizard-summary-table">
 								<div class="ddwcwm-wizard-summary-row">
-									<span class="ddwcwm-wizard-summary-label ddwcwm-success">✔ <?php esc_html_e( 'Total rows in file', 'wallet-management-for-woocommerce' ); ?></span>
+									<span class="ddwcwm-wizard-summary-label ddwcwm-success">✔ <?php esc_html_e( 'Total rows in file', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 									<span class="ddwcwm-wizard-summary-value ddwcwm-wizard-summary-total-rows">{{ data.totalRows }}</span>
 								</div>
 								<div class="ddwcwm-wizard-summary-row">
-									<span class="ddwcwm-wizard-summary-label ddwcwm-warning">⚠ <?php esc_html_e( 'Duplicated rows in file', 'wallet-management-for-woocommerce' ); ?></span>
+									<span class="ddwcwm-wizard-summary-label ddwcwm-warning">⚠ <?php esc_html_e( 'Duplicated rows in file', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 									<span class="ddwcwm-wizard-summary-value ddwcwm-wizard-summary-duplicate-rows">{{ data.duplicateRows }}</span>
 								</div>
 								<div class="ddwcwm-wizard-summary-row ddwcwm-import-summary-row-indent ddwcwm-import-summary-toggle" data-toggle="imported">
-									<span class="ddwcwm-wizard-summary-label">↳ <?php esc_html_e( 'Imported to the system', 'wallet-management-for-woocommerce' ); ?> <span class="ddwcwm-import-summary-caret">▼</span></span>
+									<span class="ddwcwm-wizard-summary-label">↳ <?php esc_html_e( 'Imported to the system', 'devdiggers-wallet-for-woocommerce' ); ?> <span class="ddwcwm-import-summary-caret">▼</span></span>
 									<span class="ddwcwm-wizard-summary-value ddwcwm-wizard-summary-imported">{{ data.imported }}</span>
 								</div>
 								<div class="ddwcwm-import-summary-dropdown ddwcwm-imported-list ddfw-hide">{{{ data.importedListHTML }}}</div>
 								<div class="ddwcwm-wizard-summary-row ddwcwm-import-summary-row-indent ddwcwm-import-summary-toggle" data-toggle="notimported">
-									<span class="ddwcwm-wizard-summary-label">↳ <?php esc_html_e( 'Not Imported', 'wallet-management-for-woocommerce' ); ?> <span class="ddwcwm-import-summary-caret">▼</span></span>
+									<span class="ddwcwm-wizard-summary-label">↳ <?php esc_html_e( 'Not Imported', 'devdiggers-wallet-for-woocommerce' ); ?> <span class="ddwcwm-import-summary-caret">▼</span></span>
 									<span class="ddwcwm-wizard-summary-value ddwcwm-wizard-summary-notimported">{{ data.notImported }}</span>
 								</div>
 								<div class="ddwcwm-import-summary-dropdown ddwcwm-notimported-list ddfw-hide">{{{ data.notImportedListHTML }}}</div>
 							</div>
 							<div class="ddwcwm-wizard-summary-total">
-								<span><?php esc_html_e( 'Total rows imported', 'wallet-management-for-woocommerce' ); ?></span>
+								<span><?php esc_html_e( 'Total rows imported', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 								<span class="ddwcwm-wizard-summary-total-value ddwcwm-wizard-summary-imported">{{ data.imported }}</span>
 							</div>
 							<div class="ddwcwm-step-actions-final ddwcwm-step-actions">
-								<a href="<?php echo esc_url( admin_url( 'admin.php?page=' . sanitize_title( wp_unslash( $_GET['page'] ?? '' ) ) . '&menu=' . sanitize_title( wp_unslash( $_GET['menu'] ?? '' ) ) ) ); ?>" class="button button-primary"><?php esc_html_e( 'Done', 'wallet-management-for-woocommerce' ); ?></a>
+								<a href="<?php echo esc_url( admin_url( 'admin.php?page=' . sanitize_title( wp_unslash( $_GET['page'] ?? '' ) ) . '&menu=' . sanitize_title( wp_unslash( $_GET['menu'] ?? '' ) ) ) ); ?>" class="button button-primary"><?php esc_html_e( 'Done', 'devdiggers-wallet-for-woocommerce' ); ?></a>
 							</div>
 						</div>
 					</div>
@@ -290,22 +290,22 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 				<div class="ddwcwm-steps">
 					<div class="ddwcwm-step active" data-step="1">
 						<span class="ddwcwm-step-index">1</span>
-						<span class="ddwcwm-step-label"><?php esc_html_e( 'Select File', 'wallet-management-for-woocommerce' ); ?></span>
+						<span class="ddwcwm-step-label"><?php esc_html_e( 'Select File', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 					</div>
 					<div class="ddwcwm-step" data-step="2">
 						<span class="ddwcwm-step-index">2</span>
-						<span class="ddwcwm-step-label"><?php esc_html_e( 'Mapping', 'wallet-management-for-woocommerce' ); ?></span>
+						<span class="ddwcwm-step-label"><?php esc_html_e( 'Mapping', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 					</div>
 					<div class="ddwcwm-step" data-step="3">
 						<span class="ddwcwm-step-index">3</span>
-						<span class="ddwcwm-step-label"><?php esc_html_e( 'Data Import', 'wallet-management-for-woocommerce' ); ?></span>
+						<span class="ddwcwm-step-label"><?php esc_html_e( 'Data Import', 'devdiggers-wallet-for-woocommerce' ); ?></span>
 					</div>
 				</div>
 
 				<form id="ddwcwm-import-form" method="post" enctype="multipart/form-data">
 					<div class="ddwcwm-step-content" data-step="1">
-						<h2><?php esc_html_e( 'Upload a CSV file', 'wallet-management-for-woocommerce' ); ?></h2>
-						<p class="ddwcwm-step-description"><?php esc_html_e( 'Make sure file includes user ID, email, and wallet balance data', 'wallet-management-for-woocommerce' ); ?></p>
+						<h2><?php esc_html_e( 'Upload a CSV file', 'devdiggers-wallet-for-woocommerce' ); ?></h2>
+						<p class="ddwcwm-step-description"><?php esc_html_e( 'Make sure file includes user ID, email, and wallet balance data', 'devdiggers-wallet-for-woocommerce' ); ?></p>
 						<div class="ddwcwm-dropzone" id="ddwcwm-dropzone">
 							<input type="file" name="import_file" id="ddwcwm-import-file" accept=".csv" required hidden />
 							<div class="ddwcwm-dropzone-inner">
@@ -323,39 +323,39 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 									);
 									?>
 								</div>
-								<p><?php esc_html_e( 'Drop a file or click to browse', 'wallet-management-for-woocommerce' ); ?></p>
-								<small><?php esc_html_e( 'CSV files of any size are supported with batch processing', 'wallet-management-for-woocommerce' ); ?></small>
+								<p><?php esc_html_e( 'Drop a file or click to browse', 'devdiggers-wallet-for-woocommerce' ); ?></p>
+								<small><?php esc_html_e( 'CSV files of any size are supported with batch processing', 'devdiggers-wallet-for-woocommerce' ); ?></small>
 							</div>
 						</div>
 						<div class="ddwcwm-import-file-info ddfw-hide"></div>
 						<div class="ddwcwm-sample-file-link">
 							<a href="<?php echo esc_url( DDWCWM_PLUGIN_URL . 'assets/sample/user-wallets.csv' ); ?>" class="ddwcwm-sample-link">
-								<?php esc_html_e( 'Download a sample CSV file', 'wallet-management-for-woocommerce' ); ?>
+								<?php esc_html_e( 'Download a sample CSV file', 'devdiggers-wallet-for-woocommerce' ); ?>
 							</a>
 						</div>
 						<div class="ddwcwm-step-actions">
-							<a href="<?php echo esc_url( admin_url( 'admin.php?page=' . sanitize_title( wp_unslash( $_GET['page'] ?? '' ) ) . '&menu=' . sanitize_title( wp_unslash( $_GET['menu'] ?? '' ) ) ) ); ?>" class="button button-secondary"><?php esc_html_e( 'Cancel', 'wallet-management-for-woocommerce' ); ?></a>
-							<button type="button" class="button button-primary ddwcwm-next-step" data-next="2" disabled><?php esc_html_e( 'Continue', 'wallet-management-for-woocommerce' ); ?></button>
+							<a href="<?php echo esc_url( admin_url( 'admin.php?page=' . sanitize_title( wp_unslash( $_GET['page'] ?? '' ) ) . '&menu=' . sanitize_title( wp_unslash( $_GET['menu'] ?? '' ) ) ) ); ?>" class="button button-secondary"><?php esc_html_e( 'Cancel', 'devdiggers-wallet-for-woocommerce' ); ?></a>
+							<button type="button" class="button button-primary ddwcwm-next-step" data-next="2" disabled><?php esc_html_e( 'Continue', 'devdiggers-wallet-for-woocommerce' ); ?></button>
 						</div>
 					</div>
 
 					<div class="ddwcwm-step-content ddfw-hide" data-step="2">
-						<h2><?php esc_html_e( 'CSV Fields Mapping', 'wallet-management-for-woocommerce' ); ?></h2>
-						<p class="ddwcwm-step-description"><?php esc_html_e( 'Map columns from imported CSV to the default fields required for wallet balances. Not required columns could be skipped.', 'wallet-management-for-woocommerce' ); ?></p>
+						<h2><?php esc_html_e( 'CSV Fields Mapping', 'devdiggers-wallet-for-woocommerce' ); ?></h2>
+						<p class="ddwcwm-step-description"><?php esc_html_e( 'Map columns from imported CSV to the default fields required for wallet balances. Not required columns could be skipped.', 'devdiggers-wallet-for-woocommerce' ); ?></p>
 
 						<div class="ddwcwm-mapping-notice">
 							<div class="ddwcwm-notice-content">
-								<strong><?php esc_html_e( 'User Identification:', 'wallet-management-for-woocommerce' ); ?></strong>
-								<?php esc_html_e( 'You need to map at least one of ID, Username, or Email to identify users. Wallet Balance field is required.', 'wallet-management-for-woocommerce' ); ?>
+								<strong><?php esc_html_e( 'User Identification:', 'devdiggers-wallet-for-woocommerce' ); ?></strong>
+								<?php esc_html_e( 'You need to map at least one of ID, Username, or Email to identify users. Wallet Balance field is required.', 'devdiggers-wallet-for-woocommerce' ); ?>
 							</div>
 						</div>
 						<div class="ddfw-table-wrapper">
 							<table class="ddwcwm-mapping ddfw-table" id="ddwcwm-mapping-table">
 							<thead>
 								<tr>
-										<th><?php esc_html_e( 'Fields', 'wallet-management-for-woocommerce' ); ?></th>
-										<th><?php esc_html_e( 'CSV Column', 'wallet-management-for-woocommerce' ); ?></th>
-										<th><?php esc_html_e( 'CSV Example Data', 'wallet-management-for-woocommerce' ); ?></th>
+										<th><?php esc_html_e( 'Fields', 'devdiggers-wallet-for-woocommerce' ); ?></th>
+										<th><?php esc_html_e( 'CSV Column', 'devdiggers-wallet-for-woocommerce' ); ?></th>
+										<th><?php esc_html_e( 'CSV Example Data', 'devdiggers-wallet-for-woocommerce' ); ?></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -363,30 +363,30 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 									$mapping_fields = [
 										[
 											'key'      => 'id',
-											'label'    => esc_html__( 'ID', 'wallet-management-for-woocommerce' ),
+											'label'    => esc_html__( 'ID', 'devdiggers-wallet-for-woocommerce' ),
 											'required' => false,
 											'group'    => 'user_identifier',
 										],
 										[
 											'key'      => 'username',
-											'label'    => esc_html__( 'Username', 'wallet-management-for-woocommerce' ),
+											'label'    => esc_html__( 'Username', 'devdiggers-wallet-for-woocommerce' ),
 											'required' => false,
 											'group'    => 'user_identifier',
 										],
 										[
 											'key'      => 'email',
-											'label'    => esc_html__( 'Email', 'wallet-management-for-woocommerce' ),
+											'label'    => esc_html__( 'Email', 'devdiggers-wallet-for-woocommerce' ),
 											'required' => false,
 											'group'    => 'user_identifier',
 										],
 										[
 											'key'      => 'wallet_balance',
-											'label'    => esc_html__( 'Wallet Balance', 'wallet-management-for-woocommerce' ),
+											'label'    => esc_html__( 'Wallet Balance', 'devdiggers-wallet-for-woocommerce' ),
 											'required' => true,
 										],
 										[
 											'key'      => 'description',
-											'label'    => esc_html__( 'Description', 'wallet-management-for-woocommerce' ),
+											'label'    => esc_html__( 'Description', 'devdiggers-wallet-for-woocommerce' ),
 											'required' => false,
 										],
 									];
@@ -398,18 +398,18 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 												<?php
 												if ( $field['required'] ) {
 													?>
-													&nbsp;<abbr class="required" title="<?php esc_attr_e( 'required', 'wallet-management-for-woocommerce' ) ?>">*</abbr>
+													&nbsp;<abbr class="required" title="<?php esc_attr_e( 'required', 'devdiggers-wallet-for-woocommerce' ) ?>">*</abbr>
 													<?php
 												} elseif ( isset( $field['group'] ) && 'user_identifier' === $field['group'] ) {
 													?>
-													&nbsp;<abbr class="required" title="<?php esc_attr_e( 'at least one required', 'wallet-management-for-woocommerce' ) ?>">*</abbr>
+													&nbsp;<abbr class="required" title="<?php esc_attr_e( 'at least one required', 'devdiggers-wallet-for-woocommerce' ) ?>">*</abbr>
 													<?php
 												}
 												?>
 									</td>
 									<td>
 												<select name="map[<?php echo esc_attr( $field['key'] ); ?>]" class="ddwcwm-map-select" data-field="<?php echo esc_attr( $field['key'] ); ?>" data-default="<?php echo esc_attr( $field['key'] ); ?>">
-													<option value=""><?php esc_html_e( 'Select column', 'wallet-management-for-woocommerce' ); ?></option>
+													<option value=""><?php esc_html_e( 'Select column', 'devdiggers-wallet-for-woocommerce' ); ?></option>
 										</select>
 									</td>
 									<td class="ddwcwm-example-data"></td>
@@ -422,24 +422,24 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 						</div>
 
 						<div class="ddwcwm-import-action-row">
-							<label><?php esc_html_e( 'Wallet Action', 'wallet-management-for-woocommerce' ); ?>:</label>
+							<label><?php esc_html_e( 'Wallet Action', 'devdiggers-wallet-for-woocommerce' ); ?>:</label>
 							<div class="ddwcwm-action-card-group">
 								<?php
 								$action_cards = [
 									[
 										'value' => 'add',
 										'icon'  => '+',
-										'title' => esc_html__( 'Add to existing balance', 'wallet-management-for-woocommerce' ),
+										'title' => esc_html__( 'Add to existing balance', 'devdiggers-wallet-for-woocommerce' ),
 									],
 									[
 										'value' => 'subtract',
 										'icon'  => '−',
-										'title' => esc_html__( 'Subtract from existing balance', 'wallet-management-for-woocommerce' ),
+										'title' => esc_html__( 'Subtract from existing balance', 'devdiggers-wallet-for-woocommerce' ),
 									],
 									[
 										'value' => 'override',
 										'icon'  => '=',
-										'title' => esc_html__( 'Override balance (set to value)', 'wallet-management-for-woocommerce' ),
+										'title' => esc_html__( 'Override balance (set to value)', 'devdiggers-wallet-for-woocommerce' ),
 									],
 								];
 
@@ -460,19 +460,19 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 						</div>
 
 						<div class="ddwcwm-import-action-row">
-							<label for="ddwcwm-manual-description"><?php esc_html_e( 'Manual Description (if not in CSV):', 'wallet-management-for-woocommerce' ); ?></label>
-							<textarea id="ddwcwm-manual-description" name="ddwcwm_manual_description" class="ddwcwm-description-textarea regular-text ddfw-full-width" rows="3" placeholder="<?php esc_attr_e( 'Enter description for all rows if not mapped', 'wallet-management-for-woocommerce' ); ?>"></textarea>
+							<label for="ddwcwm-manual-description"><?php esc_html_e( 'Manual Description (if not in CSV):', 'devdiggers-wallet-for-woocommerce' ); ?></label>
+							<textarea id="ddwcwm-manual-description" name="ddwcwm_manual_description" class="ddwcwm-description-textarea regular-text ddfw-full-width" rows="3" placeholder="<?php esc_attr_e( 'Enter description for all rows if not mapped', 'devdiggers-wallet-for-woocommerce' ); ?>"></textarea>
 						</div>
 
 						<div class="ddwcwm-step-actions">
-							<button type="button" class="button button-secondary ddwcwm-prev-step" data-prev="1"><?php esc_html_e( 'Back', 'wallet-management-for-woocommerce' ); ?></button>
-							<button type="submit" class="button button-primary"><?php esc_html_e( 'Import Wallet Balances', 'wallet-management-for-woocommerce' ); ?></button>
+							<button type="button" class="button button-secondary ddwcwm-prev-step" data-prev="1"><?php esc_html_e( 'Back', 'devdiggers-wallet-for-woocommerce' ); ?></button>
+							<button type="submit" class="button button-primary"><?php esc_html_e( 'Import Wallet Balances', 'devdiggers-wallet-for-woocommerce' ); ?></button>
 						</div>
 					</div>
 
 					<div class="ddwcwm-step-content ddwcwm-step-content-final ddfw-hide" data-step="3">
-						<h2><?php esc_html_e( 'Import Wallet Balances', 'wallet-management-for-woocommerce' ); ?></h2>
-						<p class="ddwcwm-step-description"><?php esc_html_e( 'Processing your import...', 'wallet-management-for-woocommerce' ); ?></p>
+						<h2><?php esc_html_e( 'Import Wallet Balances', 'devdiggers-wallet-for-woocommerce' ); ?></h2>
+						<p class="ddwcwm-step-description"><?php esc_html_e( 'Processing your import...', 'devdiggers-wallet-for-woocommerce' ); ?></p>
 						<div class="ddwcwm-wizard-summary-wrap">
 							<div class="ddwcwm-wizard-summary">
 								<!-- Progress bar and results will be rendered using templates -->

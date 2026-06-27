@@ -5,7 +5,7 @@
  * Builds the dashboard configuration and renders it through the shared devdiggers-framework
  * dashboard builder ( DDFW_Dashboard ). The plugin only supplies data + config.
  *
- * @package Wallet Management for WooCommerce
+ * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
 
@@ -85,12 +85,12 @@ if ( ! class_exists( 'DDWCWM_Dashboard_Template' ) ) {
 					'columns' => 5,
 					'header'  => [
 						/* translators: %s: current user display name. */
-						'welcome'  => esc_html__( 'Welcome back, %s! 👋🏻', 'wallet-management-for-woocommerce' ),
-						'subtitle' => esc_html__( 'Here\'s what\'s happening with your customers\' wallets.', 'wallet-management-for-woocommerce' ),
+						'welcome'  => esc_html__( 'Welcome back, %s! 👋🏻', 'devdiggers-wallet-for-woocommerce' ),
+						'subtitle' => esc_html__( 'Here\'s what\'s happening with your customers\' wallets.', 'devdiggers-wallet-for-woocommerce' ),
 					],
 					'summary_cards' => [
 						[
-							'title'       => esc_html__( 'Available Balance', 'wallet-management-for-woocommerce' ),
+							'title'       => esc_html__( 'Available Balance', 'devdiggers-wallet-for-woocommerce' ),
 							'value'       => wc_price( $summary['total_balance']['value'] ),
 							'change'      => $summary['total_balance']['change'],
 							'is_positive' => $summary['total_balance']['is_positive'],
@@ -98,7 +98,7 @@ if ( ! class_exists( 'DDWCWM_Dashboard_Template' ) ) {
 							'icon'        => DDFW_SVG::get_svg_icon( 'wallet_balance' ),
 						],
 						[
-							'title'       => esc_html__( 'Wallet Spent', 'wallet-management-for-woocommerce' ),
+							'title'       => esc_html__( 'Wallet Spent', 'devdiggers-wallet-for-woocommerce' ),
 							'value'       => wc_price( $summary['wallet_spent']['value'] ),
 							'change'      => $summary['wallet_spent']['change'],
 							'is_positive' => $summary['wallet_spent']['is_positive'],
@@ -106,19 +106,19 @@ if ( ! class_exists( 'DDWCWM_Dashboard_Template' ) ) {
 							'icon'        => DDFW_SVG::get_svg_icon( 'wallet_spent' ),
 						],
 						[
-							'title'       => esc_html__( 'Total Transactions', 'wallet-management-for-woocommerce' ),
+							'title'       => esc_html__( 'Total Transactions', 'devdiggers-wallet-for-woocommerce' ),
 							'value'       => $summary['total_transactions']['value'],
 							'change'      => $summary['total_transactions']['change'],
 							'is_positive' => $summary['total_transactions']['is_positive'],
 							'icon'        => DDFW_SVG::get_svg_icon( 'transactions' ),
 						],
 						[
-							'title' => esc_html__( 'Total Users', 'wallet-management-for-woocommerce' ),
+							'title' => esc_html__( 'Total Users', 'devdiggers-wallet-for-woocommerce' ),
 							'value' => $summary['total_users'],
 							'icon'  => DDFW_SVG::get_svg_icon( 'users' ),
 						],
 						[
-							'title'       => esc_html__( 'Cashback Awarded', 'wallet-management-for-woocommerce' ),
+							'title'       => esc_html__( 'Cashback Awarded', 'devdiggers-wallet-for-woocommerce' ),
 							'value'       => wc_price( $summary['total_cashback']['value'] ),
 							'change'      => $summary['total_cashback']['change'],
 							'is_positive' => $summary['total_cashback']['is_positive'],
@@ -129,40 +129,40 @@ if ( ! class_exists( 'DDWCWM_Dashboard_Template' ) ) {
 					'charts' => [
 						[
 							'id'         => 'transactions',
-							'title'      => esc_html__( 'Transaction Trends', 'wallet-management-for-woocommerce' ),
+							'title'      => esc_html__( 'Transaction Trends', 'devdiggers-wallet-for-woocommerce' ),
 							'date_label' => $date_label,
 							'type'       => 'line',
 							'data'       => $data['charts']['transactions_chart'],
 							'x_key'      => 'date',
 							'series'     => [
-								[ 'key' => 'count', 'label' => esc_html__( 'Transactions', 'wallet-management-for-woocommerce' ), 'color' => '#0256ff' ],
+								[ 'key' => 'count', 'label' => esc_html__( 'Transactions', 'devdiggers-wallet-for-woocommerce' ), 'color' => '#0256ff' ],
 							],
 							'empty'      => [
-								'title' => esc_html__( 'No transaction data', 'wallet-management-for-woocommerce' ),
-								'desc'  => esc_html__( 'Transaction trends will appear here once wallets are used.', 'wallet-management-for-woocommerce' ),
+								'title' => esc_html__( 'No transaction data', 'devdiggers-wallet-for-woocommerce' ),
+								'desc'  => esc_html__( 'Transaction trends will appear here once wallets are used.', 'devdiggers-wallet-for-woocommerce' ),
 							],
 						],
 						[
 							'id'        => 'type-breakdown',
-							'title'     => esc_html__( 'Transaction Types Breakdown', 'wallet-management-for-woocommerce' ),
+							'title'     => esc_html__( 'Transaction Types Breakdown', 'devdiggers-wallet-for-woocommerce' ),
 							'date_label' => $date_label,
 							'type'      => 'doughnut',
 							'data'      => $type_breakdown,
 							'label_key' => 'label',
 							'value_key' => 'value',
 							'empty'     => [
-								'title' => esc_html__( 'No transaction data', 'wallet-management-for-woocommerce' ),
-								'desc'  => esc_html__( 'The transaction type split will appear here.', 'wallet-management-for-woocommerce' ),
+								'title' => esc_html__( 'No transaction data', 'devdiggers-wallet-for-woocommerce' ),
+								'desc'  => esc_html__( 'The transaction type split will appear here.', 'devdiggers-wallet-for-woocommerce' ),
 							],
 						],
 					],
 					'widgets' => [
 						[
-							'title'  => esc_html__( 'Recent Activities', 'wallet-management-for-woocommerce' ),
+							'title'  => esc_html__( 'Recent Activities', 'devdiggers-wallet-for-woocommerce' ),
 							'render' => [ $this, 'render_recent_activities' ],
 						],
 						[
-							'title'  => esc_html__( 'Top Customers', 'wallet-management-for-woocommerce' ),
+							'title'  => esc_html__( 'Top Customers', 'devdiggers-wallet-for-woocommerce' ),
 							'render' => [ $this, 'render_top_customers' ],
 						],
 					],
@@ -180,7 +180,7 @@ if ( ! class_exists( 'DDWCWM_Dashboard_Template' ) ) {
 
 			if ( empty( $activities ) ) {
 				?>
-				<div class="ddfw-dash-no-data"><?php esc_html_e( 'No recent activities found.', 'wallet-management-for-woocommerce' ); ?></div>
+				<div class="ddfw-dash-no-data"><?php esc_html_e( 'No recent activities found.', 'devdiggers-wallet-for-woocommerce' ); ?></div>
 				<?php
 				return;
 			}
@@ -198,7 +198,7 @@ if ( ! class_exists( 'DDWCWM_Dashboard_Template' ) ) {
 								if ( ! empty( $activity['expiry_date'] ) ) {
 									echo ' • ';
 									/* translators: %s: expiry date. */
-									printf( esc_html__( 'Expires: %s', 'wallet-management-for-woocommerce' ), esc_html( date_i18n( get_option( 'date_format' ), strtotime( $activity['expiry_date'] ) ) ) );
+									printf( esc_html__( 'Expires: %s', 'devdiggers-wallet-for-woocommerce' ), esc_html( date_i18n( get_option( 'date_format' ), strtotime( $activity['expiry_date'] ) ) ) );
 								}
 								?>
 							</div>
@@ -222,7 +222,7 @@ if ( ! class_exists( 'DDWCWM_Dashboard_Template' ) ) {
 
 			if ( empty( $customers ) ) {
 				?>
-				<div class="ddfw-dash-no-data"><?php esc_html_e( 'No customers found.', 'wallet-management-for-woocommerce' ); ?></div>
+				<div class="ddfw-dash-no-data"><?php esc_html_e( 'No customers found.', 'devdiggers-wallet-for-woocommerce' ); ?></div>
 				<?php
 				return;
 			}

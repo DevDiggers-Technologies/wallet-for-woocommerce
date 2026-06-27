@@ -54,14 +54,14 @@ function ddfw_namespace_class_autoload( $class ) {
 	} else {
 		$message = sprintf(
 			/* translators: %1$s: class name, %2$s: file path. */
-			esc_html__( 'Autoloader error: The file for class %1$s was expected at path %2$s but was not found.', 'wallet-management-for-woocommerce' ),
+			esc_html__( 'Autoloader error: The file for class %1$s was expected at path %2$s but was not found.', 'devdiggers-wallet-for-woocommerce' ),
 			esc_html( $class ),
 			esc_html( $file )
 		);
 
 		wp_die(
 			wp_kses_post( $message ),
-			esc_html__( 'Autoloader Error', 'wallet-management-for-woocommerce' )
+			esc_html__( 'Autoloader Error', 'devdiggers-wallet-for-woocommerce' )
 		);
 	}
 }
