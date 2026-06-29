@@ -62,8 +62,6 @@ if ( ! class_exists( 'DDWCWM_File_Handler' ) ) {
 			$wallet_balance_operations_shortcode = get_option( '_ddwcwm_wallet_balance_operations_shortcode' );
 			$wallet_transactions_shortcode       = get_option( '_ddwcwm_wallet_transactions_shortcode' );
 			$enabled_payment_gateways            = get_option( '_ddwcwm_enabled_payment_gateways' );
-			$enabled_otp_operations              = get_option( '_ddwcwm_enabled_otp_operations' );
-			$otp_length                          = get_option( '_ddwcwm_otp_length', 6 );
 			$my_account_endpoint                 = get_option( '_ddwcwm_my_account_endpoint' );
 			$my_account_endpoint_title           = get_option( '_ddwcwm_my_account_endpoint_title' );
 
@@ -88,25 +86,17 @@ if ( ! class_exists( 'DDWCWM_File_Handler' ) ) {
 			}
 
 			$credit_reason = [
-				'registration'            => esc_html__( 'creating a new account', 'devdiggers-wallet-for-woocommerce' ),
-				'referral'                => esc_html__( 'referring a friend to our store', 'devdiggers-wallet-for-woocommerce' ),
-				'cashback'                => esc_html__( 'receiving cashback from your purchase', 'devdiggers-wallet-for-woocommerce' ),
-				'cart_cashback'           => esc_html__( 'receiving cart cashback from your purchase', 'devdiggers-wallet-for-woocommerce' ),
-				'product_cashback'        => esc_html__( 'receiving product cashback from your purchase', 'devdiggers-wallet-for-woocommerce' ),
-				'topup_cashback'          => esc_html__( 'receiving topup cashback from your purchase', 'devdiggers-wallet-for-woocommerce' ),
-				'first_order_cashback'    => esc_html__( 'receiving first order cashback from your purchase', 'devdiggers-wallet-for-woocommerce' ),
-				'user_role_cashback'      => esc_html__( 'receiving user role cashback from your purchase', 'devdiggers-wallet-for-woocommerce' ),
-				'payment_method_cashback' => esc_html__( 'receiving payment method cashback from your purchase', 'devdiggers-wallet-for-woocommerce' ),
-				'refund'                  => esc_html__( 'refund processing', 'devdiggers-wallet-for-woocommerce' ),
-				'transfer_received'       => esc_html__( 'wallet transfer received', 'devdiggers-wallet-for-woocommerce' ),
-				'topup'                   => esc_html__( 'wallet topup', 'devdiggers-wallet-for-woocommerce' ),
+				'registration'      => esc_html__( 'creating a new account', 'devdiggers-wallet-for-woocommerce' ),
+				'cashback'          => esc_html__( 'receiving cashback from your purchase', 'devdiggers-wallet-for-woocommerce' ),
+				'cart_cashback'     => esc_html__( 'receiving cart cashback from your purchase', 'devdiggers-wallet-for-woocommerce' ),
+				'refund'            => esc_html__( 'refund processing', 'devdiggers-wallet-for-woocommerce' ),
+				'transfer_received' => esc_html__( 'wallet transfer received', 'devdiggers-wallet-for-woocommerce' ),
+				'topup'             => esc_html__( 'wallet topup', 'devdiggers-wallet-for-woocommerce' ),
 			];
 
 			$debit_reason = [
-				'order_payment'    => esc_html__( 'order payment', 'devdiggers-wallet-for-woocommerce' ),
-				'transfer_sent'    => esc_html__( 'wallet transfer sent', 'devdiggers-wallet-for-woocommerce' ),
-				'cashback_expired' => esc_html__( 'cashback expiration', 'devdiggers-wallet-for-woocommerce' ),
-				'withdrawal'       => esc_html__( 'wallet withdrawal', 'devdiggers-wallet-for-woocommerce' ),
+				'order_payment' => esc_html__( 'order payment', 'devdiggers-wallet-for-woocommerce' ),
+				'transfer_sent' => esc_html__( 'wallet transfer sent', 'devdiggers-wallet-for-woocommerce' ),
 			];
 
 			$email_settings = [
@@ -141,29 +131,10 @@ if ( ! class_exists( 'DDWCWM_File_Handler' ) ) {
 
 			$ddwcwm_wallet = apply_filters( 'ddwcwm_modify_global_configuration', [
 				'enabled'                             => get_option( '_ddwcwm_enabled' ),
-				// Pro: peer transfer limits are locked off in Free.
-				'min_transfer_limit'                  => '',
-				'max_transfer_limit'                  => '',
 				'registration_credit'                 => get_option( '_ddwcwm_registration_credit' ),
 				'topup_order_status'                  => get_option( '_ddwcwm_topup_order_status', 'completed' ),
-				// Pro: partial payments are locked off in Free.
-				'partial_payments_enabled'            => '',
 				'redirect_to_checkout_on_topup'       => get_option( '_ddwcwm_redirect_to_checkout_on_topup', 'yes' ),
 				'enabled_payment_gateways'            => ! empty( $enabled_payment_gateways ) ? $enabled_payment_gateways : [],
-				// Pro: OTP verification is locked off in Free.
-				'enabled_otp_operations'              => [],
-				'otp_expiry'                          => '',
-				'otp_length'                          => 6,
-				// Pro: withdrawals are locked off in Free.
-				'withdrawals_enabled'                 => '',
-				'withdraw_charges_type'               => '',
-				'withdraw_charges_amount'             => '',
-				'min_withdrawal_limit'                => '',
-				'max_withdrawal_limit'                => '',
-				// Pro: referrals are locked off in Free.
-				'referrals_enabled'                   => '',
-				'referral_earning_amount'             => '',
-				'referral_email_content'              => '',
 				'my_account_endpoint'                 => ! empty( $my_account_endpoint ) ? $my_account_endpoint : 'my-wallet',
 				'my_account_endpoint_title'           => ! empty( $my_account_endpoint_title ) ? $my_account_endpoint_title : esc_html__( 'My Wallet', 'devdiggers-wallet-for-woocommerce' ),
 				'enable_widgets_my_account_endpoint'  => get_option( '_ddwcwm_enable_widgets_my_account_endpoint' ),
@@ -179,7 +150,6 @@ if ( ! class_exists( 'DDWCWM_File_Handler' ) ) {
 				'details_icon_color'                  => get_option( '_ddwcwm_details_icon_color', '#0256ff' ),
 				'details_icon_wrapper_background_color' => get_option( '_ddwcwm_details_icon_wrapper_background_color', '#EEF3FF' ),
 				'details_card_background_color'       => get_option( '_ddwcwm_details_card_background_color', '#ffffff' ),
-				// #e5e7eb
 				'details_card_border_color'           => get_option( '_ddwcwm_details_card_border_color', '#dce6ff' ),
 				'details_card_text_color'             => get_option( '_ddwcwm_details_card_text_color', '#000000' ),
 				'details_card_value_color'            => get_option( '_ddwcwm_details_card_value_color', '#111827' ),

@@ -48,7 +48,7 @@ Reward customers with wallet credit based on what they spend.
 
 * Cart total cashback rules with amount ranges and fixed or percentage rewards.
 * Maximum cashback cap, minimum order value, and an option to skip sale products.
-* Cashback messages on shop, product, cart, checkout and order pages.
+* Cashback messages on the cart, checkout, view order and order received pages.
 
 = Customer wallet page =
 
@@ -56,6 +56,7 @@ Customers manage the wallet from a tab inside WooCommerce My Account.
 
 * Balance, today's credit and debit, and full transaction history with AJAX pagination.
 * Shortcodes for the wallet balance, top-up form and transactions, so you can place them on any page.
+* Send money to another customer straight from the wallet as a peer to peer transfer.
 * Order refunds are credited back to the wallet automatically.
 
 = Admin management =
@@ -79,12 +80,12 @@ Store owners control balances and settings from the WordPress admin.
 
 The free plugin runs the complete wallet workflow: top-up, wallet checkout, cart cashback, manual and bulk adjustments, transaction history, refunds to wallet, and the customer wallet page. Most stores can launch on the free version alone.
 
-[DevDiggers Wallet for WooCommerce Pro](https://devdiggers.com/product/woocommerce-wallet-management/) is for stores that want flexible payments, peer to peer money, payouts, and a referral and cashback rewards program.
+[DevDiggers Wallet for WooCommerce Pro](https://devdiggers.com/product/woocommerce-wallet-management/) is for stores that want flexible payments, money requests, payouts, and a referral and cashback rewards program.
 
 === Flexible payments (Pro) ===
 
 * Partial payments, so a customer pays part of an order from the wallet and the rest with another gateway.
-* Send and request money between customers as peer to peer transfers.
+* Request money from another customer, with the sender approving the transfer.
 
 === Withdrawals and security (Pro) ===
 

@@ -38,8 +38,12 @@ if ( ! class_exists( 'DDWCWM_Admin_Functions' ) ) {
 				'sanitize_callback' => [ $this, 'ddwcwm_sanitize_number_option' ],
 			];
 
+			$sanitize_slug = [
+				'sanitize_callback' => [ $this, 'ddwcwm_sanitize_slug_option' ],
+			];
+
 			register_setting( 'ddwcwm-general-configuration-fields', '_ddwcwm_enabled', $sanitize );
-			register_setting( 'ddwcwm-general-configuration-fields', '_ddwcwm_registration_credit', $sanitize );
+			register_setting( 'ddwcwm-general-configuration-fields', '_ddwcwm_registration_credit', $sanitize_number );
 			register_setting( 'ddwcwm-general-configuration-fields', '_ddwcwm_topup_order_status', $sanitize );
 			register_setting( 'ddwcwm-general-configuration-fields', '_ddwcwm_enabled_payment_gateways', $sanitize_array );
 			register_setting( 'ddwcwm-general-configuration-fields', '_ddwcwm_redirect_to_checkout_on_topup', $sanitize );
@@ -48,7 +52,7 @@ if ( ! class_exists( 'DDWCWM_Admin_Functions' ) ) {
 			// partial payments) are intentionally NOT registered in Free. Their UI is shown
 			// locked and submits no meaningful value.
 
-			register_setting( 'ddwcwm-endpoints-configuration-fields', '_ddwcwm_my_account_endpoint', $sanitize );
+			register_setting( 'ddwcwm-endpoints-configuration-fields', '_ddwcwm_my_account_endpoint', $sanitize_slug );
 			register_setting( 'ddwcwm-endpoints-configuration-fields', '_ddwcwm_my_account_endpoint_title', $sanitize );
 			register_setting( 'ddwcwm-endpoints-configuration-fields', '_ddwcwm_enable_widgets_my_account_endpoint', $sanitize );
 
@@ -149,6 +153,16 @@ if ( ! class_exists( 'DDWCWM_Admin_Functions' ) ) {
 			}
 
 			return '';
+		}
+
+		/**
+		 * Sanitize an endpoint slug option for rewrite and query-var use.
+		 *
+		 * @param string $input Slug value.
+		 * @return string
+		 */
+		public function ddwcwm_sanitize_slug_option( $input ) {
+			return sanitize_title( wp_unslash( $input ) );
 		}
 
 		/**

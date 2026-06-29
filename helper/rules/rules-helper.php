@@ -239,6 +239,11 @@ if ( ! class_exists( 'DDWCWM_Rules_Helper' ) ) {
 		/**
 		 * Calculate Cashbacks with cart function
 		 *
+		 * Returns a keyed array ( only the 'cart' key is populated in Free ). The keyed
+		 * shape is the shared data contract with the Pro plugin, which adds further keys
+		 * ( product, topup, user_role, payment_method, first_order ), so the cashback data
+		 * stored on the order stays compatible if the store later upgrades to Pro.
+		 *
 		 * @return array
 		 */
 		public function ddwcwm_calculate_cashbacks_with_cart() {
@@ -281,7 +286,7 @@ if ( ! class_exists( 'DDWCWM_Rules_Helper' ) ) {
 
 					if ( ! empty( $cashback_data ) ) {
 						if ( $cashback_data[ 'cashback_type' ] == 'fixed' ) {
-							$cashbacks[ 'cart' ] = $cashback_data[ 'cashback_amount' ];
+							$cashbacks[ 'cart' ] = (float) $cashback_data[ 'cashback_amount' ];
 						} else {
 							$cashbacks[ 'cart' ] = $cart_subtotal * $cashback_data[ 'cashback_amount' ] / 100;
 						}
@@ -290,7 +295,7 @@ if ( ! class_exists( 'DDWCWM_Rules_Helper' ) ) {
 			}
 
 			$total_cashback = array_sum( $cashbacks );
-			$max_cap = ! empty( $ddwcwm_wallet['cashback_max_cap'] ) ? $ddwcwm_wallet['cashback_max_cap'] : 0;
+			$max_cap        = ! empty( $ddwcwm_wallet['cashback_max_cap'] ) ? $ddwcwm_wallet['cashback_max_cap'] : 0;
 			if ( ! empty( $max_cap ) && $total_cashback > $max_cap ) {
 				$ratio = $max_cap / $total_cashback;
 				foreach ( $cashbacks as $key => $val ) {
@@ -303,6 +308,10 @@ if ( ! class_exists( 'DDWCWM_Rules_Helper' ) ) {
 
 		/**
 		 * Calculate Cashbacks with order function
+		 *
+		 * Returns a keyed array ( only the 'cart' key is populated in Free ) to keep the
+		 * order cashback data compatible with the Pro plugin. See
+		 * ddwcwm_calculate_cashbacks_with_cart() for details.
 		 *
 		 * @param int $order_id
 		 * @return array
@@ -348,7 +357,7 @@ if ( ! class_exists( 'DDWCWM_Rules_Helper' ) ) {
 
 					if ( ! empty( $cashback_data ) ) {
 						if ( $cashback_data[ 'cashback_type' ] == 'fixed' ) {
-							$cashbacks[ 'cart' ] = $cashback_data[ 'cashback_amount' ];
+							$cashbacks[ 'cart' ] = (float) $cashback_data[ 'cashback_amount' ];
 						} else {
 							$cashbacks[ 'cart' ] = $order_subtotal * $cashback_data[ 'cashback_amount' ] / 100;
 						}
@@ -357,7 +366,7 @@ if ( ! class_exists( 'DDWCWM_Rules_Helper' ) ) {
 			}
 
 			$total_cashback = array_sum( $cashbacks );
-			$max_cap = ! empty( $ddwcwm_wallet['cashback_max_cap'] ) ? $ddwcwm_wallet['cashback_max_cap'] : 0;
+			$max_cap        = ! empty( $ddwcwm_wallet['cashback_max_cap'] ) ? $ddwcwm_wallet['cashback_max_cap'] : 0;
 			if ( ! empty( $max_cap ) && $total_cashback > $max_cap ) {
 				$ratio = $max_cap / $total_cashback;
 				foreach ( $cashbacks as $key => $val ) {

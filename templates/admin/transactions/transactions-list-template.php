@@ -179,15 +179,15 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
 					$transaction_reference = $transaction[ 'reference' ];
 
 					ob_start();
-					if ( $transaction_type == 'credit' || $transaction_reference == 'withdraw_cancelled' ) {
+					if ( $transaction_type == 'credit' ) {
 						?>
 						<span class="ddwcwm-credit">+<?php echo wp_kses_post( wc_price( $transaction[ 'amount' ], [ 'currency' => $order_currency ] ) ) ?></span>
 						<?php
-					} else if ( $transaction_type == 'transfer' || $transaction_reference == 'withdraw_completed' ) {
+					} else if ( $transaction_type == 'transfer' ) {
 						?>
 						<span class="ddwcwm-complete"><?php echo wp_kses_post( wc_price( $transaction[ 'amount' ], [ 'currency' => $order_currency ] ) ) ?></span>
 						<?php
-					} else if ( $transaction_type == 'debit' || $transaction_type == 'withdraw' ) {
+					} else if ( $transaction_type == 'debit' ) {
 						?>
 						<span class="ddwcwm-debit">-<?php echo wp_kses_post( wc_price( $transaction[ 'amount' ], [ 'currency' => $order_currency ] ) ) ?></span>
 						<?php
@@ -440,7 +440,6 @@ if ( ! class_exists( 'DDWCWM_Transactions_List_Template' ) ) {
 				'credit'   => esc_html__( 'Credit', 'devdiggers-wallet-for-woocommerce' ),
 				'debit'    => esc_html__( 'Debit', 'devdiggers-wallet-for-woocommerce' ),
 				'transfer' => esc_html__( 'Transfer', 'devdiggers-wallet-for-woocommerce' ),
-				'withdraw' => esc_html__( 'Withdrawal', 'devdiggers-wallet-for-woocommerce' ),
 			];
 
 			$all_transaction_types = apply_filters( 'ddwcwm_modify_transaction_types_for_filter' , $all_transaction_types );

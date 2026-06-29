@@ -248,47 +248,22 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 				$cashback_amount       = $order->get_meta( '_ddwcwm_cashback_amount', true );
 				$awarded_cashback_data = $order->get_meta( '_ddwcwm_awarded_cashback_data', true );
 
-				if ( ! empty( $awarded_cashback_data ) && ! empty( $cashback_amount ) ) {
-					$cashback_amount = 0;
+				// Only the 'cart' cashback type exists in Free; the keyed array keeps the
+				// stored data compatible with the Pro plugin's additional cashback types.
+				if ( ! empty( $awarded_cashback_data ) && ! empty( $cashback_amount ) && ! empty( $awarded_cashback_data['cart'] ) ) {
+					$wallet_balance -= $awarded_cashback_data['cart'];
 
-					if ( ! empty( $awarded_cashback_data[ 'cart' ] ) ) {
-						$cashback_amount += $awarded_cashback_data[ 'cart' ];
+					$data = [
+						'type'      => 'debit',
+						'amount'    => $awarded_cashback_data['cart'],
+						'user_id'   => $user_id,
+						'order_id'  => $order_id,
+						'note'      => esc_html__( 'Debit wallet cashback due to order cancel.', 'devdiggers-wallet-for-woocommerce' ),
+						'date'      => current_time( 'Y-m-d H:i:s' ),
+						'reference' => 'cart_cashback',
+					];
 
-						$wallet_balance -= $awarded_cashback_data[ 'cart' ];
-
-						$data = [
-							'type'      => 'debit',
-							'amount'    => $awarded_cashback_data[ 'cart' ],
-							'user_id'   => $user_id,
-							'order_id'  => $order_id,
-							'note'      => esc_html__( 'Debit wallet cashback for cart due to order cancel.', 'devdiggers-wallet-for-woocommerce' ),
-							'date'      => current_time( 'Y-m-d H:i:s' ),
-							'reference' => 'cart_cashback',
-						];
-
-						$transaction_helper->ddwcwm_save_transaction( $data );
-					}
-
-					if ( ! empty( $awarded_cashback_data[ 'topup' ] ) ) {
-						$cashback_amount += $awarded_cashback_data[ 'topup' ];
-
-						$wallet_balance -= $awarded_cashback_data[ 'topup' ];
-
-						$data = [
-							'type'      => 'debit',
-							'amount'    => $awarded_cashback_data[ 'topup' ],
-							'user_id'   => $user_id,
-							'order_id'  => $order_id,
-							'note'      => esc_html__( 'Debit wallet cashback for topup due to order cancel.', 'devdiggers-wallet-for-woocommerce' ),
-							'date'      => current_time( 'Y-m-d H:i:s' ),
-							'reference' => 'topup_cashback',
-						];
-
-						$transaction_helper->ddwcwm_save_transaction( $data );
-					}
-
-					if ( ! empty( $cashback_amount ) ) {
-					}
+					$transaction_helper->ddwcwm_save_transaction( $data );
 				}
 
 				$user_helper->ddwcwm_set_user_wallet_balance( $wallet_balance, $user_id );
@@ -341,47 +316,20 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 				$cashback_amount       = $order->get_meta( '_ddwcwm_cashback_amount', true );
 				$awarded_cashback_data = $order->get_meta( '_ddwcwm_awarded_cashback_data', true );
 
-				if ( ! empty( $awarded_cashback_data ) && ! empty( $cashback_amount ) ) {
-					$cashback_amount = 0;
+				if ( ! empty( $awarded_cashback_data ) && ! empty( $cashback_amount ) && ! empty( $awarded_cashback_data['cart'] ) ) {
+					$wallet_balance -= $awarded_cashback_data['cart'];
 
-					if ( ! empty( $awarded_cashback_data[ 'cart' ] ) ) {
-						$cashback_amount += $awarded_cashback_data[ 'cart' ];
+					$data = [
+						'type'      => 'debit',
+						'amount'    => $awarded_cashback_data['cart'],
+						'user_id'   => $user_id,
+						'order_id'  => $order_id,
+						'note'      => esc_html__( 'Debit wallet cashback due to order fully refund.', 'devdiggers-wallet-for-woocommerce' ),
+						'date'      => current_time( 'Y-m-d H:i:s' ),
+						'reference' => 'cart_cashback',
+					];
 
-						$wallet_balance -= $awarded_cashback_data[ 'cart' ];
-
-						$data = [
-							'type'      => 'debit',
-							'amount'    => $awarded_cashback_data[ 'cart' ],
-							'user_id'   => $user_id,
-							'order_id'  => $order_id,
-							'note'      => esc_html__( 'Debit wallet cashback for cart due to order fully refund.', 'devdiggers-wallet-for-woocommerce' ),
-							'date'      => current_time( 'Y-m-d H:i:s' ),
-							'reference' => 'cart_cashback',
-						];
-
-						$transaction_helper->ddwcwm_save_transaction( $data );
-					}
-
-					if ( ! empty( $awarded_cashback_data[ 'topup' ] ) ) {
-						$cashback_amount += $awarded_cashback_data[ 'topup' ];
-
-						$wallet_balance -= $awarded_cashback_data[ 'topup' ];
-
-						$data = [
-							'type'      => 'debit',
-							'amount'    => $awarded_cashback_data[ 'topup' ],
-							'user_id'   => $user_id,
-							'order_id'  => $order_id,
-							'note'      => esc_html__( 'Debit wallet cashback for topup due to order fully refund.', 'devdiggers-wallet-for-woocommerce' ),
-							'date'      => current_time( 'Y-m-d H:i:s' ),
-							'reference' => 'topup_cashback',
-						];
-
-						$transaction_helper->ddwcwm_save_transaction( $data );
-					}
-
-					if ( ! empty( $cashback_amount ) ) {
-					}
+					$transaction_helper->ddwcwm_save_transaction( $data );
 				}
 
 				$user_helper->ddwcwm_set_user_wallet_balance( $wallet_balance, $user_id );
@@ -415,7 +363,7 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 			}
 
 			$refund_amount = abs( floatval( $refund->get_total() ) );
-			// Current total is already reduced by refund amount in some WC flows, 
+			// Current total is already reduced by refund amount in some WC flows,
 			// but at this hook, we usually have the new total or can reconstruct original.
 			$current_total = floatval( $order->get_total() );
 			$original_total = $current_total + $refund_amount;
@@ -435,12 +383,14 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 			$wallet_balance     = $user_helper->ddwcwm_get_user_wallet_balance( $user_id );
 			$total_debit        = 0;
 
+			// Iterate the keyed cashback array ( Free only has 'cart', Pro adds more ) so the
+			// reduced data written back stays compatible with the Pro plugin.
 			foreach ( $awarded_cashback_data as $key => $amount ) {
 				if ( $amount > 0 ) {
-					$debit_amount = $amount * $ratio;
+					$debit_amount    = $amount * $ratio;
 					$wallet_balance -= $debit_amount;
 					$total_debit    += $debit_amount;
-					
+
 					$awarded_cashback_data[ $key ] -= $debit_amount;
 
 					$data = [
@@ -448,8 +398,7 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 						'amount'    => $debit_amount,
 						'user_id'   => $user_id,
 						'order_id'  => $order_id,
-						/* translators: %s: cashback type label. */
-						'note'      => sprintf( esc_html__( 'Debit wallet cashback for %s due to order partial refund.', 'devdiggers-wallet-for-woocommerce' ), str_replace( '_', ' ', $key ) ),
+						'note'      => esc_html__( 'Debit wallet cashback due to order partial refund.', 'devdiggers-wallet-for-woocommerce' ),
 						'date'      => current_time( 'Y-m-d H:i:s' ),
 						'reference' => 'cashback_partial_reversal',
 					];
@@ -461,7 +410,6 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 				$user_helper->ddwcwm_set_user_wallet_balance( $wallet_balance, $user_id );
 				$order->update_meta_data( '_ddwcwm_awarded_cashback_data', $awarded_cashback_data );
 				$order->save();
-
 			}
 		}
 
@@ -577,50 +525,24 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 
 			$awarded_cashback_data = $order->get_meta( '_ddwcwm_awarded_cashback_data', true );
 
-			if ( ! empty( $awarded_cashback_data ) ) {
-				global $ddwcwm_wallet;
-				$cashback_amount = 0;
+			if ( ! empty( $awarded_cashback_data ) && ! empty( $awarded_cashback_data['cart'] ) ) {
+				$cashback_amount = $awarded_cashback_data['cart'];
 
+				$wallet_balance += $cashback_amount;
 
-				if ( ! empty( $awarded_cashback_data[ 'cart' ] ) ) {
-					$cashback_amount += $awarded_cashback_data[ 'cart' ];
+				$data = [
+					'type'      => 'credit',
+					'amount'    => $cashback_amount,
+					'user_id'   => $user_id,
+					'order_id'  => $order_id,
+					'note'      => esc_html__( 'Wallet Cashback for Cart', 'devdiggers-wallet-for-woocommerce' ),
+					'date'      => current_time( 'Y-m-d H:i:s' ),
+					'reference' => 'cart_cashback',
+				];
 
-					$wallet_balance += $awarded_cashback_data[ 'cart' ];
+				$transaction_helper->ddwcwm_save_transaction( $data );
 
-					$data = [
-						'type'      => 'credit',
-						'amount'    => $awarded_cashback_data[ 'cart' ],
-						'user_id'   => $user_id,
-						'order_id'  => $order_id,
-						'note'      => esc_html__( 'Wallet Cashback for Cart', 'devdiggers-wallet-for-woocommerce' ),
-						'date'        => current_time( 'Y-m-d H:i:s' ),
-						'reference'   => 'cart_cashback',
-					];
-
-					$transaction_helper->ddwcwm_save_transaction( $data );
-				}
-
-				if ( ! empty( $awarded_cashback_data[ 'topup' ] ) ) {
-					$cashback_amount += $awarded_cashback_data[ 'topup' ];
-
-					$wallet_balance += $awarded_cashback_data[ 'topup' ];
-
-					$data = [
-						'type'      => 'credit',
-						'amount'    => $awarded_cashback_data[ 'topup' ],
-						'user_id'   => $user_id,
-						'order_id'  => $order_id,
-						'note'      => esc_html__( 'Wallet Cashback for Topup', 'devdiggers-wallet-for-woocommerce' ),
-						'date'        => current_time( 'Y-m-d H:i:s' ),
-						'reference'   => 'topup_cashback',
-					];
-
-					$transaction_helper->ddwcwm_save_transaction( $data );
-				}
-
-				if ( ! empty( $cashback_amount ) ) {
-					$order->update_meta_data( '_ddwcwm_cashback_amount', $cashback_amount );
-				}
+				$order->update_meta_data( '_ddwcwm_cashback_amount', $cashback_amount );
 			}
 
 			$user_helper->ddwcwm_set_user_wallet_balance( $wallet_balance, $user_id );

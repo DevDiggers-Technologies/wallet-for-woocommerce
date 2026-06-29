@@ -100,9 +100,6 @@ if ( ! class_exists( 'DDWCWM_Front_Functions' ) ) {
 				'ajaxNonce'     => wp_create_nonce( 'ddwcwm-nonce' ),
 				'ddwcwm_wallet' => $ddwcwm_wallet,
 				'i18n'          => [
-					'enterOtp'          => esc_html__( 'Enter OTP first!!', 'devdiggers-wallet-for-woocommerce' ),
-					'demoOtp'           => esc_html__( 'Demo OTP', 'devdiggers-wallet-for-woocommerce' ),
-					'confirmPayRequest' => esc_html__( 'Are you sure you want to pay this request?', 'devdiggers-wallet-for-woocommerce' ),
 					'successIcon'       => DDFW_SVG::get_svg_icon( 'checkmark-circle', true ),
 					'errorIcon'         => DDFW_SVG::get_svg_icon( 'basic-info', true ), // Using info icon for now
 				],
@@ -225,7 +222,7 @@ if ( ! class_exists( 'DDWCWM_Front_Functions' ) ) {
 			$cart_total = apply_filters( 'ddwcwm_modify_amount_to_base_currency', $cart_total );
 			$cart_total = apply_filters( 'ddwcwm_modify_cart_total_amount_for_removing_wallet_payment_gateway', $cart_total );
 
-			if ( apply_filters( 'ddwcwm_add_custom_conditions_to_remove_wallet_payment_gateway', true, $available_gateways ) && ( $wallet_balance <= 0 || ( ! empty( WC()->session ) && ! empty( WC()->session->get( 'ddwcwm_wallet_amount' ) ) ) || $wallet_balance < $cart_total ) ) {
+			if ( apply_filters( 'ddwcwm_add_custom_conditions_to_remove_wallet_payment_gateway', true, $available_gateways ) && ( $wallet_balance <= 0 || $wallet_balance < $cart_total ) ) {
 				unset( $available_gateways[ 'ddwcwm_wallet' ] );
 			}
 
@@ -472,8 +469,8 @@ if ( ! class_exists( 'DDWCWM_Front_Functions' ) ) {
 				return;
 			}
 
-			$rules_helper = new DDWCWM_Rules_Helper();
-			$cashbacks    = $rules_helper->ddwcwm_calculate_cashbacks_with_cart();
+			$rules_helper   = new DDWCWM_Rules_Helper();
+			$cashbacks      = $rules_helper->ddwcwm_calculate_cashbacks_with_cart();
 			$total_cashback = array_sum( $cashbacks );
 
 			if ( $total_cashback <= 0 ) {

@@ -144,7 +144,8 @@ if ( ! class_exists( 'DDWCWM_Dashboard_Helper' ) ) {
 		protected function get_total_cashback_awarded() {
 			global $wpdb;
 			$table        = $wpdb->prefix . 'ddwcwm_transactions';
-			$refs         = [ 'cart_cashback', 'product_cashback', 'topup_cashback', 'first_order_cashback', 'user_role_cashback', 'payment_method_cashback' ];
+			// Free awards cart-total cashback only.
+			$refs         = [ 'cart_cashback' ];
 			$placeholders = implode( ', ', array_fill( 0, count( $refs ), '%s' ) );
 
 			// phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared,WordPress.DB.PreparedSQLPlaceholders.ReplacementsWrongNumber -- $placeholders is a list of %s, $table is internal.
@@ -170,72 +171,6 @@ if ( ! class_exists( 'DDWCWM_Dashboard_Helper' ) ) {
 			];
 		}
 
-		/**
-		 * Get total referral earnings
-		 *
-		 * @return array
-		 */
-		protected function get_total_referral_earnings() {
-			global $wpdb;
-			$table = $wpdb->prefix . 'ddwcwm_transactions';
-			
-			$current_total = $wpdb->get_var( $wpdb->prepare( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
-				"SELECT SUM(amount) FROM %i WHERE type = 'referral_credit' AND date >= %s AND date <= %s", $table,				$this->date_range['from'] . ' 00:00:00',
-				$this->date_range['to'] . ' 23:59:59'
-			) );
-
-			// Previous period
-			$days_diff = ( strtotime( $this->date_range['to'] ) - strtotime( $this->date_range['from'] ) ) / ( 60 * 60 * 24 );
-			$prev_from = gmdate( 'Y-m-d', strtotime( $this->date_range['from'] . ' -' . ceil( $days_diff + 1 ) . ' days' ) );
-			$prev_to   = gmdate( 'Y-m-d', strtotime( $this->date_range['from'] . ' -1 day' ) );
-
-			$prev_total = $wpdb->get_var( $wpdb->prepare( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
-				"SELECT SUM(amount) FROM %i WHERE type = 'referral_credit' AND date >= %s AND date <= %s", $table,				$prev_from . ' 00:00:00',
-				$prev_to . ' 23:59:59'
-			) );
-
-			$change = $prev_total > 0 ? ( ( $current_total - $prev_total ) / $prev_total ) * 100 : 0;
-
-			return [
-				'value'       => (float) $current_total,
-				'change'      => round( $change, 1 ),
-				'is_positive' => $change >= 0,
-			];
-		}
-
-		/**
-		 * Get total withdrawals
-		 *
-		 * @return array
-		 */
-		protected function get_total_withdrawals() {
-			global $wpdb;
-			$table = $wpdb->prefix . 'ddwcwm_transactions';
-			
-			$current_total = $wpdb->get_var( $wpdb->prepare( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
-				"SELECT SUM(amount) FROM %i WHERE type = 'withdraw' AND reference = 'withdraw_completed' AND date >= %s AND date <= %s", $table,				$this->date_range['from'] . ' 00:00:00',
-				$this->date_range['to'] . ' 23:59:59'
-			) );
-
-			// Previous period
-			$days_diff = ( strtotime( $this->date_range['to'] ) - strtotime( $this->date_range['from'] ) ) / ( 60 * 60 * 24 );
-			$prev_from = gmdate( 'Y-m-d', strtotime( $this->date_range['from'] . ' -' . ceil( $days_diff + 1 ) . ' days' ) );
-			$prev_to   = gmdate( 'Y-m-d', strtotime( $this->date_range['from'] . ' -1 day' ) );
-
-			$prev_total = $wpdb->get_var( $wpdb->prepare( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
-				"SELECT SUM(amount) FROM %i WHERE type = 'withdraw' AND reference = 'withdraw_completed' AND date >= %s AND date <= %s", $table,				$prev_from . ' 00:00:00',
-				$prev_to . ' 23:59:59'
-			) );
-
-			$change = $prev_total > 0 ? ( ( $current_total - $prev_total ) / $prev_total ) * 100 : 0;
-
-			return [
-				'value'       => (float) $current_total,
-				'change'      => round( $change, 1 ),
-				'is_positive' => $change >= 0,
-			];
-		}
-		
 		/**
 		 * Get total wallet spent in period
 		 *
