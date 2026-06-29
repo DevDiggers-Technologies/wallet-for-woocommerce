@@ -10,7 +10,6 @@ namespace DDWCWalletManagement\Includes\Admin;
 
 use DDWCWalletManagement\Helper\Transactions\DDWCWM_Transactions_Helper;
 use DDWCWalletManagement\Helper\Users\DDWCWM_Users_Helper;
-use DDWCWalletManagement\Includes\Admin\Importer\DDWCWM_Users_Importer_Controller;
 
 defined( 'ABSPATH' ) || exit();
 
@@ -19,69 +18,6 @@ if ( ! class_exists( 'DDWCWM_Admin_Ajax_Functions' ) ) {
 	 * Admin Ajax fuctions class
 	 */
 	class DDWCWM_Admin_Ajax_Functions {
-
-		/**
-         * Ajax callback for importing one batch of products from a CSV.
-         */
-        public function ddwcwm_do_ajax_users_import() {
-            check_ajax_referer( 'ddwcwm-users-import', 'security' );
-
-            if ( ! current_user_can( 'manage_woocommerce' ) ) {
-                wp_send_json_error( [ 'message' => esc_html__( 'Insufficient permissions.', 'devdiggers-wallet-for-woocommerce' ) ] );
-            }
-
-            if ( ! isset( $_POST[ 'file' ] ) ) { // PHPCS: input var ok.
-                wp_send_json_error( [ 'message' => esc_html__( 'Insufficient privileges to import products.', 'devdiggers-wallet-for-woocommerce' ) ] );
-            }
-
-            $file   = sanitize_text_field( wp_unslash( $_POST[ 'file' ] ) );
-            $params = [
-                'delimiter'       => ! empty( $_POST[ 'delimiter' ] ) ? sanitize_text_field( wp_unslash( $_POST[ 'delimiter' ] ) ) : ',',
-                'start_pos'       => isset( $_POST[ 'position' ] ) ? absint( $_POST[ 'position' ] ) : 0,
-                'mapping'         => isset( $_POST[ 'mapping' ] ) ? map_deep( wp_unslash( $_POST[ 'mapping' ] ), 'sanitize_text_field' ) : [],
-                'update_existing' => ! empty( $_POST[ 'update_existing' ] ),
-                'lines'           => apply_filters( 'ddwcwm_users_import_batch_size', 30 ),
-                'parse'           => true,
-			];
-
-            // Log failures.
-            if ( 0 !== $params[ 'start_pos' ] ) {
-                $error_log = array_filter( (array) get_user_option( 'ddwcwm_users_import_error_log' ) );
-            } else {
-                $error_log = [];
-            }
-
-            $importer         = DDWCWM_Users_Importer_Controller::get_importer( $file, $params );
-            $results          = $importer->import();
-            $percent_complete = $importer->get_percent_complete();
-            $error_log        = array_merge( $error_log, $results[ 'failed' ], $results[ 'skipped' ] );
-
-            update_user_option( get_current_user_id(), 'ddwcwm_users_import_error_log', $error_log );
-
-            if ( 100 === $percent_complete ) {
-                // Send success.
-                wp_send_json_success(
-                    [
-                        'position'   => 'done',
-                        'percentage' => 100,
-                        'url'        => add_query_arg( [ '_wpnonce' => wp_create_nonce( 'ddwcwm-csv-importer' ) ], admin_url( 'admin.php?page=devdiggers-wallet-for-woocommerce&action=ddwcwm-users-import&step=done' ) ),
-                        'imported'   => count( $results[ 'imported' ] ),
-                        'failed'     => count( $results[ 'failed' ] ),
-                        'skipped'    => count( $results[ 'skipped' ] ),
-					]
-                );
-            } else {
-                wp_send_json_success(
-                    [
-                        'position'   => $importer->get_file_position(),
-                        'percentage' => $percent_complete,
-                        'imported'   => count( $results[ 'imported' ] ),
-                        'failed'     => count( $results[ 'failed' ] ),
-                        'skipped'    => count( $results[ 'skipped' ] ),
-					]
-                );
-            }
-        }
 
 		/**
 		 * AJAX handler for batch manual transaction (Credit/Debit)

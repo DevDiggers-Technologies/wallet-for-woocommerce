@@ -44,11 +44,12 @@ A hidden top-up product is created on activation. A customer opens the wallet pa
 **Cashback**
 * Cart total cashback rules with amount ranges (fixed or percentage).
 * Maximum cap, minimum order value, and skip-sale-products option.
-* Cashback messages on shop, product, cart, checkout and order pages.
+* Cashback messages on the cart, checkout, view order and order received pages.
 
 **Customer wallet page**
 * My Account wallet page with balance, today's credit/debit and AJAX paginated transactions.
 * Shortcodes for wallet balance, top-up and transactions (tags set in settings).
+* Send money to another customer straight from the wallet (peer to peer transfer).
 * Order refunds credited back to the wallet automatically.
 
 **Admin management**
@@ -72,8 +73,9 @@ A hidden top-up product is created on activation. A customer opens the wallet pa
 | Manual and bulk (CSV) adjustments | Yes | Yes |
 | Transaction history and refunds to wallet | Yes | Yes |
 | Wallet emails, HPOS, block checkout | Yes | Yes |
+| Send money to another customer (peer to peer) | Yes | Yes |
 | Partial payment (wallet plus gateway) | No | Yes |
-| Send and request money (peer to peer) | No | Yes |
+| Request money from another customer | No | Yes |
 | Wallet withdrawals with approval, charges, limits | No | Yes |
 | OTP email verification | No | Yes |
 | Referral program | No | Yes |

@@ -42,24 +42,6 @@ if ( ! class_exists( 'DDWCWM_Front_Hooks' ) ) {
 
 			add_action( 'woocommerce_store_api_checkout_order_processed', [ $this, 'ddwcwm_deduct_wallet_amount_on_store_api_order_processed' ] );
 
-			// add_action( 'woocommerce_order_status_on-hold', [ $this, 'ddwcwm_deduct_wallet_amount_on_order_processed' ] );
-			// add_action( 'woocommerce_order_status_processing', [ $this, 'ddwcwm_deduct_wallet_amount_on_order_processed' ] );
-
-			// add_action( 'woocommerce_checkout_order_processed', function( $order_id ) {
-			// 	$order              = wc_get_order( $order_id );
-			// 	$used_wallet_amount = WC()->session->get( 'ddwcwm_wallet_amount' );
-
-			// 	if ( ! empty( $used_wallet_amount ) ) {
-			// 		WC()->session->__unset( 'ddwcwm_wallet_amount' );
-
-			// 		$order->update_meta_data( '_ddwcwm_wallet_amount_used', $used_wallet_amount );
-
-			// 		$order->save();
-			// 	}
-			// } );
-
-			// add_action( 'woocommerce_payment_complete', [ $this, 'ddwcwm_deduct_wallet_amount_on_order_processed' ] );
-
 			add_action( 'woocommerce_before_calculate_totals', [ $this, 'ddwcwm_woocommerce_before_calculate_totals' ] );
 
 			add_action( 'wp_loaded', [ $this, 'ddwcwm_handle_wallet_topup' ] );

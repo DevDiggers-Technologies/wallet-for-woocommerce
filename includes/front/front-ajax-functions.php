@@ -184,13 +184,9 @@ if ( ! class_exists( 'DDWCWM_Front_Ajax_Functions' ) ) {
 					$transaction[ 'amount' ] = apply_filters( 'ddwcwm_modify_amount_to_multi_currency', $transaction[ 'amount' ] );
 
 					ob_start();
-					if ( $transaction_type == 'credit' || $transaction_reference == 'withdraw_cancelled' ) {
+					if ( $transaction_type == 'credit' ) {
 						?>
 						<span class="ddwcwm-credit">+<?php echo wp_kses_post( wc_price( $transaction[ 'amount' ], [ 'currency' => $order_currency ] ) ) ?></span>
-						<?php
-					} else if ( $transaction_reference == 'withdraw_completed' ) {
-						?>
-						<span class="ddwcwm-complete"><?php echo wp_kses_post( wc_price( $transaction[ 'amount' ], [ 'currency' => $order_currency ] ) ) ?></span>
 						<?php
 					} else if ( $transaction_type == 'transfer' ) {
 						$sender_id = $transaction[ 'sender_id' ];
@@ -205,7 +201,7 @@ if ( ! class_exists( 'DDWCWM_Front_Ajax_Functions' ) ) {
 						}
 						?>
 						<?php
-					} else if ( $transaction_type == 'debit' || $transaction_type == 'withdraw' ) {
+					} else if ( $transaction_type == 'debit' ) {
 						?>
 						<span class="ddwcwm-debit">-<?php echo wp_kses_post( wc_price( $transaction[ 'amount' ], [ 'currency' => $order_currency ] ) ) ?></span>
 						<?php

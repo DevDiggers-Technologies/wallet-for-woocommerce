@@ -195,11 +195,6 @@ if ( ! class_exists( 'DDWCWM_Dashboard_Template' ) ) {
 								echo esc_html( DDWCWM_Transactions_Helper::ddwcwm_get_transactions_translation( $activity['reference'] ) );
 								echo ' • ';
 								echo esc_html( date_i18n( get_option( 'date_format' ), strtotime( $activity['date'] ) ) );
-								if ( ! empty( $activity['expiry_date'] ) ) {
-									echo ' • ';
-									/* translators: %s: expiry date. */
-									printf( esc_html__( 'Expires: %s', 'devdiggers-wallet-for-woocommerce' ), esc_html( date_i18n( get_option( 'date_format' ), strtotime( $activity['expiry_date'] ) ) ) );
-								}
 								?>
 							</div>
 						</div>

@@ -101,13 +101,9 @@ final class DDWCWM_Wallet_Gateway_Blocks_Support extends AbstractPaymentMethodTy
 
 		$is_topup_in_cart = \DDWCWalletManagement\Includes\Common\DDWCWM_Common_Functions::ddwcwm_is_wallet_topup_pro_in_cart();
 
-
-		$applied_partial_payment = ! empty( WC()->session ) ? WC()->session->get( 'ddwcwm_wallet_amount' ) : 0;
-
-		// Calculate canMakePayment in PHP following woo-wallet pattern
+		// Calculate canMakePayment in PHP following the wallet gateway pattern.
 		$can_make_payment = ( get_current_user_id() > 0 ) && 
 							! $is_topup_in_cart && 
-							empty( $applied_partial_payment ) &&
 							$wallet_balance >= $cart_total;
 
 		return [
@@ -116,7 +112,6 @@ final class DDWCWM_Wallet_Gateway_Blocks_Support extends AbstractPaymentMethodTy
 			/* translators: %s: available wallet balance amount. */
 			'available_balance_text'   => sprintf( esc_html__( '(Available Balance: %s)', 'devdiggers-wallet-for-woocommerce' ), wp_strip_all_tags( wc_price( $wallet_balance ) ) ),
 			'wallet_balance'          => $wallet_balance,
-			'partial_payments_enabled' => false, // Partial payments are a Pro feature; always disabled in Free.
 			'max_debit_limit'         => 0,
 			'min_debit_limit'         => 0,
 			'total_cashback'          => array_sum( ( new \DDWCWalletManagement\Helper\Rules\DDWCWM_Rules_Helper() )->ddwcwm_calculate_cashbacks_with_cart() ),

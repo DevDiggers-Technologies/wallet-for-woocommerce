@@ -34,9 +34,6 @@ if ( ! class_exists( 'DDWCWM_Install' ) ) {
 				`amount` varchar(20) NOT NULL,
 				`type` varchar(50) NOT NULL,
 				`date` datetime NOT NULL,
-				`expiry_date` datetime DEFAULT NULL,
-				`is_expired` tinyint(1) DEFAULT 0 NOT NULL,
-				`is_reminder_sent` tinyint(1) DEFAULT 0 NOT NULL,
 				`note` varchar(250),
 				PRIMARY KEY (id)
 			) $charset_collate;";
@@ -108,7 +105,16 @@ if ( ! class_exists( 'DDWCWM_Install' ) ) {
 				$upload_filepath = $uploaddir[ 'path' ] . "/$filename";
 
 				if ( ! file_exists( $upload_filepath ) ) {
-					file_put_contents( $upload_filepath, file_get_contents( $url ) );
+					if ( ! function_exists( 'WP_Filesystem' ) ) {
+						require_once ABSPATH . 'wp-admin/includes/file.php';
+					}
+					WP_Filesystem();
+					global $wp_filesystem;
+
+					$image_contents = $wp_filesystem->get_contents( $url );
+					if ( false !== $image_contents ) {
+						$wp_filesystem->put_contents( $upload_filepath, $image_contents, FS_CHMOD_FILE );
+					}
 				}
 
 				$attachment_file = [
@@ -136,7 +142,6 @@ if ( ! class_exists( 'DDWCWM_Install' ) ) {
 		 * @return void
 		 */
 		public static function ddwcwm_on_plugin_deactivation() {
-			wp_clear_scheduled_hook( 'ddwcwm_handle_cashback_expiry' );
 		}
 	}
 }

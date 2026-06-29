@@ -62,8 +62,6 @@ if ( ! class_exists( 'DDWCWM_Transactions_Helper' ) ) {
                 'amount'    => 0,
                 'type'      => '',
                 'date'      => current_time( 'Y-m-d H:i:s' ),
-                'expiry_date' => NULL,
-                'is_expired'  => 0,
                 'note'      => '',
 			];
 
@@ -71,7 +69,7 @@ if ( ! class_exists( 'DDWCWM_Transactions_Helper' ) ) {
             $this->wpdb->insert(
                 $this->transaction_table,
                 $data,
-                [ '%d', '%s', '%d', '%d', '%s', '%s', '%s', '%s', '%d', '%s' ]
+                [ '%d', '%s', '%d', '%d', '%s', '%s', '%s', '%s' ]
             );
 
             $transaction_id = $this->wpdb->insert_id;
@@ -183,18 +181,6 @@ if ( ! class_exists( 'DDWCWM_Transactions_Helper' ) ) {
 					$email_message = wpautop( $ddwcwm_wallet['email_settings']['wallet_credited']['message'] );
 
 					$reason = ! empty( $ddwcwm_wallet['credit_reason']['transfer_received'] ) ? $ddwcwm_wallet['credit_reason']['transfer_received'] : 'Transfer Received';
-					if ( ! empty( $data['note'] ) ) {
-						$reason .= ' - ' . esc_html__( 'Note:', 'devdiggers-wallet-for-woocommerce' ) . ' ' . $data['note'];
-					}
-				}
-			} elseif ( 'withdraw' === $data['type'] ) {
-				if ( ! empty( $ddwcwm_wallet['email_settings']['withdrawal_status']['message'] ) ) {
-					$email_heading = $ddwcwm_wallet['email_settings']['withdrawal_status']['heading'];
-					$email_subject = $ddwcwm_wallet['email_settings']['withdrawal_status']['subject'];
-					$email_message = wpautop( $ddwcwm_wallet['email_settings']['withdrawal_status']['message'] );
-					
-					$status = $this->ddwcwm_get_transactions_translation( $data['reference'] );
-					$reason = ! empty( $ddwcwm_wallet['debit_reason']['withdrawal'] ) ? $ddwcwm_wallet['debit_reason']['withdrawal'] : 'Withdrawal';
 					if ( ! empty( $data['note'] ) ) {
 						$reason .= ' - ' . esc_html__( 'Note:', 'devdiggers-wallet-for-woocommerce' ) . ' ' . $data['note'];
 					}
@@ -330,7 +316,6 @@ if ( ! class_exists( 'DDWCWM_Transactions_Helper' ) ) {
 				'order_refund'           => esc_html__( 'Order Refund', 'devdiggers-wallet-for-woocommerce' ),
 				'wallet_topup'           => esc_html__( 'Wallet Topup', 'devdiggers-wallet-for-woocommerce' ),
 				'cart_cashback'          => esc_html__( 'Cart Cashback', 'devdiggers-wallet-for-woocommerce' ),
-				'topup_cashback'         => esc_html__( 'Topup Cashback', 'devdiggers-wallet-for-woocommerce' ),
 				'transfer'               => esc_html__( 'Transfer', 'devdiggers-wallet-for-woocommerce' ),
 				'wallet_transfer'        => esc_html__( 'Wallet Transfer', 'devdiggers-wallet-for-woocommerce' ),
 				'registration_credit'    => esc_html__( 'Registration Credit', 'devdiggers-wallet-for-woocommerce' ),

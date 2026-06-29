@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: DevDiggers Wallet for WooCommerce 1.0.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/devdiggers-wallet-for-woocommerce\n"
-"POT-Creation-Date: 2026-06-27 11:36:57+00:00\n"
+"POT-Creation-Date: 2026-06-29 20:52:45+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -69,7 +69,7 @@ msgstr ""
 msgid "Review"
 msgstr ""
 
-#: helper/dashboard/dashboard-helper.php:296
+#: helper/dashboard/dashboard-helper.php:231
 msgid "Guest"
 msgstr ""
 
@@ -81,89 +81,83 @@ msgstr ""
 msgid "Cashback Rules has been saved successfully."
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:119
+#: helper/transactions/transactions-helper.php:117
 msgid "Manual adjustment by admin"
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:158
-#: helper/transactions/transactions-helper.php:187
-#: helper/transactions/transactions-helper.php:199
+#: helper/transactions/transactions-helper.php:156
+#: helper/transactions/transactions-helper.php:185
 msgid "Note:"
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:320
+#: helper/transactions/transactions-helper.php:306
 #: templates/admin/manual-adjustment/manual-adjustment-template.php:222
 #: templates/admin/transactions/transactions-list-template.php:440
 msgid "Credit"
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:321
+#: helper/transactions/transactions-helper.php:307
 #: templates/admin/manual-adjustment/manual-adjustment-template.php:223
 #: templates/admin/transactions/transactions-list-template.php:441
 msgid "Debit"
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:322
+#: helper/transactions/transactions-helper.php:308
 #: includes/admin-dashboard.php:86 includes/admin-dashboard.php:224
 #: templates/admin/manual-adjustment/manual-adjustment-template.php:142
 msgid "Manual Adjustment"
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:323
+#: helper/transactions/transactions-helper.php:309
 msgid "Manual Debit"
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:324
+#: helper/transactions/transactions-helper.php:310
 msgid "Manual Credit"
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:325
+#: helper/transactions/transactions-helper.php:311
 msgid "Order Credit"
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:326
-#: helper/transactions/transactions-helper.php:327
-#: templates/admin/configuration/emails-configuration-template.php:239
+#: helper/transactions/transactions-helper.php:312
+#: helper/transactions/transactions-helper.php:313
+#: templates/admin/configuration/emails-configuration-template.php:233
 msgid "Order Payment"
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:328
+#: helper/transactions/transactions-helper.php:314
 msgid "Order Cancelled Credit"
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:329
+#: helper/transactions/transactions-helper.php:315
 msgid "Order Cancelled Debit"
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:330
+#: helper/transactions/transactions-helper.php:316
 msgid "Order Refund"
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:331
-#: includes/common/common-functions.php:566
+#: helper/transactions/transactions-helper.php:317
+#: includes/common/common-functions.php:514
 msgid "Wallet Topup"
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:332
+#: helper/transactions/transactions-helper.php:318
 #: templates/admin/configuration/emails-configuration-template.php:91
 msgid "Cart Cashback"
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:333
-#: templates/admin/configuration/emails-configuration-template.php:149
-msgid "Topup Cashback"
-msgstr ""
-
-#: helper/transactions/transactions-helper.php:334
+#: helper/transactions/transactions-helper.php:319
 #: templates/admin/transactions/transactions-list-template.php:442
 msgid "Transfer"
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:335
+#: helper/transactions/transactions-helper.php:320
 msgid "Wallet Transfer"
 msgstr ""
 
-#: helper/transactions/transactions-helper.php:336
+#: helper/transactions/transactions-helper.php:321
 #: includes/admin/setup-wizard.php:124
 #: templates/admin/configuration/general-configuration-template.php:54
 msgid "Registration Credit"
@@ -177,8 +171,7 @@ msgstr ""
 msgid "amount is debited from selected users(s) wallet balance."
 msgstr ""
 
-#: helper/users/users-helper.php:111
-#: includes/admin/admin-ajax-functions.php:156
+#: helper/users/users-helper.php:111 includes/admin/admin-ajax-functions.php:92
 msgid "Insufficient amount to debit."
 msgstr ""
 
@@ -186,33 +179,28 @@ msgstr ""
 msgid "Some fields are empty or not valid."
 msgstr ""
 
-#: includes/admin/admin-ajax-functions.php:30
-#: includes/admin/admin-ajax-functions.php:96
-#: includes/admin/admin-ajax-functions.php:204
+#: includes/admin/admin-ajax-functions.php:32
+#: includes/admin/admin-ajax-functions.php:140
 msgid "Insufficient permissions."
 msgstr ""
 
-#: includes/admin/admin-ajax-functions.php:34
-msgid "Insufficient privileges to import products."
-msgstr ""
-
-#: includes/admin/admin-ajax-functions.php:105
+#: includes/admin/admin-ajax-functions.php:41
 msgid "Invalid user_ids format."
 msgstr ""
 
-#: includes/admin/admin-ajax-functions.php:114
+#: includes/admin/admin-ajax-functions.php:50
 msgid "Invalid parameters."
 msgstr ""
 
-#: includes/admin/admin-ajax-functions.php:162
+#: includes/admin/admin-ajax-functions.php:98
 msgid "Invalid action type"
 msgstr ""
 
-#: includes/admin/admin-ajax-functions.php:183
+#: includes/admin/admin-ajax-functions.php:119
 msgid "Error processing user: "
 msgstr ""
 
-#: includes/admin/admin-ajax-functions.php:191
+#: includes/admin/admin-ajax-functions.php:127
 msgid "Internal error: "
 msgstr ""
 
@@ -334,7 +322,7 @@ msgid ""
 msgstr ""
 
 #: includes/admin-dashboard.php:63 includes/admin-dashboard.php:69
-#: includes/blocks/wallet-gateway-blocks-support.php:114
+#: includes/blocks/wallet-gateway-blocks-support.php:110
 #: includes/wallet-gateway.php:39 includes/wallet-gateway.php:107
 #: src/blocks/index.js:79
 msgid "Wallet"
@@ -480,12 +468,12 @@ msgid ""
 "appreciate it."
 msgstr ""
 
-#: includes/blocks/wallet-gateway-blocks-support.php:115
+#: includes/blocks/wallet-gateway-blocks-support.php:111
 #: includes/wallet-gateway.php:114
 msgid "Pay with Wallet."
 msgstr ""
 
-#: includes/blocks/wallet-gateway-blocks-support.php:117
+#: includes/blocks/wallet-gateway-blocks-support.php:113
 #. translators: %s: available wallet balance amount.
 msgid "(Available Balance: %s)"
 msgstr ""
@@ -518,40 +506,27 @@ msgstr ""
 msgid "Credited wallet amount on order cancel."
 msgstr ""
 
-#: includes/common/common-functions.php:264
-msgid "Debit wallet cashback for cart due to order cancel."
+#: includes/common/common-functions.php:261
+msgid "Debit wallet cashback due to order cancel."
 msgstr ""
 
-#: includes/common/common-functions.php:282
-msgid "Debit wallet cashback for topup due to order cancel."
-msgstr ""
-
-#: includes/common/common-functions.php:332
+#: includes/common/common-functions.php:307
 msgid "Credited wallet amount on order fully refund."
 msgstr ""
 
-#: includes/common/common-functions.php:357
-msgid "Debit wallet cashback for cart due to order fully refund."
+#: includes/common/common-functions.php:327
+msgid "Debit wallet cashback due to order fully refund."
 msgstr ""
 
-#: includes/common/common-functions.php:375
-msgid "Debit wallet cashback for topup due to order fully refund."
+#: includes/common/common-functions.php:401
+msgid "Debit wallet cashback due to order partial refund."
 msgstr ""
 
-#: includes/common/common-functions.php:452
-#. translators: %s: cashback type label.
-msgid "Debit wallet cashback for %s due to order partial refund."
-msgstr ""
-
-#: includes/common/common-functions.php:595
+#: includes/common/common-functions.php:538
 msgid "Wallet Cashback for Cart"
 msgstr ""
 
-#: includes/common/common-functions.php:613
-msgid "Wallet Cashback for Topup"
-msgstr ""
-
-#: includes/common/common-functions.php:657
+#: includes/common/common-functions.php:579
 #. translators: %s: registration credit amount.
 msgid "You'll receive %s in your wallet after sucessful registration."
 msgstr ""
@@ -572,71 +547,39 @@ msgstr ""
 msgid "Thanks for choosing Wallet."
 msgstr ""
 
-#: includes/file-handler.php:91
+#: includes/file-handler.php:89
 msgid "creating a new account"
 msgstr ""
 
-#: includes/file-handler.php:92
-msgid "referring a friend to our store"
-msgstr ""
-
-#: includes/file-handler.php:93
+#: includes/file-handler.php:90
 msgid "receiving cashback from your purchase"
 msgstr ""
 
-#: includes/file-handler.php:94
+#: includes/file-handler.php:91
 msgid "receiving cart cashback from your purchase"
 msgstr ""
 
-#: includes/file-handler.php:95
-msgid "receiving product cashback from your purchase"
-msgstr ""
-
-#: includes/file-handler.php:96
-msgid "receiving topup cashback from your purchase"
-msgstr ""
-
-#: includes/file-handler.php:97
-msgid "receiving first order cashback from your purchase"
-msgstr ""
-
-#: includes/file-handler.php:98
-msgid "receiving user role cashback from your purchase"
-msgstr ""
-
-#: includes/file-handler.php:99
-msgid "receiving payment method cashback from your purchase"
-msgstr ""
-
-#: includes/file-handler.php:100
+#: includes/file-handler.php:92
 msgid "refund processing"
 msgstr ""
 
-#: includes/file-handler.php:101
+#: includes/file-handler.php:93
 msgid "wallet transfer received"
 msgstr ""
 
-#: includes/file-handler.php:102
+#: includes/file-handler.php:94
 msgid "wallet topup"
 msgstr ""
 
-#: includes/file-handler.php:106
+#: includes/file-handler.php:98
 msgid "order payment"
 msgstr ""
 
-#: includes/file-handler.php:107
+#: includes/file-handler.php:99
 msgid "wallet transfer sent"
 msgstr ""
 
-#: includes/file-handler.php:108
-msgid "cashback expiration"
-msgstr ""
-
-#: includes/file-handler.php:109
-msgid "wallet withdrawal"
-msgstr ""
-
-#: includes/file-handler.php:168
+#: includes/file-handler.php:139
 msgid "My Wallet"
 msgstr ""
 
@@ -674,75 +617,63 @@ msgstr ""
 msgid "Arguments are missing."
 msgstr ""
 
-#: includes/front/front-ajax-functions.php:230
+#: includes/front/front-ajax-functions.php:226
 #: templates/admin/transactions/transactions-list-template.php:366
 msgid "Ref:"
 msgstr ""
 
-#: includes/front/front-ajax-functions.php:234
+#: includes/front/front-ajax-functions.php:230
 #: templates/admin/transactions/transactions-list-template.php:350
 msgid "Link:"
 msgstr ""
 
-#: includes/front/front-ajax-functions.php:244
+#: includes/front/front-ajax-functions.php:240
 #. translators: %s: recipient email and user ID.
 msgid "Receiver: %s"
 msgstr ""
 
-#: includes/front/front-ajax-functions.php:247
+#: includes/front/front-ajax-functions.php:243
 #. translators: %d: recipient user ID.
 msgid "Receiver: #%d"
 msgstr ""
 
-#: includes/front/front-ajax-functions.php:252
+#: includes/front/front-ajax-functions.php:248
 #: templates/admin/transactions/transactions-list-template.php:329
 #. translators: %s: sender email and user ID.
 #. translators: %s: linked user or order.
 msgid "Sender: %s"
 msgstr ""
 
-#: includes/front/front-ajax-functions.php:255
+#: includes/front/front-ajax-functions.php:251
 #: templates/admin/transactions/transactions-list-template.php:332
 #. translators: %d: sender user ID.
 #. translators: %d: user ID.
 msgid "Sender: #%d"
 msgstr ""
 
-#: includes/front/front-ajax-functions.php:260
+#: includes/front/front-ajax-functions.php:256
 #: templates/admin/transactions/transactions-list-template.php:340
 #. translators: %s: order link HTML.
 #. translators: %s: linked user or order.
 msgid "Order: %s"
 msgstr ""
 
-#: includes/front/front-ajax-functions.php:268
+#: includes/front/front-ajax-functions.php:264
 #: templates/admin/transactions/transactions-list-template.php:389
 msgid "N/A"
 msgstr ""
 
-#: includes/front/front-ajax-functions.php:275
+#: includes/front/front-ajax-functions.php:271
 msgid "No transactions made yet."
 msgstr ""
 
-#: includes/front/front-functions.php:103
-msgid "Enter OTP first!!"
-msgstr ""
-
-#: includes/front/front-functions.php:104
-msgid "Demo OTP"
-msgstr ""
-
-#: includes/front/front-functions.php:105
-msgid "Are you sure you want to pay this request?"
-msgstr ""
-
-#: includes/front/front-functions.php:166
+#: includes/front/front-functions.php:163
 msgid ""
 "Cannot add new products now. Either empty cart or process wallet topup "
 "first."
 msgstr ""
 
-#: includes/front/front-functions.php:335
+#: includes/front/front-functions.php:332
 msgid "Enter amount to topup"
 msgstr ""
 
@@ -1067,8 +998,8 @@ msgid ""
 msgstr ""
 
 #: templates/admin/configuration/cashback-configuration-template.php:40
-#: templates/admin/configuration/cashback-configuration-template.php:145
-#: templates/admin/configuration/cashback-configuration-template.php:168
+#: templates/admin/configuration/cashback-configuration-template.php:135
+#: templates/admin/configuration/cashback-configuration-template.php:154
 msgid "Days"
 msgstr ""
 
@@ -1121,224 +1052,224 @@ msgid ""
 "first successful purchase."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:96
+#: templates/admin/configuration/cashback-configuration-template.php:94
 msgid "Reward Type"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:97
+#: templates/admin/configuration/cashback-configuration-template.php:95
 msgid ""
 "Choose whether the first-order bonus is a fixed monetary value or a "
 "percentage of the purchase subtotal."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:99
+#: templates/admin/configuration/cashback-configuration-template.php:97
 #: templates/admin/configuration/general-configuration-template.php:119
 msgid "Fixed"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:100
+#: templates/admin/configuration/cashback-configuration-template.php:98
 #: templates/admin/configuration/general-configuration-template.php:120
 msgid "Percentage"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:110
+#: templates/admin/configuration/cashback-configuration-template.php:106
 msgid "Reward Amount"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:111
+#: templates/admin/configuration/cashback-configuration-template.php:107
 msgid "The specific value or percentage for the first-order incentive."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:122
+#: templates/admin/configuration/cashback-configuration-template.php:116
 msgid "Expiry"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:123
+#: templates/admin/configuration/cashback-configuration-template.php:117
 msgid ""
 "Set expiration rules and automated email reminders to encourage users to "
 "spend their cashback balances."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:128
+#: templates/admin/configuration/cashback-configuration-template.php:122
 msgid "Enable Expiry"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:129
+#: templates/admin/configuration/cashback-configuration-template.php:123
 msgid "Enable expiration for awarded cashback"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:130
+#: templates/admin/configuration/cashback-configuration-template.php:124
 msgid ""
 "Toggle the automatic expiration of awarded cashback balances after a "
 "defined period."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:139
+#: templates/admin/configuration/cashback-configuration-template.php:131
 msgid "Expiry Duration"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:140
+#: templates/admin/configuration/cashback-configuration-template.php:132
 msgid ""
 "The lifespan of awarded cashback (in days) before it is automatically "
 "deducted from the user's balance."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:144
-#: templates/admin/configuration/cashback-configuration-template.php:167
+#: templates/admin/configuration/cashback-configuration-template.php:134
+#: templates/admin/configuration/cashback-configuration-template.php:153
 msgid "Enter number of days"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:151
+#: templates/admin/configuration/cashback-configuration-template.php:141
 msgid "Enable Expiry Reminder"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:152
+#: templates/admin/configuration/cashback-configuration-template.php:142
 msgid "Enable reminder email for expiring cashback"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:153
+#: templates/admin/configuration/cashback-configuration-template.php:143
 msgid ""
 "Send an automated notification to customers before their cashback balance "
 "is scheduled to expire."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:162
+#: templates/admin/configuration/cashback-configuration-template.php:150
 msgid "Reminder Before Expiry (in days)"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:163
+#: templates/admin/configuration/cashback-configuration-template.php:151
 msgid "Number of days prior to expiration to trigger the reminder notification."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:176
+#: templates/admin/configuration/cashback-configuration-template.php:162
 msgid "Visuals & Notifications"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:177
+#: templates/admin/configuration/cashback-configuration-template.php:163
 msgid ""
 "Customize how cashback opportunities and earned rewards are communicated to "
 "customers across your store."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:182
+#: templates/admin/configuration/cashback-configuration-template.php:168
 msgid "Enable Messages"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:183
+#: templates/admin/configuration/cashback-configuration-template.php:169
 msgid "Display Cashback Banners"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:184
+#: templates/admin/configuration/cashback-configuration-template.php:170
 msgid ""
 "Toggle the visibility of cashback information banners across various store "
 "pages."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:191
+#: templates/admin/configuration/cashback-configuration-template.php:177
 msgid "Shop Page Message"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:192
+#: templates/admin/configuration/cashback-configuration-template.php:178
 msgid "Enter Shop Page Message"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:195
+#: templates/admin/configuration/cashback-configuration-template.php:181
 #. translators: %s: the {cashback_amount} placeholder tag.
 msgid ""
 "Archive pages highlighting potential earnings. Use placeholder: %s. "
 "Available in the Pro version."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:201
+#: templates/admin/configuration/cashback-configuration-template.php:187
 msgid "Product Page Message"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:202
+#: templates/admin/configuration/cashback-configuration-template.php:188
 msgid "Enter Product Page Message"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:205
+#: templates/admin/configuration/cashback-configuration-template.php:191
 #. translators: %s: the {cashback_amount} placeholder tag.
 msgid ""
 "Individual item pages showing specific cashback. Use placeholder: %s. "
 "Available in the Pro version."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:211
+#: templates/admin/configuration/cashback-configuration-template.php:197
 msgid "Cart Page Message"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:212
+#: templates/admin/configuration/cashback-configuration-template.php:198
 msgid "Enter Cart Page Message"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:217
+#: templates/admin/configuration/cashback-configuration-template.php:203
 #. translators: %s: the {cashback_amount} placeholder tag.
 msgid "Cumulative cashback summary on the cart page. Use placeholder: %s."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:221
+#: templates/admin/configuration/cashback-configuration-template.php:207
 msgid "Checkout Page Message"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:222
+#: templates/admin/configuration/cashback-configuration-template.php:208
 msgid "Enter Checkout Page Message"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:227
+#: templates/admin/configuration/cashback-configuration-template.php:213
 #. translators: %s: the {cashback_amount} placeholder tag.
 msgid "Final cashback confirmation during checkout. Use placeholder: %s."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:231
+#: templates/admin/configuration/cashback-configuration-template.php:217
 msgid "View Order Page Message"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:232
+#: templates/admin/configuration/cashback-configuration-template.php:218
 msgid "Enter View Order Page Message"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:237
+#: templates/admin/configuration/cashback-configuration-template.php:223
 #. translators: %s: the {cashback_amount} placeholder tag.
 msgid "Summary of rewards displayed on order details. Use placeholder: %s."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:241
+#: templates/admin/configuration/cashback-configuration-template.php:227
 msgid "Order Received Message"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:242
+#: templates/admin/configuration/cashback-configuration-template.php:228
 msgid "Enter Order Received Page Message"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:247
+#: templates/admin/configuration/cashback-configuration-template.php:233
 #. translators: %s: the {cashback_amount} placeholder tag.
 msgid "Confirmation message on the \"Thank You\" page. Use placeholder: %s."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:253
+#: templates/admin/configuration/cashback-configuration-template.php:239
 msgid "Message Design"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:254
+#: templates/admin/configuration/cashback-configuration-template.php:240
 msgid ""
 "Fine-tune the appearance of cashback banners to match your store's visual "
 "theme."
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:259
+#: templates/admin/configuration/cashback-configuration-template.php:245
 msgid "Text Color"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:266
+#: templates/admin/configuration/cashback-configuration-template.php:252
 msgid "Background Color"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:273
+#: templates/admin/configuration/cashback-configuration-template.php:259
 msgid "Border Color"
 msgstr ""
 
-#: templates/admin/configuration/cashback-configuration-template.php:280
+#: templates/admin/configuration/cashback-configuration-template.php:266
 msgid "Font Size (px)"
 msgstr ""
 
@@ -1353,14 +1284,14 @@ msgid ""
 msgstr ""
 
 #: templates/admin/configuration/emails-configuration-template.php:35
-#: templates/admin/configuration/emails-configuration-template.php:201
-#: templates/admin/configuration/emails-configuration-template.php:287
+#: templates/admin/configuration/emails-configuration-template.php:195
+#: templates/admin/configuration/emails-configuration-template.php:281
 msgid "Heading"
 msgstr ""
 
 #: templates/admin/configuration/emails-configuration-template.php:36
-#: templates/admin/configuration/emails-configuration-template.php:202
-#: templates/admin/configuration/emails-configuration-template.php:288
+#: templates/admin/configuration/emails-configuration-template.php:196
+#: templates/admin/configuration/emails-configuration-template.php:282
 msgid "Enter Heading"
 msgstr ""
 
@@ -1371,14 +1302,14 @@ msgid ""
 msgstr ""
 
 #: templates/admin/configuration/emails-configuration-template.php:44
-#: templates/admin/configuration/emails-configuration-template.php:210
-#: templates/admin/configuration/emails-configuration-template.php:296
+#: templates/admin/configuration/emails-configuration-template.php:204
+#: templates/admin/configuration/emails-configuration-template.php:290
 msgid "Subject"
 msgstr ""
 
 #: templates/admin/configuration/emails-configuration-template.php:45
-#: templates/admin/configuration/emails-configuration-template.php:211
-#: templates/admin/configuration/emails-configuration-template.php:297
+#: templates/admin/configuration/emails-configuration-template.php:205
+#: templates/admin/configuration/emails-configuration-template.php:291
 msgid "Enter subject"
 msgstr ""
 
@@ -1389,14 +1320,14 @@ msgid ""
 msgstr ""
 
 #: templates/admin/configuration/emails-configuration-template.php:53
-#: templates/admin/configuration/emails-configuration-template.php:219
-#: templates/admin/configuration/emails-configuration-template.php:305
+#: templates/admin/configuration/emails-configuration-template.php:213
+#: templates/admin/configuration/emails-configuration-template.php:299
 msgid "Email Message"
 msgstr ""
 
 #: templates/admin/configuration/emails-configuration-template.php:54
-#: templates/admin/configuration/emails-configuration-template.php:220
-#: templates/admin/configuration/emails-configuration-template.php:306
+#: templates/admin/configuration/emails-configuration-template.php:214
+#: templates/admin/configuration/emails-configuration-template.php:300
 msgid "Enter Email Message"
 msgstr ""
 
@@ -1432,15 +1363,15 @@ msgstr ""
 #: templates/admin/configuration/emails-configuration-template.php:110
 #: templates/admin/configuration/emails-configuration-template.php:119
 #: templates/admin/configuration/emails-configuration-template.php:128
-#: templates/admin/configuration/emails-configuration-template.php:139
-#: templates/admin/configuration/emails-configuration-template.php:150
-#: templates/admin/configuration/emails-configuration-template.php:161
-#: templates/admin/configuration/emails-configuration-template.php:172
-#: templates/admin/configuration/emails-configuration-template.php:183
-#: templates/admin/configuration/emails-configuration-template.php:240
-#: templates/admin/configuration/emails-configuration-template.php:249
-#: templates/admin/configuration/emails-configuration-template.php:258
-#: templates/admin/configuration/emails-configuration-template.php:269
+#: templates/admin/configuration/emails-configuration-template.php:138
+#: templates/admin/configuration/emails-configuration-template.php:148
+#: templates/admin/configuration/emails-configuration-template.php:158
+#: templates/admin/configuration/emails-configuration-template.php:168
+#: templates/admin/configuration/emails-configuration-template.php:178
+#: templates/admin/configuration/emails-configuration-template.php:234
+#: templates/admin/configuration/emails-configuration-template.php:243
+#: templates/admin/configuration/emails-configuration-template.php:252
+#: templates/admin/configuration/emails-configuration-template.php:263
 msgid "Enter Reason"
 msgstr ""
 
@@ -1491,65 +1422,69 @@ msgstr ""
 msgid "Referral"
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:132
+#: templates/admin/configuration/emails-configuration-template.php:131
 msgid "Reason text for funds earned from the referral program."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:138
+#: templates/admin/configuration/emails-configuration-template.php:137
 msgid "Product Cashback"
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:143
+#: templates/admin/configuration/emails-configuration-template.php:141
 msgid "Reason text for cashback earned on specific products or categories."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:154
+#: templates/admin/configuration/emails-configuration-template.php:147
+msgid "Topup Cashback"
+msgstr ""
+
+#: templates/admin/configuration/emails-configuration-template.php:151
 msgid "Reason text for bonus cashback earned on wallet top-ups."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:160
+#: templates/admin/configuration/emails-configuration-template.php:157
 msgid "First Order Cashback"
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:165
+#: templates/admin/configuration/emails-configuration-template.php:161
 msgid "Reason text for the one-time first-order cashback bonus."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:171
+#: templates/admin/configuration/emails-configuration-template.php:167
 msgid "User Role Cashback"
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:176
+#: templates/admin/configuration/emails-configuration-template.php:171
 msgid "Reason text for cashback earned based on the customer user role."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:182
+#: templates/admin/configuration/emails-configuration-template.php:177
 msgid "Payment Method Cashback"
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:187
+#: templates/admin/configuration/emails-configuration-template.php:181
 msgid "Reason text for cashback earned by paying with a specific gateway."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:195
+#: templates/admin/configuration/emails-configuration-template.php:189
 msgid "Wallet Debited Notification"
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:196
+#: templates/admin/configuration/emails-configuration-template.php:190
 msgid ""
 "Automated notification sent to customers when funds are deducted for "
 "purchases, transfers, or balance expirations."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:206
+#: templates/admin/configuration/emails-configuration-template.php:200
 msgid "The main title that appears at the top of the email when funds are debited."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:215
+#: templates/admin/configuration/emails-configuration-template.php:209
 msgid "The subject line for the funds debit notification email."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:226
+#: templates/admin/configuration/emails-configuration-template.php:220
 #. translators: 1: amount, 2: reason, 3: balance, 4: user name, 5: user email,
 #. 6: display name, 7: site title.
 msgid ""
@@ -1559,69 +1494,68 @@ msgid ""
 " Available Placeholders: %1$s, %2$s, %3$s, %4$s, %5$s, %6$s and %7$s."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:232
+#: templates/admin/configuration/emails-configuration-template.php:226
 msgid "Debit Reason Labels"
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:234
+#: templates/admin/configuration/emails-configuration-template.php:228
 #. translators: %s: the {reason} placeholder tag.
 msgid ""
 "Define the human-readable text for the %s placeholder used in debit "
 "notifications. This clarifies the reason for the deduction."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:244
+#: templates/admin/configuration/emails-configuration-template.php:238
 msgid "Enter the reason text for funds debited for paying an order."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:248
+#: templates/admin/configuration/emails-configuration-template.php:242
 msgid "Transfer Sent"
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:253
+#: templates/admin/configuration/emails-configuration-template.php:247
 msgid "Reason text for funds sent to another user via Send Money."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:257
+#: templates/admin/configuration/emails-configuration-template.php:251
 msgid "Cashback Expired"
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:262
+#: templates/admin/configuration/emails-configuration-template.php:256
 msgid "Reason text for cashback removed when it expires."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:268
-#: templates/admin/transactions/transactions-list-template.php:443
+#: templates/admin/configuration/emails-configuration-template.php:262
 msgid "Withdrawal"
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:273
+#: templates/admin/configuration/emails-configuration-template.php:267
 msgid "Reason text for funds debited for a withdrawal payout."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:281
+#: templates/admin/configuration/emails-configuration-template.php:275
 msgid "Manual Adjustment Notification"
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:282
+#: templates/admin/configuration/emails-configuration-template.php:276
 msgid ""
 "Notification sent when an administrator manually modifies a user's wallet "
 "balance."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:292
+#: templates/admin/configuration/emails-configuration-template.php:286
 msgid ""
 "The title of the email that notifies users of manual adjustments made to "
 "their wallet balance by an admin."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:301
+#: templates/admin/configuration/emails-configuration-template.php:295
 msgid ""
 "The subject line of the email notifying users of manual adjustments to "
 "their balance."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:312
+#: templates/admin/configuration/emails-configuration-template.php:306
 #. translators: 1: amount, 2: reason, 3: balance, 4: user name, 5: user email,
 #. 6: display name, 7: site title.
 msgid ""
@@ -1755,75 +1689,75 @@ msgstr ""
 msgid "The minimum amount a customer can send in a single wallet transfer."
 msgstr ""
 
-#: templates/admin/configuration/general-configuration-template.php:163
+#: templates/admin/configuration/general-configuration-template.php:162
 msgid "Max Transfer Limit"
 msgstr ""
 
-#: templates/admin/configuration/general-configuration-template.php:164
+#: templates/admin/configuration/general-configuration-template.php:163
 msgid "The maximum amount a customer can send in a single wallet transfer."
 msgstr ""
 
-#: templates/admin/configuration/general-configuration-template.php:176
+#: templates/admin/configuration/general-configuration-template.php:174
 msgid "Checkout Settings"
 msgstr ""
 
-#: templates/admin/configuration/general-configuration-template.php:177
+#: templates/admin/configuration/general-configuration-template.php:175
 msgid ""
 "Configure how the wallet integrates with the WooCommerce checkout process "
 "and manage payment methods."
 msgstr ""
 
-#: templates/admin/configuration/general-configuration-template.php:182
+#: templates/admin/configuration/general-configuration-template.php:180
 msgid "Partial Payments"
 msgstr ""
 
-#: templates/admin/configuration/general-configuration-template.php:183
+#: templates/admin/configuration/general-configuration-template.php:181
 msgid "Enable/Disable Partial Payments"
 msgstr ""
 
-#: templates/admin/configuration/general-configuration-template.php:184
+#: templates/admin/configuration/general-configuration-template.php:182
 msgid ""
 "Allow customers to pay a portion of their order with their wallet balance "
 "and the rest with another payment method. Available in the Pro version."
 msgstr ""
 
-#: templates/admin/configuration/general-configuration-template.php:193
+#: templates/admin/configuration/general-configuration-template.php:190
 msgid "Enabled Payment Gateways for Topup"
 msgstr ""
 
-#: templates/admin/configuration/general-configuration-template.php:194
+#: templates/admin/configuration/general-configuration-template.php:191
 msgid ""
 "Restrict the payment methods available specifically for wallet top-up "
 "transactions."
 msgstr ""
 
-#: templates/admin/configuration/general-configuration-template.php:201
+#: templates/admin/configuration/general-configuration-template.php:198
 msgid "Select Payment Gateways"
 msgstr ""
 
-#: templates/admin/configuration/general-configuration-template.php:206
+#: templates/admin/configuration/general-configuration-template.php:203
 msgid "Redirect to Checkout on Top-up"
 msgstr ""
 
-#: templates/admin/configuration/general-configuration-template.php:207
+#: templates/admin/configuration/general-configuration-template.php:204
 msgid "Redirect to checkout after adding top-up"
 msgstr ""
 
-#: templates/admin/configuration/general-configuration-template.php:208
+#: templates/admin/configuration/general-configuration-template.php:205
 msgid ""
 "Automatically redirect customers to the checkout page after they add a "
 "top-up amount to their wallet."
 msgstr ""
 
-#: templates/admin/configuration/general-configuration-template.php:215
+#: templates/admin/configuration/general-configuration-template.php:212
 msgid "Configure Payment Gateway"
 msgstr ""
 
-#: templates/admin/configuration/general-configuration-template.php:216
+#: templates/admin/configuration/general-configuration-template.php:213
 msgid "Configure"
 msgstr ""
 
-#: templates/admin/configuration/general-configuration-template.php:217
+#: templates/admin/configuration/general-configuration-template.php:214
 msgid ""
 "Navigate to the core WooCommerce settings to configure the Wallet payment "
 "method."
@@ -2246,12 +2180,7 @@ msgstr ""
 msgid "No recent activities found."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:201
-#. translators: %s: expiry date.
-msgid "Expires: %s"
-msgstr ""
-
-#: templates/admin/dashboard/dashboard-template.php:225
+#: templates/admin/dashboard/dashboard-template.php:220
 msgid "No customers found."
 msgstr ""
 
@@ -2625,24 +2554,24 @@ msgstr ""
 msgid "Transaction Type"
 msgstr ""
 
-#: templates/admin/transactions/transactions-list-template.php:469
+#: templates/admin/transactions/transactions-list-template.php:468
 msgid "From:"
 msgstr ""
 
-#: templates/admin/transactions/transactions-list-template.php:472
+#: templates/admin/transactions/transactions-list-template.php:471
 msgid "To:"
 msgstr ""
 
-#: templates/admin/transactions/transactions-list-template.php:475
+#: templates/admin/transactions/transactions-list-template.php:474
 msgid "Select Customer"
 msgstr ""
 
-#: templates/admin/transactions/transactions-list-template.php:488
+#: templates/admin/transactions/transactions-list-template.php:487
 #: templates/admin/users/users-list-template.php:317
 msgid "Filter"
 msgstr ""
 
-#: templates/admin/transactions/transactions-list-template.php:495
+#: templates/admin/transactions/transactions-list-template.php:494
 #: templates/admin/users/users-list-template.php:319
 msgid "Reset"
 msgstr ""
