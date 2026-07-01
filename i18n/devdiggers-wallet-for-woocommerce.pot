@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: DevDiggers Wallet for WooCommerce 1.0.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/devdiggers-wallet-for-woocommerce\n"
-"POT-Creation-Date: 2026-06-29 20:52:45+00:00\n"
+"POT-Creation-Date: 2026-07-01 10:50:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-#: functions.php:159 includes/admin-dashboard.php:473
+#: functions.php:159 includes/admin-dashboard.php:504
 msgid "Review"
 msgstr ""
 
@@ -139,7 +139,7 @@ msgid "Order Refund"
 msgstr ""
 
 #: helper/transactions/transactions-helper.php:317
-#: includes/common/common-functions.php:514
+#: includes/common/common-functions.php:510
 msgid "Wallet Topup"
 msgstr ""
 
@@ -424,44 +424,109 @@ msgstr ""
 msgid "Fixed or percentage withdrawal charges"
 msgstr ""
 
-#: includes/admin-dashboard.php:267
-#: templates/admin/configuration/withdrawals-configuration-template.php:34
+#: includes/admin-dashboard.php:267 includes/admin-dashboard.php:330
 msgid "Minimum and maximum withdrawal limits"
 msgstr ""
 
-#: includes/admin-dashboard.php:408
+#: includes/admin-dashboard.php:325
+msgid "Withdrawals is a Pro feature"
+msgstr ""
+
+#: includes/admin-dashboard.php:326
+msgid ""
+"Allow customers to request payouts from their wallet balance, with full "
+"control over charges and limits."
+msgstr ""
+
+#: includes/admin-dashboard.php:328
+msgid "Enable customer withdrawal requests"
+msgstr ""
+
+#: includes/admin-dashboard.php:329
+msgid "Fixed or percentage based withdrawal charges"
+msgstr ""
+
+#: includes/admin-dashboard.php:331
+msgid "Approve or cancel requests from the admin dashboard"
+msgstr ""
+
+#: includes/admin-dashboard.php:354
+msgid "OTP Verification is a Pro feature"
+msgstr ""
+
+#: includes/admin-dashboard.php:355
+msgid ""
+"Add an email based One-Time Password layer to secure sensitive wallet "
+"operations."
+msgstr ""
+
+#: includes/admin-dashboard.php:357
+msgid "Require OTP for send, request and withdraw operations"
+msgstr ""
+
+#: includes/admin-dashboard.php:358
+msgid "Configurable OTP expiry time"
+msgstr ""
+
+#: includes/admin-dashboard.php:359
+msgid "Configurable OTP length"
+msgstr ""
+
+#: includes/admin-dashboard.php:373
+msgid "Referral Program is a Pro feature"
+msgstr ""
+
+#: includes/admin-dashboard.php:374
+msgid ""
+"Reward both the referrer and the new customer with wallet credit on "
+"successful registration."
+msgstr ""
+
+#: includes/admin-dashboard.php:376
+msgid "Reward referrer and new user automatically"
+msgstr ""
+
+#: includes/admin-dashboard.php:377
+msgid "Configurable reward amount"
+msgstr ""
+
+#: includes/admin-dashboard.php:378
+msgid "Customizable referral invitation email"
+msgstr ""
+
+#: includes/admin-dashboard.php:439
 msgid "No rows imported."
 msgstr ""
 
-#: includes/admin-dashboard.php:409
+#: includes/admin-dashboard.php:440
 msgid "All rows imported."
 msgstr ""
 
-#: includes/admin-dashboard.php:410
+#: includes/admin-dashboard.php:441
 msgid "Processing import..."
 msgstr ""
 
-#: includes/admin-dashboard.php:411
+#: includes/admin-dashboard.php:442
 msgid "Import error occurred"
 msgstr ""
 
-#: includes/admin-dashboard.php:412
+#: includes/admin-dashboard.php:443
 msgid "Please map at least one of ID, Username, or Email to identify users."
 msgstr ""
 
-#: includes/admin-dashboard.php:413
+#: includes/admin-dashboard.php:444
 msgid "Please map the Wallet Balance field."
 msgstr ""
 
-#: includes/admin-dashboard.php:414
+#: includes/admin-dashboard.php:445
 msgid "Unknown error occurred"
 msgstr ""
 
-#: includes/admin-dashboard.php:415
+#: includes/admin-dashboard.php:446
 msgid "AJAX error:"
 msgstr ""
 
-#: includes/admin-dashboard.php:473
+#: includes/admin-dashboard.php:504
 #. translators: %s for a tag
 msgid ""
 "If you really like our plugin, please leave us a %s rating, we'll really "
@@ -506,27 +571,27 @@ msgstr ""
 msgid "Credited wallet amount on order cancel."
 msgstr ""
 
-#: includes/common/common-functions.php:261
+#: includes/common/common-functions.php:259
 msgid "Debit wallet cashback due to order cancel."
 msgstr ""
 
-#: includes/common/common-functions.php:307
+#: includes/common/common-functions.php:305
 msgid "Credited wallet amount on order fully refund."
 msgstr ""
 
-#: includes/common/common-functions.php:327
+#: includes/common/common-functions.php:325
 msgid "Debit wallet cashback due to order fully refund."
 msgstr ""
 
-#: includes/common/common-functions.php:401
+#: includes/common/common-functions.php:397
 msgid "Debit wallet cashback due to order partial refund."
 msgstr ""
 
-#: includes/common/common-functions.php:538
+#: includes/common/common-functions.php:534
 msgid "Wallet Cashback for Cart"
 msgstr ""
 
-#: includes/common/common-functions.php:579
+#: includes/common/common-functions.php:565
 #. translators: %s: registration credit amount.
 msgid "You'll receive %s in your wallet after sucessful registration."
 msgstr ""
@@ -673,246 +738,246 @@ msgid ""
 "first."
 msgstr ""
 
-#: includes/front/front-functions.php:332
+#: includes/front/front-functions.php:326
 msgid "Enter amount to topup"
 msgstr ""
 
-#: includes/import-wizard.php:36
+#: includes/import-wizard.php:35
 msgid "You do not have permission to import wallet balances."
 msgstr ""
 
-#: includes/import-wizard.php:51
+#: includes/import-wizard.php:50
 msgid "No data."
 msgstr ""
 
-#: includes/import-wizard.php:87
+#: includes/import-wizard.php:86
 msgid "User not found"
 msgstr ""
 
-#: includes/import-wizard.php:99
+#: includes/import-wizard.php:98
 msgid "Invalid balance value"
 msgstr ""
 
-#: includes/import-wizard.php:109
+#: includes/import-wizard.php:108
 msgid "Wallet balance imported via CSV"
 msgstr ""
 
-#: includes/import-wizard.php:127
+#: includes/import-wizard.php:126
 msgid "Balance added"
 msgstr ""
 
-#: includes/import-wizard.php:142
+#: includes/import-wizard.php:141
 msgid "Balance subtracted"
 msgstr ""
 
-#: includes/import-wizard.php:156
+#: includes/import-wizard.php:155
 msgid "Balance overridden (added)"
 msgstr ""
 
-#: includes/import-wizard.php:158
+#: includes/import-wizard.php:157
 msgid "Balance overridden (subtracted)"
 msgstr ""
 
-#: includes/import-wizard.php:160
+#: includes/import-wizard.php:159
 msgid "Balance already matches"
 msgstr ""
 
-#: includes/import-wizard.php:168
+#: includes/import-wizard.php:167
 msgid "Unknown action"
 msgstr ""
 
-#: includes/import-wizard.php:214
+#: includes/import-wizard.php:213
 msgid "Import Error"
 msgstr ""
 
-#: includes/import-wizard.php:216
+#: includes/import-wizard.php:215
 #: templates/admin/manual-adjustment/manual-adjustment-template.php:48
 msgid "Try Again"
 msgstr ""
 
-#: includes/import-wizard.php:233
+#: includes/import-wizard.php:232
 msgid "Row"
 msgstr ""
 
-#: includes/import-wizard.php:236
+#: includes/import-wizard.php:235
 msgid "User ID"
 msgstr ""
 
-#: includes/import-wizard.php:253
+#: includes/import-wizard.php:252
 msgid "Import CSV Summary"
 msgstr ""
 
-#: includes/import-wizard.php:257
+#: includes/import-wizard.php:256
 msgid "rows"
 msgstr ""
 
-#: includes/import-wizard.php:257
+#: includes/import-wizard.php:256
 msgid "columns"
 msgstr ""
 
-#: includes/import-wizard.php:261
+#: includes/import-wizard.php:260
 msgid "Total rows in file"
 msgstr ""
 
-#: includes/import-wizard.php:265
+#: includes/import-wizard.php:264
 msgid "Duplicated rows in file"
 msgstr ""
 
-#: includes/import-wizard.php:269
+#: includes/import-wizard.php:268
 msgid "Imported to the system"
 msgstr ""
 
-#: includes/import-wizard.php:274
+#: includes/import-wizard.php:273
 msgid "Not Imported"
 msgstr ""
 
-#: includes/import-wizard.php:280
+#: includes/import-wizard.php:279
 msgid "Total rows imported"
 msgstr ""
 
-#: includes/import-wizard.php:284
+#: includes/import-wizard.php:283
 #: templates/admin/manual-adjustment/manual-adjustment-template.php:116
 msgid "Done"
 msgstr ""
 
-#: includes/import-wizard.php:293
+#: includes/import-wizard.php:292
 msgid "Select File"
 msgstr ""
 
-#: includes/import-wizard.php:297
+#: includes/import-wizard.php:296
 msgid "Mapping"
 msgstr ""
 
-#: includes/import-wizard.php:301
+#: includes/import-wizard.php:300
 msgid "Data Import"
 msgstr ""
 
-#: includes/import-wizard.php:307
+#: includes/import-wizard.php:306
 msgid "Upload a CSV file"
 msgstr ""
 
-#: includes/import-wizard.php:308
+#: includes/import-wizard.php:307
 msgid "Make sure file includes user ID, email, and wallet balance data"
 msgstr ""
 
-#: includes/import-wizard.php:326
+#: includes/import-wizard.php:325
 msgid "Drop a file or click to browse"
 msgstr ""
 
-#: includes/import-wizard.php:327
+#: includes/import-wizard.php:326
 msgid "CSV files of any size are supported with batch processing"
 msgstr ""
 
-#: includes/import-wizard.php:333
+#: includes/import-wizard.php:332
 msgid "Download a sample CSV file"
 msgstr ""
 
-#: includes/import-wizard.php:337
+#: includes/import-wizard.php:336
 msgid "Cancel"
 msgstr ""
 
-#: includes/import-wizard.php:338
+#: includes/import-wizard.php:337
 msgid "Continue"
 msgstr ""
 
-#: includes/import-wizard.php:343
+#: includes/import-wizard.php:342
 msgid "CSV Fields Mapping"
 msgstr ""
 
-#: includes/import-wizard.php:344
+#: includes/import-wizard.php:343
 msgid ""
 "Map columns from imported CSV to the default fields required for wallet "
 "balances. Not required columns could be skipped."
 msgstr ""
 
-#: includes/import-wizard.php:348
+#: includes/import-wizard.php:347
 msgid "User Identification:"
 msgstr ""
 
-#: includes/import-wizard.php:349
+#: includes/import-wizard.php:348
 msgid ""
 "You need to map at least one of ID, Username, or Email to identify users. "
 "Wallet Balance field is required."
 msgstr ""
 
-#: includes/import-wizard.php:356
+#: includes/import-wizard.php:355
 msgid "Fields"
 msgstr ""
 
-#: includes/import-wizard.php:357
+#: includes/import-wizard.php:356
 msgid "CSV Column"
 msgstr ""
 
-#: includes/import-wizard.php:358
+#: includes/import-wizard.php:357
 msgid "CSV Example Data"
 msgstr ""
 
-#: includes/import-wizard.php:366
+#: includes/import-wizard.php:365
 #: templates/admin/users/users-list-template.php:197
 msgid "ID"
 msgstr ""
 
-#: includes/import-wizard.php:372
+#: includes/import-wizard.php:371
 msgid "Username"
 msgstr ""
 
-#: includes/import-wizard.php:378
+#: includes/import-wizard.php:377
 msgid "Email"
 msgstr ""
 
-#: includes/import-wizard.php:384
+#: includes/import-wizard.php:383
 msgid "Wallet Balance"
 msgstr ""
 
-#: includes/import-wizard.php:389 includes/wallet-gateway.php:111
+#: includes/import-wizard.php:388 includes/wallet-gateway.php:111
 msgid "Description"
 msgstr ""
 
-#: includes/import-wizard.php:401
+#: includes/import-wizard.php:400
 msgid "required"
 msgstr ""
 
-#: includes/import-wizard.php:405
+#: includes/import-wizard.php:404
 msgid "at least one required"
 msgstr ""
 
-#: includes/import-wizard.php:412
+#: includes/import-wizard.php:411
 msgid "Select column"
 msgstr ""
 
-#: includes/import-wizard.php:425
+#: includes/import-wizard.php:424
 msgid "Wallet Action"
 msgstr ""
 
-#: includes/import-wizard.php:432
+#: includes/import-wizard.php:431
 msgid "Add to existing balance"
 msgstr ""
 
-#: includes/import-wizard.php:437
+#: includes/import-wizard.php:436
 msgid "Subtract from existing balance"
 msgstr ""
 
-#: includes/import-wizard.php:442
+#: includes/import-wizard.php:441
 msgid "Override balance (set to value)"
 msgstr ""
 
-#: includes/import-wizard.php:463
+#: includes/import-wizard.php:462
 msgid "Manual Description (if not in CSV):"
 msgstr ""
 
-#: includes/import-wizard.php:464
+#: includes/import-wizard.php:463
 msgid "Enter description for all rows if not mapped"
 msgstr ""
 
-#: includes/import-wizard.php:468
+#: includes/import-wizard.php:467
 msgid "Back"
 msgstr ""
 
-#: includes/import-wizard.php:469 includes/import-wizard.php:474
+#: includes/import-wizard.php:468 includes/import-wizard.php:473
 msgid "Import Wallet Balances"
 msgstr ""
 
-#: includes/import-wizard.php:475
+#: includes/import-wizard.php:474
 msgid "Processing your import..."
 msgstr ""
 
@@ -1285,13 +1350,13 @@ msgstr ""
 
 #: templates/admin/configuration/emails-configuration-template.php:35
 #: templates/admin/configuration/emails-configuration-template.php:195
-#: templates/admin/configuration/emails-configuration-template.php:281
+#: templates/admin/configuration/emails-configuration-template.php:277
 msgid "Heading"
 msgstr ""
 
 #: templates/admin/configuration/emails-configuration-template.php:36
 #: templates/admin/configuration/emails-configuration-template.php:196
-#: templates/admin/configuration/emails-configuration-template.php:282
+#: templates/admin/configuration/emails-configuration-template.php:278
 msgid "Enter Heading"
 msgstr ""
 
@@ -1303,13 +1368,13 @@ msgstr ""
 
 #: templates/admin/configuration/emails-configuration-template.php:44
 #: templates/admin/configuration/emails-configuration-template.php:204
-#: templates/admin/configuration/emails-configuration-template.php:290
+#: templates/admin/configuration/emails-configuration-template.php:286
 msgid "Subject"
 msgstr ""
 
 #: templates/admin/configuration/emails-configuration-template.php:45
 #: templates/admin/configuration/emails-configuration-template.php:205
-#: templates/admin/configuration/emails-configuration-template.php:291
+#: templates/admin/configuration/emails-configuration-template.php:287
 msgid "Enter subject"
 msgstr ""
 
@@ -1321,13 +1386,13 @@ msgstr ""
 
 #: templates/admin/configuration/emails-configuration-template.php:53
 #: templates/admin/configuration/emails-configuration-template.php:213
-#: templates/admin/configuration/emails-configuration-template.php:299
+#: templates/admin/configuration/emails-configuration-template.php:295
 msgid "Email Message"
 msgstr ""
 
 #: templates/admin/configuration/emails-configuration-template.php:54
 #: templates/admin/configuration/emails-configuration-template.php:214
-#: templates/admin/configuration/emails-configuration-template.php:300
+#: templates/admin/configuration/emails-configuration-template.php:296
 msgid "Enter Email Message"
 msgstr ""
 
@@ -1371,7 +1436,7 @@ msgstr ""
 #: templates/admin/configuration/emails-configuration-template.php:234
 #: templates/admin/configuration/emails-configuration-template.php:243
 #: templates/admin/configuration/emails-configuration-template.php:252
-#: templates/admin/configuration/emails-configuration-template.php:263
+#: templates/admin/configuration/emails-configuration-template.php:261
 msgid "Enter Reason"
 msgstr ""
 
@@ -1402,7 +1467,7 @@ msgid "Enter the reason text for funds returned via an order refund."
 msgstr ""
 
 #: templates/admin/configuration/emails-configuration-template.php:109
-#: templates/shortcodes/wallet-balance-layout.php:86
+#: templates/shortcodes/wallet-balance-layout.php:85
 msgid "Topup"
 msgstr ""
 
@@ -1521,41 +1586,41 @@ msgstr ""
 msgid "Cashback Expired"
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:256
+#: templates/admin/configuration/emails-configuration-template.php:254
 msgid "Reason text for cashback removed when it expires."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:262
+#: templates/admin/configuration/emails-configuration-template.php:260
 msgid "Withdrawal"
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:267
+#: templates/admin/configuration/emails-configuration-template.php:263
 msgid "Reason text for funds debited for a withdrawal payout."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:275
+#: templates/admin/configuration/emails-configuration-template.php:271
 msgid "Manual Adjustment Notification"
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:276
+#: templates/admin/configuration/emails-configuration-template.php:272
 msgid ""
 "Notification sent when an administrator manually modifies a user's wallet "
 "balance."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:286
+#: templates/admin/configuration/emails-configuration-template.php:282
 msgid ""
 "The title of the email that notifies users of manual adjustments made to "
 "their wallet balance by an admin."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:295
+#: templates/admin/configuration/emails-configuration-template.php:291
 msgid ""
 "The subject line of the email notifying users of manual adjustments to "
 "their balance."
 msgstr ""
 
-#: templates/admin/configuration/emails-configuration-template.php:306
+#: templates/admin/configuration/emails-configuration-template.php:302
 #. translators: 1: amount, 2: reason, 3: balance, 4: user name, 5: user email,
 #. 6: display name, 7: site title.
 msgid ""
@@ -1985,50 +2050,6 @@ msgstr ""
 msgid "Info Background"
 msgstr ""
 
-#: templates/admin/configuration/otp-configuration-template.php:29
-msgid "OTP Verification is a Pro feature"
-msgstr ""
-
-#: templates/admin/configuration/otp-configuration-template.php:30
-msgid ""
-"Add an email based One-Time Password layer to secure sensitive wallet "
-"operations."
-msgstr ""
-
-#: templates/admin/configuration/otp-configuration-template.php:32
-msgid "Require OTP for send, request and withdraw operations"
-msgstr ""
-
-#: templates/admin/configuration/otp-configuration-template.php:33
-msgid "Configurable OTP expiry time"
-msgstr ""
-
-#: templates/admin/configuration/otp-configuration-template.php:34
-msgid "Configurable OTP length"
-msgstr ""
-
-#: templates/admin/configuration/referrals-configuration-template.php:29
-msgid "Referral Program is a Pro feature"
-msgstr ""
-
-#: templates/admin/configuration/referrals-configuration-template.php:30
-msgid ""
-"Reward both the referrer and the new customer with wallet credit on "
-"successful registration."
-msgstr ""
-
-#: templates/admin/configuration/referrals-configuration-template.php:32
-msgid "Reward referrer and new user automatically"
-msgstr ""
-
-#: templates/admin/configuration/referrals-configuration-template.php:33
-msgid "Configurable reward amount"
-msgstr ""
-
-#: templates/admin/configuration/referrals-configuration-template.php:34
-msgid "Customizable referral invitation email"
-msgstr ""
-
 #: templates/admin/configuration/shortcodes-configuration-template.php:29
 msgid "Custom Shortcodes"
 msgstr ""
@@ -2095,28 +2116,6 @@ msgid ""
 "transaction logs."
 msgstr ""
 
-#: templates/admin/configuration/withdrawals-configuration-template.php:29
-msgid "Withdrawals is a Pro feature"
-msgstr ""
-
-#: templates/admin/configuration/withdrawals-configuration-template.php:30
-msgid ""
-"Allow customers to request payouts from their wallet balance, with full "
-"control over charges and limits."
-msgstr ""
-
-#: templates/admin/configuration/withdrawals-configuration-template.php:32
-msgid "Enable customer withdrawal requests"
-msgstr ""
-
-#: templates/admin/configuration/withdrawals-configuration-template.php:33
-msgid "Fixed or percentage based withdrawal charges"
-msgstr ""
-
-#: templates/admin/configuration/withdrawals-configuration-template.php:35
-msgid "Approve or cancel requests from the admin dashboard"
-msgstr ""
-
 #: templates/admin/dashboard/dashboard-template.php:88
 #. translators: %s: current user display name.
 msgid "Welcome back, %s! 👋🏻"
@@ -2127,7 +2126,7 @@ msgid "Here's what's happening with your customers' wallets."
 msgstr ""
 
 #: templates/admin/dashboard/dashboard-template.php:93
-#: templates/shortcodes/wallet-balance-layout.php:44
+#: templates/shortcodes/wallet-balance-layout.php:43
 msgid "Available Balance"
 msgstr ""
 
@@ -2269,8 +2268,8 @@ msgstr ""
 #: templates/admin/manual-adjustment/manual-adjustment-template.php:183
 #: templates/admin/manual-adjustment/manual-adjustment-template.php:201
 #: templates/admin/manual-adjustment/manual-adjustment-template.php:219
+#: templates/shortcodes/wallet-operations.php:37
 #: templates/shortcodes/wallet-operations.php:41
-#: templates/shortcodes/wallet-operations.php:45
 msgid "Required"
 msgstr ""
 
@@ -2288,7 +2287,7 @@ msgstr ""
 
 #: templates/admin/manual-adjustment/manual-adjustment-template.php:200
 #: templates/admin/transactions/transactions-list-template.php:256
-#: templates/shortcodes/wallet-operations.php:45
+#: templates/shortcodes/wallet-operations.php:41
 #: templates/shortcodes/wallet-transactions.php:41
 msgid "Amount"
 msgstr ""
@@ -2341,157 +2340,157 @@ msgstr ""
 msgid "The wallet transactions have been processed."
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:71
+#: templates/admin/rules/cashback-rules-template.php:68
 msgid "Available in Pro"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:93
+#: templates/admin/rules/cashback-rules-template.php:90
 msgid "Amount From"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:93
+#: templates/admin/rules/cashback-rules-template.php:90
 msgid "From this amount range, respective cashback applied."
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:94
+#: templates/admin/rules/cashback-rules-template.php:91
 msgid "Amount To"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:94
+#: templates/admin/rules/cashback-rules-template.php:91
 msgid "To this amount range, respective cashback applied."
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:95
-#: templates/admin/rules/cashback-rules-template.php:119
-#: templates/admin/rules/cashback-rules-template.php:223
+#: templates/admin/rules/cashback-rules-template.php:92
+#: templates/admin/rules/cashback-rules-template.php:116
+#: templates/admin/rules/cashback-rules-template.php:220
 msgid "Cashback Type"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:95
+#: templates/admin/rules/cashback-rules-template.php:92
 msgid "Select cashback type."
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:96
+#: templates/admin/rules/cashback-rules-template.php:93
 msgid "Cashback Amount"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:96
+#: templates/admin/rules/cashback-rules-template.php:93
 msgid ""
 "This cashback amount will be credited to customers between the respective "
 "amount ranges."
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:97
+#: templates/admin/rules/cashback-rules-template.php:94
 msgid "Status"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:97
+#: templates/admin/rules/cashback-rules-template.php:94
 msgid "Select rule status."
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:108
-#: templates/admin/rules/cashback-rules-template.php:212
+#: templates/admin/rules/cashback-rules-template.php:105
+#: templates/admin/rules/cashback-rules-template.php:209
 msgid "Enter Amount From"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:114
-#: templates/admin/rules/cashback-rules-template.php:218
+#: templates/admin/rules/cashback-rules-template.php:111
+#: templates/admin/rules/cashback-rules-template.php:215
 msgid "Enter Amount to"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:120
-#: templates/admin/rules/cashback-rules-template.php:224
+#: templates/admin/rules/cashback-rules-template.php:117
+#: templates/admin/rules/cashback-rules-template.php:221
 #. translators: %s: currency symbol.
 msgid "Fixed (%s)"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:121
-#: templates/admin/rules/cashback-rules-template.php:225
+#: templates/admin/rules/cashback-rules-template.php:118
+#: templates/admin/rules/cashback-rules-template.php:222
 msgid "Percentage (%)"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:125
-#: templates/admin/rules/cashback-rules-template.php:230
+#: templates/admin/rules/cashback-rules-template.php:122
+#: templates/admin/rules/cashback-rules-template.php:227
 msgid "Enter Cashback Amount"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:129
-#: templates/admin/rules/cashback-rules-template.php:235
+#: templates/admin/rules/cashback-rules-template.php:126
+#: templates/admin/rules/cashback-rules-template.php:232
 msgid "Select Status"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:127
+#: templates/admin/rules/cashback-rules-template.php:233
+msgid "Enabled"
+msgstr ""
+
+#: templates/admin/rules/cashback-rules-template.php:128
+#: templates/admin/rules/cashback-rules-template.php:234
+msgid "Disabled"
 msgstr ""
 
 #: templates/admin/rules/cashback-rules-template.php:130
 #: templates/admin/rules/cashback-rules-template.php:236
-msgid "Enabled"
-msgstr ""
-
-#: templates/admin/rules/cashback-rules-template.php:131
-#: templates/admin/rules/cashback-rules-template.php:237
-msgid "Disabled"
-msgstr ""
-
-#: templates/admin/rules/cashback-rules-template.php:133
-#: templates/admin/rules/cashback-rules-template.php:239
 msgid "Remove"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:143
+#: templates/admin/rules/cashback-rules-template.php:140
 msgid "Add Row"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:155
+#: templates/admin/rules/cashback-rules-template.php:152
 msgid "Cart Cashback Rules"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:156
+#: templates/admin/rules/cashback-rules-template.php:153
 msgid ""
 "Define cashback amount ranges for cart purchases. Rules are matched based "
 "on the order subtotal falling within the specified range."
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:163
+#: templates/admin/rules/cashback-rules-template.php:160
 msgid "Product Cashback Rules"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:164
+#: templates/admin/rules/cashback-rules-template.php:161
 msgid "Configure per-product cashback rewards."
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:167
+#: templates/admin/rules/cashback-rules-template.php:164
 msgid ""
 "Reward customers with cashback when they purchase specific products or "
 "product categories."
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:171
+#: templates/admin/rules/cashback-rules-template.php:168
 msgid "User Role Cashback Rules"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:172
+#: templates/admin/rules/cashback-rules-template.php:169
 msgid "Configure cashback rewards based on user roles."
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:175
+#: templates/admin/rules/cashback-rules-template.php:172
 msgid "Give different cashback rates to different customer user roles."
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:179
+#: templates/admin/rules/cashback-rules-template.php:176
 msgid "Payment Method Cashback Rules"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:180
+#: templates/admin/rules/cashback-rules-template.php:177
 msgid "Configure cashback rewards based on the payment method used."
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:183
+#: templates/admin/rules/cashback-rules-template.php:180
 msgid "Reward customers with cashback for paying with a specific payment gateway."
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:199
+#: templates/admin/rules/cashback-rules-template.php:196
 msgid "Save"
 msgstr ""
 
-#: templates/admin/rules/cashback-rules-template.php:248
+#: templates/admin/rules/cashback-rules-template.php:245
 msgid "Some Fields are empty or not valid."
 msgstr ""
 
@@ -2540,7 +2539,7 @@ msgid "Transaction Context"
 msgstr ""
 
 #: templates/admin/transactions/transactions-list-template.php:257
-#: templates/shortcodes/wallet-operations.php:49
+#: templates/shortcodes/wallet-operations.php:45
 #: templates/shortcodes/wallet-transactions.php:42
 msgid "Note"
 msgstr ""
@@ -2612,41 +2611,41 @@ msgstr ""
 msgid "Users don't have amount in wallet"
 msgstr ""
 
-#: templates/shortcodes/wallet-balance-layout.php:58
+#: templates/shortcodes/wallet-balance-layout.php:57
 msgid "Today's Credit"
 msgstr ""
 
-#: templates/shortcodes/wallet-balance-layout.php:64
+#: templates/shortcodes/wallet-balance-layout.php:63
 msgid "Today's Debit"
 msgstr ""
 
-#: templates/shortcodes/wallet-balance-layout.php:78
+#: templates/shortcodes/wallet-balance-layout.php:77
 msgid "Add Money"
 msgstr ""
 
-#: templates/shortcodes/wallet-balance-layout.php:85
+#: templates/shortcodes/wallet-balance-layout.php:84
 msgid "Enter amount here"
 msgstr ""
 
-#: templates/shortcodes/wallet-operations.php:27
-#: templates/shortcodes/wallet-operations.php:37
-#: templates/shortcodes/wallet-operations.php:52
+#: templates/shortcodes/wallet-operations.php:23
+#: templates/shortcodes/wallet-operations.php:33
+#: templates/shortcodes/wallet-operations.php:48
 msgid "Send Money"
 msgstr ""
 
-#: templates/shortcodes/wallet-operations.php:41
+#: templates/shortcodes/wallet-operations.php:37
 msgid "Receiver's Email"
 msgstr ""
 
-#: templates/shortcodes/wallet-operations.php:42
+#: templates/shortcodes/wallet-operations.php:38
 msgid "Enter receiver email address"
 msgstr ""
 
-#: templates/shortcodes/wallet-operations.php:46
+#: templates/shortcodes/wallet-operations.php:42
 msgid "Enter Amount"
 msgstr ""
 
-#: templates/shortcodes/wallet-operations.php:50
+#: templates/shortcodes/wallet-operations.php:46
 msgid "Enter Note (optional)"
 msgstr ""
 

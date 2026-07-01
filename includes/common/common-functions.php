@@ -248,8 +248,6 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 				$cashback_amount       = $order->get_meta( '_ddwcwm_cashback_amount', true );
 				$awarded_cashback_data = $order->get_meta( '_ddwcwm_awarded_cashback_data', true );
 
-				// Only the 'cart' cashback type exists in Free; the keyed array keeps the
-				// stored data compatible with the Pro plugin's additional cashback types.
 				if ( ! empty( $awarded_cashback_data ) && ! empty( $cashback_amount ) && ! empty( $awarded_cashback_data['cart'] ) ) {
 					$wallet_balance -= $awarded_cashback_data['cart'];
 
@@ -383,8 +381,6 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 			$wallet_balance     = $user_helper->ddwcwm_get_user_wallet_balance( $user_id );
 			$total_debit        = 0;
 
-			// Iterate the keyed cashback array ( Free only has 'cart', Pro adds more ) so the
-			// reduced data written back stays compatible with the Pro plugin.
 			foreach ( $awarded_cashback_data as $key => $amount ) {
 				if ( $amount > 0 ) {
 					$debit_amount    = $amount * $ratio;
@@ -553,16 +549,6 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 		}
 
 		/**
-		 * Add registration fields function
-		 *
-		 * @return void
-		 */
-		public function ddwcwm_add_registration_fields() {
-			// The referral registration field is part of the Pro referral program and is
-			// not rendered in Free.
-		}
-
-		/**
 		 * Display registration wallet credit notice for guest function
 		 *
 		 * @return void
@@ -612,8 +598,6 @@ if ( ! class_exists( 'DDWCWM_Common_Functions' ) ) {
 
 				$transaction_helper->ddwcwm_save_transaction( $data );
 			}
-
-			// Referral rewards on registration are a Pro feature and are not processed in Free.
 		}
 
 		/**

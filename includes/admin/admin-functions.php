@@ -42,15 +42,19 @@ if ( ! class_exists( 'DDWCWM_Admin_Functions' ) ) {
 				'sanitize_callback' => [ $this, 'ddwcwm_sanitize_slug_option' ],
 			];
 
+			$sanitize_gateway_ids = [
+				'sanitize_callback' => [ $this, 'ddwcwm_sanitize_gateway_ids_option' ],
+			];
+
+			$sanitize_text_map = [
+				'sanitize_callback' => [ $this, 'ddwcwm_sanitize_text_map_option' ],
+			];
+
 			register_setting( 'ddwcwm-general-configuration-fields', '_ddwcwm_enabled', $sanitize );
 			register_setting( 'ddwcwm-general-configuration-fields', '_ddwcwm_registration_credit', $sanitize_number );
 			register_setting( 'ddwcwm-general-configuration-fields', '_ddwcwm_topup_order_status', $sanitize );
-			register_setting( 'ddwcwm-general-configuration-fields', '_ddwcwm_enabled_payment_gateways', $sanitize_array );
+			register_setting( 'ddwcwm-general-configuration-fields', '_ddwcwm_enabled_payment_gateways', $sanitize_gateway_ids );
 			register_setting( 'ddwcwm-general-configuration-fields', '_ddwcwm_redirect_to_checkout_on_topup', $sanitize );
-
-			// Pro-only configuration groups (OTP, withdrawals, referrals, transfer limits,
-			// partial payments) are intentionally NOT registered in Free. Their UI is shown
-			// locked and submits no meaningful value.
 
 			register_setting( 'ddwcwm-endpoints-configuration-fields', '_ddwcwm_my_account_endpoint', $sanitize_slug );
 			register_setting( 'ddwcwm-endpoints-configuration-fields', '_ddwcwm_my_account_endpoint_title', $sanitize );
@@ -62,15 +66,11 @@ if ( ! class_exists( 'DDWCWM_Admin_Functions' ) ) {
 			register_setting( 'ddwcwm-shortcodes-configuration-fields', '_ddwcwm_wallet_balance_operations_shortcode', $sanitize );
 			register_setting( 'ddwcwm-shortcodes-configuration-fields', '_ddwcwm_wallet_transactions_shortcode', $sanitize );
 
-			// Pro-only: cashback credit delay is not registered in Free.
 			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_exclude_sale_products', $sanitize );
 			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_max_cap', $sanitize_number );
 			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_min_order_value', $sanitize_number );
-			// Pro-only cashback controls (first-order cashback, expiry, expiry reminders)
-			// are intentionally NOT registered in Free.
 
 			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_messages_enabled', $sanitize );
-			// Shop/product page cashback messages depend on Pro product/category rules and are not registered in Free.
 			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_cart_page_message', $sanitize );
 			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_checkout_page_message', $sanitize );
 			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_view_order_page_message', $sanitize );
@@ -81,14 +81,12 @@ if ( ! class_exists( 'DDWCWM_Admin_Functions' ) ) {
 			register_setting( 'ddwcwm-cashback-configuration-fields', '_ddwcwm_cashback_message_font_size', $sanitize_number );
 
 			register_setting( 'ddwcwm-emails-configuration-fields', '_ddwcwm_email_settings', $sanitize_array );
-			register_setting( 'ddwcwm-emails-configuration-fields', '_ddwcwm_credit_reason', $sanitize_array );
-			register_setting( 'ddwcwm-emails-configuration-fields', '_ddwcwm_debit_reason', $sanitize_array );
+			register_setting( 'ddwcwm-emails-configuration-fields', '_ddwcwm_credit_reason', $sanitize_text_map );
+			register_setting( 'ddwcwm-emails-configuration-fields', '_ddwcwm_debit_reason', $sanitize_text_map );
 
 			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_icons_enabled', $sanitize );
 			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_icons_wrapper_enabled', $sanitize );
 			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_icon_size', $sanitize_number );
-			// Pro-only: custom component icon uploads (available balance, send, request,
-			// withdraw, refer, top-up) are not registered in Free.
 			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_theme_color', $sanitize_color );
 			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_icon_color', $sanitize_color );
 			register_setting( 'ddwcwm-layout-configuration-fields', '_ddwcwm_details_icon_wrapper_background_color', $sanitize_color );
@@ -129,6 +127,26 @@ if ( ! class_exists( 'DDWCWM_Admin_Functions' ) ) {
 			}
 
 			return map_deep( wp_unslash( $input ), 'wp_kses_post' );
+		}
+
+		/**
+		 * Sanitize an array of payment gateway IDs.
+		 *
+		 * @param mixed $input Option value.
+		 * @return array
+		 */
+		public function ddwcwm_sanitize_gateway_ids_option( $input ) {
+			return map_deep( wp_unslash( (array) $input ), 'sanitize_key' );
+		}
+
+		/**
+		 * Sanitize an associative array of plain-text reason labels.
+		 *
+		 * @param mixed $input Option value.
+		 * @return array
+		 */
+		public function ddwcwm_sanitize_text_map_option( $input ) {
+			return map_deep( wp_unslash( (array) $input ), 'sanitize_text_field' );
 		}
 
 		/**

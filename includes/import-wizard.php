@@ -23,7 +23,6 @@ if ( ! class_exists( 'DDWCWM_Import_Wizard' ) ) {
 		 */
 		public function __construct() {
 			$this->enqueue_scripts();
-			add_action( 'wp_ajax_ddwcwm_batch_import_wallets', [ $this, 'ajax_batch_import_wallets' ] );
 		}
 
 		/**

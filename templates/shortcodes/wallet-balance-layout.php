@@ -24,7 +24,6 @@ $ddwcwm_today_transaction = [
 $ddwcwm_details_icons_enabled         = ! empty( $ddwcwm_wallet['details_icons_enabled'] ) ? $ddwcwm_wallet['details_icons_enabled'] : 'yes';
 $ddwcwm_details_icons_wrapper_enabled = ! empty( $ddwcwm_wallet['details_icons_wrapper_enabled'] ) ? $ddwcwm_wallet['details_icons_wrapper_enabled'] : 'yes';
 
-// Available Balance Icon. Custom icon uploads are a Pro feature; Free uses the built-in SVG.
 $ddwcwm_available_balance_icon = DDFW_SVG::get_svg_icon(
 	'wallet', true,
 	[

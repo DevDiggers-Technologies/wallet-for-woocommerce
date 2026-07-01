@@ -58,8 +58,6 @@ if ( ! class_exists( 'DDWCWM_Front_Hooks' ) ) {
 			add_shortcode( $this->ddwcwm_validate_shortcode( $ddwcwm_wallet[ 'wallet_transactions_shortcode' ] ), [ $this, 'ddwcwm_add_wallet_transactions_shortcode_content' ] );
 
 			if ( ! empty( $ddwcwm_wallet[ 'cashback_messages_enabled' ] ) ) {
-				// Per-product/shop cashback messaging depends on product/category cashback
-				// rules, which are a Pro feature, so only cart-based messages are shown in Free.
 				add_action( 'woocommerce_before_cart', [ $this, 'ddwcwm_display_cashback_message_on_cart_page' ] );
 				add_action( 'woocommerce_before_checkout_form', [ $this, 'ddwcwm_display_cashback_message_on_checkout_page' ] );
 				add_action( 'woocommerce_order_details_before_order_table', [ $this, 'ddwcwm_display_cashback_message_on_view_order_page' ] );

@@ -2,10 +2,6 @@
 /**
  * Wallet Operations Shortcode
  *
- * Free renders only the "Send Money" operation (peer-to-peer wallet transfer),
- * mirroring the Pro layout. Request Money, Withdraw and Refer a Friend remain
- * Pro features and are not rendered here.
- *
  * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */

@@ -2,9 +2,6 @@
 /**
  * Cashback Rules template class
  *
- * Free supports cart-total cashback rules only. Product, Category, User Role and
- * Payment Method cashback rules are shown as locked Pro upgrade sections.
- *
  * @package DevDiggers Wallet for WooCommerce
  * @version 1.0.0
  */
@@ -258,7 +255,6 @@ if ( ! class_exists( 'DDWCWM_Cashback_Rules_Template' ) ) {
 		 */
 		public function ddwcwm_save_rules_data() {
 			if ( ! empty( $_POST[ 'ddwcwm-save-rule' ] ) && ! empty( $_POST[ 'ddwcwm-save-rule_nonce' ] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST[ 'ddwcwm-save-rule_nonce' ] ) ), 'ddwcwm-save-rule_nonce_action' ) ) {
-				// Only cart-total rules are processed in Free; Pro rule sets are passed as empty.
 				if ( $this->rules_helper->ddwcwm_prepare_cashback_rule_data_and_save( $_POST, $this->cart_rules_data ) ) {
 					$this->cart_rules_data = $this->rules_helper->ddwcwm_get_all_cashback_rules();
 				}

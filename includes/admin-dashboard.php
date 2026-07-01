@@ -320,7 +320,18 @@ if ( ! class_exists( 'DDWCWM_Admin_Dashboard' ) ) {
 		 * @return void
 		 */
 		public function ddwcwm_get_withdrawals_configuration_template() {
-			new Admin\Configuration\DDWCWM_Withdrawals_Configuration_Template( $this->ddwcwm_configuration );
+			ddfw_upgrade_to_pro_section( [
+				'image_url'     => DDWCWM_PLUGIN_URL . 'assets/images/pro-pages/withdrawal-configuration.webp',
+				'heading'       => esc_html__( 'Withdrawals is a Pro feature', 'devdiggers-wallet-for-woocommerce' ),
+				'description'   => esc_html__( 'Allow customers to request payouts from their wallet balance, with full control over charges and limits.', 'devdiggers-wallet-for-woocommerce' ),
+				'list_features' => [
+					esc_html__( 'Enable customer withdrawal requests', 'devdiggers-wallet-for-woocommerce' ),
+					esc_html__( 'Fixed or percentage based withdrawal charges', 'devdiggers-wallet-for-woocommerce' ),
+					esc_html__( 'Minimum and maximum withdrawal limits', 'devdiggers-wallet-for-woocommerce' ),
+					esc_html__( 'Approve or cancel requests from the admin dashboard', 'devdiggers-wallet-for-woocommerce' ),
+				],
+				'upgrade_url'   => 'https://devdiggers.com/product/woocommerce-wallet-management/',
+			] );
 		}
 
 		/**
@@ -338,7 +349,17 @@ if ( ! class_exists( 'DDWCWM_Admin_Dashboard' ) ) {
 		 * @return void
 		 */
 		public function ddwcwm_get_otp_configuration_template() {
-			new Admin\Configuration\DDWCWM_OTP_Configuration_Template( $this->ddwcwm_configuration );
+			ddfw_upgrade_to_pro_section( [
+				'image_url'     => DDWCWM_PLUGIN_URL . 'assets/images/pro-pages/otp-configuration.webp',
+				'heading'       => esc_html__( 'OTP Verification is a Pro feature', 'devdiggers-wallet-for-woocommerce' ),
+				'description'   => esc_html__( 'Add an email based One-Time Password layer to secure sensitive wallet operations.', 'devdiggers-wallet-for-woocommerce' ),
+				'list_features' => [
+					esc_html__( 'Require OTP for send, request and withdraw operations', 'devdiggers-wallet-for-woocommerce' ),
+					esc_html__( 'Configurable OTP expiry time', 'devdiggers-wallet-for-woocommerce' ),
+					esc_html__( 'Configurable OTP length', 'devdiggers-wallet-for-woocommerce' ),
+				],
+				'upgrade_url'   => 'https://devdiggers.com/product/woocommerce-wallet-management/',
+			] );
 		}
 
 		/**
@@ -347,7 +368,17 @@ if ( ! class_exists( 'DDWCWM_Admin_Dashboard' ) ) {
 		 * @return void
 		 */
 		public function ddwcwm_get_referrals_configuration_template() {
-			new Admin\Configuration\DDWCWM_Referrals_Configuration_Template( $this->ddwcwm_configuration );
+			ddfw_upgrade_to_pro_section( [
+				'image_url'     => DDWCWM_PLUGIN_URL . 'assets/images/pro-pages/referral-configuration.webp',
+				'heading'       => esc_html__( 'Referral Program is a Pro feature', 'devdiggers-wallet-for-woocommerce' ),
+				'description'   => esc_html__( 'Reward both the referrer and the new customer with wallet credit on successful registration.', 'devdiggers-wallet-for-woocommerce' ),
+				'list_features' => [
+					esc_html__( 'Reward referrer and new user automatically', 'devdiggers-wallet-for-woocommerce' ),
+					esc_html__( 'Configurable reward amount', 'devdiggers-wallet-for-woocommerce' ),
+					esc_html__( 'Customizable referral invitation email', 'devdiggers-wallet-for-woocommerce' ),
+				],
+				'upgrade_url'   => 'https://devdiggers.com/product/woocommerce-wallet-management/',
+			] );
 		}
 
 		/**

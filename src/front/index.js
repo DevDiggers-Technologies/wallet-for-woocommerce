@@ -2,13 +2,6 @@
 
 import './front.less';
 
-/**
- * Free front-end behaviour.
- *
- * Only the cart/topup and transaction features ship in Free. All Pro operations
- * (partial payment, send/request/withdraw/refer money, OTP and money-request
- * management) live in the Pro plugin and are intentionally absent here.
- */
 document.addEventListener( 'DOMContentLoaded', () => {
 
 	// Transaction Table AJAX Pagination

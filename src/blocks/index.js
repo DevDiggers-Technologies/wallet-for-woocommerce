@@ -8,7 +8,7 @@ const { createElement } = window.wp.element;
 const { registerPlugin } = window.wp.plugins;
 const { ExperimentalOrderMeta } = window.wc.blocksCheckout;
 
-// Consolidate gateway settings. Partial-payment is a Pro feature and is not registered here.
+// Consolidate gateway settings.
 const walletSettings = getSetting('ddwcwm_wallet_data', {});
 const extensionSettings = getSetting('ddwcwm-wallet-extension_data', {});
 const settings = { ...walletSettings, ...extensionSettings };

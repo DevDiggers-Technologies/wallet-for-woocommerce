@@ -238,13 +238,7 @@ if ( ! class_exists( 'DDWCWM_Front_Functions' ) ) {
 		public function ddwcwm_deduct_wallet_amount_on_order_processed( $order_id ) {
 			global $ddwcwm_wallet;
 
-			$order = wc_get_order( $order_id );
-
-			// Partial wallet payment deduction (session based) is a Pro feature and is not
-			// applied in Free. Full wallet payments are deducted by the wallet gateway
-			// ( DDWCWM_Wallet_Gateway::process_payment ). Cashback and topup handling below
-			// still run for every order.
-
+			$order        = wc_get_order( $order_id );
 			$rules_helper = new DDWCWM_Rules_Helper();
 
 			$awarded_cashback_data = $rules_helper->ddwcwm_calculate_cashbacks_with_order( $order_id );

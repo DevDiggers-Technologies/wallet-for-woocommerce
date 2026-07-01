@@ -47,7 +47,6 @@ if ( ! class_exists( 'DDWCWM_Common_Hooks' ) ) {
 			add_action( 'woocommerce_order_partially_refunded', [ $this, 'ddwcwm_handle_wallet_on_order_partially_refunded' ], 10, 2 );
 			add_action( 'woocommerce_order_status_completed', [ $this, 'ddwcwm_handle_wallet_on_order_completed' ] );
 
-			add_action( 'woocommerce_register_form', [ $this, 'ddwcwm_add_registration_fields' ] );
 			add_action( 'template_redirect', [ $this, 'ddwcwm_display_registration_credit_notice_for_guest' ] );
 			add_action( 'woocommerce_created_customer', [ $this, 'ddwcwm_credit_wallet_on_registration' ] );
 		}
